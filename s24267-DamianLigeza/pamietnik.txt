@@ -1,0 +1,10 @@
+2022-03-05
+Moj kochany pamietniczku na dzisiejszych zajeciach nauczylem sie:
+
+-- Opis zajec --
+Pierwsze zajęcia z SOP rozpoczeły się od omówienia spraw organizacyjnych: warunki zaliczenia, czego się nauczymy podczas zajęć, zadania domowe itp.
+Następnie przeszliśmy do pobrania obrazu dysku systemu Debian oraz do stworzenia maszyny wirtualnej w VirtualBox.
+
+-- Czego sie nauczylem --
+Nie był to pierwszy raz, kiedy instalowałem sytem Linux, ale na zajęciach pierwszy raz instalowałem go nie w trybie "okienkowym". Między trybem okienkowym, a tekstowym nie ma różnicy (poza tym, że widok jest inny i nie można używać myszki...), chyba nawet kolejne kroki są takie same - wybór języka -> lokalizacja -> ustawienia klawiatury -> itd.
+NAJWAŻNIEJSZE: checkbox zaznacza/odznacza się SPACJĄ!

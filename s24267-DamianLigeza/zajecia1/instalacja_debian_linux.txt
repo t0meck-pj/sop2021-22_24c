@@ -1,0 +1,40 @@
+Instalacja systemu linux na maszynach wirtualnych
+
+//-- Tu dodać sekcję o VirtualBOX --\\
+
+-- Menu instalacyjne Debian - Debian GNU/Linux installer menu (Bios mode)
+- Graphical install - umożliwia instalacje systemu w trybie okienkowym
+- Install - isntalacja systemu w trybie tekstowym (z tej opcji korzystalismy na zajeciach)
+- Advanced options:
+	Graphical expert install - instalacja systemu w trybie okienkowym, lecz w tym trybie mamy pełną kontrolę nad przepiegiem instalacji systemu. 
+	Graphical rescue mode - tryb odzyskiwania w trybie okienkowym. Opcja ta pozwala na naprawienie systemu, gdy ten nie chce się załadować np.: podczas instalacji systemu nie zaintalowalismy GRUB'a, i system nie chce się załadować. Dzięki tej opcji możemy go zainstalować lub go reinstalować, jeśli w nim coś zostało nagrzebane.
+	Graphical automated install - automatyczna instalacjw w trybie okienkowym. Dzięki tej opcji możemy zautomatyzować instalację systemu. Opcja ta do działania potrzebuje skonfigurowanego pliku konfiguracyjnego, w którym podane są już odpowidzi na pytanie zadawane podczas instalacji systemu.
+	Expert install - isntalacja systemu w trybie eksperta oraz trybie tekstowym
+	Rescue mode - tryb odzyskiwania w trybie tekstowym.
+	Automated install - automatyczna instalacja w trybie tekstowym
+	- Speech-enabled advanced options:
+		Expert, Rescue oraz Automated install wykorzystujące syntezator głosu do czytania tekstu na ekranie.
+- Accesible dark contrast installer menu - tryb wysokiego kontrastu / czarno-biały ekran
+- Help - pomoc
+- Install with speech synthesiz - instalacja w trybie okienkowym z syntezatorem głosu
+
+-- Pytania podczas instalacji systemu
+- Select language
+	W tym pytaniu wybieramy język, który będzie dostepny podczas instalacji systemu oraz język domyślny już zainstalowanego systemu.
+	W moim przypadku wybieram "English".
+
+- Select your location
+	Wybór lokalizacji, w ktorej sie znajdujemy. Pozwala to na ustawienie odpowiedniej strefy czasowej. Pozycje na liscie dobrane sa na podstawie wczesniejszego pytania, dlatego też Polski nie ma na liscie, aby jąodnaleść należy wybrać: other -> Europe - > Poland.
+
+- Configure locales
+	Locale, czyli ustawienia lokalne - pozwalają one na ustawienie np. odpowiedniego sposobu wyswietlenia daty czy symbolu dziesiętnego (, lub .). Przy wyborze English oraz Poland instalator nie jest w stanie okreslic odpowiedniego ustawienia dla tego pytania. Wybieramy United States.
+
+- Configure the keyboard
+	Tutaj wybieramy odpowiednie ustawienie do naszego układu klawiatury. 
+	
+- Configure the network: 
+	Hostname - pytanie te pozwala na ustawienie nazwy naszego urządzenia jaka będzie widoczna w sieci.
+	Domain - ????
+- Set up users and passwords:
+	Root password
+		
