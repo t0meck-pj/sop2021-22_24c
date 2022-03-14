@@ -1,0 +1,17 @@
+14.03.2022
+Mój kochany pamiętniczku na pierwszej lekcji systemów operacyjnych nauczyłem sięinstalacji debiana na virtual boxie:
+-przed samą pracą skonfigurowałem odpowiednio maszyne do poprawnego funkcjonowania
+-podczas tworzenia maszyny wybrałem opcje "Stwórz wirtualny dysk twardy"
+Tryby plików:
+VDI(VIRTUAL DISK IMAGE)- jest to usługa, która obsługuje środowisko pulpitu na serwerze zdalnym.
+VHD(VIRTUAL HARD DISK)-jest to format wirtualnego dysku twardego, moze zawierac dokladnie to samo co znajduje sie na partycjach fizycznych dysku
+VMDK(VIRTUAL MACHINE DISK)-jest to dysk wirtualny przechowujący zawartość dysku twardego maszyny wirtualnej.
+-nastepnie wybralem opcje dynamicznego przydzielania pamieci, ktora jest zdecydowanie lepsza opcja, poniewaz dysk sam dostosowuje sie do tego ile ma pamieci i wraz z jej wzrostem, wzrasta pamiec do przechowywania na dysku
+-nastepnie sciezka + rozmiar dysku
+-wybrałem instalacje bez gui
+-język, strefa czasowa
+-ustawiłem hasło na roota
+-ustawiłem nazwe użytkownika
+-wybrałem własny podział na partycje
+-wybralem katalog /boot (partycja do uruchamiania systemu)
+-instalacja zakonczona
