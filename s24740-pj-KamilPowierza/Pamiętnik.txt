@@ -1,0 +1,7 @@
+2022-03-05
+Mój kochany pamiętniczku na dzisiejszych zajęciach nauczyłem się:
+
+- Jak konfigurować system Debian w VirtualBoxie i podstawowe opcje w nim zawarte przy instalacji. 
+- Poznałem naszego profesora :)
+- Myślę że wszystko dla mnie było jasne, ponieważ nie było dużo skomplikowanych rzeczy.
+- Następnym razem muszę poczekać przed wykonaniem jakiegoś zadania, ponieważ dzisiaj za szybko przy konfiguracji pomyślałem i kliknąłem i musiałem dłużej czekać na konfiguracje i instalacje nie potrzebnych paczek.
