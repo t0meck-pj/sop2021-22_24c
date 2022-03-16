@@ -2,10 +2,10 @@
 
 -- Pobranie systemu operacyjnego
 	Debian dostepny jest do pobrania na oficjalnej stronie https://debian.org.
-	Do rozpoczecia pobierania nalezy kliknac w przycisk „Download”. Pobieranie rozpocznie się automatycznie.
-	Jesli chcemy pobrac inna wersję nalezy wejsc na stronę https://www.debian.org/distrib/, na ktorej dostępne sa następujace wersje:
-		- Small installation image – maly obraz plyty do instalacji tylko niezbędnych plikow systemu operacyjnego, bez dodatkowych aplikacji czy pakietow. Rozmiar pliku pozwala na nagranie go na plycie CD. Dostępne w wersji 64 oraz 32 bitowej.
-		- Complete installation image – obraz plyty zawierajacy niezbędne pliki do instalacji systemu operacyjnego oraz dodatkowe aplikacje i pakiety np. pakiet biurowy  Libre Office. Dostępne w wersji 64 oraz 32 bitowej.
+	Do rozpoczecia pobierania nalezy kliknac w przycisk „Download”. Pobieranie rozpocznie sie automatycznie.
+	Jesli chcemy pobrac inna wersje nalezy wejsc na strone https://www.debian.org/distrib/, na ktorej dostepne sa nastepujace wersje:
+		- Small installation image – maly obraz plyty do instalacji tylko niezbednych plikow systemu operacyjnego, bez dodatkowych aplikacji czy pakietow. Rozmiar pliku pozwala na nagranie go na plycie CD. Dostepne w wersji 64 oraz 32 bitowej.
+		- Complete installation image – obraz plyty zawierajacy niezbedne pliki do instalacji systemu operacyjnego oraz dodatkowe aplikacje i pakiety np. pakiet biurowy  Libre Office. Dostepne w wersji 64 oraz 32 bitowej.
 		- Cloud image – specjalnie przygotowany plik do do „instalacji” systemu w chmurze.
 
 
@@ -29,9 +29,9 @@
 	- Graphical install - umozliwia instalacje systemu w trybie okienkowym
 	- Install - isntalacja systemu w trybie tekstowym (z tej opcji korzystalismy na zajeciach)
 	- Advanced options:
-		Graphical expert install - instalacja systemu w trybie okienkowym, lecz w tym trybie mamy pelna kontrolę nad przepiegiem instalacji systemu. 
-		Graphical rescue mode - tryb odzyskiwania w trybie okienkowym. Opcja ta pozwala na naprawienie systemu, gdy ten nie chce się zaladowac np.: podczas instalacji systemu nie zaintalowalismy GRUB'a, i system nie chce się zaladowac. Dzięki tej opcji mozemy go zainstalowac lub go reinstalowac, jesli w nim cos zostalo nagrzebane.
-		Graphical automated install - automatyczna instalacjw w trybie okienkowym. Dzięki tej opcji mozemy zautomatyzowac instalację systemu. Opcja ta do dzialania potrzebuje skonfigurowanego pliku konfiguracyjnego, w ktorym podane sa juz odpowidzi na pytanie zadawane podczas instalacji systemu.
+		Graphical expert install - instalacja systemu w trybie okienkowym, lecz w tym trybie mamy pelna kontrole nad przepiegiem instalacji systemu. 
+		Graphical rescue mode - tryb odzyskiwania w trybie okienkowym. Opcja ta pozwala na naprawienie systemu, gdy ten nie chce sie zaladowac np.: podczas instalacji systemu nie zaintalowalismy GRUB'a, i system nie chce sie zaladowac. Dzieki tej opcji mozemy go zainstalowac lub go reinstalowac, jesli w nim cos zostalo nagrzebane.
+		Graphical automated install - automatyczna instalacjw w trybie okienkowym. Dzieki tej opcji mozemy zautomatyzowac instalacje systemu. Opcja ta do dzialania potrzebuje skonfigurowanego pliku konfiguracyjnego, w ktorym podane sa juz odpowidzi na pytanie zadawane podczas instalacji systemu.
 		Expert install - isntalacja systemu w trybie eksperta oraz trybie tekstowym
 		Rescue mode - tryb odzyskiwania w trybie tekstowym.
 		Automated install - automatyczna instalacja w trybie tekstowym
@@ -43,20 +43,20 @@
 
 -- Pytania podczas instalacji systemu przy wybranej opcji Install
 	- Select language
-		W tym pytaniu wybieramy język, ktory będzie dostepny podczas instalacji systemu oraz język domyslny juz zainstalowanego systemu.
+		W tym pytaniu wybieramy jezyk, ktory bedzie dostepny podczas instalacji systemu oraz jezyk domyslny juz zainstalowanego systemu.
 		W moim przypadku wybieram "English".
 	
 	- Select your location
 		Wybor lokalizacji, w ktorej sie znajdujemy. Pozwala to na ustawienie odpowiedniej strefy czasowej. Pozycje na liscie dobrane sa na podstawie wczesniejszego pytania, dlatego tez Polski nie ma na liscie, aby ja odnalesc nalezy wybrac: other -> Europe - > Poland.
 	
 	- Configure locales
-		Locale, czyli ustawienia lokalne - pozwalaja one na ustawienie np. odpowiedniego sposobu wyswietlenia daty czy symbolu dziesiętnego (, lub .). Przy wyborze English oraz Poland instalator nie jest w stanie okreslic odpowiedniego ustawienia dla tego pytania. Wybieramy United States.
+		Locale, czyli ustawienia lokalne - pozwalaja one na ustawienie np. odpowiedniego sposobu wyswietlenia daty czy symbolu dziesietnego (, lub .). Przy wyborze English oraz Poland instalator nie jest w stanie okreslic odpowiedniego ustawienia dla tego pytania. Wybieramy United States.
 	
 	- Configure the keyboard
 		Tutaj wybieramy odpowiednie ustawienie do naszego ukladu klawiatury. 
 		
 	- Configure the network: 
-		Hostname - pytanie te pozwala na ustawienie nazwy naszego urzadzenia jaka będzie widoczna w sieci.
+		Hostname - pytanie te pozwala na ustawienie nazwy naszego urzadzenia jaka bedzie widoczna w sieci.
 		Domain - ????
 	- Set up users and passwords:
 		Root password - haslo do konta "root" w systemie. Konto to posiada najwyzsze uprawnienia w systemie Debian.
@@ -70,7 +70,7 @@
 		Guided - use entire disk
 			Wybierajac ta opcje system pomoze podczas partycjonowania dysku.
 			Instalator zapyta sie jak chcemy partycjonowac dysk: 
-				All files in one partiton: zostanie stworzona jedna partycja, ktora będzie zawierac foldery /, /home/, /var, /tmp itd.
+				All files in one partiton: zostanie stworzona jedna partycja, ktora bedzie zawierac foldery /, /home/, /var, /tmp itd.
 				Separate /home partition: dwie poartycje - jedna dla /home i druga na cala reszte
 				Separata /home, /var and /tmp partitions: osobne partycje dla /home, /var oraz /tmp i kolejna partycja na reszte.
 		Guided - use entire disk and set up LVM
