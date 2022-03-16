@@ -1,7 +1,34 @@
-Instalacja systemu linux na maszynach wirtualnych
+-------- Instalacja systemu linux na maszynach wirtualnych
 
-//-- Tu dodać sekcję o VirtualBOX --\\
+-- Pobranie systemu operacyjnego
+	Debian dostępny jest do pobrania na oficjalnej stronie https://debian.org.
+	Do rozpoczęcia pobierania należy kliknąć w przycisk „Download”. Pobieranie rozpocznie się automatycznie.
+	Jeśli chcemy pobrać inną wersję należy wejść na stronę https://www.debian.org/distrib/, na której dostępne są następujące wersje:
+		- Small installation image – mały obraz płyty do instalacji tylko niezbędnych plików systemu operacyjnego, bez dodatkowych aplikacji czy pakietów. Rozmiar pliku pozwala na nagranie go na płycie CD. Dostępne w wersji 64 oraz 32 bitowej.
+		- Complete installation image – obraz płyty zawierający niezbędne pliki do instalacji systemu operacyjnego oraz dodatkowe aplikacje i pakiety np. pakiet biurowy  Libre Office. Dostępne w wersji 64 oraz 32 bitowej.
+		- Cloud image – specjalnie przygotowany plik do do „instalacji” systemu w chmurze.
 
+
+-- VirtualBOX
+	- Tworzenie maszyny wirtualnej - CTRL + N, Maszyna -> Nowa lub przy pomocy guzika "Nowa"
+		Name: nazwa maszyny wirtualnej
+		Machine folder: folder, w ktorym beda pliki zwiazane z maszyna wirtualna (np. dysk twardy, pliki migawek)
+		Typ: typ systemu
+		Wersja: wersja systemu
+	
+		Rozmiar pamieci: rozmiar pamieci RAM maszyny wirtualnej
+		Dysk twardy: mozemy stworzyc nowy lub uzyc istniejacego pliku dysku twardego
+		Typ pliku z wirtualnym dyskiem: mozliwosc wybrania typu pliku, jeśli jhest potrzeba uzywania z innym programem wirtualizacyjnym to mozna wybrac odpowiedni dla niego typ pliku
+		Pamiec na fizycznym dysku twardym:
+			Dynamicznie przydzielony - plik dysku bedzie rosl w miare jego zapelniania
+			Staly rozmiar - plik dysku twardego zarezerwuje na fizycznym dysku twardym podany rozmiar w kolejnym kroku
+		Lokalizacja pliku i rozmiar: lokalizacja poliku dysku twardego oraz jego rozmiar
+		
+		
+		
+		
+		
+		
 -- Menu instalacyjne Debian - Debian GNU/Linux installer menu (Bios mode)
 	- Graphical install - umożliwia instalacje systemu w trybie okienkowym
 	- Install - isntalacja systemu w trybie tekstowym (z tej opcji korzystalismy na zajeciach)
@@ -149,6 +176,3 @@ Instalacja systemu linux na maszynach wirtualnych
 		
 	- Installation complete
 		Isntalacja zakonczona. Nalezy wysunac plik z obrazem dysku systemu Debian (VirtualBox sam go wysuwa).
-		
-		
-		
