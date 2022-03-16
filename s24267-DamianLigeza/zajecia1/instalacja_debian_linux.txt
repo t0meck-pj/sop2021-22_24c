@@ -59,18 +59,12 @@
 		Hostname - pytanie te pozwala na ustawienie nazwy naszego urzadzenia jaka będzie widoczna w sieci.
 		Domain - ????
 	- Set up users and passwords:
-		Root password
-			Haslo do konta "root" w systemie. Konto to posiada najwyzsze uprawnienia w systemie Debian.
-		Re-enter root password
-			Powtorzenie hasla root w celu weryfikacji.
-		Full name for the new user
-			Pelna nazwa nowego uzytkownika np. imie i nazwisko. Moze byc wykorzystywane przez inne programy, ktore wymagaja pelnej nazwy uzytkownika.
-		Username for your account
-			Nazwa konta uzytkownika.
-		Chosa a password for the new user
-			Haslo do konta uzytkownika.
-		Re-enter password to verify
-			Powtrorzenie hasla w celu weryfikacji.
+		Root password - haslo do konta "root" w systemie. Konto to posiada najwyzsze uprawnienia w systemie Debian.
+		Re-enter root password - powtorzenie hasla root w celu weryfikacji.
+		Full name for the new user - pelna nazwa nowego uzytkownika np. imie i nazwisko. Moze byc wykorzystywane przez inne programy, ktore wymagaja pelnej nazwy uzytkownika.
+		Username for your account - nazwa konta uzytkownika.
+		Chosa a password for the new user - haslo do konta uzytkownika.
+		Re-enter password to verify - powtrorzenie hasla w celu weryfikacji.
 	
 	- Partition disks:
 		Guided - use entire disk
