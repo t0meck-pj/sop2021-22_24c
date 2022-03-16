@@ -5,4 +5,3 @@ Pierwsze zajecia z SOP rozpoczely sie od omowienia spraw organizacyjnych: warunk
 Nastepnie przeszlismy do pobrania obrazu dysku systemu Debian, do stworzenia maszyny wirtualnej w VirtualBox oraz zainstalowalismy system Debian.
 
 Nie byl to pierwszy raz, kiedy instalowalem sytem Linux, ale na zajeciach pierwszy raz instalowalem go nie w trybie "okienkowym". Miedzy trybem okienkowym, a tekstowym nie ma roznicy, chyba nawet kolejne kroki sa takie same - wybor jezyka -> lokalizacja -> ustawienia klawiatury -> itd.
-NAJWAŻNIEJSZE: checkbox zaznacza/odznacza sie SPACJA!
