@@ -1,0 +1,27 @@
+Instalacja Debiana:
+    po wybraniu z czego ma być bootowany system pojawia nam się okno w którym można wybrać instalację graficzną, tekstową, oraz opcje zaawansowane.
+    w opcjach zaawanoswanych jest instalacja ekspercka, tryb naprawy oraz instalacja automatyczna, wszystkie te rzeczy dostępne są w wersji tekstowej jak i graficznej
+    po wybraniu instalacji tekstowej pojawia się okno wyboru języka instalacji
+    poźniej wybieramy region, należy przejść do other i stamtąd wybrać Europę
+    następnie do wyboru jest kraj, kilkając przycisk "P" można przejśc odrazu do krajów na literę P
+    następnie wybieramy region potrzebny do kodowania znaków
+    następnie wybieramy schemat klawiatury jakiego chcemy używać
+    później do wprowadzenia jest nazwa hosta
+    następnie jeżeli chcemy dołączyć system do jakiejś domeny można zrobić to w tym kroku
+    następnie ustawiamy hasło dla roota
+    potwierdzamy hasło roota
+    wprowadzamy pełną nazwe użytkownika
+    wprowadzamy skróconą nazwę użytkownika
+    wprowadzamy hasło dla użytkownika a następnie je potwierdzamy
+    następnie do wyboru mamy różne sposoby partycjonowania dysku, automatyczna, automatyczna z managerem woluminów logicznych, i jak poprzednio tylko z szyfrowaniem, oraz w pełni manualne ustalanie partycji i ich wielkości. LMV pozwala miedzy innymi na takie operacje jak polaczenie roznych pamieci masowych w jeden dysk logiczny, dynamiczne rozszerzanie pamieci itd.
+    dalej wybieramy dysk na system
+    następnie schemat, do wyboru wszystkie pliki na jednej partycji, osobna partycja dla katalogu /home, oraz osobne partycje dla katalogów /home, /var i /tmp
+    następnie w razie potrzeby można dostosować konkretne partycje
+    dalej wyskakuje okno z pytaniem czy chcemy włożyć następną płytę do dalszej instalacji 
+    wybieramy kraj aby dobrać serwer z którego będą pobierane paczki
+    a następnie konkretny serwer
+    wyskakuje okienko dotycząće proxy, które zazwyczaj należy pominąć
+    wyskakuje okno pytające czy chcemy wysyłać anonimowe informacje na temat działania systemu deweloperom w celu ulepszania go
+    dalej narzędzie taksel pozwala nam wybrać komponenty które mają zostać zainstalowane (można to później zmienić)
+    następnie pojawia się pytanie o instalacje GRUBa, wybieramy yes i wybieramy dysk na którym chcemy go zainstalować
+    po tym system zresetuje się i pojawi się GRUB w którym należy wybrać system, po załadowaniu jest on gotowy do użycia
