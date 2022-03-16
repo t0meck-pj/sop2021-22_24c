@@ -3,38 +3,152 @@ Instalacja systemu linux na maszynach wirtualnych
 //-- Tu dodać sekcję o VirtualBOX --\\
 
 -- Menu instalacyjne Debian - Debian GNU/Linux installer menu (Bios mode)
-- Graphical install - umożliwia instalacje systemu w trybie okienkowym
-- Install - isntalacja systemu w trybie tekstowym (z tej opcji korzystalismy na zajeciach)
-- Advanced options:
-	Graphical expert install - instalacja systemu w trybie okienkowym, lecz w tym trybie mamy pełną kontrolę nad przepiegiem instalacji systemu. 
-	Graphical rescue mode - tryb odzyskiwania w trybie okienkowym. Opcja ta pozwala na naprawienie systemu, gdy ten nie chce się załadować np.: podczas instalacji systemu nie zaintalowalismy GRUB'a, i system nie chce się załadować. Dzięki tej opcji możemy go zainstalować lub go reinstalować, jeśli w nim coś zostało nagrzebane.
-	Graphical automated install - automatyczna instalacjw w trybie okienkowym. Dzięki tej opcji możemy zautomatyzować instalację systemu. Opcja ta do działania potrzebuje skonfigurowanego pliku konfiguracyjnego, w którym podane są już odpowidzi na pytanie zadawane podczas instalacji systemu.
-	Expert install - isntalacja systemu w trybie eksperta oraz trybie tekstowym
-	Rescue mode - tryb odzyskiwania w trybie tekstowym.
-	Automated install - automatyczna instalacja w trybie tekstowym
-	- Speech-enabled advanced options:
-		Expert, Rescue oraz Automated install wykorzystujące syntezator głosu do czytania tekstu na ekranie.
-- Accesible dark contrast installer menu - tryb wysokiego kontrastu / czarno-biały ekran
-- Help - pomoc
-- Install with speech synthesiz - instalacja w trybie okienkowym z syntezatorem głosu
+	- Graphical install - umożliwia instalacje systemu w trybie okienkowym
+	- Install - isntalacja systemu w trybie tekstowym (z tej opcji korzystalismy na zajeciach)
+	- Advanced options:
+		Graphical expert install - instalacja systemu w trybie okienkowym, lecz w tym trybie mamy pełną kontrolę nad przepiegiem instalacji systemu. 
+		Graphical rescue mode - tryb odzyskiwania w trybie okienkowym. Opcja ta pozwala na naprawienie systemu, gdy ten nie chce się załadować np.: podczas instalacji systemu nie zaintalowalismy GRUB'a, i system nie chce się załadować. Dzięki tej opcji możemy go zainstalować lub go reinstalować, jeśli w nim coś zostało nagrzebane.
+		Graphical automated install - automatyczna instalacjw w trybie okienkowym. Dzięki tej opcji możemy zautomatyzować instalację systemu. Opcja ta do działania potrzebuje skonfigurowanego pliku konfiguracyjnego, w którym podane są już odpowidzi na pytanie zadawane podczas instalacji systemu.
+		Expert install - isntalacja systemu w trybie eksperta oraz trybie tekstowym
+		Rescue mode - tryb odzyskiwania w trybie tekstowym.
+		Automated install - automatyczna instalacja w trybie tekstowym
+		- Speech-enabled advanced options:
+			Expert, Rescue oraz Automated install wykorzystujące syntezator głosu do czytania tekstu na ekranie.
+	- Accesible dark contrast installer menu - tryb wysokiego kontrastu / czarno-biały ekran
+	- Help - pomoc
+	- Install with speech synthesiz - instalacja w trybie okienkowym z syntezatorem głosu
 
--- Pytania podczas instalacji systemu
-- Select language
-	W tym pytaniu wybieramy język, który będzie dostepny podczas instalacji systemu oraz język domyślny już zainstalowanego systemu.
-	W moim przypadku wybieram "English".
-
-- Select your location
-	Wybór lokalizacji, w ktorej sie znajdujemy. Pozwala to na ustawienie odpowiedniej strefy czasowej. Pozycje na liscie dobrane sa na podstawie wczesniejszego pytania, dlatego też Polski nie ma na liscie, aby jąodnaleść należy wybrać: other -> Europe - > Poland.
-
-- Configure locales
-	Locale, czyli ustawienia lokalne - pozwalają one na ustawienie np. odpowiedniego sposobu wyswietlenia daty czy symbolu dziesiętnego (, lub .). Przy wyborze English oraz Poland instalator nie jest w stanie okreslic odpowiedniego ustawienia dla tego pytania. Wybieramy United States.
-
-- Configure the keyboard
-	Tutaj wybieramy odpowiednie ustawienie do naszego układu klawiatury. 
+-- Pytania podczas instalacji systemu przy wybranej opcji Install
+	- Select language
+		W tym pytaniu wybieramy język, który będzie dostepny podczas instalacji systemu oraz język domyślny już zainstalowanego systemu.
+		W moim przypadku wybieram "English".
 	
-- Configure the network: 
-	Hostname - pytanie te pozwala na ustawienie nazwy naszego urządzenia jaka będzie widoczna w sieci.
-	Domain - ????
-- Set up users and passwords:
-	Root password
+	- Select your location
+		Wybór lokalizacji, w ktorej sie znajdujemy. Pozwala to na ustawienie odpowiedniej strefy czasowej. Pozycje na liscie dobrane sa na podstawie wczesniejszego pytania, dlatego też Polski nie ma na liscie, aby jąodnaleść należy wybrać: other -> Europe - > Poland.
+	
+	- Configure locales
+		Locale, czyli ustawienia lokalne - pozwalają one na ustawienie np. odpowiedniego sposobu wyswietlenia daty czy symbolu dziesiętnego (, lub .). Przy wyborze English oraz Poland instalator nie jest w stanie okreslic odpowiedniego ustawienia dla tego pytania. Wybieramy United States.
+	
+	- Configure the keyboard
+		Tutaj wybieramy odpowiednie ustawienie do naszego układu klawiatury. 
+		
+	- Configure the network: 
+		Hostname - pytanie te pozwala na ustawienie nazwy naszego urządzenia jaka będzie widoczna w sieci.
+		Domain - ????
+	- Set up users and passwords:
+		Root password
+			Hasło do konta "root" w systemie. Konto to posiada najwyższe uprawnienia w systemie Debian.
+		Re-enter root password
+			Powtorzenie hasla root w celu weryfikacji.
+		Full name for the new user
+			Pelna nazwa nowego uzytkownika np. imie i nazwisko. Moze byc wykorzystywane przez inne programy, ktore wymagaja pelnej nazwy uzytkownika.
+		Username for your account
+			Nazwa konta uzytkownika.
+		Chosa a password for the new user
+			Haslo do konta uzytkownika.
+		Re-enter password to verify
+			Powtrorzenie hasla w celu weryfikacji.
+	
+	- Partition disks:
+		Guided - use entire disk
+			Wybierajac ta opcje system pomoze podczas partycjonowania dysku.
+			Instalator zapyta sie jak chcemy partycjonowac dysk: 
+				All files in one partiton: zostanie stworzona jedna partycja, która będzie zawierać foldery /, /home/, /var, /tmp itd.
+				Separate /home partition: dwie poartycje - jedna dla /home i druga na cala reszte
+				Separata /home, /var and /tmp partitions: osobne partycje dla /home, /var oraz /tmp i kolejna partycja na reszte.
+		Guided - use entire disk and set up LVM
+			Podobnie to opcji, ktora znajduje sie wyzej, tylko wraz z instalacja LVM - Logical Volume Manager. LVM dziala podobnie do RAID, pozwala np. na polaczenie kilku dyskow w jeden. Pozwala rowniez na dynamiczna zmiane wielkosci partycji.
+		Guided - use entire disk and set up encrypted LVM
+			Jak wyzej, tylko teraz z wlaczona opcja szyfrowania danych.
+		Manual
+			Reczne ustawienie partycji. Po wybraniu tej opcji system zapyta sie, ktory dysk chcemy partycjonowac.
+			
+			Ustawienia partycji:
+				Use as: typ systemu plikow partycji
+				Mount point: punkt mocowania partycji (/boot, /home, /var ...)
+				Mount options: opcja mocowania partycji, moemy np. wylaczyc zapisywanie ostatniego dostepu do pliku na partycji
+				Label: etykieta/nazwa wlasna partycji
+				Reserved blocks: ???
+				Typical usage: odpowiedni wybor pozwoli na ustawienie odpowiednich parametrow systemu plikow
+				Bootable flag: flaga bootowania paartycji
+				
+				Done setting up the partition - zapisanie i powrot do ustawien partycji dysku twardego
+			
+			
+			Przykladowa konfiguracja wyglada nastepujaco:
+			Partycja /boot:
+				Wybieramy interesujacy nas dysk twardy.
+				Zostaniemy poinformowani, ze wszystkie aktualnie znajdujace sie partycje zostana usuniete
+				Wybieramy puste miejsce na naszym wybranym dysku twardym
+				Wybieramu opcje Create new partition
+				Ustalamy rozmiar nowej partycji (w moim przypadku 500 MB)
+				Wybieramy typ partycji: Primary
+				Wybieramy czy nasza partycja ma sie rozpoczynac od poczatku dostepnego wolnego miejsca czy od jego konca: Beginning
+				Ustawienia partycji:
+					Use as: Ext4 jurnaling file system
+					Mount point: /boot
+					Mount options: defaults
+					Label: none
+					Reserved blocks: 5%
+					Typical usage: standard
+					Bootable flag: On
+			
+			Partycja /:
+				Rozmiar: 15 GB
+				Tyo partycji: Logical
+				Beginning
+				Ustawienia partycji:
+					Use as: Ext4 jurnaling file system
+					Mount point: /
+					Mount options: defaults
+					Label: none
+					Reserved blocks: 5%
+					Typical usage: standard
+					Bootable flag: off
+			
+			Partycja swap:
+				Rozmiar: 3 GB
+				Tyo partycji: Logical
+				Beginning
+				Ustawienia partycji:
+					Use as: swap area
+			
+			Partycja /home:
+				Rozmiar: pozostaly rozmiar
+				Typ partycji: Logical
+				Beginning
+				Ustawienia partycji:
+					Use as: Ext4 jurnaling file system
+					Mount point: /home
+					Mount options: defaults
+					Label: none
+					Reserved blocks: 5%
+					Typical usage: standard
+					Bootable flag: off
+					
+			
+			Po ustawieniu partycji wybieramy opcje Finish partitioning and write changes to disk.
+			
+	- Konfiguracja menedzera pakietow (apt)
+		Network mirror - serwer lustrzany. Serwer z ktorego beda pobierane aktualizacje systemu oraz pakietow
+		
+		Use a networtk mirror: Yes
+		Debian archive mirror country: Poland
+		Debian archive mirror: deb.debian.org
+		HTTP proxy inforation: puste (ustawienia sieci proxy)
+	
+	- Configurating popularity contest
+		Anonimowe dane statystyczne dotyczace najczesciej uzywanych pakietow
+		
+	-Software selection
+		Pozwala na wybranie instalacji srodowiska graficznego
+		
+	- Install the GRUB boot loader
+		Instalacja menedzera GRUB. Bez niego nie bedzie mozliwosci zaladowania systemu operacyjnego.
+		Po wybraniu opcji YES nalezy wybrac partycje z flaga bootwania.
+		
+	- Installation complete
+		Isntalacja zakonczona. Nalezy wysunac plik z obrazem dysku systemu Debian (VirtualBox sam go wysuwa).
+		
+		
 		
