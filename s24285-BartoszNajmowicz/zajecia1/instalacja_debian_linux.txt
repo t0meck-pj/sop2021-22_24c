@@ -1,0 +1,110 @@
+Instalacja Debiana:
+1. Utworzenie nowej maszyny wirtualnej:
+- Nowa - utworzenie nazwy maszyny, rozmiar pamieci:
+    - Typ pliku z wirtualnym dyskiem:
+        - VDI - VirtualBox Disk Image - format domyslny dla VirtualBoxa, 
+        - VHD - Virtual Hard Disk - format domyslny dla VirtualPC, Hyper-V,
+        - VMDK - Virtual Machine Disk - format domyslny dla VMWare,
+    - Pamiec na fizycznym dysku twardym:
+        - Dynamicznie przydzielany - pamiec bedzie uzywana miejsca na fizycznym twardym dysku (do max stalego rozmiaru), ale nie zmniejszy sie automatycznie, gdy zostanie zwolnione miejsce,
+        - Staly rozmiar - staly ustalony rozmiar przydzielonej pamieci na dysku twardym, wolniej sie instaluje, ale szybciej dziala niz dynamicznie przydzielany.
+    -Utworz,
+2. VM zainstalowana
+3. Ustawienia VM:
+    - Ogolne:
+        - Zaawansowane: 
+            - Folder migawek - migawka przechowuje kopie ustawien VM, zapisuje stan dyskow podczpionych do danej maszyny w chwili jej tworzenia; funkcjonalnosc ta umozliwia na przywrocenie wczesniejszego stanu systemu, w przypadku wystapienia jakichs problemow;
+            - Wspoldzielony schowek - umozliwia np. przeklejanie skopiowanych elementow miedzy VM a fizycznym komputerem (w przypadku wybrania opcji bidirectional),
+            - Przeciaganie i upuszczanie - j.w. w przypadku przeciagania i opuszczania elementow,
+    - System (wybrane opcje):
+        - Plyta glowna - odhaczylem floppy disk i dysk optyczny, poniewaz dysk z systemem jest na dysku twardym,
+        - Liczba rdzeni - zaznaczylem 2 rdzenie,
+    - Ekran - bez zmian,
+    - Dzwiek - bez zmian,
+    - Siec - bez zmian (wybrana NAT),
+    - Porty szeregowe - bez zmian,
+    - USB - bez zmian,
+    - Udostepniane foldery - bez zmian,
+    - Interfejs uzytkownika - bez zmian,
+4. Uruchom:
+    - Zwykly start - domyuslny rodzaj startu; przypomina normalny start fizycznej maszyny; zalecany w przypadku, gdy uzytkownik chce pracowac bezposrednio na pulpicie VM; 
+    - Bezglowy start - uruchomienie VM bez obrazu video; wykorzystywany do systemow serwerowych; 
+    - Oddzielny start - polaczenie obu powyzszych trybow startu; VM uruchamia sie normalnie, ale moze przejsc do trybu bezglowego;
+5. Uruchamianie instalacji:
+    - Przechwyc
+    - ctrl prawy - zeby pojawil sie kursor
+    - wybrac opcje Maszyna -> zresetuj -> F12
+    - GRUB - (GRUB - grand unified bootloader - program rozruchowy dla systemu operacyjnego) - wybor systemu instalacji 
+    - Graphical install
+    - Install - TAK
+    - Advanced options
+6. Ekrany instalacji:
+ - Select language - English
+ - Select your location - Other -> Europe -> UK
+ - Configure keyboard - American English
+ - Configure network - hostname: ....., domain name: ---
+ - Setup users - and passwords - root password: ....., username: ...., password: .....
+ - Configure the clock - UK
+ - Partitioning disks:
+    - Guided Partitioning - WYBRANE:
+        - Guided - use entire disk - WYBRANE: 
+            - stworzy partycje automatycznie na calym dysku,
+        - Guided - use entire disk and set up LVM:
+            - LVM - Linux Volume Manager - linuxowa interpretacja dyskow RAID
+            - stworzy partycje bazujace na koncepcji LVM na calym dysku 
+        - Guided - use entire disk and set up encrypted LVM
+            - stworzy partycje bazujace na koncepcji LVM na calym dysku i zaszyfruje dysk
+        - Manual:
+            - umozliwia tworzenie wlasnej koncepcji podzialu partycji przez uzytkownika.
+                - podstawowe partycje:
+                    - / - root
+                    - /home - glowne katalogi uzytkownika
+                    - /var - dla plikow zmiennych (variable), czyli takich, ktorych rozmiar moze sie zwiekszac i zmniejszac,
+                    - /boot - zawiera pliki wykorzystywane do rozruchu systemu,
+                    - swap - partycja, ktora umozliwia rozszerzenie pamieci systemowej poprzez wydzielenie czesci dysku,
+                    - /usr - zawiera programy dla uzytkownikow, biblioteki, dokumenty, itp.,
+                    - /tmp - zwiera pliki tymczasowe,
+    - Configure iSCSI volumes:
+        - iSCSI - (Internet Small Computer Systems Interface) - standard pamieci sieciowej;
+    - SCI3 (0, 0, 0) (sda) - 21.5 GB ATA VBOX HARDDISK
+    - Undo changes to partitions
+    - Finish partitioning and write changes to disk
+- Po wybraniu Guided Partition - use entire disk:
+    - SCSI2 (0, 0, 0) (sda) - 21.5 GB ATA VBOX HARDDISK - dysk uzytkownika,
+- Partitioning scheme:
+    - All files in one partition - WYBRANE
+        - wszystkie pliki w jednej partycji,
+        - opcja zalecana dla poczatkujacych uzytkownikow,
+    - Separate /home partition
+        - dzieki oddzielnej partycji /home, w przypadku reinstalacji systemu, wszystkie dane i ustawienia pozostaja zachowane,
+        - bezpieczniejsza opcja, jesli system udostepnia sie wielu uzytkownikom,
+    - Separate /home, /var, and /tmp partitions
+        - podzial dysku na dodatkowe partycje,
+- Finish partitioning and write changes to disk
+- Configure the package Manager:
+    - znalezienie lustrzanego archiwum Debiana bliskiego lokalizacji mojej sieci - Poland
+    - deb.debian.org- wybor
+    - HTTP proxy information - wybrane BLANK
+- Software selection:
+    - Debian desktop environment (WYBRANE) - srodowiska graficzne pulpitu; 
+        - GNOME (WYBRANE)
+        - Xfce
+        - GNOME Flashback
+        - KDE Plasma
+        - Cinnamon
+        - MATE
+        - LXDE
+        - LXQt
+    - web server - umozliwia instalacje Debiana jako web server,
+    - SSH server - umozliwia instlacje i konfiguracje serwera SSH,
+    - standard system utilities (WYBRANE) - bez wybrania tej opcji system bedzie dzialal, ale nie bedzie mial wielu uzytecznych narzedzi; ewentualnie pozniej mozna doinstalowac potrzebne narzedzia;
+- Install the GRUB boot loader - YES
+    - Enter device manually
+    - /dev/cda (ata-VBOX_HARDDISK_VBF1C1679E-2F18C235) - WYBRANE
+- Finish the installation
+- Installation complete
+
+
+
+
+

@@ -1,0 +1,6 @@
+2022-03-13
+Moj kochany pamietniczku, na dzisiejszych zajeciach nauczylem sie:
+- instalacji Debiana
+- konfiguracji wirtualnej maszyny w programie VirtualBox
+- przypomnialem sobie obsluge gita
+
