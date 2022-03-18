@@ -1,0 +1,8 @@
+2022.03.12
+Mój kochany pamiętniczku na dzisiejszych zajęciach dowiedziałam się:
+
+- jak zdać przedmiot i poznałam naszego prowadzącego
+- jak skonfigurować Debiana w VirtualBoxie
+- dowiedzialam się czym jest fragmentacja (to chyba jedno z niewielu pojęć które zapamiętałam, muszę chyba więcej notować następnym razem)
+- bardzo podoba mi się, że gdy coś jest nie jasne, można zadać w każdym momencie pytanie i mieć pewność, że otrzyma się dokładne wytłumaczenie :)
+- pierwsze zajęcia były wprowadzające, więc wydaje mi się, że wszystko jest w miarę zrozumiałe :D
