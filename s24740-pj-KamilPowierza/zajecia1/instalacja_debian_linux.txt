@@ -58,7 +58,7 @@ Opis procesu instalacji systemu Debian
 	&10.1 > Guided -> use entire disk - używa całego wybranego dysku.
 	&10.2 > Guided -> use entire disk and set up LVM - używa całego wybranego dysku i przenosi do konfiguracji LVM.
 	&10.3 > Guided -> use entire disk and set up encrypted LVM - używa całego wybranego dysku i przenosi do konfiguracji zaszyfrowanego LVM.
-	LVM - Logical volume management - pozwala na lepsze i szybsze rozmieszczanie danych na dysku przez administratora. (?)
+	LVM - Logical volume management - pozwala na lepsze i szybsze rozmieszczanie danych na dysku przez administratora.
 
 	&10.4 > Manual -> Manualna konfiguracja partycji dysku.
 	&10.4.1 > By przejść dalej musimy kliknąć na dysk po czym wybrać opcje "Yes".
