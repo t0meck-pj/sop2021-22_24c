@@ -1,1 +1,6 @@
-test
+05.03.2022
+Mój kochany pamiętniczku na dzisiejszych zajęciach dowiedziałem się:
+
+- O istnieniu Debiana i jak go zainstalować
+- że prowadzący jest żartownisiem i prowadzi zajęcia na przysłowiowym "luzie" :D
+- że nie do końca ogarniam GitHub
