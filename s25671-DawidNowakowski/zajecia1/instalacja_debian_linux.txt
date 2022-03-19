@@ -1,0 +1,113 @@
+Instalacja systemu linux na maszynach wirtualnych
+ 
+Do instalacji systemu linux w postaci maszyny wirtualnej skorzystalem z programu Oracle VM VirtualBox.
+Uruchomiwszy w.w. program w zakladce „Maszyna” mam do wyboru dwie opcje intuicyjnie mowiace o funkcjach, ktore reprezentuja, tj.: Nowa (zainicjowanie instalacji systemu, ktorego uzytkownik „nie posiada” obecnie na dysku); Dodaj (odnalezienie sciezki do istniejacego obrazu/pliku wirtualnej maszyny). Na potrzeby zadania wybieram opcje „Nowa”.
+ 
+Pojawia sie okno „Nazwa i system operacyjny”. W polu „Name” okreslam pod jaka nazwa zainstalowany zostanie, a nastepnie bedzie widoczny system w programie VirtualBox.
+Machine Folder – sciezka do obrazu nowopowstalego obrazu.
+Typ – okno wyboru rodzaju oprogramowania
+Wersja – generacja/aktualizacja systemu, ktory zostanie zainstalowany
+Wpisujac w Name „Debian”, VirtualBox automatycznie sugeruje system, ktory chce zainstalowac, tj.:
+Typ – Linux, Wersja – Debian (64-bit)
+Aby kontynuowac do wyboru sa opcje: Tryb eksperta, Dalej, Anuluj.
+Tryb eksperta – Umozliwia od razu sprecyzowac maksymalny Rozmiar pamieci (RAM), ktory udostepnie nowopowstalemu systemowi. Nastepnie mozna okreslic rodzaj dysku twardego: Nie dodawaj wirtualnego dysku twardego; Stworz wirtualny dysk twardy; Uzyj istniejacego pliku wirtualnego dysku twardego.
+Opcje, ktore sa dostepne do kontynuacji to: Tryb przewodnika, Uruchom, Anuluj.
+Wracam do trybu przewodnika wybierajac Debiana -> Dalej.
+Okreslam rozmiar pamieci RAM przydzielonej do maszyny. Standardowa wartosc 1024MB, wybieram 8192MB. -> Dalej
+Jak powyzej, w Trybie eksperta mozna bylo od razu sprecyzowac rodzaj dysku twardego, w trybie przewodnika program przedstawia te opcje uzytkownikowi w kilku krokach.
+STWORZ wirtualny dysk twardy -> Utworz
+Typ pliku z wirtualnym dyskiem:
+- VDI (VirtualBox Disk Image) – obraz plyty w formacie VirtualBoxa, do tworzenia nowej maszyny wirtualnej, umozliwia zainstalowanie systemu z nosnika na innym urzadzeniu
+- VHD (Virtual Hard Disk) – “format uzywany przez MS”; stworzenie wirtualnego dysku twardego
+- VMDK – “dysk wirtualny przechowujacy zawartosc dysku twardego maszyny wirtualnej Vmware”
+-> VHD -> Dalej (Tryb eksperta jak powyzej umozliwia wykonanie kilku krokow od razu)
+ 
+Pamiec na fizycznym dysku twardym:
+- Dynamicznie przydzielany – wymaga okreslenia maksymalnej ilosci pamieci, ktora bedzie operowac nsys. (<- uznajmy to za skrot powielanego okreslenia „nowopowstaly system”). Nie rezerwuje odgornie okreslonej ilosci, gdy potrzebuje korzysta z kolejnych obszarow pamieci. Dzieki takiej opcji dysk twardy jest zarzadzany w czasie biezacym za posrednictwem posiadanych systemow – jest elastyczny w zaleznosci od potrzeby. Porownajmy do powiedzenia, ze nie jest psem ogrodnika 😉
+- Staly rozmiar – zdefiniowanie przydzialu pamieci do pracy nsys.
+Dynamicznie przydzielany -> Dalej
+ 
+Lokalizacja pliku i rozmiar:
+Musze okreslic lokalizacje instalacji nsys. oraz jego nazwe pliku.
+Suwakiem ponizej okreslam ilosc pamieci dysku twardego, ktora bedzie dostepna do uzytku dla nsys. Dla optymalnej pracy wymagane jest min. 8gb, ustawiam suwak na 16gb. -> Utworz
+ 
+Nastepuje instalacja systemu -> zamkniecie okna instalacji -> powrot do menu glownego Virtual Box
+Z poziomu biblioteki systemow zaznaczam Debian, nastepnie obok przycisku „Uruchom” jest strzalka w dol umozliwiajaca wybor jeden z trzech opcji wlaczenia systemu:
+- Zwykly start – standardowa opcja, uruchamia system w naturalny, charakterystyczny dla niego sposob
+- Bezglowy start – opcja umozliwiajaca odpalenie systemu „bez szaty graficznej”, precyzujac uruchamia system w tle. Stosowany przewazne w srodowiskach serwerowych.
+- Oddzielny start – wyglada jak odpalenie systemu uzywajac zwyklego startu, jednakze pozwala na wylaczenie szaty graficznej i prace jak w przypadku bezglowego startu.
+Uruchom -> Zwykly start
+Wybierz dysk startowy -> Uruchom -> F12 -> prawy ctrl -> przechwyc z uprzednio zaznaczona opcja „nie pokazuj wiecej tej wiadomosci”
+ 
+Optical Disk Selector -> odnajduje sciezke do pliku obrazu -> naped optyczny
+ W oknie mam mozliwosc wybrania urzadzenia/metody bootowania. Z uwagi, ze system nie bedzie instalowany z dysku twardego, ani z dyskietki, ani lanowo, a nie chce kontynuowac standardowego bootowania, gdyz posiadam obraz plyty, wybieram opcje c)  CD-ROM (w ustawieniach maszyny mozna odhaczyc z opcji bootowania dyskietki i dysk twardy, aby domyslna forma byl obraz plyty)
+ 
+Debian Gnu/Linux installer menu (BIOS mode):
+Graphical install – instalacja w oparciu o okno ozdobione szata graficzna
+Install – domyslna instalacja z poziomu biosa
+Advanced options – Opcje zaawansowane:
++Back – owrot
++Graphical expert install – opcja  z szata graficzna dla “zaawansowanych”
++Graphical rescue mode – jak powyzej ale w trybie awaryjnym
++Graphical automated install – automatyczna instalacja z szata graficzna
++Expert install – instalacja z poziomu biosa dla zaawansowanych
++Rescue mode – tryb awaryjny
++Automated install – instalacja automatyczna
++Speech-enabled advanced options – z komunikacja glosowa
+Accessible dark contrast installer menu – opcja instalacji z oknem dostosowanym dla osob z wada wzroku (intensywniejszy kontrast barw ulatwia czytanie)
+Help – „kolo ratunkowe” gdy uzytkownik nie ma pojecia co nalezy zrobic; manual a-z
+Install with speech synthesis – instalacja z synteza mowy
+ 
+Install -> enter
+ 
+Instalator prosi o wybor jezyka -> English – English -> Nastepnie o wybranie lokalizacji -> United Kingdom -> Konfiguracje klawiatury -> American English -> //proces konfiguracji
+System wymaga podania nazwy Hosta. W moim przypadku bedzie to numer indeksu: s25671 -> Continue
+Nastepnie poprosi o wprowadzenie nazwy domeny. Z moim przypadku pomijam krok -> Continue
+Kolejnym krokiem jest ustawienie hasla dla konta administracyjnego tj. roota. Istnieje mozoliwosc podgladu wpisywanego haslo wybrawszy opcje „show password in clear” (wybieramy klawiszem spacji ) -> Continue
+Weryfikacja hasla -> ponowne wpisane ustalone hasla -> Continue
+Po zdefiniowanu hasla roota nalezy stworzyc konto „zwyklego” uzytkownika uzywajacego tego stanowiska -> Dawid Nowakowski -> Continue
+Okreslenie ksywki/nicku dla konta, domyslnie jest to imie uzytkownika podane w poprzednim kroku. -> Continue
+Ustalenie hasla dla uzytkownika i nastepnie jego weryfikacja -> Continue
+//konfiguracja
+Kolejnym krokiem jest partycjonowanie dysku. Dostepne sa trzy mozliwosci:
++Guided – use entire disk – automatycznie z uzyciem calego dostepnego miejsca na dysk (przydzielonego)
++Guided – use entire disk and set up LVM – jak powyzej lecz metoda linuxowa, ktora jest bardziej elastyczna/wydajna
++Guided – use entire disk and set up encrypted LVM – jak powyzej lecz dodatkowo szyfrujac dysk
++Manual – reczny podzial
+ 
+->Guided – use entire disk
+Schemat partycjonowania:
++All files in one partition (redommended for new users) – wszystkie pliki beda w jednej partycji
++Separate /home partition – wydzielenie partycji dysku „/home”
++Separate /home, /var, and /tmp partitions – z wydzieleniem trzech partycji
+->All files in one partition
+ 
+Nastepnie pojawia sie podglad podzialu dysku na partycje:
+ 
+Guided partitioning – mozliwosc powrotu do wyboru metody
+Configure software RAID – rozdzielenie zapisu na kilka dyskow (minus tego rozwiazania jest taki, ze gdy jeden z dyskow padnie, uzuwajac tylko drugiego niemozliwy jest odczyt)
+Configure the LVM – pozwala na polaczenie partycji roznych dyskow jeden dysk wirtualny
+Configue encrypted volumes – konfiguracja szyfrowanych woluminow
+Configure iSCSI volumes – w skrocie w oparciu o polaczenie internetowe na zasadzie chmury
+SCSI3 (0,0,0,) (sda) – 17.2GB ATA VBOX HARDDISK (mimo deklaracji 16gb, system otrzymal 17,2GB, gdyz windows opiera sie o inny przelicznik w mysl ktorego 1000 = 1024; np. windowsowe GB to GiB)
+#1 primary 16.2 GB f ext4 /
+#5 logical 1.0 GB f swap swap
+Undo changes to partiotions – cofniecie zmian na partycjach
+Finish partiotioning and write changes to disk – ukonczenie partycjonowania I naniesienie zmian na dysk -> komunikat o tym czy jestem pewny ze chce podzielic dysk na partycje w.w. sposob-> Yes ->
+//Instalowanie
+Zapytanie o dodatkowe nośniki, z których ma byc wczytany obraz. W moim przypadku pominiecie kroku -> No
+Konfiguracja menedzera zawartosci o lustrzane archiwum debiana dla kraju -> Poland
+Wybor lustrzanego archiwum -> ftp.task.gda.pl
+Prosba o podanie proxy -> <pusto> -> Continue
+//Konfiguracja/instalowanie
+Zapytanie o zgode na dane statystyczne -> No ->
+Zapytanie pozwalajace dobrac optymalna konfiguracje systemowa (w moim przypadku):
+[*]Debian desktop enviroment – srodowisko Debiana dla pulpitu
+[*] Gnome
+…
+[*] standard system utilities
+-> Continue
+Zapytanie czy chce zainstalowac GRUB boot loader (narzedzie do bootwania systemu)? -> Yes -> Harddisk
+Zakonczenie instalacji -> Continue
+
+
