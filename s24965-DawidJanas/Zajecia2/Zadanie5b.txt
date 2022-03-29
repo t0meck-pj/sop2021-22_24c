@@ -1,0 +1,10 @@
+#!/bin/bash
+tekst="tekst"
+echo "argument: " $tekst
+echo Pierwszy znak argumentu to: ${tekst:0:1}
+echo Ostatni znak argumentu to: ${tekst:4} 
+tekst1="SOP"
+tekst2="\e[32mSOP\e[0m"
+echo "Na początku: " $tekst1
+echo -e "Po zmianie: " ${tekst1//SOP/$tekst2}
+

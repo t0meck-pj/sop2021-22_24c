@@ -1,0 +1,3 @@
+!#/bin/bash
+zmienna=Ala
+echo $zmienna ma kota , a kot ma ${zmienna/a/ę}

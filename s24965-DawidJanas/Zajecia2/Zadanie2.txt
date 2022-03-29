@@ -1,0 +1,6 @@
+!#/bin/bash
+X=tekst
+echo $X
+bash
+echo $X
+#Moim zdaniem zmienił się wygląd monitu , moim zdaniem nic więcej sie nie zmieniło ponieważ po wykonawaniu komend takich ls , żeby sprawdzić listę plików nic się nie zmieniło , wciąż mogę wykonywać te same polecania tylko nie widzę tego w moncie.

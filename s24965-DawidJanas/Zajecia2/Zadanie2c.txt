@@ -1,0 +1,9 @@
+!#/bin/bash
+X="Tekst 1"
+Y="tekst:$X"
+echo "$Y"
+Y='tekst:$X'
+echo "$Y"
+Y=tekst:$X
+echo "$Y"
+#Różnica pomiędzy cudzysłowem a apostrofem jest taka ,że gdy używamy cudzysłowów możemy wpisywać znaki specjalne i są one tłumaczone na wartości a gdy używamy apostrofów są one tłumaczone jako znaki specjalne bez przypisania im wartości. 
