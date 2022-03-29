@@ -1,6 +1,12 @@
 2022-03-13
 Moj kochany pamietniczku, na dzisiejszych zajeciach nauczylem sie:
-- instalacji Debiana
-- konfiguracji wirtualnej maszyny w programie VirtualBox
-- przypomnialem sobie obsluge gita
+- konfiguracji wirtualnej maszyny w programie VirtualBox,
+- instalacji Debiana,
+Co do niejasnosci - na razie wszystko bylo raczej jasne, musze jedynie przypomniec sobie obsluge gita.
+
+2022-03-19
+Moj kochany pamietniczku, na dzisiejszych zajeciach nauczylem sie:
+- co to jest skrypt i do czego sluzy,
+- przypomnialem sobie po co jest putty oraz jak dziala vim
+- po raz kolejny przypomnialem sobie, ze trzeba ogarnac gita.
 

@@ -1,0 +1,7 @@
+W Cw.6 skrypt bedzie wygladal nastepujaco:
+    #!/bin/bash
+
+    A=$1
+    echo $A ma kota, a kot ma $A | sed s/a$/e./g
+
+    

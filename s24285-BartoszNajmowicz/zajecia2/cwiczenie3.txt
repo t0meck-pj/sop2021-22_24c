@@ -1,0 +1,11 @@
+Opis poszczegolnych predefiniowanych zmiennych srodowiskowych:
+    PATH - zmienna zawierajaca dane katalogow, w ktorych znajduja sie programy. 
+            Sciezki do poszczegolnych katalogow oddzielone sa dwukropkami.
+    RANDOM - zmienna zawierajaca dana liczbe losowa. 
+            Po kazdym nowym wypisaniu zmiennej RANDOM, generowana jest nowa liczba losowa.
+    PWD - zmienna zawierajaca sciezke bezwzgledna do biezacego katalogu, w ktorym uzytkownik przebywa.
+    PS1 - zmienna odpowiadajaca za postac znaku zachety, ktory to znak informuje,
+            ze system jest w stanie przyjmowac polecenia.
+    USER - zmienna zawierajaca informacje o aktualnym uzytkowniku,
+    HOSTNAME - zmienna zawierajaca informacje o aktualnym hoscie,
+    OSTYPE - zmienna zawierajaca informacje o uzywanym systemie operacyjnym.
