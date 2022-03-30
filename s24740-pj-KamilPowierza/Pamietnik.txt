@@ -5,3 +5,8 @@ Mój kochany pamiętniczku na dzisiejszych zajęciach nauczyłem się:
 - Poznałem naszego profesora :)
 - Myślę że wszystko dla mnie było jasne, ponieważ nie było dużo skomplikowanych rzeczy.
 - Następnym razem muszę poczekać przed wykonaniem jakiegoś zadania, ponieważ dzisiaj za szybko przy konfiguracji pomyślałem i kliknąłem i musiałem dłużej czekać na konfiguracje i instalacje nie potrzebnych paczek.
+
+
+2022-03-19
+
+Niestety na tych zajęciach nie mogłem uczestniczyć ale wszystko na temat basha nadrobiłem i nauczyłem :)

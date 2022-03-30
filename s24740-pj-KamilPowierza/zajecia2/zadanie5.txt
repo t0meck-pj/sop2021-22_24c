@@ -1,0 +1,42 @@
+5a.
+
+#!/bin/bash
+
+A=Ala
+
+echo $A ma kota, a kot ma ${A/a/ę}
+
+5a.1
+
+#!/bin/bash
+
+A="pszetżkole Ala"
+Al=${A:10}
+
+echo ${Al} ma kota, a kot ma ${Al/a/ę}
+
+
+J="pszetżkole Justyna"
+Ju=${J:10}
+
+echo ${Ju} ma kota, a kot ma ${Ju/a/ę}
+
+
+S="pszetżkole Stefan"
+St=${S:10}
+
+echo ${St} ma kota, a kot ma ${St}a
+
+
+5b.
+
+#!/bin/bash
+
+S="Testowe zdanie do zadania SOP koniec"
+S_First=${S:0:1}
+S_Last=${S:${#S}-1:${#S}}
+SOP='\e[32mSOP\e[0m'
+
+echo -e ${S_First}
+echo -e ${S_Last}
+echo -e ${S/SOP/$SOP}
