@@ -1,0 +1,2 @@
+po przypisaniu komendy ls-l do x za pomoca X='ls -l'
+samo wywolanie komendy poprzez $X daje nam rezultat komendy natomiast echo $X wypisuje nam ls -l

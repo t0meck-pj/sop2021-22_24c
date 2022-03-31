@@ -1,0 +1,3 @@
+Aby przerobic zdanie wystarczy zmienic wartosc zmiennej:
+A = Al
+echo ${A}a ma kota, a kot ma ${A}ę

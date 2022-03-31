@@ -6,7 +6,7 @@ Tryby plików:
 VDI(VIRTUAL DISK IMAGE)- jest to usługa, która obsługuje środowisko pulpitu na serwerze zdalnym.
 VHD(VIRTUAL HARD DISK)-jest to format wirtualnego dysku twardego, moze zawierac dokladnie to samo co znajduje sie na partycjach fizycznych dysku
 VMDK(VIRTUAL MACHINE DISK)-jest to dysk wirtualny przechowujący zawartość dysku twardego maszyny wirtualnej.
--nastepnie wybralem opcje dynamicznego przydzielania pamieci, ktora jest zdecydowanie lepsza opcja, poniewaz dysk sam dostosowuje sie do tego ile ma pamieci i wraz z jej wzrostem, wzrasta pamiec do przechowywania na dysku
+-nastepnie wybralem opcje dynamicznego przydzielania pamieci, ktora jest zdecydowanie lepsza opcja, poniewaz dysk dostosowuje sie do tego ile ma pamieci i wraz z jej wzrostem, wzrasta pamiec do przechowywania na dysku
 -nastepnie sciezka + rozmiar dysku
 -wybrałem instalacje bez gui
 -język, strefa czasowa
@@ -15,3 +15,11 @@ VMDK(VIRTUAL MACHINE DISK)-jest to dysk wirtualny przechowujący zawartość dys
 -wybrałem własny podział na partycje
 -wybralem katalog /boot (partycja do uruchamiania systemu)
 -instalacja zakonczona
+
+31.03.2022
+Drogi pamiętniczku, na ostatnich zajęciach przerabialiśmy skrypty w bashu, każdy skrypt rozpoczynasieę od #!/bin/bash inaczej zostanie źle zinterpretowany pierwszy skrypt jaki utworzyliśmy składałsię z wydrukowania "króliczka" na ekranie aby wywołać nasz skrypt potrzebujemy zapisac nasz skryptjako nazwa.sh i nadać mu możliwość wykonywalnośći w chmod lub poprzedzić wykonanie skryptu:
+bash nazwa.sh
+Następnie uczyliśmy się deklarować zmienne: ZMIENNA=wartosc, gdy w wartosci chcemy podac wiecej niz jedno slowo musimy poprzedzic "" lub '', zmienne widoczne sa tylko na tej powloce, na ktorej zostaly utworzone, jezeli chcemy przeniesc je dalej musimy wypisac export ZMIENNA=wartosc lub utworzyc zmienna a nastepnie export nazwa_zmiennej.Aby ją odexportować wpisujemy export -n ZMIENNA, aby odczytać zawartość zmiennej, poprzedzamy jej nazwę znakiem $ np. $zmienna, bezpieczejsza forma odczytania wartosci jest ${zmienna} wtedy nie ma mozliweosci, ze skrypt zinterpretuje zmienna inaczej(w przypadku $zmienna, moga wystapic problemy gdy w naszej nazwie sa cyfry lub jest to tablica)
+Nastepnie deklarowalismy zmienna A=Ala i wypisywalismy na ekran:
+echo $A ma kota, a kota ma ${A}ę, co dało nam wynik:
+Ala ma kota, a kot ma Alaę, jest to zjawisko konkatenacji czyli łączenie stringów.

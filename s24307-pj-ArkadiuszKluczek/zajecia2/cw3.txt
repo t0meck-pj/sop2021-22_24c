@@ -1,0 +1,7 @@
+$PATH = przechowuje dokladna sciezke do katalogu games
+$RANDOM = wyswietla randomowy PID powloki(?) 
+$PWD = pokazuje dokladna lokalizacje w ktorej sie znajdujemy
+$PS1 = przechowuje znaki specjalne(?) 
+$USER = pokazuje uzytkownika
+$HOSTNAME = pokazuje serwer na ktorym jestesmy zalogowani 
+$OSTYPE =wyswietla system operacyjny (?)
