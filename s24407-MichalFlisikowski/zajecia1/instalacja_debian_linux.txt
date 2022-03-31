@@ -1,0 +1,51 @@
+Zajecia 1: Instalacja systemu linux na maszynach wirtualnych
+
+Instrukcja inastalacji systemu Debian w WirtualBox.
+->VirtualBox
+  ->Zwykły start - domyślne włączenie vm.
+  ->Bezgłowy start - włączenie maszyny bez obrazu.
+  ->Oddzielny start - uruchomienie maszyny w domyślny sposób, lecz z możliwością wyłączenia obrazu.
+  ->Tworzymy nową maszyne wirtualną, przydzielamy pamięć RAM (1GB wystarczy), dodajemy obraz systemu:
+    ->VMDK (Virtual Machine Disk) format stworzony na potrzeby Vmware.
+	->VHD (Virtual Hard Disk) format stworzony na potrzeby Microsoftu.
+	->VDI (VirtualBox Disk Image) domyślny format wykorzystywany w VB.
+  ->Przydzielamy pamięć na system i nasze pliki:
+    ->Pamięć dynamiczna - pamięć będzie rozszerzać się do określonego rozmiaru.
+	->Pamięć statyczna - przypisujemy rozmiar na sztywno.
+->Debian
+  ->Pobieramy obraz systemu operacyjnego z oficjalnej strony:
+  ->Uruchamiamy maszyne ze wcześniejszym zaimportowaniem pliku iso.
+  ->Klikamy f12 żeby wybrać kolejność bootwania, wybieramy ten, na ktorym mamy plik iso.
+  ->Jest kilka sposobow na instalacje:
+    ->Graphical install – instalacja z GUI.
+	->Install – instalacja tekstowa.
+	->Advanced options
+	  ->Graphical expert install - zaawansowany tryb z GUI.
+	  ->Graphical rescue mode - tryb awaryjny z GUI.
+	  ->Graphical automated install - uproszczona instalacja z GUI.
+	  ->Expert install - instalacja tekstowa zaawansowana..
+	  ->Rescue mode - instalacja tekstowa w trybie awaryjnym.
+	  ->Automated install - instalacja tekstowa w trybie uproszczonym.
+	  ->Speech-enabled advanced options:
+	    ->Expert speech install - zaawansowana instalacja ze syntezatorem mowy.
+		->Rescue speech mode - instalacja tekstowa w trybie awaryjnym ze syntezatorem mowy.
+		->Automated speech install - instalacja tekstowa w trybie uproszczonym ze syntezatorem mowy.
+	->Accessible dark contrast installer menu - zmiana kontrastu wyswietlanego menu.
+	->Help - dział pomocy.
+  ->Select language - wybieramy język.
+  ->Select your location - wybór lokacji, w której aktualnie się znajdujemy.
+  ->Configure locales - ustawienia dot. czasu/daty itp.
+  ->Configure the keyboard - wybór rodzaju klawiatury.
+  ->Configure the network - konfiguracja sieci.
+  ->Set up users and passwords - konfiguracja nowego uzytkownika.
+  ->Partition disks
+    ->Guided use entire disk - użycie całego dysku.
+	->Guided use entire disk and set up LVM - użycie całego dysku i przejscia do Logical Volume Manager.
+	->Guided use entire disk and set up encrypted LVM - użycie całego dysku i przejscia do Logical Volume Manager z szyfrowaniem.
+	->Manual - ręczne partycjonowanie dysku.
+  ->Wybieramy nasz dysk
+  ->Poland > ftp.task.gda.pl - wybor archiwum.
+  ->Software selection - wybieramy dodatki do systemu.
+
+  
+	
