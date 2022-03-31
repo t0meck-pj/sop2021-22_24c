@@ -1,0 +1,15 @@
+W EDYTORZE:
+
+A=Ala
+echo $A ma kota, a kot ma $A | sed "s/$a/ę/" -> s(pierwsze wystąpienie, zamieni tylko raz, jeżeli miałoby zamienic każdą literkę a to po slashu musimy dodać jeszcze g), a(literka podmieniana), $(liczone od końca ciągu znaków), ę(literka na którą zmieniamy). Czyli po prostu podmieni nam jedną ostatnią literkę.
+
+lub
+
+
+A=Ala
+echo $A ma kota, a kot ma $A | sed s/a$/ę/g | sed 's/\([^ę]\)$/\1a/g' -> ten zapis także działa, ale nie do końca go rozumiem
+
+W KONSOLI: 
+
+W obu przypadkach dostaniemy:
+Ala ma kota, a kot ma Alę

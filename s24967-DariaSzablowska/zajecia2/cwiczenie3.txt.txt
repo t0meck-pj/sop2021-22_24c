@@ -1,0 +1,25 @@
+W EDYTORZE:
+echo "path- $PATH"
+echo "random- $RANDOM"
+echo "pwd- $PWD"
+echo "ps1- $PS1"
+echo "user- $USER"
+echo "hostname- $HOSTNAME"
+echo "ostype- $OSTYPE"
+
+W KONSOLI DOSTANIEMY: 
+path- /usr/local/bin:/usr/bin:/bin:/usr/local/games:/usr/games:/opt/puppetlabs/bin
+random- 29626
+pwd- /home/PJWSTK/s24967/zjazd2
+ps1-
+user- s24967
+hostname- szuflandia
+ostype- linux-gnu
+
+PATH - wypisuje zapisane ścieżki w zmiennej środowiskowej PATH, gdzie linux wyszukuje plików wykonywalnych
+RANDOM - wypisuje losową liczbę
+PWD - wypisuje obecną ścieżkę, w której się znajdujemy
+PS1 - to, to co pokazuje się na początku w command line \u@\h:\w\$. \u-username \h-hostname \w-pełna ścieżka folderu w którym obecnie się znajdujemy
+USER - wypisuje nazwę obecnego użytkownika
+HOSTNAME - wypisuje nazwę hosta
+OSTYPE - wypisuje typ systemu operacyjnego

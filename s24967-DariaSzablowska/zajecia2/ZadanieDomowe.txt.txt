@@ -1,0 +1,9 @@
+W KONSOLI:
+
+file=$1.txt -> zmienna, dzieki której możemy wpisać dowolny plik .txt, którego zawartość ma zostać wypisana
+colourChange='\e[31mDaria\e[0m' -> zmienna aby zmienić kolor imienia Daria na czerwony
+fileContent=`cat $file` -> zmienna do której zapisujemy zawartość pliku .txt, który podamy w argumencie, w konsoli
+echo -e ${fileContent//Daria/$colourChange} -> wypisanie zapisanej zawartości z pliku txt, z podmienieniem każdego wystąpienia imienia Daria. Nie moglibyśmy tu użyć samej zmiennej file, ponieważ, nie mamy tam przypisanego wypisywania zawartości pliku .txt.
+
+W EDYTORZE:
+Wypisze nam zawartość pliku txt.jaki podamy, gdzie każde wystąpienie imienia będzie podświetlone na czerwono.

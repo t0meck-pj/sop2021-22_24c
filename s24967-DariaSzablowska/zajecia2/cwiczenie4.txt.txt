@@ -1,0 +1,15 @@
+tworzymy skrypt -> nano cwiczenie4.sh
+zmieniamy uprawnienie -> chmod 777 cwiczenie4.sh
+
+W EDYTORZE:
+X=$(ls -l)
+printf "$X\n"
+
+W KONSOLI:
+-rwxrwxrwx 1 s24967 pjwstk  26 mar 23 23:09 cwiczenie1.sh
+-rwxrwxrwx 1 s24967 pjwstk  81 mar 24 17:58 cwiczenie2.sh
+-rwxrwxrwx 1 s24967 pjwstk  18 mar 24 18:37 cwiczenie3.sh
+-rwxrwxrwx 1 s24967 pjwstk  26 mar 24 19:01 cwiczenie4.sh
+-rwxrwxrwx 1 s24967 pjwstk 172 mar 19 11:17 kroliczek.sh
+
+różnica między echo a printf - obydwa służą do wypisywania danych w konsoli. Echo jest szybsze, ale nie ma takich możliwości formatowania jak printf. Printf może przyjąćtylko jeden argument, a echo wiele, poza tym printf zwraca wartść 1, a echo żadną. Dlatego przy bardziej sformatowanym tekście lepiej używać printf, aby wszystko bylo poukładane.
