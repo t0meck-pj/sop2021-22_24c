@@ -1,0 +1,9 @@
+2022-03-05
+Mój kochany pamiętniczku na dzisiejszych zajęciach nauczyłem się:
+
+- Stawiania maszyny wirtualnej 
+- Konfigurowania systemu Debian w VirtualBoxie wraz z opisem wszystkich funkcji
+
+2022-03-19
+
+- Pisania prostych skryptow w bashu
