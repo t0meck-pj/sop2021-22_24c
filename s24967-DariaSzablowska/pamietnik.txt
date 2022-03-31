@@ -6,3 +6,10 @@ Mój kochany pamiętniczku na dzisiejszych zajęciach dowiedziałam się:
 - dowiedzialam się czym jest fragmentacja (to chyba jedno z niewielu pojęć które zapamiętałam, muszę chyba więcej notować następnym razem)
 - bardzo podoba mi się, że gdy coś jest nie jasne, można zadać w każdym momencie pytanie i mieć pewność, że otrzyma się dokładne wytłumaczenie :)
 - pierwsze zajęcia były wprowadzające, więc wydaje mi się, że wszystko jest w miarę zrozumiałe :D
+
+2022.03.19
+Mój kochany pamietniczku, na dzisiejszych zajęciach:
+
+- poznałam podstawowe komendy basha
+- nauczyłam się jak wyjść z vima
+- jak na razie wszystko jest jasne i bardzo przyjemne do robienia, jedynie nie do końca rozumiem jednego zapisu sed w ćwiczeniu 6
