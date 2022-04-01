@@ -5,3 +5,12 @@ Pierwsze zajecia z SOP rozpoczely sie od omowienia spraw organizacyjnych: warunk
 Nastepnie przeszlismy do pobrania obrazu dysku systemu Debian, do stworzenia maszyny wirtualnej w VirtualBox oraz zainstalowalismy system Debian.
 
 Nie byl to pierwszy raz, kiedy instalowalem sytem Linux, ale na zajeciach pierwszy raz instalowalem go nie w trybie "okienkowym". Miedzy trybem okienkowym, a tekstowym nie ma roznicy, chyba nawet kolejne kroki sa takie same - wybor jezyka -> lokalizacja -> ustawienia klawiatury -> itd.
+
+
+2022-03-19
+Moj kochany pamietniczku na dzisiejszych zajeciach nauczylem sie:
+
+Na zajęciach byłą to moja pierwsza przygoda ze skryptami w bashu. Dowiedziałem się, że skrypt powinien rozpoczynać sięod specjalnej linijiki zwanej shebang. Bez niej nasz skrypt uruchomi sie w interpreterze, z którego został wywołany np. :
+#!/usr/bin/python - skrypt zostanie uruchomiony jako program w Pythonie.
+
+Ponadto dowiedziałem się o zmiennych oraz o podstawowych operacjach na nich.

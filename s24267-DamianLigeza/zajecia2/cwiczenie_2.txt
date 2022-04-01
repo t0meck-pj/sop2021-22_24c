@@ -1,0 +1,56 @@
+Zobacz taką serię poleceń:
+
+> X=tekst
+> echo $X
+> bash
+> echo $X
+
+Co się stało? Czy potrafisz wyjaśnić?
+
+Po kolei:
+> X=tekst
+Tworzymy nową zmienną lokalną o nazwie "X" z wartością "tekst"
+
+> echo $X
+Wywołujemy komendę "echo" z argumentem "$X" co w wyniku wyświetli w termianlu "tekst"
+
+> bash
+Uruchamiamy kolejną instację bash
+
+> echo $X
+Wywołujemy komendę "echo" z argumentem "$X", lecz w tym wypadku jako wynik nic się nie wyświetli. Stało się tak, ponieważ nowa instancja bash nie ma wglądu do zmiennych lokalnych w wyższej instancji (w swoim rodzicu).
+
+
+
+Zobacz:
+
+> X=Tekst dłuższy
+> echo $X
+
+Co jest nie tak? jak to naprawić? Zobacz czy pomoże zastosowanie cudzysłowów i apostrofów.
+
+Co jest nie tak?
+Brak cudzysłowów lub apostrofów.
+
+Jak to naprawić?
+Objąć Tekst Dłuższy w cudzysłowia lub apostrofy.
+
+Zobacz czy pomoże zastosowanie cudzysłowów i apostrofów.
+Pomogło :)
+
+
+
+Zobacz:
+
+> X="Tekst 1"
+> Y="tekst:$X"
+> echo "$Y"
+> Y='tekst:$X'
+> echo "$Y"
+> Y=tekst:$X
+> echo "$Y"
+
+Jaka jest różnica między " a ' ?
+
+Cudzysłowia powodują, że znaki specjalne są interpretowane, a nazwy zmiennych wyświetlają ich wartości.
+Apostrofy działają podobnie, z tym że wyświetli się dokładnie to, co zostało napisane.
