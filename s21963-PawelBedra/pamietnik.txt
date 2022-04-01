@@ -1,3 +1,13 @@
 2022-03-05
-Moj kochany pamietniczku, na dzisiejszych zajeciach nauczylem sie
+Moj kochany pamietniczku, na dzisiejszych zajeciach nauczylem sie o:
+Tak naprawdę nie uczestniczyłem w przedmiotowych zajęciach z powodów zawodowych, ale zorientowałem się co na zajęciach było i w ramach pracy domowej przerobiłem matieriał samodzielnie w domu.
+Uczyliśmy się instalacji systemu operacyjnego Linux Debian na wirtualnej maszynie Virtual Box, co wymagało wcześniejszego skonfigurowania 
+wirtualnej maszyny.
+W ramach zadań zdobyłem bardzo podstawową wiedzę na temat roznicy pomiedzy systemami plików, czy przeznaczenia niektórych katalogów w systemie plików Linuxa.
+Do zglebienia z pewnoscia pozostaje prawie wszystko w zakresie omawianych tematow. Chocby same systemy plikow, nie potrafie powiedziec na czym faktycznie polega roznice w sensie technicznym. 
+W jaki sposob maszyna wirtualna komunikuje sie z hostem, czy internetem. Generalnie uwazam, ze moja wiedza o systemie Linux na tym etapie jest na tyle mala, ze nie potrafie jeszcze zadawac 
+odpowiednich pytan. Na poczatek potrzebuje praktyki, by wiedziec o co pytac.
+Uwazam, ze fajnie na zajeciach przejsc szczegolowo proces instalacji takiego systemu jak Linux, zwlaszcza dla kogos takiego jak ja, czytaj przyzwyczajanego do okienkowego trybu komunikacji z komputerem.
+Pozwala to lepiej rozumiec caly proces, jak i niektore elementy systemu, z ktorych w pozniejszym etapie bedziemy korzystac. 
+
 

@@ -1,0 +1,84 @@
+TWORZENIE MASZYNY WIRTUALNEJ
+Do tego celu uzywamy programu Virtual Box. Ponizej przedstawiam podstawowe parametry konfiguracji maszyny wirtualnej
+Wybieramy rozmiar dysku twardego dla VM oraz ilosc pamieci RAM.
+Trzy dostepne formaty dyskow wirtualnych:
+	- VDI - format Virtual Box - ten wybieramy korzystajac z tego oprogramowania
+	- VHD - format Microsoft
+	- VMDK - format firmy VM Ware, osobiscie korzystam z tego oprogramowania bo dziala mi stabilniej
+Pamiec na fizycznym dysku twardym:
+	- dynamicznie przydzielana - w miare uzytkowania systemu plik bedzie rosl, zaleta jest mniejszy rozmaiat pliku, zwlaszcza w okresie poczatkowym
+	- staly rozmiar - powstaje "ciagly" plik na dysku o docelowej wielkosci. Wiecej miejsca na starcie jest minusem, natomiast zaleta jest sprawniejsze dzialanie systemu. Byc moze rowniez
+	ewentualne bezpieczniejsze przenowszenie maszyny na inny dysk/komputer/serwer.
+Ustawienia -> System
+	Odznaczamy naped optyczny, by usprawnic proces pozniejszego bootowania systemu. Boot bedzie automatycznie startowal z dysku.
+Ustawienaia -> Procesor
+	Mozna ustawic liczbe przydzielanych rdzeni procesora. U mnie domyslnie bylo ustawione na 1, wiec wybralem 2.
+Ustawienia -> Pamiec -> Naped optyczny socendary master
+	Tutaj mozna ustalic lokalizacje obrazu plyty z system Debian.
+Ustawienia Siec:
+	- NAT - wirtualna maszyna ma dostep do sieci na posrednictwem komputera hosta i tak jest widziana przez uzytkownikow sieci.
+	- Bridged - wirtualna maszyna widziana jest w sieci jako osobny komputer
+	- Siec wewnetrzna - sluzy do komunikacji maszyn wirtualnych ze soba (jesli byloby stworzonych wiecej), ale nie z komputerem
+	- Host only - sluzy do komunikacji pomiedzy hostem a maszyna wirtualna
+
+INSTALACJA SYSTEMU DEBAIN LINUX
+Instalacje Debiana pobieramy ze strony debian.org. 
+Mamy trzy opcje instalacji systemu: obraz plyty z dysku lub USB, CD, badz instalacje bezposrenio z sieci.
+Sciagamy maly obraz plyty Linuxa na dysk twardy i mozemy przystapic do kolejnych krokow.
+W pierwszej kolejnosci trzeba wybrac zrodlo instalacji. Zgodnie z wczesniejszym ustawieniem maszyny wirtualnej trzeba wybrac cd-rom.
+Wybieramy instlacje tekstowa, w jezyku angielskim.
+Uklad klawiatury USA, UTF-8
+Ustalamy kolejno uzytkownikow i hasla
+
+Partycjonowanie -> manual
+Rodzaje partycji:
+	Primary - partycja podstawowa, w systemie Linux, moze byc max 4 takie partycje
+	Extended - partycja podstawowa moze sie zmienic w partycje rozszerzona, ktora bedzie zawierac jakas liczbe partycji Logicznych. Na liscie partycji nie widnieje taka partycja, tylko logiczne,
+		ktore zostaly na niej utworzone
+	Logiczne
+
+Podzial na partycje: Katalogi w Linuxie sa opisane wg standardu FHS - Filesystem Hierarchy Standrad. Ponizej opisuje przeznaczenie niektorych z tych katalogow:
+	/bin	- przechowuje programy wykonywalne (binarne), czyli gotowe do uruchomienia. Wiekszosc z podstawowych polecen Linux takich jak "ls" czy "cp", znajdujacych sie w tym katalogu to pliki binarne
+		przygotowane przez kompilator jezyka C.
+	/dev	- ang. devieces - przechowuje pliki urzadzen
+	/boot	- opisane ponizej
+	/etc	- najwazniejsze pliki konfiguracyjne systemu. Znajduja sie tutaj pliki hasel, konfiguracji uruchamiania systemu, urzadzen sieci i innych elementow systemu. Wiele plikow w /etc zwiazanych 
+		jest z konkretnym elementem sprzetowym zamontowanym w komputerze
+	/home	- opisany ponizej
+	/lib	- ang. library - znajduja sie tu pliki bibliotek przechowujace kod, z ktorego moga korzystac pliki wykonywalne
+	/proc	- wirtualny system plikow proc inormujacy o stanie systemu i poszczegolnych procesow, w wiekszosci pliki tekstowe. Udostepnia statystyki o systemie w potaci interfejsu skladajacego sie
+		z katalogow i plikow
+	/sys	- podobny do katalogu /proc, z ta roznica, ze tworzy interfejs dla urzadzen i systemu
+	/sbin	- przechowuje systemowe pliki wykonywalne. Sa one przeznaczone do zarzadzania systemem, dlatego dostep do tego katalogo posiada jedynie uztykownik root (i prawdopodobnie inni, ktorzy 
+		zostana do tego przez roota uprawnieni).
+	/tmp	- w tym katalogu mozna umieszczac niewielkie pliki tymczasowe. Kazdy uzytkownik moze zapisywac i odczytywac pliki z katalogu /tmp, ale nikt nie ma uprawnien na dostep do pikow innych uzytkownikow.
+		Niektore programy wykorzystuja ten katalog jako swoja przestrzen robocza. Wiekszosc dystrybucji czysci jego zawartosc w czasie uruchamiania systemu, a niektore cyklicznie usuwaja starsze pliki.
+	/usr	- znajduje sie tu rozbudowana struktura bardzo podobna do katalogu glowniego. W tym katalogu zapisywana jest ogromna czest systemu Linux. Wiele podkatalogow ma takie same nazwy jak podkatalogi
+		katalogu glownego. Moga sie tu znajdowac np. programy zainstalowane recznie przez uzytkownikow. Katalog ten mozna trzymac na osobnej partycji, dzieki czemu po aktualizacji czy nawet zmianie 
+		systemu (choc tutaj pewnie nie zawsze), nie byloby potrzeby instalowania dodatkowych progamow.
+		/usr/include	- przechowuje pliki naglowkowe wykorzystywane przez kompilator jezyka C
+		/usr/local	- tutaj administratorzy moga instalowac swoje oprogramowanie. Struktura tego katalogu powinna przypominac strukture katalogu glownego
+		/usr/man	- przechowuje strony podrecznika systemowego
+	/var - opisane ponizej
+	/root	- katalog domowy uzytkwnika root. Jego funkcje nie odbiegaja od katalogow domowych pozostalych uzytkownikow
+
+
+Niektore katalogi z uwagi na stabilnosci i bezpieczenstwo systemu powinny byc na osobnych partycjach. Np te ponizej:
+	/ 	- katalog glowny - jesli przydzielimy osobne partycje na poszczegolne katalogi, logicznie cala reszte tez trzeba bedzie przechowywac na osobnej partycji
+	/home 	- katalog z katalogami osobistymi zwyklych uzytkownikow systemu. Warto w jakis sposob ograniczyc miejsce zwyklych uzytkownikow. 
+	/boot	- przechowuje pliki ladujace jadro systemu w czasie uruchamiania komputera. Pliki te obsluguja tylko pierwszy etap procesu uruchamiania Linuxa, co oznacza, ze nie znajdziemy tam informacji
+		o uslugach uruchamianych przez system przy starcie. Warto zarezrwowac osobna partycje by jakiekolwiek dzialania uzytkownikow czy programow w systemie nie zagrozily integralnosci danych 
+		oraz dostepnemu miejscu, tak by system w razie awarii mogl sie zawsze na nowo uruchomic
+	/var	- od ang. variable, podkatalog, w ktorym programy zapisuja informacje w czasie swojego dzialania. Znajduja sie tu dzienniki systemowe, informacje o dzialaniach uzytkownikow i inne pliki tworzone
+		przez programy systemowe. Wewnatrz znajduje sie katalog /var/tmp o podobnym przeznaczeniu jak /tmp, jednak nie jest on czyszczony przez system w czasie uruchamiania. Warto miec osobna partycje 
+		na katalog /var na wypadek np gdyby jakis prograc zaczal tworzyc nieograniczone wpisy, szybko by mogl sie rozrosnac i wypelnic cale dostepne miejsce uniemozliwsiajac dzialania innym procesom.
+	/swap	- odpowiednik windowsowej pamieci wirtualnnej, czyli miejsce na dysku, ktore moze byc wykorzystywane przez system jako bufor w przypadku niewystarczajacej pamieci operacyjnej.
+
+Po ustaleniu tych opcji konczymy instalacje, wybierajac jeszcze serwej, z ktorego beda instalowane dodatkowe pakiety.
+Nalezy doinstalowac serwer ssh.
+Zostawiamy bootloader na odpowiedni dysk.
+
+
+
+
+
