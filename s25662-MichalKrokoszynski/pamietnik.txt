@@ -1,0 +1,10 @@
+2022-03-05
+Moj kochany pamietniczku na dzisiejszych zajeciach nauczylem sie:
+Jak instalowac system operacyjny debian
+Ze system operacyjny bez GUI jest najlepszym systemem dla informatykow.
+
+Cale 1,5h opisywalismy kazda mozliwa opcje w instalatorze debiana. I go instalowalismy
+
+Zasakaujace bylo to jak wiele opcji mozna sobie poustawiac i ze nie jest to takie latwe jak zainstalowanie po prostu jakiegos widowsa czy ubuntu jednym przyciskiem
+
+Ciekawe co bedzie na nastepnych zajeciach
