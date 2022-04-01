@@ -1,0 +1,16 @@
+PATH 	- sciezki do katalogow nie przechowywane sa programy. Po wydaniu jakiegokolwiek polecenia system przeszukuje lokalizacje zapisane w zmiennej PATH, szukajac nazwy pasujacej do wywolanego polecenia.
+	Po znalezieniu odpowiedniego programu zostaje on uruchomiony w podpowloce.
+
+RANDOM 	- zmienna generujaca liczby pseudolowe.
+
+PWD	- zmienna zawierajaca pelna sciezke aktualnie otwartego katalogu. Jej wartosc jest tez zwracana za pomoca polecenia pwd.
+
+PS1	- zmienna zawierajaca w sobie sekwencje znakow odpowiadajaca za postac podstawowego znaku zachety.
+
+USER	- zawiera nazwe uzytkownika, ktory jest obecnie zalogowany.
+
+HOSTNAME	- nazwa komputera/serwera na ktorym dziala program.
+
+OSTYPE		- nazwa systemu operacyjnego.
+
+

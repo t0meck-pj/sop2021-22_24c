@@ -10,4 +10,27 @@ odpowiednich pytan. Na poczatek potrzebuje praktyki, by wiedziec o co pytac.
 Uwazam, ze fajnie na zajeciach przejsc szczegolowo proces instalacji takiego systemu jak Linux, zwlaszcza dla kogos takiego jak ja, czytaj przyzwyczajanego do okienkowego trybu komunikacji z komputerem.
 Pozwala to lepiej rozumiec caly proces, jak i niektore elementy systemu, z ktorych w pozniejszym etapie bedziemy korzystac. 
 
+2022-03-19
+Moj kochany pamietniczku, na dzisiejszych zajeciach nauczylem sie:
+- podstawy funkcjonowania w powloce bash w systemie Linux.
+- w jezyku polskim w Linuxie rozroznia sie uprawnienia od praw: uprawnienia dotycza plikow (wykonania czy odczytu etc.), natomiast prawo do wykonywania jakichs czynnosci, np. zmiany daty. Wydaje sie malo intuicyjne
+i brak takiego podzialu w nomenklaturze anglojezycznej wydaje sie mniej problematyczny.
+- Skrypt - jest to plik z szeregiem komend. Skrypty sa interpretowane, a nie kompilowane, czyli powloka czyta je linijka po linijce dokladnie tak samo, jakbysmy wpisywali komendy z palca.
+- Shibang - #!/bin/bash - pierwsza linijka skryptu, ktora zawiera sciezke do interpretera, ktory ma wykonac skrypt
+- Na koncu kazdego skryptu nalezy nacisnac enter, by zrobic pusty wiersz, by uniknac sytuacji, w ktorej interpreter nie bedzie wykonywac ostatniego wiersza.
+- Uruchamiajac skrypt, uruchamia sie podproces bash specjalnie na wykonanie tego skrytpu, ktory po zakonczeniu wykonywnia skryptu zamyka sie
+- source <sciezka-do-pliku> - uruchamianie pliku w biezacej sesji powloki. Nalezy unikac, przydatne moze byc w przypadku potrzeby zmiany jakichs zmiennych. Proces nosi nazwe sourcowania
+- bash - polecenie uruchami podproces basha
+- ${ZMIENNA} - sposob wywolywania zmiennej, ktory zawsze dziala, w przeciwienstwie do $ZMIENNA, dlatego lepiej sie przyzwyczaic do uzywania pewniejszej formy
+- mozna wykonywac skrypty, do ktorych nie posiadamy bita wykonalnosci, wystarczy uzyc do tego polecenia bash, ktore uruchomi smrypt w podpowloce
+
+Co jest dla mnie niejasne? Nie znajduje niejasnosci w przekazanym materiale, raczej znowu odzywa sie brak praktyki, to ze robiac cokolwiek, rozwiazujac zadania musze zagladac do notatek czy internetu
+i upewniac sie jaka jest skladnia etc. 
+
+Zaskakujace bylo dla mnie to, ze mozna tak gladko obejsc brak uprawnienia do wykonywania pliku. jednak po przemysleniu stwierdzilem, ze to w zasadzie logiczne by mozna bylo tak zrobic, skoro mozna odczytac
+zawartosc skryptu i ewentualnie go przekopiowac do wlasnego pliku z odpowiednimi uprawnieniami. Zasieg zmiennych w podprocesach wydaje sie logiczny i poruszanie sie po galezi powlok nadrzednych i podrzednych tez
+sa logiczne, chociaz potrafia przysporzyc niezlego mindfucka.
+
+Cale zajecia bardzo pouczajace i tresciwe. Wymagaja przepracownia konceptow we wlasnym zakresie, ale na tym to polega.
+
 
