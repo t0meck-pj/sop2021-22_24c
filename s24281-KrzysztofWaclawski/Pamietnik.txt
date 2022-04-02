@@ -14,3 +14,9 @@ Mój kochany pamiętniczku na dzisiejszych zajęciach dowiedziałem się:
 - Jak stworzyć skrypt i edytować go
 - Przez source nie odpalamy skrypty ponieważ zostawia nieodwracalne zmiany
 - Strona do nauki GITa "https://learngitbranching.js.org/?locale=pl"
+
+02.04.2022
+Mój kochany pamiętniczku na dzisiejszych zajęciach dowiedziałem się:
+
+- Co to if i jak z niego korzystać w skryptach
+- Wyszukiwania pomocy w konsoli poprzez "man"
