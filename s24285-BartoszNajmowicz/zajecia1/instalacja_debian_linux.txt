@@ -1,8 +1,12 @@
 Instalacja Debiana:
 1. Utworzenie nowej maszyny wirtualnej:
-- Nowa - utworzenie nazwy maszyny, rozmiar pamieci:
+- Nowa - utworzenie nazwy maszyny:
+	- rozmiar pamieci:
+		- RAM 2048MB - wybrane, ponieważ większosc dystrybucji Linuxa wymaga tyle jako minimum; ale oczywiście można dać więcej, w zależności od dostępnej pamięci RAM;
+		- Dysk twardy - wybrana opcja Stworz wirtualny dysk twardy, poniewaz nie mam innego wirtualnego dysku, ktorego moglbym uzyc do obslugi instalowanego systemu; 
+					wybor pamieci - 20GB, zeby miec zapas do normalne obslugi systemu (pliki uzytkownika, itp), ale defaultowa wartosc 8GB powinna wystarczyc na poczatek; pozniej mozna oczywiscie zwiekszyc w razie potrzeby (Plik/Menedzer nosnikow wirtualnych -> najechac na wlasciwa maszyne i wybrac suwakiem docelowa wielkosc dysku )
     - Typ pliku z wirtualnym dyskiem:
-        - VDI - VirtualBox Disk Image - format domyslny dla VirtualBoxa, 
+        - VDI - VirtualBox Disk Image (WYBRANE, poniewaz do instalacji wybralem plik .iso, czyli rozszerzenie obslugiwane przez VB)- format domyslny dla VirtualBoxa, 
         - VHD - Virtual Hard Disk - format domyslny dla VirtualPC, Hyper-V,
         - VMDK - Virtual Machine Disk - format domyslny dla VMWare,
     - Pamiec na fizycznym dysku twardym:
@@ -18,7 +22,7 @@ Instalacja Debiana:
             - Przeciaganie i upuszczanie - j.w. w przypadku przeciagania i opuszczania elementow,
     - System (wybrane opcje):
         - Plyta glowna - odhaczylem floppy disk i dysk optyczny, poniewaz dysk z systemem jest na dysku twardym,
-        - Liczba rdzeni - zaznaczylem 2 rdzenie,
+        - Liczba rdzeni - zaznaczylem 1 rdzen (przy 2 rdzeniowym CPU), poniewaz powinno sie wybrac o 1 rdzen mniej niz dysponuje sie w procesorze (przy wyborze wszystkich dostepnych rdzeni, intensywne uzywanie VM moze przycinac glowny system operacyjny),
     - Ekran - bez zmian,
     - Dzwiek - bez zmian,
     - Siec - bez zmian (wybrana NAT),
@@ -35,11 +39,22 @@ Instalacja Debiana:
     - ctrl prawy - zeby pojawil sie kursor
     - wybrac opcje Maszyna -> zresetuj -> F12
     - GRUB - (GRUB - grand unified bootloader - program rozruchowy dla systemu operacyjnego) - wybor systemu instalacji 
-    - Graphical install
-    - Install - TAK
-    - Advanced options
+    - Graphical install - instalacja w trybie graficznym, dziala nieco wolniej niz tryb tekstowy, opcje instalacji wybiera sie w innym frontendzie niz w zwyklej instalacji, mozna uzywac myszy do nawigacji, moze pojawiac sie kilka odpowiedzi na jednej karcie,
+    - Install (WYBRANE) - instalacja w trybie tekstowym, potrzebuje mniej pamieci niz graficzna instalacja, nieco szybszy,
+    - Advanced options:
+			- Graphical expert install - standardowa instalacja graficzna z mozliwoscia podgladu procesow w tle,
+			- Graphical rescue mode - instalacja graficzna z mozliwoscia naprawy bledu instalacji,
+			- Graphical automated install - automatyczna instalacja, w ktorej system jest instalowany automatycznie na podstawie odpowiedzi wczesniej zapisanych w pliku,
+			- Expert install - instalacja systemu w terminalu, podobna do powyzszej opcji,
+			- Rescue mode - mozliwosc naprawy bledow w terminalu,
+			- Automated install - automatyczna instalacja przy uzyciu terminala,
+			- Speech-enabled advanced options:
+				- Expert speech install - zaawansowana/ekspercka instalacja z wykorzystaniem syntezatora mowy (dla niewidomych lub niedowidzacych),
+				- Rescue speech mode - mozliwosc naprawy bledow z wykorzystaniem syntezatora mowy (dla niewidomych lub niedowidzacych),
+				- Automated speech install - automatyczna instalacja z wykorzystaniem syntezatora mowy (dla niewidomych lub niedowidzacych),
+	
 6. Ekrany instalacji:
- - Select language - English
+ - Select language - English - wybor j. angielskiego moze ulatwic w przyszlosci szukanie pomocy w przypadku ewentualnych problemow z obsluga systemu (wiecej odpowiedzi w j.angielskim niz w j.polskim) 
  - Select your location - Other -> Europe -> UK
  - Configure keyboard - American English
  - Configure network - hostname: ....., domain name: ---
@@ -49,6 +64,7 @@ Instalacja Debiana:
     - Guided Partitioning - WYBRANE:
         - Guided - use entire disk - WYBRANE: 
             - stworzy partycje automatycznie na calym dysku,
+			- wybrane poniewaz jest to najprostsza instalacja; generalnie opcji uzywa sie dla nowych komputerow z jednym systemem operacyjnym;
         - Guided - use entire disk and set up LVM:
             - LVM - Linux Volume Manager - linuxowa interpretacja dyskow RAID
             - stworzy partycje bazujace na koncepcji LVM na calym dysku 
@@ -81,10 +97,27 @@ Instalacja Debiana:
     - Separate /home, /var, and /tmp partitions
         - podzial dysku na dodatkowe partycje,
 - Finish partitioning and write changes to disk
+- DODATKOWE WYMAGANE OPISY:
+	
+    - struktury partycji - w Linuxie (czyli rowniez w poszczegolnych dystrybucjach) wyrozniamy partycje glowne i rozszerzone/logiczne.
+	- ile ich jest i jakie maja typy - glownych partycji moze byc max 4;  w przypadku, gdy ma byc wiecej niz 4 partycje, powinno sie stworzyc 3 partycje glowne, jedna rozszerzona a ktorej beda partycje logiczne;
+    - jakie dostają numery i dlaczego - partycje glowne numerowane sa od 1 do 4, a logidzne od 5 do 8, niezaleznie od tego, czy partycji glownych jest 4 czy mniej;
+										glowna partycja na pierwszym 1 oznaczona jest hda1 lub sda1, na drugim hdb1 lub sdb1, itd.
+										dzieki temu mamy wiecej informacji nt partycji, itp. niz w przypadku oznaczen partycji systemu Windows
+	- wybrane typy i ulokowanie partycji - wybrano jedna partycje; partycja ulokowana na dysku SATA
+    - wybrany rozmiar z uzasadnieniem przydzielenia miejsca - wybrano rozmiar 21.5 GB - czyli cala jedna partycja w systemie;
+    - punkty montowania - to katalog, ktoremu zostala przyporzadkowana dana partycja z system plikow
+    - flagi - to dodatkowe parametry ustawiane dla konkretnych partycji, 
+		- m.in. bootflag:
+			- do czego jest - okresla obecnosc programu rozruchowego umowliwiajacego wybor SO oraz parametrow jego uruchamiania; 
+			- czy była ustawiona - nie byla, poniewaz zaplanowalem standardowa instalacje (jeden dysk, jeden system)
+			- kiedy należy a kiedy nie należy jej ustawiać - nie mam pojecia; nikt w internecie tez nie ma pojecia.
+
 - Configure the package Manager:
     - znalezienie lustrzanego archiwum Debiana bliskiego lokalizacji mojej sieci - Poland
-    - deb.debian.org- wybor
+    - deb.debian.org- wybor - ponoc najbardziej stabilna wersja (bullseye);
     - HTTP proxy information - wybrane BLANK
+	- Configuring popularity-contest - zgoda/brak zgody na wysylanie danych dla programistow dot. popularnosci pakietow i/lub statystyk uzytkowania,
 - Software selection:
     - Debian desktop environment (WYBRANE) - srodowiska graficzne pulpitu; 
         - GNOME (WYBRANE)
@@ -99,6 +132,14 @@ Instalacja Debiana:
     - SSH server - umozliwia instlacje i konfiguracje serwera SSH,
     - standard system utilities (WYBRANE) - bez wybrania tej opcji system bedzie dzialal, ale nie bedzie mial wielu uzytecznych narzedzi; ewentualnie pozniej mozna doinstalowac potrzebne narzedzia;
 - Install the GRUB boot loader - YES
+		- Co to jest bootloader? - to program/menedzer rozruchowy, ktory znajduje sie w BIOSie sektorze rozruchowym dysku i uruchamia sie przed uruchomieniem systemu operacyjnego; umozliwia wybor i wystartowanie systemu operacyjnego;
+		- Do czego się go używa? - uzywa sie go do rozruchu systemu operacyjnego;
+		- Gdzie można go zainstalować? (sa 2 miejsca - kiedy ktore wybieramy a kiedy nie):
+			1. w MBR (Master Boot Record) - główny rekord rozruchowy, struktura danych zapisana w pierwszym sektorze dysku twardego, 2.  
+			2. w dowolnym sektorze rozruchowym dowolnego dysku twardego,
+		- Co się stanie jeśli się go nie zainstaluje? - bootloader jakis zawsze musi byc (np. GRUB, LILO, BURG, Syslinux); bez tego programu system nie ruszy;
+		- Czy są jakieś alternatywy? - j.w.
+		- Czy windows ma swój bootloader i czy może on uruchomić linuxa? (tak, tak ale z pomocą - jaką?) - tak, Windows ma swojego bootloadera; mozna uruchomic Linuxa z jego pomoca przy uzyciu oprogramowania Grub2Win,
     - Enter device manually
     - /dev/cda (ata-VBOX_HARDDISK_VBF1C1679E-2F18C235) - WYBRANE
 - Finish the installation
