@@ -1,0 +1,36 @@
+#!/bin/bash
+
+Argument=$1
+Sprawdzanie=0
+
+function CheckIfEmail () {
+	for (( i = 0; i < ${#Argument}; i++ )){
+		if [ ${Argument:i:1} == "@" ]; then
+			echo "Jest to email"
+		fi
+	}
+}
+
+if [[ ${Argument:0:1} == [A-Z] ]]; then
+	Sprawdzanie=$((Sprawdzanie+1))
+	for (( i = 0; i < ${#Argument}; i++ )){
+		if [[ ${Argument:i+1:1} == [a-ż] ]]; then
+			Sprawdzanie=$((Sprawdzanie+1))
+		fi
+	}
+	if [[ ${#Argument} == $Sprawdzanie ]]; then
+		echo "Jest to imię"
+	else
+		CheckIfEmail
+	fi
+fi
+
+
+if [[ ${Argument:0:1} == [0-9] ]]; then
+	Argument_Dlugosc=${#Argument}
+	if [[ ${Argument:Argument_Dlugosc-1:1} == [0-9] ]]; then
+		echo "Jest to kod pocztowy"
+	else
+		CheckIfEmail
+	fi
+fi

@@ -10,3 +10,11 @@ Mój kochany pamiętniczku na dzisiejszych zajęciach nauczyłem się:
 2022-03-19
 
 Niestety na tych zajęciach nie mogłem uczestniczyć ale wszystko na temat basha nadrobiłem i nauczyłem :)
+
+2022-04-02
+
+Mój kochany pamiętniczku na dzisiejszych zajęciach nauczyłem się:
+
+- Podstawowych komend jak if, pętle for, tablice oraz funkcje, które są całkiem podobne jak w innych językach,
+- Na zajęciach trochę musiałem się wysilić i powtórzyć co nie co, ponieważ nieobecność na poprzednich zajęciach to była spora luka,
+- Zajęcia jak zwykle całkiem ciekawe, lecz dla mnie trochę za szybko robiliśmy zadania i miałem mało czasu na przemyślenia.

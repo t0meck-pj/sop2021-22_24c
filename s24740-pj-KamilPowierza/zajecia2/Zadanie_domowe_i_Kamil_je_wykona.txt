@@ -2,7 +2,7 @@ Zadanie Domowe
 
 #!/bin/bash
 
-argument="Zadanie_domowe_i_Kamil_je_wykona.bat"
+argument="Zadanie_domowe_i_Kamil_je_wykona_Kamil__Kamil__Kamil_.bat"
 Kamil='\e[31mKamil\e[0m'
 
-echo -e ${argument/Kamil/$Kamil}
+echo -e ${argument//Kamil/$Kamil}
