@@ -60,4 +60,4 @@ Wirtualna maszyna jest ustawiona - klikam ok.
 Mam nadzieję, że powyższy opis jest wystarczającym i pokazującym, że doczynienia z VM nie mam pierwszy raz.
 
 Pozdrawiam 
-Michał Jach
+Michał Jach s26234
