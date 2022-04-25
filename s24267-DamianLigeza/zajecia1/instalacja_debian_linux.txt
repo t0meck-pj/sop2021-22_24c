@@ -48,7 +48,7 @@
 
 -- Menu instalacyjne Debian - Debian GNU/Linux installer menu (Bios mode)
 	- Graphical install - umozliwia instalacje systemu w trybie okienkowym
-	- Install - isntalacja systemu w trybie tekstowym (z tej opcji korzystalismy na zajeciach)
+	- Install - instalacja systemu w trybie tekstowym (z tej opcji korzystalismy na zajeciach)
 	- Advanced options:
 		Graphical expert install - instalacja systemu w trybie okienkowym, lecz w tym trybie mamy pelna kontrole nad przepiegiem instalacji systemu. 
 		Graphical rescue mode - tryb odzyskiwania w trybie okienkowym. Opcja ta pozwala na naprawienie systemu, gdy ten nie chce sie zaladowac np.: podczas instalacji systemu nie zaintalowalismy GRUB'a, i system nie chce sie zaladowac. Dzieki tej opcji mozemy go zainstalowac lub go reinstalowac, jesli w nim cos zostalo nagrzebane.
@@ -65,7 +65,7 @@
 -- Pytania podczas instalacji systemu przy wybranej opcji Install
 	- Select language
 		W tym pytaniu wybieramy jezyk, ktory bedzie dostepny podczas instalacji systemu oraz jezyk domyslny juz zainstalowanego systemu.
-		W moim przypadku wybieram "English".
+		W moim przypadku wybieram "English", poniewaz jezyk angielski jest obecnie podstawa w komunikacji w IT oraz jezykiem angielskim posluguje sie wiecej osob niz jezykiem polskim.
 	
 	- Select your location
 		Wybor lokalizacji, w ktorej sie znajdujemy. Pozwala to na ustawienie odpowiedniej strefy czasowej. Pozycje na liscie dobrane sa na podstawie wczesniejszego pytania, dlatego tez Polski nie ma na liscie, aby ja odnalesc nalezy wybrac: other -> Europe - > Poland.
