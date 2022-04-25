@@ -26,17 +26,25 @@
 				- Fizyczna pamiec RAM komputera to 32 GB
 				- Maszyna wirtualna do prostych, niewymagajacych zadan, bez srodowiska graficznego.
 		Dysk twardy: mozemy stworzyc nowy lub uzyc istniejacego pliku dysku twardego
-		Typ pliku z wirtualnym dyskiem: mozliwosc wybrania typu pliku, jesli jest potrzeba uzywania z innym programem wirtualizacyjnym to mozna wybrac odpowiedni dla niego typ pliku.
+		Typ pliku z wirtualnym dyskiem: mozliwosc wybrania typu pliku, jesli jest potrzeba uzywania z innym programem wirtualizacyjnym, to mozna wybrac odpowiedni dla niego typ pliku.
 			Dostępne typy:
 				- VDI (VirtualBox Disk Image) - format używany porzez Oracle VM VirtualBox
 				- VHD (Virtual Hard Disk) - format używane przez Microsoft w Hyper-V
 				- VMDK (Virtual Machine Disk) - format używany przez VMware
-			Uzywamy VirtualBox, dlatego też wybralem format VDI.	
+			Uzywam VirtualBox, dlatego też wybralem format VDI.	
 		Pamiec na fizycznym dysku twardym:
-			Dynamicznie przydzielony - plik dysku bedzie rosl w miare jego zapelniania
-			Staly rozmiar - plik dysku twardego zarezerwuje na fizycznym dysku twardym podany rozmiar w kolejnym kroku
-		Lokalizacja pliku i rozmiar: lokalizacja poliku dysku twardego oraz jego rozmiar
-		
+			Dynamicznie przydzielony - plik dysku bedzie rosl w miare jego zapelniania. Nalezy wybrac jesli mamy pewnosc, ze bedziemy mieli wystarczazjaca ilosc miejsca na fizycznym dysku twardym.
+			Staly rozmiar - plik dysku twardego zarezerwuje na fizycznym dysku twardym rozmiar, ktory zostanie podany w kolejnym kroku.	Wybieramy jezeli nie mamy pewnosci, czy fizyczny dysk twardy zostanie zapelniony wczesniej niz podana wielosc wirtualnego dysku twardego.
+			Wybralem dynamicznie przydzielony.
+		Lokalizacja pliku i rozmiar: lokalizacja poliku dysku twardego oraz jego rozmiar.
+			Rozmiar wirtualnego obrazu dysku twardego zalezy od kilku czynnikow:
+				- Minimalne ilosc potrzebna do sprawnego dzialania systemu goscia.
+				- Rozmiar dostepnej pamieci na fizycznym dysku twardym.
+				- Do czego maszyna wirtualna bedzie wykorzystywana.
+			W moim przypadku wybralem 50 GB:
+				- Zalecany rozmiar dla Debiana to 2GB (bez srodowiska graficzengo) lub 10GB (ze srodowikiem graficznym).
+				- Ilosc dostepnego miejsca na fizycznym dysku twardym to okolo 1 TB.
+				- Maszyna do nauki, bez srodowiska graficznego.
 
 -- Menu instalacyjne Debian - Debian GNU/Linux installer menu (Bios mode)
 	- Graphical install - umozliwia instalacje systemu w trybie okienkowym
