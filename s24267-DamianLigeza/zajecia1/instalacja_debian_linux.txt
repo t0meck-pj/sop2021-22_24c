@@ -26,7 +26,12 @@
 				- Fizyczna pamiec RAM komputera to 32 GB
 				- Maszyna wirtualna do prostych, niewymagajacych zadan, bez srodowiska graficznego.
 		Dysk twardy: mozemy stworzyc nowy lub uzyc istniejacego pliku dysku twardego
-		Typ pliku z wirtualnym dyskiem: mozliwosc wybrania typu pliku, jesli jest potrzeba uzywania z innym programem wirtualizacyjnym to mozna wybrac odpowiedni dla niego typ pliku
+		Typ pliku z wirtualnym dyskiem: mozliwosc wybrania typu pliku, jesli jest potrzeba uzywania z innym programem wirtualizacyjnym to mozna wybrac odpowiedni dla niego typ pliku.
+			Dostępne typy:
+				- VDI (VirtualBox Disk Image) - format używany porzez Oracle VM VirtualBox
+				- VHD (Virtual Hard Disk) - format używane przez Microsoft w Hyper-V
+				- VMDK (Virtual Machine Disk) - format używany przez VMware
+			Uzywamy VirtualBox, dlatego też wybralem format VDI.	
 		Pamiec na fizycznym dysku twardym:
 			Dynamicznie przydzielony - plik dysku bedzie rosl w miare jego zapelniania
 			Staly rozmiar - plik dysku twardego zarezerwuje na fizycznym dysku twardym podany rozmiar w kolejnym kroku
