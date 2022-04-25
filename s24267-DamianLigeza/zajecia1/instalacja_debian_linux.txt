@@ -15,10 +15,18 @@
 		Machine folder: folder, w ktorym beda pliki zwiazane z maszyna wirtualna (np. dysk twardy, pliki migawek)
 		Typ: typ systemu
 		Wersja: wersja systemu
-	
-		Rozmiar pamieci: rozmiar pamieci RAM maszyny wirtualnej
+		Rozmiar pamieci: rozmiar pamieci RAM maszyny wirtualnej.
+			To ile wybrac zalezy w zasadzie od trzech rzeczy:
+				- Minimalna ilosc pamieci RAM jaka potrzebuje system goscia zeby mogl dzialac plynnie
+				- Ilosc fizycznie posiadanej pamieci RAM w komputerze
+				- Do czego bedzie sluzyc maszyna wirtualna
+			Majac na uwadze te rzeczy mozna ocenic ile nalezy wybrac pamieci RAM.
+			W moim przypadku wybralem 8 GB: 
+				- Rekomendowana ilosc pamieci RAM dla Debian to od 128 MB (minimalna, bez srodowiska graficznego) do 1 GB (rekomendowana, ze srodowiskiem graficznym)
+				- Fizyczna pamiec RAM komputera to 32 GB
+				- Maszyna wirtualna do prostych, niewymagajacych zadan, bez srodowiska graficznego.
 		Dysk twardy: mozemy stworzyc nowy lub uzyc istniejacego pliku dysku twardego
-		Typ pliku z wirtualnym dyskiem: mozliwosc wybrania typu pliku, jesli jhest potrzeba uzywania z innym programem wirtualizacyjnym to mozna wybrac odpowiedni dla niego typ pliku
+		Typ pliku z wirtualnym dyskiem: mozliwosc wybrania typu pliku, jesli jest potrzeba uzywania z innym programem wirtualizacyjnym to mozna wybrac odpowiedni dla niego typ pliku
 		Pamiec na fizycznym dysku twardym:
 			Dynamicznie przydzielony - plik dysku bedzie rosl w miare jego zapelniania
 			Staly rozmiar - plik dysku twardego zarezerwuje na fizycznym dysku twardym podany rozmiar w kolejnym kroku
