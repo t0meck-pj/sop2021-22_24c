@@ -6,7 +6,7 @@ Instalacja Debiana:
 		- Dysk twardy - wybrana opcja Stworz wirtualny dysk twardy, poniewaz nie mam innego wirtualnego dysku, ktorego moglbym uzyc do obslugi instalowanego systemu; 
 					wybor pamieci - 20GB, zeby miec zapas do normalne obslugi systemu (pliki uzytkownika, itp), ale defaultowa wartosc 8GB powinna wystarczyc na poczatek; pozniej mozna oczywiscie zwiekszyc w razie potrzeby (Plik/Menedzer nosnikow wirtualnych -> najechac na wlasciwa maszyne i wybrac suwakiem docelowa wielkosc dysku )
     - Typ pliku z wirtualnym dyskiem:
-        - VDI - VirtualBox Disk Image (WYBRANE, poniewaz bedzie instalowany VB)- format domyslny dla VirtualBoxa, 
+        - VDI - VirtualBox Disk Image (WYBRANE,  poniewaz bedzie instalowany VB)- format domyslny dla VirtualBoxa, 
         - VHD - Virtual Hard Disk - format domyslny dla VirtualPC, Hyper-V,
         - VMDK - Virtual Machine Disk - format domyslny dla VMWare,
     - Pamiec na fizycznym dysku twardym:
