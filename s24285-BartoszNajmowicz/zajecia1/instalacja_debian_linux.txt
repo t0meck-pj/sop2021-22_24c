@@ -6,11 +6,11 @@ Instalacja Debiana:
 		- Dysk twardy - wybrana opcja Stworz wirtualny dysk twardy, poniewaz nie mam innego wirtualnego dysku, ktorego moglbym uzyc do obslugi instalowanego systemu; 
 					wybor pamieci - 20GB, zeby miec zapas do normalne obslugi systemu (pliki uzytkownika, itp), ale defaultowa wartosc 8GB powinna wystarczyc na poczatek; pozniej mozna oczywiscie zwiekszyc w razie potrzeby (Plik/Menedzer nosnikow wirtualnych -> najechac na wlasciwa maszyne i wybrac suwakiem docelowa wielkosc dysku )
     - Typ pliku z wirtualnym dyskiem:
-        - VDI - VirtualBox Disk Image (WYBRANE, poniewaz do instalacji wybralem plik .iso, czyli rozszerzenie obslugiwane przez VB)- format domyslny dla VirtualBoxa, 
+        - VDI - VirtualBox Disk Image (WYBRANE, poniewaz bedzie instalowany VB)- format domyslny dla VirtualBoxa, 
         - VHD - Virtual Hard Disk - format domyslny dla VirtualPC, Hyper-V,
         - VMDK - Virtual Machine Disk - format domyslny dla VMWare,
     - Pamiec na fizycznym dysku twardym:
-        - Dynamicznie przydzielany - pamiec bedzie uzywana miejsca na fizycznym twardym dysku (do max stalego rozmiaru), ale nie zmniejszy sie automatycznie, gdy zostanie zwolnione miejsce,
+        - Dynamicznie przydzielany - pamiec bedzie uzywana miejsca na fizycznym twardym dysku (do max stalego rozmiaru), ale nie zmniejszy sie automatycznie, gdy zostanie zwolnione miejsce. Opcja WYBRANA poniewaz jest to opcja bardziej elastyczna niz staly rozmiar.
         - Staly rozmiar - staly ustalony rozmiar przydzielonej pamieci na dysku twardym, wolniej sie instaluje, ale szybciej dziala niz dynamicznie przydzielany.
     -Utworz,
 2. VM zainstalowana
@@ -25,13 +25,21 @@ Instalacja Debiana:
         - Liczba rdzeni - zaznaczylem 1 rdzen (przy 2 rdzeniowym CPU), poniewaz powinno sie wybrac o 1 rdzen mniej niz dysponuje sie w procesorze (przy wyborze wszystkich dostepnych rdzeni, intensywne uzywanie VM moze przycinac glowny system operacyjny),
     - Ekran - bez zmian,
     - Dzwiek - bez zmian,
-    - Siec - bez zmian (wybrana NAT),
+    - Siec - bez zmian (wybrana NAT - Network Address Translation, poniewaz jest najprostszą możliwościa dostępu z systemu goscia do zewnętrznej sieci. Dostep z zewnatrz do systemu goscia (np. do zainstalowanego w systemie goscia serwera webowego) nie jest mozliwy.),
+		- inne opcje do wyboru:
+			- Mostkowana karta sieciowa (bridged),
+			- Siec wewnetrzna,
+			- Karta sieci izolowanej (host-only),
+			- Rodzajowy sterownik,
+			- Siec NAT,
+			- Cloud Network (experimental),
+			- niepodlaczona,
     - Porty szeregowe - bez zmian,
     - USB - bez zmian,
     - Udostepniane foldery - bez zmian,
     - Interfejs uzytkownika - bez zmian,
 4. Uruchom:
-    - Zwykly start - domyuslny rodzaj startu; przypomina normalny start fizycznej maszyny; zalecany w przypadku, gdy uzytkownik chce pracowac bezposrednio na pulpicie VM; 
+    - Zwykly start - domyslny rodzaj startu; przypomina normalny start fizycznej maszyny; zalecany w przypadku, gdy uzytkownik chce pracowac bezposrednio na pulpicie VM; 
     - Bezglowy start - uruchomienie VM bez obrazu video; wykorzystywany do systemow serwerowych; 
     - Oddzielny start - polaczenie obu powyzszych trybow startu; VM uruchamia sie normalnie, ale moze przejsc do trybu bezglowego;
 5. Uruchamianie instalacji:
@@ -45,8 +53,9 @@ Instalacja Debiana:
 			- Graphical expert install - standardowa instalacja graficzna z mozliwoscia podgladu procesow w tle,
 			- Graphical rescue mode - instalacja graficzna z mozliwoscia naprawy bledu instalacji,
 			- Graphical automated install - automatyczna instalacja, w ktorej system jest instalowany automatycznie na podstawie odpowiedzi wczesniej zapisanych w pliku,
-			- Expert install - instalacja systemu w terminalu, podobna do powyzszej opcji,
-			- Rescue mode - mozliwosc naprawy bledow w terminalu,
+			- Expert install - instalacja systemu w terminalu, podobna do powyzszej opcji, nalezy uzywac tej opcji jesli chcemy skonfigurowac system bardziej pod swoje potrzeby lub kiedy np. jakis sprzet wymaga recznej konfiguracji. 
+			will provide you with a few advanced options which allow for better customization of the operating system
+			- Rescue mode - mozliwosc naprawy bledow w terminalu; tego trybu uzywa sie np. gdy system nie bootuje sie i trzeba to jakos naprawic.
 			- Automated install - automatyczna instalacja przy uzyciu terminala,
 			- Speech-enabled advanced options:
 				- Expert speech install - zaawansowana/ekspercka instalacja z wykorzystaniem syntezatora mowy (dla niewidomych lub niedowidzacych),
@@ -55,18 +64,18 @@ Instalacja Debiana:
 	
 6. Ekrany instalacji:
  - Select language - English - wybor j. angielskiego moze ulatwic w przyszlosci szukanie pomocy w przypadku ewentualnych problemow z obsluga systemu (wiecej odpowiedzi w j.angielskim niz w j.polskim) 
- - Select your location - Other -> Europe -> UK
- - Configure keyboard - American English
+ - Select your location - Other -> Europe -> Poland (Wybrane ze wzgledu na wlasciwa strefe czasowa)
+ - Configure keyboard - American English (Wybrane ze wzgledu na wybor jezyka angielskiego, ktory zostal wybrany wczesniej; w tym systemie bede uzywal tylko jezyka angielskiego)
  - Configure network - hostname: ....., domain name: ---
  - Setup users - and passwords - root password: ....., username: ...., password: .....
- - Configure the clock - UK
+ - Configure the clock - UK - Wybrane poniewaz chcialem zobaczyc jak tego typu konfiguracja wyglada.
  - Partitioning disks:
     - Guided Partitioning - WYBRANE:
         - Guided - use entire disk - WYBRANE: 
             - stworzy partycje automatycznie na calym dysku,
 			- wybrane poniewaz jest to najprostsza instalacja; generalnie opcji uzywa sie dla nowych komputerow z jednym systemem operacyjnym;
         - Guided - use entire disk and set up LVM:
-            - LVM - Linux Volume Manager - linuxowa interpretacja dyskow RAID
+            - LVM - Linux Volume Manager - linuxowa interpretacja dyskow RAID, uzywa sie wtedy, kiedy potrzeba latwej rozbudowy systemu lub gdy chce sie polaczyc wiele dyskow twardych w jedna grupe pamieci masowej. 
             - stworzy partycje bazujace na koncepcji LVM na calym dysku 
         - Guided - use entire disk and set up encrypted LVM
             - stworzy partycje bazujace na koncepcji LVM na calym dysku i zaszyfruje dysk
