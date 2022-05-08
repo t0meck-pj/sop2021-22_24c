@@ -1,15 +1,37 @@
--przed samą pracą skonfigurowałem odpowiednio maszyne do poprawnego funkcjonowania
--podczas tworzenia maszyny wybrałem opcje "Stwórz wirtualny dysk twardy"
-Tryby plików:
+-przed samą pracą skonfigurowałem odpowiednio maszyne do poprawnego funkcjonowania:
+-tools->nowa->name:Deb->Wyskakuje debian->rozmiar pamieci RAM->wybrałem opcje "Stwórz wirtualny dysk twardy" i wybralem odpowiednia ilosc miejsca na dysku
+by plików:
 VDI(VIRTUAL DISK IMAGE)- jest to usługa, która obsługuje środowisko pulpitu na serwerze zdalnym.
 VHD(VIRTUAL HARD DISK)-jest to format wirtualnego dysku twardego, moze zawierac dokladnie to samo co znajduje sie na partycjach fizycznych dysku
 VMDK(VIRTUAL MACHINE DISK)-jest to dysk wirtualny przechowujący zawartość dysku twardego maszyny wirtualnej.
--nastepnie wybralem opcje dynamicznego przydzielania pamieci, ktora jest zdecydowanie lepsza opcja, poniewaz dysk sam dostosowuje sie do tego ile ma pamieci i wraz z jej wzrostem, wzrasta pamiec do przechowywania na dysku
--nastepnie sciezka + rozmiar dysku
--wybrałem instalacje bez gui
--język, strefa czasowa
--ustawiłem hasło na roota
--ustawiłem nazwe użytkownika
--wybrałem własny podział na partycje
--wybralem katalog /boot (partycja do uruchamiania systemu)
+->rozmiar dysku dynamicznie przydzielany, ponieważ jeżeli to potrzebne będzie się rozrazrastał-> odpowiednia ścieżka na ktorej chcemy miec system->rozmiar wirtualnego dysku twardego
+Aby rozpocząć instalacje należy pobrać debiana z ich oryginalnej strony debian.org:
+-na poczatku instalacji wyskakuje nam okienko jak chcemy przeprowadzic instalacje, są dwa sposoby:
+1)Instalacja graficzna, ktorej nie wybralem, poniewaz polecenie zadania bylo inne
+2)Instalacja-wybralem to ze wzgledu na to, ze gui bylo nie potrzebne
+Nastepnie wybralem jezyk oraz lokacje(other->Europe->Poland->strefa czasowa) 
+Nastepnie trzeba ustawic haslo na roota, ustawilem haslo "X"
+Nastepnie trzeba potwierdzic haslo 
+Nastepnie nazwa uzytkownika 
+Nastepnie haslo dla uzytkownika
+Wyskakuje nam okienko partycjonowania dysku:
+Wybrałem opcje manual, poniewaz lepiej jest ustawic samemu ilosc miejsca na poszczegolnych partycjach
+Nastepnie wyskakuje okienko z juz stworzona jedna wielka partycja ktora manualnie mozna sobie podzielic
+Nastepnie wybralem mount point dla partycji /boot
+MOUNT POINTY:
+/ - glowny plik systemowy
+/boot - pliki statyczne bootowania
+/home - katalogi domowe uzytkownikow
+/tmp - tymczasowe pliki
+/usr - dane statyczne
+/var - zmienne dane
+/srv - dane dotuczace uslug dla systemu
+/opt - dodatkowe pakiety oprogramowania aplikacji
+/usr/local - do uzytku administratora gdy instaluje oprogramowanie lokalnie
+-zakonczenie partycjonowania
+-na sam koniec wyskakuje nam srodowisko graficzne ktore chcemy zainstalowac:
+-Debian desktop enviroment,GNOME,Xfce,KDE Plasma,Cinnamon,MATE,LXDE,LXQt
+-Mozna rowniez zainstalwac web server, print server,server ssh oraz standardowe narzedzia systemowe
+-na sam koniec wyskakuje nam informacja o GRUBIE(program ktory wyskakuje podczas bootowania systemu) gdzie chcemy go zainstalowac 
+wybralem sciezke /dev/sda
 -instalacja zakonczona
