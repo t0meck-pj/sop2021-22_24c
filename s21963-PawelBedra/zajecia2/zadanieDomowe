@@ -1,0 +1,9 @@
+#!/bin/bash
+
+Czerwony="\e[0;31m"
+Brak='\e[0m'
+
+PLIK=$1
+
+cat ${PLIK} | sed -r "s/[pP][aA][wW][eE][lL]/$(echo -e ${Czerwony}Pawel${Brak})/g"
+
