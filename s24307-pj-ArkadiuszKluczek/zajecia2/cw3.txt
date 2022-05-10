@@ -1,7 +1,7 @@
-$PATH = przechowuje dokladna sciezke do katalogu games
-$RANDOM = wyswietla randomowy PID powloki(?) 
-$PWD = pokazuje dokladna lokalizacje w ktorej sie znajdujemy
-$PS1 = przechowuje znaki specjalne(?) 
+$PATH = określa zestaw katalogow gdzie zlokalizowanie sa programy komputerowe w celu ich uruchomienia
+$RANDOM = zwraca losowa liczbe od 0-32767
+$PWD = wyswietla pelna sciezke aktualnie otwartego katalogu
+$PS1 = zawiera ona sekwencje znaną jako znak zachęty(np. \d- data, \h-host z pominiecem domeny,\H pelny host,\n znak nowej linii)
 $USER = pokazuje uzytkownika
 $HOSTNAME = pokazuje serwer na ktorym jestesmy zalogowani 
-$OSTYPE =wyswietla system operacyjny (?)
+$OSTYPE =wyswietla system operacyjny 

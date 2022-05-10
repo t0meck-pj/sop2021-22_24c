@@ -1,5 +1,4 @@
 #!/bin/bash
-$1 =~ ^[*];
-echo -e $1;
 
-# nie mam pojecia jak wykonac to zadanie chętnie usłysze na wykladzie jak je wykonać :)
+echo -e "Pierwszy znak: ${1:0:1}";
+echo -e "Ostatni znak: ${1: -1}";
