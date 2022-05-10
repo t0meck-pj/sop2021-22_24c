@@ -1,0 +1,25 @@
+#!/bin/bash
+
+imie='^[A-ZŁŻ][a-zęóąśłżźćń]+$'
+kod='^[0-9][0-9]-[0-9]{3}$'
+email='^[a-zA-Z][a-zA-Z0-9\^\-\$!#.%&*+/=?_{|}~]+@[a-zA-Z0-9\-]+.[a-zA-Z]+$'
+zaprzeczenie='.[\^\-\$!#.%&\*+/=?_{|}~]{2,}.'
+
+input="$1"
+
+
+if [[ ${input} =~ ${imie} ]]; then
+	echo "Wpisałeś imię"
+elif [[ ${input} =~ ${kod} ]]; then
+	echo "Wpisałeś kod pocztowy"
+elif [[ (${input} =~ ${email}) ]]; then
+	if [[ ! ${input} =~ ${zaprzeczenie} ]]; then
+		echo "Wpisałeś email"
+	else
+		echo "Niewłaściwy format"
+	fi
+else
+	echo "Niewłaściwy format"
+fi
+
+

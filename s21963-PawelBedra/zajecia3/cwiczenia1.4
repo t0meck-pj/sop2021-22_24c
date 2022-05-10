@@ -1,0 +1,9 @@
+#!/bin/bash
+
+lista=$(ls -l)
+liczbaWierszy=$(echo "$lista" | grep -c "^-")
+echo "$liczbaWierszy"
+if [[ $liczbaWierszy > 5 ]]; then
+	echo "Istnieje wiecej niz 5 plik w tej lokalizacji"
+fi
+
