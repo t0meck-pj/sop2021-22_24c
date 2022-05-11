@@ -1,11 +1,12 @@
 Instalacja Debiana:
     po wybraniu z czego ma być bootowany system pojawia nam się okno w którym można wybrać instalację graficzną, tekstową, oraz opcje zaawansowane.
-    w opcjach zaawanoswanych jest instalacja ekspercka, tryb naprawy oraz instalacja automatyczna, wszystkie te rzeczy dostępne są w wersji tekstowej jak i graficznej
-    po wybraniu instalacji tekstowej pojawia się okno wyboru języka instalacji
+    instalacja graficzna jest przeznaczona dla uzytkownikow ktorzy nie mieli do czynienia jeszcze z instalacjami zadnego linuxa, jest prosta, wszystko jest przejrzyste oraz mozna poslugiwac sie myszka, instalacja tekstowa jest nieco bardziej zaawansowana, nie mamy tu juz ladnej graficznej szaty, lecz suche dane, poslugujemy sie klawiszami takimi jak enter, tab, spacja (do zaznaczania poszczegolnych opcji), opcjja tesktowa jest rowniez szybsza jezeli chodzi o dzialanie samego instalatora.
+    w opcjach zaawanoswanych jest instalacja ekspercka, tryb naprawy oraz instalacja automatyczna, wszystkie te rzeczy dostępne są w wersji tekstowej jak i graficznej, instalacja ekspercka jak sama nazwa wskazuje przeznaczona jest dla ekspertow, pozwala ona kotrolowac kazdy najmniejszy aspekt instalacji, widac tez w ktorym miejscu instalacji sie znajdujemy i ile krokow zostalo do konca, tryb naprawy sluzy do naprawnia systemu ktory z roznych powodow przestal poprawnie dzialac i jest mozliwosc ze brakuje jakiegos pliku, instalacja automatyczna polega na przygotowaniu raz konkretnego pliku ze wszystkimi ustawieniami potrzebnymi do instalacji i pozniej podczas instalacji nie trzeba juz nic robic.
+    po wybraniu instalacji tekstowej pojawia się okno wyboru języka instalacji, wybrany zostal jezyk angielski, poniewaz w razie pojawienia sie komunikatu bledu po angielsku kopiujac go w wyszukiwarke mamy dostep do odpowiedzi i rozwiazan z calego swiata a nie tylko z polski.
     poźniej wybieramy region, należy przejść do other i stamtąd wybrać Europę
     następnie do wyboru jest kraj, kilkając przycisk "P" można przejśc odrazu do krajów na literę P
-    następnie wybieramy region potrzebny do kodowania znaków
-    następnie wybieramy schemat klawiatury jakiego chcemy używać
+    następnie wybieramy region potrzebny do kodowania znaków, wybrane kodawnie znakow to en_US.UTF-8, zostal wybrany po to, aby mozna bylo wyswietlac i wprowadzac znaki charakterystyczne dla jezyka angielskiego bez zadnych "krzakow".
+    następnie wybieramy schemat klawiatury jakiego chcemy używać, wybrany jest American English, aby mozna bylo wpisywac wszystki znaki z alfabetu angielskiego bez zadnych problemow.
     później do wprowadzenia jest nazwa hosta
     następnie jeżeli chcemy dołączyć system do jakiejś domeny można zrobić to w tym kroku
     następnie ustawiamy hasło dla roota
@@ -13,15 +14,40 @@ Instalacja Debiana:
     wprowadzamy pełną nazwe użytkownika
     wprowadzamy skróconą nazwę użytkownika
     wprowadzamy hasło dla użytkownika a następnie je potwierdzamy
-    następnie do wyboru mamy różne sposoby partycjonowania dysku, automatyczna, automatyczna z managerem woluminów logicznych, i jak poprzednio tylko z szyfrowaniem, oraz w pełni manualne ustalanie partycji i ich wielkości. LMV pozwala miedzy innymi na takie operacje jak polaczenie roznych pamieci masowych w jeden dysk logiczny, dynamiczne rozszerzanie pamieci itd.
-    dalej wybieramy dysk na system
-    następnie schemat, do wyboru wszystkie pliki na jednej partycji, osobna partycja dla katalogu /home, oraz osobne partycje dla katalogów /home, /var i /tmp
-    następnie w razie potrzeby można dostosować konkretne partycje
+    następnie do wyboru mamy różne sposoby partycjonowania dysku, automatyczna, automatyczna z managerem woluminów logicznych, i jak poprzednio tylko z szyfrowaniem, oraz w pełni manualne ustalanie partycji i ich wielkości.
+    > automatyczna nalezy wybrac gdy nie mamy pojecia jak partycjonowac dyski ani co tu sie robi,
+    > automatyczna z ustawieniem LVM mozna wybrac gdy chcemy pozniej moc odrazu zarzadzac przestrzenia dyskowa za pomoca menagera dyskow bez zadnych dodatkowych instalacji po instalacji systemu
+    > automatyczna z ustawieniem LVM z szyfrowaniem wybieramy gdy chcemy uzyskac to co w poprzednim punkcie z dodatkowo zaszyfrowanymi partycjami, jak najbardziej szyfrowanie jest zalecane przy tworzeniu partycji (poza partycja boot),
+    > manualne ustawianie partycji wybieramy wtedy kiedy chcemy miec kontrole nad wszystkim i pokolei ustawic sobie wszystkie partycje dokladnie tak jak chcemy i wlasnie ta opcje wybieramy.
+    patrycjonowanie:
+    > zaczynamy od usuniecia wszystkich partycji jezeli jakies sa utworzone,
+    > nastepnie tworzymy partycje podstawowa o rozmiarze 2GB na boot, ustawiamy jej zastosowanie jako /boot, ustawiamy system plikow na ext4, gdyz jest to najpopularniejszy system plikow w systemie linux, dodatkowo ustawiamy flage bootowania na on aby komputer wiedzial z ktorej partycji ma byc uruchamiany system, co wazne partycja ta nie moze byc szyfrowana,
+    > dalej tworzymy partycje logiczne z systemem plikow ext4, alternatywnym systemem plikow moglby byc fat32, XFS lub JFS (/ -> katalog roota, /home - -> katalogi domowe uzytkownikow, /var -> do przechowywania zmieniajacych sie danych, /tmp -> do przechowywania plikow tymczasowych oraz partycje swap czyli wymiany, powinna ona zajmowac miec 120-130% rozmiaru pamieci RAM oraz zamiast ext4 musismy zmienic jej typ na swap area),
+    > do kazdej partycji przyporzadkowujemy odpowiedni punkt montownia, system plikow do kazdej patrycji to ext4 gdyz jest on najpopularniejszy
     dalej wyskakuje okno z pytaniem czy chcemy włożyć następną płytę do dalszej instalacji 
     wybieramy kraj aby dobrać serwer z którego będą pobierane paczki
-    a następnie konkretny serwer
+    a następnie konkretny serwer, dostepne sa rozne serwery, miedzyinnymi serwery ftp debiana, siec task gdanskich uczelni, wybrana zostala wartosc deb.debian.org, poniewaz sam instalator mowi ze to zazywczaj najlepszy wybor a dodatkowo jest to najbardziej uniwersalna opcja ktora zawsze zadziala.
     wyskakuje okienko dotycząće proxy, które zazwyczaj należy pominąć
     wyskakuje okno pytające czy chcemy wysyłać anonimowe informacje na temat działania systemu deweloperom w celu ulepszania go
     dalej narzędzie taksel pozwala nam wybrać komponenty które mają zostać zainstalowane (można to później zmienić)
-    następnie pojawia się pytanie o instalacje GRUBa, wybieramy yes i wybieramy dysk na którym chcemy go zainstalować
-    po tym system zresetuje się i pojawi się GRUB w którym należy wybrać system, po załadowaniu jest on gotowy do użycia
+    Opcje jakie sa dostpne to:
+    > Debian Desktop Environment -  czyli srodowisko graficzne debiana
+    > dalej do wyboru mamy (poprzedzone "...") konkretne srodowisko graficzne, mozemy wybrac 1 lub wiele, lecz w przypadku wyboru wielu na raz bedziemy musieli zdecydowac ktore ma byc uzywane jako domyslne,
+    > dalej do wyboru jest WEB server, mozemy zaznaczyc ta opcje jezeli chcemy miec serwer www na komputerze i hostowac strone
+    > dalej do wyboru mamy SSH server, jego instalujemy gdy chcemy miec serwer SSH na komputerze w celu laczenia sie po SSH i wykonywania jakichs czynnosci administracyjnych
+    > dalej do wybrania (domyslnie zaznaczone) mamy basic system utilities, jest to zbior w miare podstawowych programow takich jak miedzy innymi python, telnet, ftp.    
+    > nie musimy zaznaczac zadnych elementow, mozna odznaczyc wszystkie i przejsc dalej, system zainstaluje sie poprawnie
+    > zostalo wybrane tylko "basic system utilities" aby nie istalowac tych pakietow pozniej, chcac zostawic system w postaci tekstowej srodowisko graficzne nie zostalo zainstalowane 
+    następnie pojawia się pytanie o instalacje GRUBa (GRand Unified Bootloader) czyli standardowego bootloadera (programu do uruchamiania systemu) dla systemow Linux, ktory jest w stanie uruchomic wiekszosc systemow (nie tylko Linuxa) na platrormie Intela. GRUB mozna zainstalowac na dysku na ktorym mamy system (najczestsza opcja, poniewaz przenoszac dysk nie musimy przenosic nic innego aby moc uruchomic system), druga mozliwoscia jest zainstalowanie GRUBa na innym dysku lub np pendrive, mozna to wykorzystac jako zabezpieczenie, poniewaz do uruchomienia systemu bedzie potrzebany wtedy pendrive i bez niego nic nie zdzialamy. Istnieje pare alterantyw dla GRUBa, miedzy innymi sa to: LILO (Linux LOader), BURG (Brand-new Universal loadeR from GRUB) oraz rEFInd. Jezeli nie zainstalujemy zadnego bootloadera nie bedziemy w stanie uruchomic systemu operacyjnego.
+    po zainstalowaniu GRUBa system zresetuje się i pojawi się sam GRUB w którym należy wybrać system, ktory po zaladowaniu jest gotowy do użycia
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
