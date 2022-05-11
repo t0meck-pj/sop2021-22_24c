@@ -1,0 +1,27 @@
+Ćwiczenie 5a
+
+A=Ala
+echo $A ma kota, a kot ma ${A}ę
+dostaję: Ala ma kota, a kot ma Alaę
+
+korekta:
+echo $A ma kota, a kot ma ${A/Ala/Alę}
+dostaję: Ala ma kota, a kot ma Alę
+
+lub:
+#!/bin/bash
+A=$1
+B={#A}
+C=ę
+echo $A ma kota, a kot ma ${A:0:(B-1)}$B
+
+
+Wersja dla imion męskich:
+#!/bin/bash
+A=$1
+B=ę
+C=a
+echo $A ma kota, a kot ma ${A:0}$C
+
+
+Nie jest to możliwe w czystym bash-u.

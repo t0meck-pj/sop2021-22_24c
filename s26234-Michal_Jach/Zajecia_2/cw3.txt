@@ -1,0 +1,25 @@
+Ćwiczenie 3
+
+PATH jest listą jednego lub więcej katalogów do którego odwołuje się polecenie
+
+RANDOM pozwala generować losowe intigery. w zakresie 0 do 32767
+Dla przykładu gerenrowanie 3 losowych intigerów 
+RANDOM=$$
+for i in `seq 3`
+> do
+> echo $RANDOM
+> done
+ 
+PWD podaje ścieżkę bieżącego katalogu
+
+PS1 - 'prompt string one' lub 'prompt statement one' - zmienna środowiskowa która odpowiada za znak zachety. Tak naprawdę pod PS1 kryje się PS1 (monit oczekiwania na polecenie), PS2 (monit o kontynuację), PS3 (monit wyświetlany, gdy polecenie czeka na dane wejściowe), PS4 (prefiks linii śledzenia debugowania). Aby zmienić PS1 wpisuję w bash-a:
+export PS1="Proponowana nazwa która będzie się wyświetlać> ". Mogę też wywołać moją nazwę, nazwę gospodarza czyli:
+export PS1="\h> ". Do ostatniej linijki jak dodamy \w, czyli: export PS1="\h \w> " wyświetli się nazwa folderu w którym teraz jestem.
+
+USER - nazwa korzystającego z terminala
+
+HOSTNAME - nazwa gospodarza. po wpisaniu komendy w terminal:
+hostname pojawia się pełna nazwa hosta która zwiera moje imię-nazwę komputera+.local
+
+
+OSTYPE - po wywołaniu komendy echo $OSTYPE uzyskuje informację o nazwię zainstalowanego systemu operacyjnego.
