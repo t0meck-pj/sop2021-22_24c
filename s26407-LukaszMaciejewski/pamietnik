@@ -72,4 +72,10 @@ Bash jest jedną z najpopularniejszych powłok systemów UNIXowych. Jest także 
 - Aby odnieść się do wartości zmiennej należy użyć znak '$'
 - Usuwanie zmiennej wykonuje się poprzez: unset nazwa zmiennej. Bez znaku '$'. W momencie użycia zmiennej ze znakiem '$' system będzie szukał zmiennej o nazwie takiej jaka była wartość tej zmiennej.
 
+- W bashu istnieją predefiniowane zmienne, które przechowują przydatne informacje takie jak kod zakończenia ostatniego polecenia, czy ścieżka i sposób urucomienia skryptu.
+
+- Istnieje możliwość wykonywania prostych operacji na ciągach znaków.
+- W bashu można wykonywać operacje arytmetyczne.
+
+- Bash obsługuje wyrażenia regularne
 
