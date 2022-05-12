@@ -1,1 +1,69 @@
-Pamietnik
+2022-04-25
+Mój kochany pamiętniczku przepraszam, że tak długo nie pisałem. Na pierwszych zajęciach nauczyłem się jak zainstalować dystrybucję Linuxa, Debian, na maszynie wirtualnej Oracle VM VirtualBox. A było to tak:
+
+- po pierwsze włączamy program VirtualBox
+- w ustawieniach programu należy zmienić domyślny folder maszyn wirtualnych na inny miż systemowy
+
+- następnie klikamy na przycisk 'Nowa' lub wybieramy z menu Maszyna>Nowa...
+- w oknie, które się pojawi wpisujemy nazwę: deb24c
+- po wpisaniu pierwszych 3 liter program wykryje automatycznie jaką dystrybucję Linuxa chcemy zainstalować > możemy kliknąć dalej
+- w następnym kroku wybieramy przydzieloną dla wirtualnej maszyny ilość pamięci RAM: 4096 MB
+- kolejne okno daje nam możliwość dodania wirtualnego dysku twardego. Mamy tu trzy opcje: możemy pominąć ten krok i skonfigurować pamięć po utworzeniu wirtualnej maszyny, stworzyć wirtualny dysk twardy w tym momencie lub użyć istniejącego pliku wirtualnego dysku twardego
+- zaznaczamy opcję drugą i przechodzimy do kolejnego okna, w którym wybieramy typ pliku do użycia z nowym wirtualnym dyskiem
+- tu także mamy trzy opcje: VDI, VHD i VMDK
+	- VDI to format VirtualBoxa i możemy go wybrać jeśli nie planujemy używać go z innymi maszynami wirtualnymi
+	- VHD to format Microsoft Virtual PC oraz Virtual Server
+	- VMDK to format stworzony dla urządzeń VMware takich jak VMware Workstation, VMware Player czy VMware Fusion
+
+ - po wybraniu VDI mamy opcję wyboru pomiędzy dynamicznie przydzielanym a stałym rozmiarem pliku twardego dysku. Dynamicznie przydzielany plik będzie zajmował mniej miejsca na fizycznym dysku twardym i będzie rósł w miarę jak będzie się zapełniał. 
+- wybieramy dynamicznie przydzielany i przechodzimy dalej
+- w kolejnym oknie podajemy lokalizację i rozmiar pliku wirtualnego dysku
+- suwakiem zmieniamy rozmiar na 32 GB i klikamy 'Utwórz'
+
+- w tym momencie widzimy już utworzoną maszynę z Debianem w głównym oknie VirtualBoxa. Należy jednak jeszcze przed uruchomieniem zmienić kilka ustawień. Klikamy na przycisk 'Ustawienia'
+- na liście wybieramy 'System' i w pierwszej zakładce 'Płyta główna' w okienku kolejność bootowania zaznaczamy 'Napęd optyczny' oraz 'Dysk twardy'
+- w kolejnej zakładce 'Procesor' możemy wybrać ilość procesorów. Zaznaczam 2
+- następnie na liście klikam 'Pamięć', następnie klikam na ikone płyty która znajduje się poniżej kontrolera IDE i kolejny raz ikonę płyty z prawej strony przy napędzie optycznym
+- następnie wybieram 'Choose a disk file...' i wybieram pobrany wcześniej plik z obrazem Debiana i klikamy 'OK'
+
+- uruchamiamy Debiana
+- pojawi się okno BIOSU w którym konfigurujemy instalację systemu
+- wybieramy opcję 'Install'
+- następnie wybieramy język angielski, na kolejnej stronie wybieramy region 'other' a następnie 'Europe' i 'Poland'
+- na kolejnej stronie klikamy 'United States' i ustawienia klawiatury na 'Polish'
+- system zaczyna się instalować
+- następnie ustawiamy hasło dla użytkownika 'root'
+- ustawiamy nazwę dla konta innego niż 'root' oraz hasło
+
+- na kolejnej stronie przechodzimy do partycjonowania dysku. Mamy tu do wyboru cztery opcje. Guided oznacza, że instalator sam zaproponuje podział na partycje. Jest to zalecane dla początkujących, ponieważ różne części Linuxa powinny być na osobnych partycjach, np.: sam system, katalogi domowe użytkowników, logi, boot, plik wymiany, itp. Instalacja całego Linuxa na jednej partycji jest niezalecana.
+- wybieramy opcję 'Guided - use entire disk'
+- wybieramy na którym dysku tworzymy partycje, mamy tylko jeden więc klikamy enter
+- następnie wybieramy schemat partycji. Możemy wybrać 'All files in one partition' co jest sugerowane dla początkujących użytkowników. Aby zobaczyć jakie rozmiary zaproponuje instalator wybieramy opcję 'Separate /home, /var, and /tmp partitions'
+- w tym momencie możemy zaakceptować zaproponowane partycje lub je zmienić
+- klikamy 'Finish partitioning and write changes to disk'
+- w tym momencie instaluje się system
+- na kolejnej stronie możemy zeskanować kolejne nośniki - nie mamy takich więc klikamy 'No'
+- następnie wybieramy skąd należy pobierać pakiety z internetu 
+- wybieramy 'Poland' oraz 'ftp.task.gda.pl' czyli serwery Politechniki Gdańskiej
+- proxy pozostawiamy puste
+- system się instaluje
+- na stronie ankiety popularności pakietów klikamy 'No'
+- kolejna strona to "tasksel" na niej zostawiamy zaznaczone tylko 'standard system utilities'
+- w oknie instalacji programu rozruchowego GRUB klikamy 'Yes' i wybieramy istniejący dysk
+- System został zainstalowany
+
+
+
+2022-04-30
+Mój kochany pamiętniczku na drugich zajęciach nauczyłem się czym jest BASH.
+
+Bash jest jedną z najpopularniejszych powłok systemów UNIXowych. Jest także językiem, za pomocą którego, możemy pisać skrypty, które ułatwiają i przyspieszają pracę z komputerem.
+
+- Pisanie skryptów zaczynamy od linijki zwanej 'Shebang'. Jest to linia zaczynająca się od znaku '#' więc de facto jest komentarzem, ale spełnia ważną funkcję - informuje jaki program interpretujący skrypt ma zostać użyty. Jeśli tej linijki nie będzie, bash wykona ten skrypt w podpowłoce samego siebie.
+- Pisanie skryptu kończymy natomiast pustym wierszem. Interpreter działa do ostatniego znaku zatwierdzenia. Jeśli na końcu nie będzie entera to ostania linijka może się nie wykonać.
+- Skrypty zapisuje się w pliku z rozszerzeniem .sh. 
+- Następnie przed wykonaniem należy nadać bit wykonywalności. 
+- Uruchamia się skrypty w następujący sposób: ./nazwa_pliku
+
+- Można uruchomić skrypt w bieżącym bashu za pomocą komendy 
+
