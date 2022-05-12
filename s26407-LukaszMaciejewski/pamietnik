@@ -65,6 +65,11 @@ Bash jest jedną z najpopularniejszych powłok systemów UNIXowych. Jest także 
 - Następnie przed wykonaniem należy nadać bit wykonywalności. 
 - Uruchamia się skrypty w następujący sposób: ./nazwa_pliku
 
-- Można uruchomić skrypt w bieżącym bashu za pomocą komendy 
+- Można uruchomić skrypt w bieżącym bashu za pomocą komendy source/nazwa_pliku, ale nie powinno się tak robić ze zwykłymi skryptami. Może dojść bowiem do niekontrolowanych zmian w konsoli.
+
+- Tworzenie zmiennych: zmienną tworzymy przez nazwa_zmiennej=wartość. Nie dodajemy spacji przed i po znaku '='
+- Tak utworzona zmienna jest zmienną lokalną widoczną w aktualnej powłoce. Aby zmienna była widoczna w kolejnych powłokach należy użyć komendy export.
+- Aby odnieść się do wartości zmiennej należy użyć znak '$'
+- Usuwanie zmiennej wykonuje się poprzez: unset nazwa zmiennej. Bez znaku '$'. W momencie użycia zmiennej ze znakiem '$' system będzie szukał zmiennej o nazwie takiej jaka była wartość tej zmiennej.
 
 
