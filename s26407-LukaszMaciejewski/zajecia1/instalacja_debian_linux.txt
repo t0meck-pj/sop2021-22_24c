@@ -1,5 +1,4 @@
-2022-04-25
-Mój kochany pamiętniczku przepraszam, że tak długo nie pisałem. Na pierwszych zajęciach nauczyłem się jak zainstalować dystrybucję Linuxa, Debian, na maszynie wirtualnej Oracle VM VirtualBox. A było to tak:
+Instalacja Debiana na maszynie wirtualnej Oracle VM VirtualBox:
 
 - po pierwsze włączamy program VirtualBox
 - w ustawieniach programu należy zmienić domyślny folder maszyn wirtualnych na inny miż systemowy
@@ -51,19 +50,3 @@ Mój kochany pamiętniczku przepraszam, że tak długo nie pisałem. Na pierwszy
 - kolejna strona to "tasksel" na niej zostawiamy zaznaczone tylko 'standard system utilities'
 - w oknie instalacji programu rozruchowego GRUB klikamy 'Yes' i wybieramy istniejący dysk
 - System został zainstalowany
-
-
-
-2022-04-30
-Mój kochany pamiętniczku na drugich zajęciach nauczyłem się czym jest BASH.
-
-Bash jest jedną z najpopularniejszych powłok systemów UNIXowych. Jest także językiem, za pomocą którego, możemy pisać skrypty, które ułatwiają i przyspieszają pracę z komputerem.
-
-- Pisanie skryptów zaczynamy od linijki zwanej 'Shebang'. Jest to linia zaczynająca się od znaku '#' więc de facto jest komentarzem, ale spełnia ważną funkcję - informuje jaki program interpretujący skrypt ma zostać użyty. Jeśli tej linijki nie będzie, bash wykona ten skrypt w podpowłoce samego siebie.
-- Pisanie skryptu kończymy natomiast pustym wierszem. Interpreter działa do ostatniego znaku zatwierdzenia. Jeśli na końcu nie będzie entera to ostania linijka może się nie wykonać.
-- Skrypty zapisuje się w pliku z rozszerzeniem .sh. 
-- Następnie przed wykonaniem należy nadać bit wykonywalności. 
-- Uruchamia się skrypty w następujący sposób: ./nazwa_pliku
-
-- Można uruchomić skrypt w bieżącym bashu za pomocą komendy 
-
