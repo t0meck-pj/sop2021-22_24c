@@ -2,11 +2,19 @@
 
 #!/bin/bash
 
+Czarny=30
+Czerwony=31
+Zielony=32
+Zolty=33
+Niebieski=34
+Fioletowy=35
+Cyjan=36
+
 function Pokoloruj () {
 	echo -e '\e['$2'm'$1'\e[0m'
 }
 
-Pokoloruj "Przykladowy tekst do pokolorowania" "31"
+Pokoloruj "Przykladowy tekst do pokolorowania" $[$1]
 
 #----Kolory----#
 #Czarny       30

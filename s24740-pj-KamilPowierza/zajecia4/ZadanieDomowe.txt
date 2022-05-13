@@ -1,0 +1,143 @@
+---------------------
+------Zadanie 1------
+---------------------
+
+
+
+#include <stdio.h>
+#include <stdlib.h>
+
+typedef struct Node {
+    int x;
+    struct Node* next;
+} Node;
+
+int main()
+{
+    Node root;
+
+    root.x = 16;
+    root.next = malloc(sizeof(Node));
+
+    root.next->x = -32;
+    root.next->next = malloc(sizeof(Node));
+
+    root.next->next->x = -2;
+    root.next->next->next = NULL;
+
+    printf("Pierwsza wartosc: %d\n", root.x);
+    printf("Druga wartosc: %d\n", root.next->x);
+    printf("Trzecia wartosc: %d\n", root.next->next->x);
+
+    free(root.next);
+    free(root.next->next);
+    return 0;
+}
+
+
+
+---------------------
+------Zadanie 2------
+---------------------
+
+
+#include <stdio.h>
+#include <stdlib.h>
+
+typedef struct Node {
+    int x;
+    struct Node* next;
+    struct Node* prev;
+} Node;
+
+int main()
+{
+    Node root;
+
+    root.x = 16;
+    root.next = malloc(sizeof(Node));
+
+    root.next->prev = root.x;
+
+    root.next->x = -32;
+    root.next->next = malloc(sizeof(Node));
+
+    root.next->next->prev = root.next->x;
+
+    root.next->next->x = -2;
+    root.next->next->next = NULL;
+
+    printf("Pierwsza wartosc: %d\n\n", root.x);
+
+    printf("Druga wartosc: %d\n", root.next->x);
+    printf("Poprzednia wartosc: %d\n\n", root.next->prev);
+
+    printf("Trzecia wartosc: %d\n", root.next->next->x);
+    printf("Poprzednia wartosc: %d\n\n", root.next->next->prev);
+
+    free(root.next);
+    free(root.next->next);
+    return 0;
+}
+
+
+
+---------------------
+------Zadanie 3------
+---------------------
+
+
+---------------------
+--Wersja rekursywna--
+---------------------
+
+#include <stdio.h>
+#include <stdlib.h>
+
+int ciag_fibonacciego(int,int,int);
+
+int main()
+{
+    int a=0;
+    int b=1;
+    int temp;
+
+    ciag_fibonacciego(a,b,temp);
+
+    return 0;
+}
+
+int ciag_fibonacciego(a,b,temp){
+    printf("%d \n", a);
+    temp = a;
+    a = a+b;
+    b = temp;
+    //Niech ta funkcja robi się do momentu uzyskania wartości 55
+    if(a <= 55){
+        ciag_fibonacciego(a,b,temp);
+    }
+}
+
+
+----------------------
+--Wersja iteracyjnej--
+----------------------
+
+#include <stdio.h>
+#include <stdlib.h>
+
+int main()
+{
+    int a=0;
+    int b=1;
+    int temp;
+
+    for(int i=-1; i < 10; i++){
+        printf("%d \n", a);
+        temp = a;
+        a = a+b;
+        b = temp;
+    }
+
+    return 0;
+}

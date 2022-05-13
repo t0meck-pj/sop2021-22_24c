@@ -1,6 +1,4 @@
-1.Komenda "bash" pozwala na odpalenie następnej powłoki basha i w tym przypadku nic więcej nie robi i pozostaje puste pole.
-
-#!/bin/bash
+1.Komenda "bash" odpala nową powłokę terminala w terminalu. W nowym terminalu zmienne są resetowane i dlatego w nim nie ma zapisanego co jest pod X, ponieważ podpisaliśmy go w poprzednim. Jeżeli po wpisaniu bash, wpiszemy exit, powrócimy do poprzedniego basha, w którym ten X jest podpisany i normalnie wypisze słowo "tekst".
 
 X=tekst
 echo $X

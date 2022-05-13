@@ -2,30 +2,14 @@
 
 #!/bin/bash
 
-A=Ala
+Imie=$1
+Imie_ostatnia=${Imie:${#Imie}-1}
 
-echo $A ma kota, a kot ma ${A/a/ę}
-
-5a.1
-
-#!/bin/bash
-
-A="pszetżkole Ala"
-Al=${A:10}
-
-echo ${Al} ma kota, a kot ma ${Al/a/ę}
-
-
-J="pszetżkole Justyna"
-Ju=${J:10}
-
-echo ${Ju} ma kota, a kot ma ${Ju/a/ę}
-
-
-S="pszetżkole Stefan"
-St=${S:10}
-
-echo ${St} ma kota, a kot ma ${St}a
+if [[ $Imie_ostatnia == "a" ]]; then
+	echo $1 ma kota, a kot ma ${Imie:0:${#Imie}-1}ę
+else
+	echo $1 ma kota, a kot ma ${Imie}a
+fi
 
 
 5b.
@@ -39,4 +23,4 @@ SOP='\e[32mSOP\e[0m'
 
 echo -e ${S_First}
 echo -e ${S_Last}
-echo -e ${S/SOP/$SOP}
+echo -e ${S//SOP/$SOP}

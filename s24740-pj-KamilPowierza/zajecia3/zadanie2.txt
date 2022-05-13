@@ -8,7 +8,7 @@ for ((i = 10; i > 0; i=i-2)); do echo $i; done
 ------------------------------
 
 
-2. cwiczenie
+2. cwiczenie // Skrypt poniżej wypisuje wszystkie argumenty wywołania skryptu, nawet te co są zapisanme w cusdzysłowiach.
 
 #!/bin/bash
 

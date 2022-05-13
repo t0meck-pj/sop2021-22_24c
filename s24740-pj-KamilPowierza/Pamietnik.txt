@@ -11,6 +11,7 @@ Mój kochany pamiętniczku na dzisiejszych zajęciach nauczyłem się:
 
 Niestety na tych zajęciach nie mogłem uczestniczyć ale wszystko na temat basha nadrobiłem i nauczyłem :)
 
+
 2022-04-02
 
 Mój kochany pamiętniczku na dzisiejszych zajęciach nauczyłem się:
@@ -18,3 +19,13 @@ Mój kochany pamiętniczku na dzisiejszych zajęciach nauczyłem się:
 - Podstawowych komend jak if, pętle for, tablice oraz funkcje, które są całkiem podobne jak w innych językach,
 - Na zajęciach trochę musiałem się wysilić i powtórzyć co nie co, ponieważ nieobecność na poprzednich zajęciach to była spora luka,
 - Zajęcia jak zwykle całkiem ciekawe, lecz dla mnie trochę za szybko robiliśmy zadania i miałem mało czasu na przemyślenia.
+
+
+2022-04-23
+
+Mój kochany pamiętniczku na dzisiejszych zajęciach nauczyłem się:
+
+- Ręcznej kompilacji kodów C/C++,
+- Zajęcia nazywały się wstęp do C/C++, lecz wcześniej mało co mieliśmy cokolwiek związane z językiem C, więc nie były dla mnie niektóre zadania zrozumiałe,
+- Pisania skryptów w terminalu,
+- Fajnie że nagrywamy te zajęcia i można podejrzeć co robiliśmy na ostatnich zajęciach ale czasami dźwięk nie jest w najlepszej jakości, jednak sporo sobie przypomniałem po samym obrazie.
