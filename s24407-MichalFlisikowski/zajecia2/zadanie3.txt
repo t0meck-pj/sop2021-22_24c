@@ -1,0 +1,7 @@
+PATH     - zwraca domyślną scieżkę
+RANDOM   - zwraca losową liczbę
+PWD      - zwraca aktualną scieżkę 
+PS1      - \u@\h:\w\$. \u-username \h-hostname \w-aktualna scieżka
+USER     - zwraca nazwę użytkownika
+HOSTNAME - zwraca nazwę hosta
+OSTYPE   - zwraca nazwę OS'a
