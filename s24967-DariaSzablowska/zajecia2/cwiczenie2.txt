@@ -6,7 +6,7 @@ echo $X  -> wypisujemy zawartość zmiennej
 bash -> polecenie otwarcia nowego bash'a w bashu
 echo $X -> wypisujemy zawartość zmiennej, ona już się nie pokaże w konsoli po uruchomieniu skryptu, ponieważ zmienna nie jest zmienną środowiskową, więc nie mamy tutaj do niej dostępu
 
-nadajemy uprawnienia -> chmod 777 cwiczenie2.sh
+nadajemy uprawnienia -> chmod 644 cwiczenie2.sh
 uruchamiamy skrypt -> ./cwiczenie2.sh
 
 W KONSOLI DOSTANIEMY:

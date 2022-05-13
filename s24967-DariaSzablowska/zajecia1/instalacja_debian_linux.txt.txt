@@ -6,54 +6,64 @@ Proszę zrobić commit do swojego repozytorium do gałęzi głównej (master lub
 
 VIRTUALBOX
 1. W VirtualBoxie tworzymy nową maszynę wirtualną, wpisujemy nazwę, systemu, który chcemy zainstalować (typ i wersja zmienią się automatycznie wg. wpisanej przez nas nazwy)
-2. Wpisujemy ilość pamięci RAM jaką, chcemy, wybieramy czy chcemy stworzyć nowy dysk twardy, czy dodać już do istniejącego pliku wirtualnego dysku twardego.
+2. Wpisujemy ilość pamięci RAM jaką, chcemy (w moim przypadku 2GB, ponieważ jedst to najbardziej zalecana ilość. Natomiast sama nasza maszyna jest głównie demonstracyjna więc nawet 1GB powinien wystarczyć na nasze potrzeby. Same wymagania są systemu operacyjnego są nie duże, zależnie od tego czy chcemy instalować środowisko graficzne, czy nie.), wybieramy czy chcemy stworzyć nowy dysk twardy (wybrałam tworzenie nowego dysku, 8GB wg zaleceń w maszynie), czy dodać już do istniejącego pliku wirtualnego dysku twardego.
 3. Wybieramy typ pliku z wirtualnym dyskiem:
--VDI (VirtualBox Disk Image) standardowy format dysku wirtualnego dla VirtualBox.
+-VDI (VirtualBox Disk Image) standardowy format dysku wirtualnego dla VirtualBox. (WYBRANY, ponieważ jest to standardowy format dysku potrzebny do podstawowych czynności systemowych, co na ten moment jest wystarczające)
 -VHD (Virtual Hard Disk) format dysku używany dla oprogramowania wirtualizacyjnego VirtualPC, Hyper-V.
 -VMDK (Virtual Machine Disk) format dysku wykorzystywany przez Vmware
-4. Wybieramy czy chcemy stały rozmiar, czy dysk dynamicznie przydzielany. Przy stałym rozmiarze tworzy od razu plik o rozmiarze przez nas wybranym, nie ważne ile miejsca zajmują dane w środku VM. Dysk dynamicznie przydzielany po wybraniu maksymalnej wielkości do jakiej może rosnąć, tworzy mały plik, którego wielkość zwiększa się wraz z kolejnymi dodawanymi danymi w VM.
+4. Wybieramy czy chcemy stały rozmiar, czy dysk dynamicznie przydzielany. Przy stałym rozmiarze tworzy od razu plik o rozmiarze przez nas wybranym, nie ważne ile miejsca zajmują dane w środku VM. Dysk dynamicznie przydzielany po wybraniu maksymalnej wielkości do jakiej może rosnąć, tworzy mały plik, którego wielkość zwiększa się wraz z kolejnymi dodawanymi danymi w VM. (wybrałam dynamicznie przydzielany, działa on odrobinkę wolniej ponieważ komputer musi stale wykonywać dodatkową pracę, żeby zwiększać dysk, ale na nasze potrzeby nie ma to znaczenie, a zajmie mniej miejsca, ponieważ nie będziemy tam dodawać zbyt wiele plików)
 5. Po wybraniu wszystkich ustawień uruchamiamy maszynę, do wyboru mamy 3 opcje:
--Zwykły start, jest to domyślny rodzaj startu, wyświetla się okienko z obrazem maszyny wirtualnej. Zamknięcie okienka pozwala na restart, uśpienie i zamknięcie maszyny.
+-Zwykły start, jest to domyślny rodzaj startu, wyświetla się okienko z obrazem maszyny wirtualnej. Zamknięcie okienka pozwala na restart, uśpienie i zamknięcie maszyny. Używamy go gdy chcemy pracować typowo na pulpice systemu operacyjnego.
 -Bezgłowy start, tutaj maszyna wirtualna zostaje włączona, ale bez widocznego obrazu. 
 -Oddzielny start, przy tej opcji maszyna włącza się normalnie, tak jak przy zwykłym starcie, ale mamy także możliwość wyłączenia obrazu, bez potrzeby zatrzymywania maszyny.
 
 
 
 DEBIAN
-1. Wybór dysku startowego – wybieramy plik z systemem operacyjnym, który chcemy zainstalować na WM. (w tym przypadku wybieramy ściągnięty plik iso)
+1. Wybór dysku startowego – wybieramy plik z instalatorem systemu operacyjnego, który chcemy zainstalować na WM. (w tym przypadku wybieramy ściągnięty plik iso)
 2. Z menu wybieramy opcje Install:
 - Graphical install (umożliwia wybieranie opcji za pomocą myszki)
 - Install (ustawianie wszystkiego tekstowo w konsoli)
--Advanced options (Są do wyboru w wersji graficznej oraz zwyklej tekstowej. EXPERT INSTALL – dzięki tej opcji możemy mieć pełny wpływ na cały proces instalacji, jest on przeprowadzany w pełni przez nas , RESCUE MODE – jest to pomocne, gdy wystąpią jakieś problemy z naszym systemem, możemy wtedy uruchomić tzw. tymczasowy system operacyjny aby naprawić problem , AUTOMATED INSTALL – jest to w pełni automatyczna instalacja , Graphical Expert install, Graphical Rescue mode, Graphical Automated install )
+- Advanced options (Są do wyboru w wersji graficznej oraz zwyklej tekstowej. 
+EXPERT INSTALL – dzięki tej opcji możemy mieć pełny wpływ na cały proces instalacji, jest on przeprowadzany w pełni przez nas , 
+RESCUE MODE – jest to pomocne, gdy wystąpią jakieś problemy z naszym systemem, możemy wtedy uruchomić tzw. tymczasowy system operacyjny aby naprawić problem , 
+AUTOMATED INSTALL – jest to w pełni automatyczna instalacja , Graphical Expert install, Graphical Rescue mode, Graphical Automated install )
 - Accessible dark contrast installer menu – możliwość ustawienia trybu ciemnego
 - Help 
 -install with speech synthesis – opcja instalacji z syntezatorem mowy
-3. Ustawianie języka w jakim będzie przebiegał proces instalacji oraz język w zainstalowanym już systemie (w moim przypadku English)
+Instalacja Graficzna i zwykła różnią się tym, że przy instalacji graficznej instalacja zajmuje trochę więcej czasu, przez elementy graficzne.
+3. Ustawianie języka w jakim będzie przebiegał proces instalacji oraz język w zainstalowanym już systemie (w moim przypadku English, ponieważ w informatyce głównie używa się języka angielskiego, więc najlepiej jego używać. W razie potzreby wyszukania czegoś w internecie także łatwiej znajdziemy odpowiedź szukając w języku angielskim, a spolszczone nazwy możemy po prostu potem źle przetlumaczyć, tym samym dodając sobie dodatkowej roboty przy szukaniu odpowiedzi na nasz problem.)
 4. Wybór lokalizacji, do ustawienia odpowiedniej strafy czasowej w jakiej się znajdujemy. Tutaj nie ma naszej opcji, dlatego w kolejnych pytaniach wybieramy other -> Europe -> Poland.
-5. Wybieramy system kodowania znaków
-6. Konfiguracja klawiatury, czyli ustawienia klawiatur, w tym przypadku wybranie Polskiego, jeżeli chcemy mieć polskie literki. 
+5. Wybieramy system kodowania znaków (tutaj nie ma do wyboru Polski, więc wybieramy inne pasujące np. UK)
+6. Konfiguracja klawiatury, czyli ustawienia klawiatur, w tym przypadku wybranie Polskiego, jeżeli chcemy mieć polskie literki. (Tutaj z tego co pamiętamy wybrałam Polski, ale odpowiadając na Pana pytanie dlaczego mogę nie chcieć celowo używać j. Polskiego, to tak jak wyżej napisałam najlepiej trzymać się już we wszystkim języka angielskiego, co ułatwia wyszukiwanie problemów itp. poza tym polskich znaków i tak przeważnie nie używamy, ponieważ mogą nam narobić tylko zbędnych problemów.) 
 7. Konfiguracja sieci – proszą nas o podanie Host Name – nazwa jak będzie widziany nasz komputer w sieci oraz Domain Name – nazwa domeny.
 8. Ustawienia użytkownika który ma pełną kontrolę (roota) oraz innych dodatkowych, musimy podać jego nazwę użytkownika oraz ustawić dla niego hasło. 
 9. W kolejnym kroku mamy do wyboru kilka metod partycjonowania dysku 
 - Guided – use entire disk (Podstawowa konfiguracja z pomocą komputera, używamy całego dysku) (Tą opcję wybieram, ponieważ nie potrzebuję konkretniejszego dzielenia dysku)
-- Guided – use entire disk and set up LVM (Tak samo jak w poprzednim, tylko z wbudowanym mechanizmem systemu operacyjnego do zarządzania przestrzenią pamięci masowej)
+- Guided – use entire disk and set up LVM (Tak samo jak w poprzednim, tylko z wbudowanym mechanizmem systemu operacyjnego do zarządzania przestrzenią pamięci masowej) LVM pozwala na łatwą rozbudowę oraz na połączenie partycji znajdujących się na różnych urządzeniach w jeden dysk wirtualny. Możemy lepiej zarządzać na partycjach. Dzięki niemu możemy powiększać przestrzeń dyskową w trakcie działania systemu, bez konieczności jego wyłączania np. jeżeli z naszego jakiegoś serwera korzystają inni użytkownicy, to nie będą oni odczuwali żadnych zmian. Jego wadą jest jednak większa możliwość uszkodzenia dysków.
 - Guided – use entire disk and set up encoded LVM (-||- z zaszyfrowanym LVM, który zapewnia większe bezpieczeństwo. Zaleca się jednak stworzyć tutaj zapasowe hasła, aby nie utracić cennych danych.)
 - Manual – (własnoręczne dzielenie dysku)
-10. Wybór dysku, który chcemy podzielić, schemat partycjonowania dysku (wszystkie pliki w jednej partycji, podzielone /home (główne)  /var (zmienne) /tmp (tymczasowe)) (wybieramy jedną partycję)
+10. Wybór dysku, który chcemy podzielić, schemat partycjonowania dysku (wszystkie pliki w jednej partycji, podzielone /home (główne)  /var (zmienne) /tmp (tymczasowe)) (wybieramy jedną partycję) 
+Partycjonowanie dysku pozwala nam na uchronienie danych które mamy na nim zapisane. Wydzielenie katalogów jest ważne dla bezpieczeństwa, w przypadku gdy z systemu korzysta wiecej osob oraz może ułatwić nam pracę. 
+Z najważniejszych katalogów powinno się osobno posiadać partcję główną (root), /home oraz /usr (tu znajdują sie przeważnie wszystkie programy dla użytkowników. Dobrym pomysłem jest  także posiadanie niewielkiej osobnej partycji na katalog /tmp.
 11. Podsumowanie naszych partycji, między innymi wypisana jest jej nazwa oraz to ile miejsca zajmuje.
-12. Znalezienie i wybór lokalizacji skąd będzie korzystane z archiwum debiana (Poland -> deb.debian.org)
+12. Znalezienie i wybór lokalizacji skąd będzie korzystane z archiwum debiana (Poland -> deb.debian.org) (Wybrałam tutaj to, ponieważ kojarzyłam, że na zajęciach tego używalismy. deb.debian.org jest mirrorem dobrym jeżeli często zmieniamy miejsce swojego pobytu. Jest to serwer lustrzany obsługiwany przez sieć globalną CDN. Natomiast najlepiej użyć najbliższego serwera, który przyspieszy transfer danych i zredukuje obciążenie serwerów. Listę mirrorów możemy znaleźć tutaj https://www.debian.org/mirror/list )
 13. Wg. uznania wpisujemy HTTP  proxy – czyli serwer, który pośredniczy w przekazywaniu danych z sieci  komputerowej. Umożliwia to dostęp innym osobom. Tutaj zostawiamy puste pole, ponieważ będziemy tylko my z tego korzystać.
-14. Software selection –jakie środowisko graficzne chcemy zainstalować  (zostawiam 1, 2 i ostatnie) Tutaj z tego co mi się wydaje wybór jest zależny po prostu od preferencji :D
-- Debian desktop enviroment 
-- GNOME 
+14. Software selection –jakie środowisko graficzne chcemy zainstalować  (zostawiam 1, 2 i ostatnie) Tutaj wybór zależy od wydajności, ograniczeń sprzętowych, preferencji wizualnych, bezpieczeństwa, kompatybilności. Można zainstalować jedno konkretne lub wszystkie i doinstalować menadżery okien.
+- Debian desktop enviroment - jest on najbardziej uniwersalny
+- GNOME - wybrany, ponieważ jest jednym z najpopularniejszych środowisk graficznych. jest prosty w użyciu, ładny, a rozszerzenia pozwalają zwiększyć jeszcze bardziej jego funkcjonalność.
 - Xfce
 - Gnome Flashback
--KDE Plasma
+- KDE Plasma
 - Cinnamon
 - Mate
 - LXDE
 - LXQt
 - web serwer – instalacja jako web serwer
 - SSH server – instalacja jako serwer SSH
-- Standard system utilities – podstawowe narzędzia
-15. Install the GRUB boot loader – wybieramy TAK (GRUB bootloader umożliwia nam wybór uruchamianego systemu operacyjnego) oraz gdzie ma zostać on zainstalowany, czy chcemy wpisać miejsce samemu czzainstalować w domyślnym  (w moim przypadku 2 wybór) .
+- Standard system utilities – podstawowe narzędzia - wybrane, ponieważ zapewnia większość potrzebnych, podstawowych narzędzi. Bez tego  system także będzie działał i będzie można z niego korzystać, ale część z tych narzędzi będziemy i tak potrzebować i musieli dosinstalować później. 
+Środowisko graficzne zajmuje jednak więcej miejsca oraz spowalnia działanie. 
+15. Install the GRUB boot loader – wybieramy TAK (GRUB bootloader umożliwia nam wybór uruchamianego systemu operacyjnego) oraz gdzie ma zostać on zainstalowany, czy chcemy wpisać miejsce samemu czy zainstalować w domyślnym  (w moim przypadku 2 wybór).
+Mamy także alternatywy dla GRUB-a, takie jak np.: GRUB2, BURG, GAG, Syslinux - jest to najlżejsza wersja, LILO - Linux Loader.
+System może działać bez bootloadera, ale nie uruchomi się on bez niego sam. 
+Bootloadera instalujemy w MBR (głównym rekordzie rozruchowym), z którego na początku odczytywane są wszystkie dane, znajduje się on w pierwszym sektorze dysku. W klasycznym MBR pierwsze bajty dysku zanjmowane są właśnie przez bootloadera.

@@ -3,5 +3,5 @@ tworzymy plik 'cwiczenie1' -> nano cwiczenie1
 W EDYTORZE:
 echo "Witamy w terminalu"
 
-nadajemy uprawnienia -> chmod 777 cwiczenie1
+nadajemy uprawnienia -> chmod 644 cwiczenie1
 wpisujemy -> ./cwiczenie1 -> aby zobaczyć co jest w pliku
