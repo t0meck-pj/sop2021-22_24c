@@ -1,0 +1,20 @@
+#!/bin/bash
+function witaj {
+Tekst=$1
+Kolor=$2
+Niebieski='\033[0;34m'
+Czerwony='\033[0;31m'
+Zolty='\033[0;33m'
+Default='\033[0m'
+if [[ $Kolor == niebieski ]]; then
+	echo -e "${Niebieski}$Tekst${Default}"
+fi
+if [[ $Kolor == czerwony ]]; then
+	echo -e "${Czerwony}$Tekst${Default}"
+fi
+if [[ $Kolor == żółty ]]; then
+	echo -e "${Zolty}$Tekst${Default}"
+fi	
+return 0
+}
+witaj

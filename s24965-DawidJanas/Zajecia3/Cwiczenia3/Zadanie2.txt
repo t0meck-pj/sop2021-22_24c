@@ -1,0 +1,12 @@
+#!/bin/bash
+TABLICA[0]=1
+TABLICA[1]=2
+function fibonacii {
+	for (( i = 0; i < 10 ; i++ )); do
+		TABLICA[i+2]=$((${TABLICA[i]}+${TABLICA[i+1]}))		
+	done
+	echo ${TABLICA[@]}
+}
+fibonacii
+
+

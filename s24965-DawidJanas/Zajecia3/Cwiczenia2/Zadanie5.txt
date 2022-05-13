@@ -1,0 +1,10 @@
+!#/bin/bash
+Zmienna1=$(cat $@)
+Zmienna2=$(cat $@ | wc -w)
+TABLICA=($Zmienna1)
+for ((i = 0; i < $Zmienna2; i++)); do
+echo ${TABLICA[i]}
+done
+for ((i = $Zmienna2; i >= 0; i--)); do
+echo ${TABLICA[i]}
+done

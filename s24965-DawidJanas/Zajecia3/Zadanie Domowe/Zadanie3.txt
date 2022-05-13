@@ -1,0 +1,3 @@
+#!/bin/bash
+email='jasfasola1@gmail.com'
+[[ $email =~ ^([A-Za-z0-9._%+-]+@[A-Za-z0-9.-]+\.[a-z]+)$  ]] && echo To jest e-mail

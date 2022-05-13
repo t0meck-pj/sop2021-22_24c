@@ -1,0 +1,5 @@
+#!/bin/bash
+zmienna=$(ls | wc -l)
+if [[ $zmienna > 5 ]]; then
+echo "W bieżącym katalogu jest więcej niż 5 plików"
+fi
