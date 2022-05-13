@@ -1,0 +1,4 @@
+#!/bin/bash
+
+A=Al
+echo ${A}a ma kota, a kot ma ${A}ę

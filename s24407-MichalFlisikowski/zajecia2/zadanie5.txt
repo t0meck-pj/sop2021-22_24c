@@ -1,0 +1,30 @@
+5.a.1)	
+#!/bin/bash
+
+A=Al
+echo ${A}a ma kota, a kot ma ${A}ę
+
+5.a.2) 
+#!/bin/bash
+	 
+Name=$1
+LastChar=${Name:${#Name}-1}
+
+if [[ $LastChar == "a" ]]; then
+	echo $1 ma kota, a kot ma ${Name:0:${#Name}-1}ę
+else
+	echo $1 ma kota, a kot ma ${Name}a
+fi
+
+5.b)
+#!/bin/bash
+
+var=$1
+color='\e[32mSOP\e[0m'
+
+firstChar=${var: 0: 1}
+lastChar=${var: -1}
+
+echo 1. $firstChar
+echo 2. $lastChar
+echo -e 3. "${var//SOP/$color}"

@@ -3,9 +3,3 @@
 2.2) Aby zapisac ciąg znaków, w którym występują białe znaki należy użyć cudzysłówów lub apostrofów.
 
 2.3) Apostrofy zamieniają w ciąg znaków znaki specjalne np. "$".  
-
-2.4)	
-	 #!/bin/bash
-
-	 A=Al
-	 echo ${A}a ma kota, a kot ma ${A}ę
