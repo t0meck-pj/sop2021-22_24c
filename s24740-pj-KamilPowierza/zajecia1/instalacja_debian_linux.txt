@@ -1,0 +1,106 @@
+Zajecia 1: Instalacja systemu linux na maszynach wirtualnych
+Prosze zrobic commit do swojego repozytorum do galezi glownej (master lub main) w katalogu o nazwie sXXXXX-ImieNazwisko. W nim proszę stworzyć katalog zajecia1 a w nim plik instalacja_debian_linux.txt z opisem procesu instalacji systemu. Czyli sXXXXX-ImieNazwisko/zajecia1/instalacja_debian_linux.txt
+
+Opis procesu instalacji systemu Debian
+
+1.|Debian GNU/Linux installer menu (BIOS mode)|
+
+*Graphical install - Instalacja systemu graficznie. (2 podpunkt rozwinięcie)
+
+*Install - Instalacja systemu tekstowo. (2 podpunkt rozwinięcie)
+
+*Advanced options:
+	> Back - Cofa nas do poprzedniego menu.
+	> Graphical expert install - Instalacja systemu przebiega normalnie lecz mamy wgląd do wszystkiego co się dzieje w tle.
+	> Graphical rescue mode - Jak sama nazwa wskazuje, możemy graficznie naprawić jakiś błąd w systemie jeżeli wiemy co dokładnie się zepsuło.
+	> Graphical automated install - Graficznie oraz automatycznie, prawie wszystko, robi za nas przy instalacji, lecz przy tym potrzebujemy już gotowych odpowiedzi zapisanych w odpowiednim pliku.
+	> Expert install - Zwykła instalacja, podobna do "Graphical expert install", lecz tutaj wszystko dzieje się w terminalu.
+	> Rescue mode - Tak samo jak w "Graphical rescue mode", przy zepsutej rzeczy w systemie można to tutaj naprawić lecz w terminalu.
+	> Automated install - Automatycznie, prawie wszystko, robi za nas przy instalacji, lecz w tym przypadku przy użyciu terminala.
+	> Speech-enabled advanced options:
+		> Back - Cofa nas do poprzedniego menu.
+		> Expert speech install - Instalacja ekspercka przy użyciu syntetyzatora mowy (robota).
+		> Rescue speech mode - Pozwala na naprawę błędów przy użyciu syntetyzatora mowy (robota).
+		> Automated speech install - Zautomatyzowana instalacja przy użyciu syntetyzatora mowy (robota).
+
+*Accesible dark contrast intaller menu - Pozwala na edycje wyglądu instalacji. Zmienia nam kontrast całego menu.
+
+*Help - Przerzuca nas do sekcji pomocy gdzie możemy uzyskać odpowiedź na nasze problemy.
+
+*Install with speech synthesis - Odpala proces instalacji z pomocą dla osób słabo widzących lub nie widzących. System wykrywa naszą kartę dźwiękową i czyta wszystkie możliwe opcje do wyboru i pomaga w instalacji.
+
+2. |Graphical install / Install|
+	&1 > Select language - Wybór języka używanego do procesu instalacji. Wybrałem opcję English.
+
+	&2 > Select your location - Wybór lokalizacji, by później system mógł ustawić naszą strefę czasową. Gdy jednak chcemu ustawić naszą Polską strefę, musimy przejść w opcję 'other > Europe > Poland'
+
+	&3 > Configure locales - Ustawienie ustawień lokalnych, jak wyświetlanie naszej daty itp.
+
+	&4 > Configure the keyboard - Tutaj jest wszystko zależne od naszej klawiatury, ponieważ wybieramy "język naszej klawiatury". Lepiej zawsze ustawiać angielską, ponieważ jest ona najbardziej uniwersalna, lecz gdy użyjemy znaku nie przystosowaną do angielskiej klawiatury to zostanie on zastąpiony "kwadratem" (znakiem, który system go nie zna).
+
+	&5 > Configure the network - Tutaj konfigurujemy nasze połączenie z internetem.
+	&5.1 > Hostname - Ustawiamy nazwę naszego hosta.
+	&5.2 > Domain name- Jeżeli posiadamy jakąś domenę w sieci, możemy ją tutaj wprowadzić. Nie musimy.
+
+	&6 > Set up users and passwords (Root) - ustawiamy hasło dla roota.
+	&6.1 > Root password - Wprowadzamy hasło roota.
+	&6.2 > Re-enter password to verify - Powtarzamy hasło roota.
+
+	&7 > Set up users and passwords (Full name) - Ustawiamy pełne imię i nazwisko.
+
+	&8 > Set up users and passwords (New user) (Username) - Ustawiamy nazwę nowego użytkownika.
+
+	&9 > Set up users and passwords (New user) - ustawiamy hasło dla nowego użytkownika.
+	&9.1 > Choose a password for the new user - Wprowadzamy hasło dla nowego użytkownika.
+	&9.2 > Re-enter password to verify - Powtarzamy hasło nowego użytkownika.
+
+	&10 > Partition disks - Wybieramy partycjonowanie dyskami.
+	&10.1 > Guided -> use entire disk - używa całego wybranego dysku.
+	&10.2 > Guided -> use entire disk and set up LVM - używa całego wybranego dysku i przenosi do konfiguracji LVM.
+	&10.3 > Guided -> use entire disk and set up encrypted LVM - używa całego wybranego dysku i przenosi do konfiguracji zaszyfrowanego LVM.
+	LVM - Logical volume management - pozwala na lepsze i szybsze rozmieszczanie danych na dysku przez administratora.
+
+	&10.4 > Manual -> Manualna konfiguracja partycji dysku.
+	&10.4.1 > By przejść dalej musimy kliknąć na dysk po czym wybrać opcje "Yes".
+	&10.4.2 > Klikamy w partycje, która ma w nazwie "FREE SPACE"
+	&10.4.3 > Create a new partition - Po kolei manualnie konfigurujemy miejsce na dysku na poszczególne partycje. Musimy stworzyć odzielne partycje na /home (główna partycja), /var (zmienne), /tmp (temporary, czyli chwilowe, tymczasowe pliki), /boot (pliki systemowe), na którym możemy ustawić flagę bootującą, czyli powiedzieć maszynie by się ten system odpalał jako pierwszy (czasami jest ona potrzebna by system w ogóle się odpalił).
+	&10.4.4 > Automatically partition the free space - Automatycznie przydzieli nam poszczególne partycje.
+	&10.4.4.1 > All files in one partition (recommended for new users) - Wszystkie pliki będą na jednej partycji i jest ta opcja rekomendowana dla nowych użytkowników. Tą opcję wybrałem, ponieważ nie potrzebowałem nic specjalnego konfigurować.
+	&10.4.4.2 > Separate /home partition - Oddzielnie przydzieli partycje dla /home.
+	&10.4.4.3 > Separate /home, /var, and /tmp partitions - Oddzielnie przydzieli partycje dla /home, /var i /tmp.
+	&10.4.5 > Show Cylinder/Head/Sector information - pokazuje informacje o naszym dysku.
+
+	&10.5 > Finish partitioning and write changes to disk - Po zakończonym partycjonowaniu wybieramy tą opcję by zakończyć i przejść dalej
+	&10.5.1 > Zostaniemy zapytani czy na pewno chcemy te dyski tak ustawić i czy mogą być one zformatowane.
+
+	&10.6 > Configure the package manager - Jeżeli chcemy możemy doinstalować pare paczek, których nie do końca potrzebujemy.
+	&10.6.1 > Wybieramy z jakiego regionu mają pobierać się inne paczki.
+	&10.6.2 > Wybieramy z jakiej domeny mają się one pobierać. Zalecane dla nas to "ftp.task.gda.pl"
+	&10.6.3 > HTTP proxy information - Możemy tutaj wpisać nasze proxy HTTP (nie wiem do końca co to znaczy). Możemy zostawić to również puste.
+	
+	&10.7 > Configuring popularity-contest - Wybieramy czy chcemy wysyłać anonimowe statystyki by pomóc developerom. Ja wybrałem opcję nie.
+
+	&10.8 > Software selection - Sam core już jest zainstalowany, lecz teraz wybieramy jak chcemy by wyglądał ten system i do czego on ma być wykorzystywany. Program wyświetlający te ustawienia nazywa się tasksel. Po zainstalowaniu już wszystkich potrzebnych systemów, możemy go ponownie uruchomić. Musimy w terminalu zainstalować pakiet tasksel "sudo apt-get install tasksel" a potem tylko "sudo tasksel" i powinno wyświetlić się to samo menu.
+	&10.8.1 > Debian desktop environment - Instaluje środowisko debiana.
+	&10.8.2 > ... GNOME - Graficznie intuicyjny i atrakcyjny pulpit oraz rozbudowana platforma, w której łatwo o integracje z resztą pulpitu.
+	&10.8.3 > ... Xfce - lekkie środowisko graficzne dla systemów *NIX. Szybko ładują się aplikacje.
+	&10.8.4 > ... GNOME Flashback - Sesja open source dla GNOME 3. Wygląda tak samo jak GNOME 2 ale korzysta z nowszych narzędzi GTK+ 3 i powiązanych technologii.
+	&10.8.5 > ... KDE Plasma - Graficzne środowisko typu open source. Łatwa obsługa z współczesną funkcjonalnością.
+	&10.8.6 > ... Cinnamon - Open source system. Oferuje szybkie działanie.
+	&10.8.7 > ... MATE - Zapewnia intuicyjne i atrakcyjne środowisko graficzne wykorzystujące tradycyjne metafory dla Linuxa i innych uniksopodobnych systemów operacyjnych.
+	&10.8.8 > ... LXDE - Zaprojektowany jest tak by działał na słabsze maszyny.
+	&10.8.9 > ... LXQt - Lekkie środowisko graficzne typu open source. Powstała z połączenia projektów LXDE i Razor-qt.
+	&10.8.10 > web server - Wieloplatformowy serwer HTTP open source, który obsługuje duży procent witryn internetowych.
+	&10.8.11 > SSH server - Wykorzystuje protokół bezpiecznej powłoki do akceptowania połączeń ze zdalnych komputerów.
+	&10.8.12 > standard system utilities - Instaluje dodatkową ilość standardowych paczek systemowych.
+
+	&11 > Install the GRUB boot loader - Jeżeli mamy kilka systemów zainstalowanych na tym samym dysku to przy starcie jednego z nich będziemy mieli do wyboru, który system chcemy odpalić. W tym podpunkcie pyta się nas czy chcemy to mieć zainstalowane. Wybrałem opcję tak i wybrałem dysk, na którym jest zainstalowany system.
+	&11.1 > Bootloader - Odrazu po tym jak BIOS zakończy procedurę POST, bootloader (program rozruchowy) pozwala na załadowanie danego systemu, na którym jest on zainstlowany.
+	&11.1.1 > GRUB może być zainstalowany na dysku twardym, pamięci Flash, dysku zewnętrznym USB, płycie CD/DVD itp. W pliku /boot/grub.
+	&11.1.2 > Jest sporo alternatyw GRUBa, np. rEFInd, GRUB4DOS, Grub2Win, coreboot.
+	&11.1.3 > Da się odpalić domyślnie Windowsa za pomocą Bootloadera. Trzeba tylko zmienić kolejność bootu w biosie. Trzeba zwrócić uwagę na wersję GRUBA bo w GRUB2 jest nieco inaczej z tą zmianą.
+	&11.1.4 > Do instalacji dwóch systemów, linuxa i windowsa potrzebne są dwa dyski zewnętrzne, np. pendrive z obrazami systemu i program pomagający do tak zwanego dual-boota, Etcher.
+
+	&11.2 > Wybieramy jaki dysk ma być ten główny, który system ma się odpalać.
+
+	&12 > Finish the installation - Na koniec warto usunąć 'installation media' by następnym razem nie odpalać na nowo instalacji.

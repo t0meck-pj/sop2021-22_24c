@@ -1,0 +1,54 @@
+1.Komenda "bash" odpala nową powłokę terminala w terminalu. W nowym terminalu zmienne są resetowane i dlatego w nim nie ma zapisanego co jest pod X, ponieważ podpisaliśmy go w poprzednim. Jeżeli po wpisaniu bash, wpiszemy exit, powrócimy do poprzedniego basha, w którym ten X jest podpisany i normalnie wypisze słowo "tekst".
+
+X=tekst
+echo $X
+bash
+echo $X
+
+2.Tutaj zmienna musi mieć cudzysłów lub apostrofy, ponieważ jest więcej niż jedno słowo z użyciem spacji.
+
+#!/bin/bash
+
+X=Tekst dłuższy
+echo $X
+
+Jak powinnien wyglądać działający kod:
+
+#!/bin/bash
+
+X="Tekst dłuższy"
+echo $X
+
+lub:
+
+#!/bin/bash
+
+X='Tekst dłuższy'
+echo $X
+
+
+3.Różnica między " a ' jest taka że cudzysłów pozwala na wypisanie więcej niż jednego słowa z użyciem spacji i przy okazji użyciu zmiennych. Przy apostrofie wypisujemy cały ciąg znaków w nich więc jeżeli bedziemy chcieli użyć normalnie zmiennej to wypisze się nazwa tej zmiennej a nie wartość zmiennej.
+
+#!/bin/bash
+
+X="Tekst 1"
+Y="tekst:$X"
+echo "$Y"
+Y='tekst:$X'
+echo "$Y"
+Y=tekst:$X
+echo "$Y"
+
+4.Tutaj można zmienić zmienną na "Al" i wtedy w dwóch przypadkach zmiennić końcówkę. W późniejszym etapie zrobię to tak jak powinno być, jednak tutaj pokazuję taką na szybko opcję jaka mi wpadła do głowy :)
+
+#!/bin/bash
+
+A=Ala
+echo $A ma kota, a kot ma ${A}ę
+
+może wyglądać to tak:
+
+#!/bin/bash
+
+A=Al
+echo ${A}a ma kota, a kot ma ${A}ę

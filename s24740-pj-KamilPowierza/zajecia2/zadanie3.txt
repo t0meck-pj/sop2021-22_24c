@@ -1,0 +1,16 @@
+PATH - Wypisuje nam wszystkie podstawowe ścieżki, gdzie bash po wypisaniu jakiejś komendy, wyszukuje on właśnie w tych lokalizacjach jeżeli w komendzie nie jest podana żadna ścieżka. Przykładowo jak mamy zainstalowaną jave i wpiszemy komendę "java", nie podając gdzie ta java w ogóle jest zainstalowana, to pokaże nam jej możliwości. Ładniejsze wypisanie tych ścieżej można znaleźć pod komendą <echo $PATH | tr ":" "\n">.
+
+RANDOM - Wypisuje nam randomową liczbę w zakresie 0 - 32767.
+
+PWD - Pokazuje nam aktualną ścieżkę, w której się znajdujemy.
+
+PS1 - Jest to pierwsza wartość, która się nam wyświetla po odpaleniu shell'a. Ma on postać \u@\h \W\\$ gdzie: 
+\u = użytkownik,
+\h = nazwa hosta,
+\W = ścieżka w której aktualnie jesteśmy/pracujemy.
+
+USER - podobna komenda to "whoami". Wyświetla naszą nazwę użytkownika.
+
+HOSTNAME - Wyświetla nazwę hosta.
+
+OSTYPE - Sprawdza nam jaki system jest używany.

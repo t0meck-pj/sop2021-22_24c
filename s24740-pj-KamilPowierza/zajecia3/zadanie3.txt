@@ -1,0 +1,51 @@
+1.cwiczenie
+
+#!/bin/bash
+
+Czarny=30
+Czerwony=31
+Zielony=32
+Zolty=33
+Niebieski=34
+Fioletowy=35
+Cyjan=36
+
+function Pokoloruj () {
+	echo -e '\e['$2'm'$1'\e[0m'
+}
+
+Pokoloruj "Przykladowy tekst do pokolorowania" $[$1]
+
+#----Kolory----#
+#Czarny       30
+#Czerwony     31
+#Zielony      32
+#Zolty        33
+#Niebieski    34
+#Fioletowy    35
+#Cyjan        36
+
+
+------------------------------
+
+
+2. cwiczenie
+
+#!/bin/bash
+
+function Ciag () {
+	pierwsza=0
+	druga=1
+	for (( i = -1; i < $1; i++ )){
+		dodawanie=$((pierwsza+druga))
+		echo $pierwsza
+		pierwsza=$druga
+		druga=$dodawanie
+	}		
+}
+
+Ciag "19"
+
+
+#Przy ciagu numer 93 już się pojawia liczba ujemna gdzie takowa tam się nie powinna znajdować. Jeżeli dobrze rozumiem to ciąg 93 to już będzie wartość powyżej maksymalnej liczby liczonej w 64 bitach. Maksymalna ta wartość wynosi od -9,223,372,036,854,775,808 do 9,223,372,036,854,775,807. Wartość Ciągu 93 w rzeczywistości wynosić powinna 12,200,160,415,121,876,738.
+
