@@ -1,0 +1,7 @@
+PATH - lista ścieżek, w których system wyszukuje plik wykonywalny jeśli został on podany bez ścieżki do niego. Może się przydać np. do stworzenia folderu, do którego wrzucamy skrypty,a następnie dodać go do zmiennej środowiskowej PATH, żeby nie trzeba było za każdym razem pisać pełnej śieżki do skryptów.
+RANDOM - wyświetla losową liczbę. Przyda się do genreowania liczby pseudolosowej.
+PWD - aktualna ścieżka, w której się znajdujemy.
+PS1 - wyświetla tzw. znak zachęty, czyli to co znajduje się po lewej stronie od kursora. Można dodać dodatkowe dane oraz zmienić jego kolor.
+USER - wyświetli nazwę obecnego użytkownika
+HOSTNAME - nazwa naszego komputera.
+OSTYPE - typ systemu.
