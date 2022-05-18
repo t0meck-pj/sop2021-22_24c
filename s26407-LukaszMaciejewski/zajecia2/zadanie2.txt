@@ -1,0 +1,42 @@
+Ćwiczenie 2
+Zobacz taką serię poleceń:
+
+X=tekst
+echo $X
+bash
+echo $X
+
+Co się stało? Czy potrafisz wyjaśnić?
+
+Odpowiedź: Wartość zmiennej, czyli 'tekst' wyświetliła się tylko raz ponieważ ta zmienna nie była widoczna w nowej powłoce. 
+
+--------------
+Zobacz:
+
+X=Tekst dłuższy
+echo $X
+
+Co jest nie tak? jak to naprawić? Zobacz czy pomoże zastosowanie cudzysłowów i apostrofów.
+
+Odpowiedź: skrypt się nie wykona. Wyskakuje informacja "linia 3: dłuższy: nie znaleziono polecenia". Aby to naprawić należy nazwę zmiennej umieścić między znakami apostrofu.
+
+--------------
+Zobacz:
+
+X="Tekst 1"
+Y="tekst:$X"
+echo "$Y"
+Y='tekst:$X'
+echo "$Y"
+Y=tekst:$X
+echo "$Y"
+
+Jaka jest różnica między " a ' ?
+
+Odpowiedź: rezultatem będzie:
+tekst:tekst 1
+tekst:$X
+tekst:tekst 1
+
+Znak " zapisuje do wartości zmiennej tekst podany między znakami ", ale zmienne zamienia na wartości
+Znak ' zapisuje cały tekst między znakami do wartości zmiennej nawet znaki specjalne

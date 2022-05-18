@@ -1,0 +1,9 @@
+Zobacz co przechowują zmienne i opisz jak rozumiesz uzyskany wynik. Do czego on jest i kiedy może się wg Ciebie przydać:
+
+PATH - ta zmienna przechowuje informacje w jakich katalogach znajdują się pliki wykonywalne
+RANDOM - jest to polecenie generujące liczbę losową
+PWD - wypisuje nazwę bieżącego katalogu roboczego
+PS1 - prompt, czyli znak zachęty - można go dowolnie konfigurować
+USER - zwraca login użytkownika
+HOSTNAME - zwraca nazwę serwera
+OSTYPE - zwraca typ systemu
