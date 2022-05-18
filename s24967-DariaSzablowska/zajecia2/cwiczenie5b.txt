@@ -1,0 +1,18 @@
+W EDYTORZE:
+
+text=$1
+colourChange='\e[32mSOP\e[0m'
+firstIndex=${text: 0: 1} -> zmienna wybierająca znak/znaki od 0 do 1 indeksu
+lastIndex=${text: -1} -> zmienna wybierająca literkę z ostatniego indeksu
+echo 1. $firstIndex
+echo 2. $lastIndex
+echo -e 3. "${text//SOP/$colourChange}" -> podwójny slash podmienia każde wystąpienie SOP w tekście na SOP (na zielono)
+
+
+W KONSOLI:
+./cwiczenie5b.sh 'Zadanie na SOP, cwiczenie 5b SOP'
+
+1. Z
+2. P
+3. Zadanie na SOP, cwiczenie 5b SOP -> obydwa SOP wyświetlane na zielono
+

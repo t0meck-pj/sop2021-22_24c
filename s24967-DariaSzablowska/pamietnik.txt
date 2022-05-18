@@ -1,0 +1,25 @@
+2022.03.12
+Mój kochany pamiętniczku na dzisiejszych zajęciach dowiedziałam się:
+
+- jak zdać przedmiot i poznałam naszego prowadzącego
+- jak skonfigurować Debiana w VirtualBoxie
+- dowiedzialam się czym jest fragmentacja (to chyba jedno z niewielu pojęć które zapamiętałam, muszę chyba więcej notować następnym razem)
+- bardzo podoba mi się, że gdy coś jest nie jasne, można zadać w każdym momencie pytanie i mieć pewność, że otrzyma się dokładne wytłumaczenie :)
+- pierwsze zajęcia były wprowadzające, więc wydaje mi się, że wszystko jest w miarę zrozumiałe :D
+
+2022.03.26
+Mój kochany pamietniczku, na dzisiejszych zajęciach:
+
+- poznałam podstawowe komendy basha
+- nauczyłam się jak wyjść z vima
+- jak na razie wszystko jest jasne i bardzo przyjemne do robienia, jedynie nie do końca rozumiem jednego zapisu sed w ćwiczeniu 6
+
+2022.04.09
+Mój kochany pamietniczku, na dzisiejszych zajęciach:
+
+- nauczyłam się nowych komend w bashu
+- zobaczyłam jak robić pętle i ify w bashu
+- wszystko było w miarę zrozumiałe, lecz do przećwiczenia w domu
+
+2022.04.21
+Mój kochany pamiętniczku, niestety nie mogłam być na dzisiejszych zajęciach, na których uczyliśmy się podstaw języa C. Dlatego czeka mnie nadrabianie zaległości.
