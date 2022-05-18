@@ -1,0 +1,19 @@
+W wierszu polecen wpisalem:
+    X=tekst
+    echo $X
+    bash
+    echo $X
+
+Po pierwszym wywolaniu zmiennej X nastepuje jej wypisanie zgodnie z zadana wartoscia.
+W drugim przypadku, przeszlismy do drugiego poziomu powloki bash, a zmienna X byla zadeklarowana
+w na poprzednim poziomie. Stad, na kolejnym poziomie pod zmienna X nie jest zadeklarowana
+zadna wartosc.
+
+Stworzenie zmiennej X=Tekst dluzszy spowoduje zadeklarowanie jedynie pierwszego czlonu.
+Po wykonaniu komendy echo, w wierszu polecen wystapi informacja, ze nie znajduje polecenia dluzszy.
+Zeby zadeklarowac cala zmienna nalezy uzyc cudzyslowiow lub apostrofow.
+
+Jesli chodzi o roznice miedzy " a ', w przypadku " zmienna zadeklarowana jak w przykladzie
+Y="tekst:$X" zostanie wypisana jako tekst wraz z wartoscia zmiennej X. Natomiast w przypadku '
+komenda echo wypisze jedynie to, co zostalo wpisane do zmiennej, bez wywolania faktycznej wartosci X.
+

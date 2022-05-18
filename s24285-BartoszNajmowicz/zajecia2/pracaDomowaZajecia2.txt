@@ -1,0 +1,8 @@
+Skrypt bedzie wygladal nastepujaco (jako argument nalezy podac nazwe pliku):
+    #!/bin/bash
+
+    A=$1 #zmienna
+    RED=$'\e[31m' #41 podswietlenie na czerwono, 31 - zmiana koloru czcionki
+    NC=$'\e[0m' #bez koloru
+    
+    printf ${NC} && sed "s/Bartek/${RED}Bartek${NC}/g" $A

@@ -1,0 +1,5 @@
+W celu "normalnego" (tzn. z nowymi liniami) wypisania komendy ls -l w podpowloce po wczesniejszym przypisaniu jej do zmiennej X,
+nalezy wywolac komende echo z cudzyslowiami, tj.:
+echo "$X"
+Dzieje sie tak, poniewaz bez cudzyslowiow komenda $(...) usuwa nowe linie.
+Dodanie cudzyslowiow pozwala na wypisanie zmiennej w postaci polecenia tak jak "w oryginale" (bez kolorkow).
