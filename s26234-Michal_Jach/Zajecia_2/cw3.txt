@@ -1,6 +1,13 @@
 Ćwiczenie 3
 
-PATH jest listą jednego lub więcej katalogów do którego odwołuje się polecenie
+PATH to zmienna środowiskowa która wskazuje bash-owi, gdzie szukać programów w systemie plików. Dla potwierdzenie zrozumienia pojęcia zmeinnej środowiskowej jest to powłoka budowana za każdym razem, gdy rozpoczyna sesję. PATH jest zmienna środowiskową , która śledzi niektóre katalogi. Domyślnie zmienna PATH zawiera następujące lokalizacje:
+/usr/bin
+/usr/sbin
+/usr/local/bin
+/usr/local/sbin
+/kosz
+/sbin
+Zmienna PATH przechowuje, gdzie można znaleźć pliki wykonywalne. Za każdym razem, gdy uruchamiane jest polecenie, powłoka wyszukuje katalogi PATH dla docelowego pliku wykonywalnego i uruchamia go. Na przykład, dla komendy ‘echo’, gdy wpiszę w bash-a ‘which echo’ dowiem się, gdzie znajduje sie plik wykonywalny dla komendy ‘echo’. W moim przypadku to ‘/bin/echo’.
 
 RANDOM pozwala generować losowe intigery. w zakresie 0 do 32767
 Dla przykładu gerenrowanie 3 losowych intigerów 

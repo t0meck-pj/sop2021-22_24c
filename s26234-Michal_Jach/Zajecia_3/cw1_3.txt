@@ -1,0 +1,9 @@
+!#/bin/bash
+
+nazwa_pliku = "$(basename $0)"
+sama_nazwa = "${nazwa_pliku%.*}"
+rozszerzenie = "${nazwa_pliku##*.}"
+
+if [ "${rozszerzenie}" != "sh" ]; then
+	mv $0 ${0}.sh
+fi
