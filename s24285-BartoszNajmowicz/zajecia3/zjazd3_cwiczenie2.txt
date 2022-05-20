@@ -1,0 +1,65 @@
+Cwiczenie 2.1
+
+#!/bin/bash
+
+for i in {10..1..-2}; 
+do 
+	echo $i
+done
+
+
+Cwiczenie 2.2
+
+#!/bin/bash
+
+for i in $*
+do 
+	echo '"'$i'"' 
+done
+
+
+Cwiczenie 2.3
+
+#!/bin/bash
+
+element=`ls`
+for kazdyElement in $element
+do
+	echo Patrzcie Panstwo, oto plik: $kazdyElement
+done
+
+
+Cwiczenie 2.4
+
+#!/bin/bash
+
+element=`ls`
+for kazdyElement in $element
+do
+        zmieniany=$kazdyElement
+	if [ ${zmieniany##*.} == "c" ]
+	then cc ${zmieniany} -o ${zmieniany:0:${#zmieniany}-2}
+	fi
+done
+
+
+Cwiczenie 2.5
+
+#!/bin/bash
+
+plik=`cat $@`
+
+echo "Wypisanie zawartosci plikow od poczatku do konca:"
+echo -e "$plik \n"
+
+for ((i=0; i<${#plik}; i++))
+do
+        Tablica[i]=${plik:i:1}
+done
+
+echo "Wypisanie zawartosci plikow na odwrot:"
+for ((i="${#Tablica[@]}"; i>=0; i--))
+do
+	printf %s "${Tablica[i]}"
+done
+echo

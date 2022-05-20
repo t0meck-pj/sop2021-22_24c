@@ -1,0 +1,69 @@
+Cwiczenie 1.1
+
+#!/bin/bash
+
+if [ $# -ne 1 ]
+then 
+	echo "Nie podano argumentow."
+else
+	echo $1
+fi
+
+
+Cwiczenie 1.2
+
+#!/bin/bash
+
+if [ -e ./config.cfg ]
+then
+	./config.cfg
+elif [ $# -ne 0 ] && [ -e ./$1 ]
+then
+	./$1
+
+else
+	echo "BLAD!"
+fi
+
+
+Cwiczenie 1.3
+
+#!/bin/bash
+
+nazwa=$(basename $0)
+rozszerzenie=${nazwa##*.}
+
+echo Rozszerzenie tego pliku, to: ${rozszerzenie}
+
+if [ “${rozszerzenie}” != “sh” ]
+then
+	mv $0 ${0}.sh
+fi
+
+lub
+
+#!/bin/bash
+
+nazwa=$(basename $0)
+rozszerzenie=${nazwa#"${nazwa%??}"}
+
+echo Rozszerzenie tego pliku to: ${rozszerzenie}
+
+if [ “${rozszerzenie}” != “sh” ]
+then
+	mv $0 ${0}.sh
+fi
+
+
+Cwiczenie 1.4
+
+#!/bin/bash
+
+licznik=`ls | wc -l`
+
+if [ $licznik -gt 5 ]
+then
+	echo W katalogu jest wiecej niz 5 plikow.
+else
+	echo W katalogu jest mniej niz 5 plikow.
+fi
