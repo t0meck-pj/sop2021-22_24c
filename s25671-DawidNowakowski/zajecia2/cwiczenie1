@@ -1,0 +1,9 @@
+W Git Bash wpisuję kolejno:
+nano (komenda uruchamia dostepny edytor tekstowy)
+w edytorze -> echo "Witamy w terminalu" //echo wypisuje linie tekstu zawarta w cudzyslowach
+uzywam kombinacji klawiszy "ALT + X" aby zamknac edytor; edytor zapyta o to czy jestem pewny -> "Y" potwierdzam; 
+zarząda podania nazwy nowopowstalego pliku, uzylem "z2cw1";
+po zamknieciu edytora w terminalu wpisuje "./z2cw1";
+wyswietla sie:
+
+Witamy w terminalu
