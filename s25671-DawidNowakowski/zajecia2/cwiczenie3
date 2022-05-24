@@ -1,0 +1,38 @@
+W bashu: nano z2cw3
+/* Wpisuje tresc zadania */
+
+echo "path - $PATH"
+echo "random - $RANDOM"
+echo "pwd - $PWD"
+echo "ps1 - $PS1"
+echo "user - $USER"
+echo "hostname - $HOSTNAME"
+echo "ostype - $OSTYPE"
+
+/* zapisuje 
+
+(w poprzednich cwiczeniach korzytalem z GIT BASH, stad nie mialem potrzeby nadawania uprawnien,
+robiac cwiczenie3 za pomoca PuTTY zalogowalem sie do szuflandii, gdzie uruchomienie pliku wymaga nadania uprawnien.
+Stad komende "./z2cw3" poprzedzam "chmod u+rwx z2cw3" "chmod go+r-wx" )
+
+/// sciezka z komendy $path byla zbyt dluga do przepisania, stad zmiana ^^" ... zmiana wyszla na dobre bo dzieki niej zwrocilem uwage na chmod ///
+
+uruchamiam */
+
+w konsoli:
+
+path - /usr/local/bin:/usr/bin:/usr/local/games:/opt/puppetlabs/bin
+random - 6485
+ps1 -
+user - s25671
+hostname - szuflandia
+ostype - linux-gnu
+
+_____________________________________________________________________________________________________________________
+
+PATH - przechowuje gdzie mozna znalezc pliki wykonywalne. Uzycie dowolnego polecenia sprawia, ze powloka wyszukuje katalogi PATH dla docelowego pliku wykonywalnego i go uruchamia
+RANDOM - generuje pseudolosowo liczbe z zakresu 0 - 32767.
+PS1 - znacznik zachety, ktory jest modyfikowalny. Wyswietlany jest po nazwie uzytkownika, hosta i sciezki w ktorej uzytkownik sie znajduje. Domyslnie "$".
+USER - drukuje nazwe aktualnego uzytkownika terminala
+HOSTNAME - drukuje nazwe hosta
+OSTYPE - drukuje nazwe systemu operacyjnego
