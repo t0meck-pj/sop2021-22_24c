@@ -1,4 +1,4 @@
-W terminalu: nano z2cw2 (podanie nazwy po komendzie nano tworzy od razu plik o wskazanej nazwie)
+W bashu: nano z2cw2 (podanie nazwy po komendzie nano tworzy od razu plik o wskazanej nazwie)
 
 do pliku zapisuje ponizsze kod, ktory nastepnie sprawdzam:
 
@@ -15,7 +15,7 @@ tekst
 
 _____________________________________________________________________________________________________________________
 
-czyszcze plik, do pliku zapisuje ponizsze kod, ktory nastepnie sprawdzam:
+czyszcze plik, do pliku zapisuje ponizszy kod, ktory nastepnie sprawdzam:
 
 X=Tekst dłuższy
 echo $X
