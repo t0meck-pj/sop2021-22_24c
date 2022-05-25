@@ -1,0 +1,26 @@
+W bashu: nano z2cw5b
+W nano edytorze:
+
+#!/bin/bash
+
+X=$1
+Y=${#Z}
+
+echo "${X:0:1}"
+echo "${X:(Y-1):1}"
+
+SOP="\e[32mSOP\e[0m"
+
+Q="SOP! SOP w imieniu prawa! SOP w imieniu prawa!"
+
+echo -e "${Q//SOP/$SOP}"
+
+/*zapisuje*/
+
+chmod u+rwx z2cw5b
+./z2cw5b Proba
+
+-> :
+p
+a
+SOP! SOP w imieniu prawa! SOP w imieniu prawa! // SOP wyswietla sie kazdorazowo na zielono
