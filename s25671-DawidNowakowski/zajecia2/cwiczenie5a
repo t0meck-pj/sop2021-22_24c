@@ -1,0 +1,21 @@
+W bashu: nano z2cw5a2
+W nano edytorze:
+
+#!/bin/bash
+
+X=$1
+Y=${#Z}
+
+if [ "${X:Y-1} == 'a' ]; then
+    echo "$1 ma kota, a kot ma ${X:0:Y-1}ę."
+else
+    echo "$1 ma kota, a kot ma ${X}a."
+fi
+/*zapisuje*/
+
+chmod u+rwx z2cw5a2
+./z2cw5a2 Ala
+-> Ala ma kota, a kot ma Alę.
+
+./z2cw5a2 Adam
+-> Adam ma kota, a kot ma Adama.
