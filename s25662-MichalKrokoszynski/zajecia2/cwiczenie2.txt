@@ -1,0 +1,20 @@
+X=tekst
+echo $X
+bash
+echo $X
+
+zmienna X została zdeklarowana w wyższej powłoce niż 4 linijka zostala wykonana.
+Po prostu nie ma w tej drugiej powłoce tej zmiennej.
+
+
+
+X=Tekst dłuższy
+echo $X
+
+W tym przypadku bash sprobuje "dłuższy" zinterpretowac jako komende.
+Naprawić się da wstawiając wartość w cudzysłów, czyli:
+X="Tekst dłuższy"
+
+
+pojedyńczy ' jest traktowany jako tylko string nic wiecej tam sie nie zmieni przez inną zmienna (czysty teskt).
+W podwójnym " da się wsadzić jakąś zmienną w string.
