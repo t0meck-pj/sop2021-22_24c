@@ -1,0 +1,70 @@
+Cwiczenie 1:
+*************
+echo "Witamy w terminalu"
+*************
+
+Cwiczenie 2:
+"tekst" wyswietlilo sie tylko raz, stalo sie tak, poniewaz pierwsze polecenie echo wywolane jest w obecnym bashu, a poleceniem bash otiweramy nowego basha ktory nie zna zmiennej X. Rozwiazaniem tego problemu byloby wyeksportowanie zmiennej jako globalna.
+
+"tekst dluzszy" nie wyswietli sie, poniewaz sa to 2 slowa, w takim wypadku aby wszystko zadzialalo tekst musi znajdowac sie w cudzyslowie lub apostrofach.
+ 
+Roznica miedzy cudzyslowem a apostrofem jest taka, ze przy cudzyslowie zmienne sa rozumiane jako ich wartosci i znaki specjalne sa interpretowane, a wszystko to co jest zapisane w apostrofach interpretowane jest doslownie.
+
+Roznica miedzy $* a $@ jest taka, ze $* wyswietla wszystkie argumenty skryptu jako jeden string a $@ wyswietla je jako tablice
+
+Cwiczenie 3:
+zmienna $PATH wywietla sciezki katalogow przeszukanych w celu znalezienia polecen wykorzystanych w danym skrypcie
+zmienna $RANDOM generuje losowa wartosc, moze sie to przydac wszedzie tam gdzie potrzebne jest wygenerowanie losowej liczby.
+zmienna $PATH wyswietla sciezke w ktorej aktualnie sie znajdujemy, moze byc to przydatne podczas pisania skryptow dotyczacych operacji na plikach
+zmienna $PS1 wyswietla obecny znak zachety, sa to znaki ktore wskazuja na gotowosc systemu do wpisywania polecen, zazwyczaj jest to dla uzytkownika znak: $, a dla roota #, dodatkowo do znaku zachety mozna dodac okreslone argumenty takie jak np biezacy czas, lub wersja powloki.
+zmienna $USER wyswietla aktualnego uzytkownika, moze przydac sie do okresenia czy mamy uprwanienia roota czy jest to tylko zwykly uzytkowik
+zmienna $HOSTNAME sluzy do wyswietlania nazwy hosta, moze sluzyc np do okreslenia domeny w ktorej znajduje sie komputer
+zmienna $OSTYPE wyswietla aktualny system operacyjny, moze byc to przydatne jezeli skrypt uzalezniony jest od systemu 
+
+Cwiczenie 4:
+***************************
+A=$(ls -l)
+echo $A
+ls -l
+***************************
+
+oba te wywolania roznia sie tym, ze przy wywolaniu za pomoca echo(zmienna) dane wyswietalaja sie w rzedzie, a przy normalnym wywolaniu pod soba.
+
+Cwiczenie 5a:
+*******************************************
+A=Ala
+echo $A ma kota, a kot ma ${A/a/e}
+*******************************************
+echo $1 ma kota, a kot ma $1a
+(aby zrobic jeden kod do obydwu wariantow, nalezaloby uzyc instrukcji warunkowych, ktore sa tematem nastepnych zajec)
+*******************************************
+
+Cwiczenie 5b:
+*******************************************
+echo $1
+echo ${1:0:1}
+echo ${1:(-1)}
+echo -e ${1/SOP/\e[32mSOP\e[0m}
+*******************************************
+
+Cwiczenie 6:
+*******************************************
+if [[ $1 == *"a" ]]
+then
+	echo $1 | sed s/a$/e/g
+else
+	echo $1a
+fi
+*******************************************
+
+Zaddanie domowe:
+*******************************************
+#!/bin/bash
+
+RED='\033[0;31m'
+RESET='\033[03m'
+
+TEKST=cat $1
+printf $TEKST | sed 's/Michal/${RED}Michal${RESET}/g'
+
+

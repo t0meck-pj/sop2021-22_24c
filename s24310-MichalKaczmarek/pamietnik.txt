@@ -3,3 +3,17 @@ Na dzisiejszych zajęciach nauczyłem się:
 - Tworzyć maszynę wirtualną i uruchamiać plik iso z obrazem systemu do bootowania
 - instalować system debian
 - partycjonować dysk pod system linux
+
+19.03.2022r.
+Na dziejszych zajeciach nauczylem sie:
+- co to sa skrypty i jak je pisac
+- jak uzywac powloki bash i deklarowac ze to wlasnie w niej chcemy pisac
+- co to sa zmienne i jak z nich korzystac
+- jaka jest roznica miedzy ' a "
+- jak wyeksportowac zmienna aby byla globalna i co to znaczy
+- jak otworzyc basha w bashu
+- co oznaczaja predefiniowane zmienne srodowiskowe
+- podstawowych operacji na lancuchach znakow oraz jak wykonywac operacje arytmetyczne
+- co to sa wyrazenia regularne oraz jak z nich korzystac
+- co to jest program sed i jak z niego korzystac
+
