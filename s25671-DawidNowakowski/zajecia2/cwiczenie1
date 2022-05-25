@@ -1,4 +1,4 @@
-W Git Bash wpisuję kolejno:
+W Git Bash wpisuję kolejno:   // w pierwszych dwoch cwiczeniach pracowalem uzywajac GIT BASH, od cw3 logowalem sie do szuflandii
 nano (komenda uruchamia dostepny edytor tekstowy)
 w edytorze -> echo "Witamy w terminalu" //echo wypisuje linie tekstu zawarta w cudzyslowach
 uzywam kombinacji klawiszy "ALT + X" aby zamknac edytor; edytor zapyta o to czy jestem pewny -> "Y" potwierdzam; 
