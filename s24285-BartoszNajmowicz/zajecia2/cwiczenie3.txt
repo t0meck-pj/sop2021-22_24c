@@ -1,15 +1,15 @@
 Opis poszczegolnych predefiniowanych zmiennych srodowiskowych:
     PATH - zmienna zawierajaca dane katalogow, w ktorych znajduja sie programy. 
             Sciezki do poszczegolnych katalogow oddzielone sa dwukropkami. 
-			W praktyce uzywa sie tej zmiennej np. do wyszukiwania plikow wykonywalnych i uruchomic je (jesli się da)
+			W praktyce uzywa sie tej zmiennej np. do wyszukiwania plikow wykonywalnych i aby uruchomic je (jesli się da)
     RANDOM - zmienna zawierajaca dana liczbe losowa. 
             Po kazdym nowym wypisaniu zmiennej RANDOM, generowana jest nowa liczba losowa.
     PWD - zmienna zawierajaca sciezke bezwzgledna do biezacego katalogu, w ktorym uzytkownik przebywa.
     PS1 - zmienna odpowiadajaca za postac znaku zachety, ktory to znak informuje,
-            ze system jest w stanie przyjmowac polecenia. 
+            ze system jest w stanie przyjmowac polecenia.
 			Przyjmuje postac \u@\h:\w\$, i podaje informacje nt. username (\u), hostname (\h), aktualny katalog (\w) i uprawnienia uzytkownika (\$),
 			Mozna ja customizowac, czyli zmieniac jej wartosc (tak jak kazda zmienna);
 			Jest uzywana do przechowywania znakow specjalnych. 
     USER - zmienna zawierajaca login aktualnego uzytkownika systemu,
     HOSTNAME - zmienna zawierajaca informacje o aktualnym hoscie,
-    OSTYPE - zmienna zawierajaca informacje o uzywanym systemie operacyjnym. Nie znalazlem informacji do czego jeszcze moze byc przydatna.
+    OSTYPE - zmienna zawierajaca informacje o uzywanym systemie operacyjnym. W praktyce moze byc przydatna np. podczas pisania skryptu i checi wsparcia konkretnego systemu operacyjnego.
