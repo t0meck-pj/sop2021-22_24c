@@ -1,0 +1,31 @@
+Ćwiczenie 5a
+Pamiętasz jedno z zadań poprzednich?
+
+A=Ala
+echo $A ma kota, a kot ma ${A}ę
+Przerób je tak, aby tekst wypisywał się poprawnie.
+
+Napisz skrypt, który będzie wypisywał taki tekst także dla imion męskich. Pomijamy zdrobnienia i imiona które się dziwnie odmieniają (na przykład Marek). Niech skrypt ten przyjmuje jeden argument - imię.
+
+------------------------------
+
+Odpowiedź: Najpierw dowiedziałem się jak pobrać parametr do skryptu z wiersza poleceń. Taki parametr zapisuje się w zmiennej $1. Napisałem więc taki skrypt:
+
+x=${#1}
+y=${1:0:((x-1))}
+echo $1 ma kota, a kot ma ${y}ę
+
+gdzie w zmiennej $x przechowuję długość przekazywanego parametru (czyli imienia), następnie w zmiennej $y usuwam ostatni znak przez wyświetlenie stringa od pozycji 0 do jego długości minus 1. Do tak przygotowanej zmiennej mogę dokleić znak ę.
+
+Później znalazłem dużo prostsze rozwiązanie: 
+
+echo $1 ma kota, a kot ma ${1%a}ę
+
+Taki sam efekt uzyskuję przez usunięcie z końca stringa pasującego wzorca.
+
+Kolejna modyfikacja to dodanie możliwości odmieniania męskich imion. Postanowiłem to zrobić w następujący sposób:
+
+z=${1}a
+echo $1 ma kota, a kot ma ${z/aa/ę}
+
+Zauważyłem, ze męskie imiona różnią się od damskich tym, że nie kończą się na 'a'. Dlatego do podanego stringa doklejam właśnie 'a'. Dzięki temu męskie imiona w tym sktypcie odmieniają się we właściwy sposób. Pozostaje kwestia damskich imion, które teraz kończą się na 'aa'. Dodałem operację zamieniającą 'aa' na ę.
