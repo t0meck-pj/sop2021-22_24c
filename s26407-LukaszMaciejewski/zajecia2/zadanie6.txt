@@ -1,0 +1,11 @@
+Ćwiczenie 6
+Teraz postaraj się zrobić to zadanie z haczykiem i podmianą fragmentu zmiennej (Ala ma ...)
+
+---------------------
+
+Odpowiedź: Argument przekazuję z linii poleceń w taki sposób:
+./sop.sh Ala
+
+Skrypt wygląda następująco:
+
+echo $1 ma kota, a kot ma $1 | sed s/a$/ę/g
