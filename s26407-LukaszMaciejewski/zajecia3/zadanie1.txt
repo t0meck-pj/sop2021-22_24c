@@ -1,0 +1,74 @@
+Ćwiczenia 1
+
+1. Napisz skrypt, który sprawdzi, czy podano więcej niż jeden parametr. Jeśli tak, to niech wyświetli pierwszy parametr. Jeśli nie, to niech wyświetli komunikat, że nie podano parametrów.
+
+-------------
+
+Odpowiedź:
+
+if [ $2 ]; then
+  echo $1
+elif [ $1 ]; then
+  echo "Jest jeden parametr!"
+else
+  echo "Nie ma parametrów!"
+fi
+
+-------------------------------------------
+
+2. Napisz skrypt, który:
+  - Sprawdzi, czy istnieje plik config.cfg w bieżącym katalogu.
+  - Jeśli taki plik istnieje, to niech go wykona.
+  - Jeśli nie istnieje, to niech sprawdzi, czy podano argument i wykona plik o nazwie takiej jak wartość argumentu (parametru) skryptu.
+  - Jeśli żadne z powyższych nie nastąpiło, to niech wyświetli komunikat o błędzie.
+  
+-------------
+
+Odpowiedź:
+
+if [ -e ./config.cfg ]; then
+  ./config.cfg
+elif [ $1 ]; then
+  ./$1.cfg
+else
+  echo "Błąd! Nie ma takiego pliku"
+fi
+
+-------------------------------------------
+
+3. Napisz skrypt, który:
+  - Sprawdzi, czy jego nazwa kończy się .sh
+  - Jeśli nie, to niech zmieni swoją nazwę poprzez dopisanie tego rozszerzenia (rozszerzenie nazwy pliku). Sprawdzenie można zrobić na kilka sposobów, polecam przetestować 3 typowe:
+    - dopasowanie do wyrażenia regularnego (to jest bardziej uniwersalny sposób)
+    - porównanie ostatnich 3 liter nazwy skryptu
+    - użyć wbudowanego w basha mechanizmu do wyciągania części napisów ${%}, ${%%}, ${#}, ${##} 
+    
+-------------
+
+Odpowiedź:
+
+if [ "sh" != ${0##*.} ]; then
+  mv $0 ${0}.sh
+fi
+
+-------------------------------------------
+
+4. Napisz skrypt, który:
+- Sprawdzi, czy w bieżącym katalogu jest więcej niż 5 plików. 
+- Jeśli tak, to wypisze odpowiedni komunikat z informacją że tak jest. 
+  Podpowiem:
+  - ls - wyświetla listę plików
+  - wc - word count - zlicza znaki, słowa i linie
+  - grep ma parametr który też może podawać ilość wystąpień wzorca w strumieniu - poszukać w manualu jaki to parametr
+  - może warto użyć także innego polecenia by znaleźć pliki?
+  
+-------------
+
+Odpowiedź:
+
+x=$(ls -p | grep -cv /)
+if [ $x -le 5 ]; then
+  echo "W katalogu jest mniej niż 5 plików!"
+else
+  echo "W katalogu jest więcej niż 5 plików!"
+fi
