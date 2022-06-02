@@ -1,0 +1,52 @@
+zadanie 1
+
+if [ $# > 0 ]
+then
+        echo "twoj pierwszy argument to: $1"
+else
+        echo "brak argumentow"
+fi
+--------------------
+
+zadanie 2
+
+if [ -f config.cfg ]
+then
+        echo "plik zostanie uruchomiony"
+        ./config.cfg
+elif [ $# -gt 0 ]
+then
+        touch $1.txt
+else
+        echo "blad"
+fi
+--------------------
+
+zadanie 3
+
+
+file=$(basename $0)
+
+if [[ $file == *.txt ]]
+then
+        echo "ten plik ma rozszerzenie .sh"
+else
+        mv  ${file} ${file:0:10}.txt
+fi
+
+--------------------
+
+zadanie 4
+
+
+num_of_files=$(ls -1 /home/PJWSTK/s24967/zjazd3 | wc -l)
+
+if [ $num_of_files > '5' ]
+then
+        echo "katalog ma więcej niz 5 plikow"
+else
+        echo "katalog ma mniej niz 5 plikow"
+fi
+
+
+

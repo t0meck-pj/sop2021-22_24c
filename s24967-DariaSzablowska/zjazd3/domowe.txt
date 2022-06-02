@@ -1,0 +1,39 @@
+Zadanie 1
+
+name=$1
+namew=${name:1}
+
+   if [[ ${name:0:1} =~ [A-Z] && $namew =~ ^[a-z]+$ ]];then
+      echo "jest to poprawnie zapisane"
+   else
+      echo "nie jest to poprawnie zapisane"
+   fi
+
+
+--------------------
+
+Zadanie 2
+
+text=$1
+length=${#text}
+for i in $text; do
+   if [[ $i =~ ^[0-9]+$ && $length == 5 ]];then
+      echo "jest to kod pocztowy"
+   else
+      echo "nie jest to kod pocztowy"
+   fi
+done
+--------------------
+
+Zadanie 3
+
+
+text=$1
+email='*\@*\.*'
+   if [[ $text == $email ]]; then
+      echo "jest to poprawnie zapisane"
+   else
+      echo "nie jest to poprawnie zapisane"
+   fi
+
+

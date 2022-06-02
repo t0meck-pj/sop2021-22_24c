@@ -1,0 +1,48 @@
+Zadanie 1.2
+
+for ((i=10; i>0; i-=2)); do echo $i; done
+--------------------
+
+Zadanie 2.2
+
+arg=$#
+for i in $@; do echo $i; done
+--------------------
+
+Zadanie 2.3
+for files in *;
+do
+        echo "Patrzcie Panstwo oto plik: $files"
+done
+--------------------
+
+zadanie 2.4
+
+
+for files in *;
+do
+        if [[ $file == *.c ]]; then
+                cc $files -o ${files:0:-2}
+        fi
+done
+--------------------
+
+zadanie 2.5
+
+test=$(ls)
+for i in $test; do
+        cat $i
+done
+
+for i in $test; do
+        tac $i
+done
+--------------------
+
+
+
+
+
+
+
+
