@@ -1,0 +1,74 @@
+Ćwiczenia 2
+
+1. Napisz skrypt, który będzie wypisywał liczby od 10 do 1 co 2
+
+-------------
+
+Odpowiedź:
+
+for((i=10; i>0; i-=2)); do
+  echo $i
+done
+
+-------------------------------------------
+
+2. Napisz skrypt, który będzie wypisywał wszystkie argumenty wywołania skryptu (pamiętaj o tym, że argument może w sobie zawierać jakieś spacje) napisane w cudzysłowach.
+
+-------------
+
+Odpowiedź:
+
+for i; do
+  echo $i
+done
+
+-------------------------------------------
+
+3. Napisz skrypt, który wypisze listę plików i katalogów bieżącego katalogu poprzedzając każdą nazwę pliku tekstem "Patrzcie Państwo, oto plik: ". 
+
+-------------
+
+Odpowiedź:
+
+for i in $(ls); do
+  echo "Patrzcie Państwo, oto plik: "$i
+done
+
+-------------------------------------------
+
+4. Napisz skrypt, który dla każdego pliku w bieżącym katalogu, który ma rozszerzenie .c wykona taką komendę:
+  - cc (tu_nazwa_pliku) -o (tu_nazwa_pliku_bez_rozszerzenia)
+  Oczywiście zamień (tu_nazwa_pliku) na nazwę pliku, a (tu_nazwa_pliku_bez_rozszerzenia) na nazwę pliku z obciętym rozszerzeniem. Jeśli chcesz przykładowe pliki do potestowania, oto one :-) http://lmgtfy.com/?q=example+c+file
+
+-------------
+
+Odpowiedź:
+
+for i in $(ls); do
+  if [ ${i##*.} == "c" ]; then
+    cc $i -o ${i:0:${#i}-2}
+  fi
+done
+
+-------------------------------------------
+
+5. Napisz skrypt, który wczyta listę plików do wypisania z wiersza poleceń, a następnie wypisze ich zawartości raz w kolejności od początku do końca, a raz na odwrót. Podpowiedzi:
+  - indeksy ujemne tablicy mogą się przydać
+  - można wyliczać wartości wyrażeń arytmetycznych (i+1)
+  - przyda się for
+  - może się przydać: cat oraz tac ale postaraj się zrobić to bez używania tych poleceń (drukowanie znak po znaku od początku do końca i od końca do początku)
+
+-------------
+
+Odpowiedź:
+
+Nie potrafię zrobić tego zadania. Nie wiem jak wczytać więcej niż jeden argument oraz jak zapisać je w tablicy
+
+TAB=()
+arg=$#
+
+for ((i = 0; i< arg; i++)); do
+  $TAB[i]=$($i)
+done
+
+echo ${TAB[*]}
