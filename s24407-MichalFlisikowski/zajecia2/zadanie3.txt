@@ -1,4 +1,4 @@
-PATH     - zwraca domyślną scieżkę
+PATH     - zwraca domyślne ścieżki, w których bash będzie szukał plików wykonywalnych komend. 
 RANDOM   - zwraca losową liczbę
 PWD      - zwraca aktualną scieżkę 
 PS1      - \u@\h:\w\$. \u-username \h-hostname \w-aktualna scieżka
