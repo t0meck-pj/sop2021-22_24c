@@ -8,4 +8,5 @@ if [ "$pliki" -gt 5 ]; then
 
 	echo "Jest wiecej niz 5 plikow"
  
-fi
+ fi
+ 
