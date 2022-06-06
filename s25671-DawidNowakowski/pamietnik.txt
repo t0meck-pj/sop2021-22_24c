@@ -1,7 +1,13 @@
 2022-03-18
-Moj kochany pamietniczku na dzisiejszych zajeciach nauczylem/lam sie:
-- ..Jak stworzyc obraz dla linuksa w wersji debian, a z tego obrazupostawic system
-poki co to byly pierwse zajecia ale wywarly na mnie bardzo pozytywne wrazenia. Typ prac domowych wymaga przyswojenia materialu co mi sie podoba.
+Moj kochany pamietniczku na dzisiejszych zajeciach nauczylem sie:
+-  Procesu instalacji systemu GNU/Linux w dystrybucji Debian na maszynie wirtualnej z gotowego oficjalnego obrazu instalacyjnego pobranego z oficjalnej strony dystrybucji Debian. ( Opis calego procesu jeszcze musze zupdate'owac :- ) )
+Poki co to byly pierwse zajecia ale wywarly na mnie bardzo pozytywne wrazenia. Typ prac domowych wymaga przyswojenia materialu co mi sie podoba.
 
+2022-04-02
+Moj kochany pamietniczku na dzisiejszych zajeciach niestety nie uczestniczylem wskutek choroby, ale we wlasnym zakresie nadrobilem zaleglosci z podstaw skryptowania w Bashu:
+- dowiedzialem sie, ze kazdy skrypt aby byl interpretowany przez bash musi zawierac w pierwszej wykonywalnej linii "#!/bin/bash"
+- udalo mi sie napisac prosty skrypt rysujacy kroliczka
+- nauczylem sie jak przypisac wartosc do zmiennej i ja wypisac/wywolac dzieki "echo" z $, ' ' lub " "
+- nauczylem sie operacji na ciagach znakow 
 
-
+2022-04-16
