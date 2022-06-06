@@ -1,0 +1,6 @@
+#!/bin/bash
+
+tekst_pliku="$(cat $1)"
+kolor='\e[31mDamian\e[0m'
+
+echo -e ${tekst_pliku//Damian/$kolor}

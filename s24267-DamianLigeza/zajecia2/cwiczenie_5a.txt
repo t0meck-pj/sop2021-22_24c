@@ -1,0 +1,16 @@
+Przerobiony skrypt:
+A=Ala
+echo $A ma kota, a kot ma ${A:0:2}ę
+
+
+Skrypt dla imion meskich:
+#!/bin/bash
+imie=$1
+echo $imie ma kota, a kot ma ${imie}a
+
+
+Czy jest to możliwe w czystym bash-u?
+	Tak, przyklad:
+		damian@DESKTOP-MG627AQ:/mnt/f/SOP$ imie=Damian
+		damian@DESKTOP-MG627AQ:/mnt/f/SOP$ echo "$imie ma kota, a kot ma ${imie}a"
+		Damian ma kota, a kot ma Damiana

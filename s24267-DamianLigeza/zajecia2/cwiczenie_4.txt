@@ -1,0 +1,14 @@
+Wynik komendy ls -l:
+total 0
+-rwxrwxrwx 1 damian damian 0 Jun  6 19:15 gfgfg
+-rwxrwxrwx 1 damian damian 0 Jun  6 19:15 test23
+-rwxrwxrwx 1 damian damian 0 Jun  6 19:12 test.txt
+
+Skrypt:
+X=$(ls -l)
+
+Rozwiazanie:
+echo "$X"
+
+Wyjaśnienie:
+Komena echo wypisuje wszystko w jednej linii. Aby pojawily sie nowe linie nalezy zmienna X objac znakami " - "$X".
