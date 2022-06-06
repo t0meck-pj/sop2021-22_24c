@@ -1,0 +1,4 @@
+dziala wysmienicie
+
+A=`cat $1`
+echo -e ${A//"Michal"/"\e[31mMichal\e[0m"}
