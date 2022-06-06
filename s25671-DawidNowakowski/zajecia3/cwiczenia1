@@ -1,4 +1,4 @@
-nano z3cw1      // w nano, po zapisaniu chmod u+rwx ./z3cw1
+nano z3cw1      // w nano, po zapisaniu chmod u+rwx ./z3cw1 i tak odpowiednio dla kolejnych przykladow
 _______________________________________________________
 
 Ćwiczenie 1.1
@@ -33,3 +33,33 @@ _______________________________________________________
 
 Ćwiczenie 1.3
 
+#!/bin/bash
+
+X=$0
+Y=${#Z}
+
+if [[ ${X:(Y-2):2 = "sh" ]]
+  then
+    echo ${0}
+  else
+    mv $0 ${0}.sh
+    echo ${0}.sh
+fi
+
+// Po sprawdzeniu chociażby komendą "ls" plik wyświetla się już z koncówą ".sh" //
+_______________________________________________________
+
+Ćwiczenie 1.4
+
+#!/bin/bash
+
+X=`locate --a ./ | tree | wc -l`
+
+let Y=($X-3)                // wynik pomniejszam o 3 aby nie uwzglednic aktualnego katalogu wyswietlanego przez "tree" w pierwszej linii, oraz dwoch ostatnich linii (przerwy i informacji o ilosci plikow itd.)
+
+if [[ $Y > 4 ]]
+  then
+      echo "Katalog zawiera conajmniej 5 plikow"
+  else
+      echo "Katalog nie zawiera conajmniej 5 plikow"
+fi
