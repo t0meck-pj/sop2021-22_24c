@@ -1,0 +1,35 @@
+1)
+for ((i = 10; i > 0; i-=2)); do echo $i; done
+
+2)
+for i; do 
+   echo $i 
+done
+
+3)
+a=`ls | wc -l`
+
+for ((i = 1; i < $a+1; i++)); do
+	
+   echo "Patrzcie Państwo, oto plik:" `ls | sed -n ${i}p`
+done
+
+4)
+komenda=`ls | wc -l`
+
+for ((i = 1; i < $komenda+1; i++)); do 
+	plik=`ls | sed -n ${i}p`
+	if [ ${plik##*.} == "c" ]; then
+		cc ${plik} -o ${plik:0:${#plik}-2}
+	fi
+done
+
+5)
+
+for ((i = 1; i < $#+1; i++)); do 
+	echo `cat ${i}` #tu nie wiem co nie dziala 
+done
+echo "...................."
+for ((i = $#; i > 0; i--)); do 
+	echo `cat ${i}`
+done

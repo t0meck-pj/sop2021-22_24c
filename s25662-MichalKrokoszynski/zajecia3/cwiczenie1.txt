@@ -1,0 +1,40 @@
+1)
+
+if [ $# -gt 1 ]; then
+	echo $1
+else
+	echo "Nie podano parametrow"
+fi
+
+
+
+2)
+
+if [ -e ./config.cfg ]; then
+	./config.cfg
+elif [ $# -gt 0 ]; then
+	./$1
+else
+	echo "Blad"
+fi
+
+
+
+3)
+
+plik="$(basename $0)"
+roz="${plik##*.}"
+
+if [ "${roz}" != "sh" ]; then
+	mv $0 ${0}.sh
+fi
+
+
+
+4)
+
+liczba=`ls -p | grep -v / | wc -l`
+
+if [ "$liczba" -gt 5 ]; then
+	echo "Jest ponad 5 plikow"
+fi
