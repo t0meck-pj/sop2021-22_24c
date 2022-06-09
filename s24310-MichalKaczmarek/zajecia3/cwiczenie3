@@ -1,0 +1,182 @@
+Cwiczenie 1.1:
+***************************************
+if [ $# -gt 1 ]
+then
+        echo $1
+else
+        echo Nie podano parametrow
+fi
+
+***************************************
+
+Cwiczenie 1.2:
+***************************************
+katalog=$PWD
+if [ -e $katalog/config.cfg ]
+then
+        $katalog/config.cfg
+elif [ $# -gt 0 ] && [ -e $katalog/$1 ]
+then
+        $katalog/$1
+else
+        echo nie ma pliku config.cfg oraz nie podano parametru lub taki plik ni>
+fi
+
+***************************************
+
+Cwiczenie 1.3:
+***************************************
+if [[ $0 == *".sh" ]]
+then
+        echo plik konczy sie rozszerzeniem sh
+else
+        move ./$0 ./$0.sh
+fi
+
+**************************************
+
+Cwiczenie 1.4:
+**************************************
+WERSJA 1:
+ilosc = ls-p |grep -cv /
+
+if [ $ilosc -gt 5 ]
+then 
+        echo jest wiecej niz 5 plikow
+else
+        echo jest 5 lub mniej plikow
+fi
+
+**************************************
+WERSJA2:
+
+ilosc_f = find . -maxdepth 1 -type f | wc -1
+
+if [ $ilosc_f -gt 5 ]
+then 
+       echo jest wiecej niz 5 plikow
+else
+       echo jest 5 lub mniej plikow
+fi
+
+**************************************
+
+Cwiczenie 2.1:
+**************************************
+seq 10 -2 1
+
+**************************************
+for i in {10..-2..1}
+do
+	echo i 
+
+done
+**************************************
+
+Cwiczenie 2.2:
+**************************************
+for i
+do
+	echo $i
+done
+
+**************************************
+
+Cwiczenie 2.3:
+**************************************
+line=$(ls | wc -l)
+
+for ((i = 1; i < $line+1; i++))
+do
+        echo 'Patrzcie panstwo, oto plik: ' 
+        ls | sed -n ${i}p
+done
+
+**************************************
+
+Cwiczenie 2.4:
+**************************************
+line=$(ls | wc -l)
+
+for ((i = 1; i < $line+1; i++))
+do
+        plik=$(ls | sed -n ${i}p)
+        if [[ $plik == *".c" ]]
+        then
+                cc $plik -o $plik:0:#plik-2
+        fi
+done
+
+**************************************
+
+Cwiczenie 2.5:
+**************************************
+parametry=$(cat test.txt)
+dlugosc=$(cat test.txt | wc -c)
+tab=()
+
+for ((i = 0; i < $dlugosc; i++))
+do
+        tab[i]=${parametry:i:1}
+done
+
+printf %s ${tab[@]}
+printf "\n"
+
+for ((i = ${#tab[@]}; i > -1; i--))
+do
+        printf %s ${tab[i]}
+done
+printf "\n"
+
+**************************************
+
+Cwiczenie 3.1:
+**************************************
+function Kolorowanie () 
+{
+        echo -e '\e['$2'm'$1
+}
+
+Kolorowanie $1 $2
+
+**************************************
+
+Cwiczenie 3.2:
+**************************************
+function Fibbonaci()
+{
+        liczba1=1
+        liczba2=1
+        for ((i = 0; i < $1; i++))
+        do
+                nastepnywyraz=$((liczba1+liczba2))
+                echo $liczba1
+                liczba1=$liczba2
+                liczba2=$nastepnywyraz
+        done
+}
+
+Fibbonaci $1
+
+***************************************
+Ograniczeniem jest tu wielkosc liczby jaka maksymalnie przechowac zmienna, maksymalnym cigiem jest ciag o ilosci 92 elementow, opiera sie to na 64 bitowej architekturze procesora, wiec jest to liczba ktora mozna zapisac na 64 bitach
+
+Cwiczenie domowe:
+***************************************
+if [[ $1 == *"@"*"."* ]]
+then
+        echo "Email"
+elif [[ $1 == ??"-"??? ]]
+then
+        echo "Kod pocztowy"
+elif [[ $1 =~ ^[[A-Z]]*[[:alpha:]]$ ]] 
+then
+        echo "Imie"
+else
+        echo "Blad"
+fi
+***************************************
+
+
+

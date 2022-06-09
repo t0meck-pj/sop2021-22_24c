@@ -17,3 +17,38 @@ Na dziejszych zajeciach nauczylem sie:
 - co to sa wyrazenia regularne oraz jak z nich korzystac
 - co to jest program sed i jak z niego korzystac
 
+
+02.04.2022r.
+Na dzisiejszych zajeciach nauczylem sie:
+- co to sa wyrazenia warunkowe oraz jak z nich korzystac
+- jak wyglada budowa "if'a" w bashu
+- co to sa petle, ich rodzaje oraz jak z nich korzystac
+- co to sa tablice, ich wlasciwosci, zastosowania oraz sposob ich inicjowania i poruszania sie po nich
+- co to sa funkcje, jak je definiowac oraz jak z nich korzystac
+
+
+23.04.2022r.
+Na dzisiejszych zajeciach nauczylem sie:
+-jak recznie skompilowac plik wymuszajac poprawnosc wg standardow
+-jak uzywac standardowego wejscia oraz wyjscia, operatorow artytmetycznych, instrukcji warunkowych i petli w jezyku C
+-jak wczytywac dane z pliku do programu
+-co to sa wskazniki oraz wskazniki do funkcji i jak dzialaja
+
+
+14.05.2022r.
+Na dzisiejszych zajeciach nauczylem sie:
+-co to jest funkcja fork oraz do czego sluzy
+-co to jest PID oraz jak go wystwietlac i wykorzystywac
+-jak tworzyc podprocesy
+-do czego sluzy make i jak z niego korzystac
+
+
+28.05.2022r.
+Na dzisiejszych zajeciach nauczylem sie:
+-co to sa sygnaly, do czego sa wykorzystywane i jak je obslugiwac
+-co to sa sockety i jak z nich korzystac
+
+
+
+
+

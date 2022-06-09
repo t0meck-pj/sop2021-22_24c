@@ -1,0 +1,258 @@
+Cwiczenie 1.1:
+******************************************
+#include <iostream>
+
+int main()
+{
+        int x=0, y=0;
+        std::cout << "podaj 1 liczbe: ";
+        std::cin >> x;
+        std::cout << "podaj 2 liczbe: ";
+        std::cin >> y;
+        int suma = x + y;
+        std::cout << "Suma: " << suma << std::endl;
+
+        return 0;
+}
+******************************************
+
+Cwiczenie 1.2:
+******************************************
+#include <iostream>
+
+int main()
+{
+        int x=0, y=0;
+        std::cout << "podaj 1 liczbe: ";
+        std::cin >> x;
+        std::cout << "podaj 2 liczbe: ";
+        std::cin >> y;
+        int suma = x + y;
+
+        return suma;
+}
+******************************************
+
+Cwiczenie 1.3:
+******************************************
+#include <iostream>
+#include <cstdlib>
+
+int main(int argc, char** argv)
+{
+        int h = atoi(argv[1]);
+        for(int i = 0; i < h; i++)
+        {
+                for(int j = 0; j < (h-i-1); j++)
+                {
+                        std::cout << " ";
+                }
+                for(int k = 0; k < i*2+1; k++)
+                {
+                        std::cout << "*";
+                }
+                std::cout << "" << std::endl;
+        }
+        for(int j = 0; j < h-1; j++)
+	{
+                std::cout << " ";
+        } 
+        std::cout << "*" << std::endl;
+
+
+        return 0;
+}
+*******************************************
+
+Cwiczenie 2.1:
+*******************************************                                    
+#include <iostream>
+#include <cstdlib>
+#include <stdio.h>
+#include <stdlib.h>
+
+int main(int argc, char** argv)
+{
+        char* plik;
+        int liczba;
+        int tablica[20];
+        int i = 0;
+        int n;
+        
+        if(argv[1]==NULL)
+        {
+                char* nazwa;
+                printf("Nie podales parametru, podaj nazwe pliku: ");
+                scanf("%s", nazwa);
+                plik = nazwa;
+        }
+        else
+        {
+                plik = argv[1];
+        }
+
+        FILE *licz;
+        licz = fopen (plik, "r");
+        fscanf(licz, "%d",&n);
+        while(fscanf(licz, "%d",&liczba) > 0)
+        {
+                tablica[i] = liczba;
+                i++;
+        }
+        fclose(licz);
+
+        printf("wypisanie jak w pliku: ");
+        for(int j = 0; j < n; j++)
+        {
+                printf("%d", tablica[j]);
+        }
+        printf("\n");
+
+        printf("wypisanie odwrotnie niz w pliku: ");
+        for(int j = n-1; j >= 0; j--)
+        {
+                printf("%d", tablica[j]);
+        }
+        printf("\n");
+
+        return 0;
+}
+********************************************
+
+Cwiczenie 2.2:
+********************************************
+#include <iostream>
+#include <cstdlib>
+#include <stdio.h>
+#include <stdlib.h>
+
+int main(int argc, char** argv)
+{
+        char* plik = argv[1];
+        char hexa;
+        char tab[16];
+        int line = 1;
+	int i = 0;
+
+        FILE *hex;
+        hex = fopen(plik, "r");
+
+        while((hexa = fgetc(hex)) != EOF)
+        {
+                if(i < 1)
+                {
+                        printf("%08X0 ", line);
+                        line++;
+                }
+
+                printf("%02X ", hexa);
+                tab[i] = hexa;
+                i++;
+
+                if(i == 16)
+                {
+                        i = 0;
+                        for(int j = 0; j < 16; j++)
+                        {
+                                printf("%c", tab[j]);
+                        }
+                        printf("\n");
+                }
+        }
+
+        if(i > 0 && i < 17)
+        {
+                for(int j = i; j < 16; j++)
+                {
+                        printf("%02X ", tab[j]);
+                }
+                for(int j = 0; j < 16; j++)
+                {
+                        printf("%c", tab[j]);
+                }
+                printf("\n");
+        }
+
+        fclose(hex);
+
+        return 0;
+}
+*******************************************
+
+Cwiczenie domowe:
+(rekurencja)
+*******************************************
+int Fibbonaci(int, int, int);
+
+int main(int argc, char** argv)
+{
+        int x = 1;
+        int y = 1;
+        int z;
+
+        Fibbonaci(x,y,z);
+
+        return 0;
+}
+
+
+int Fibbonaci(int x, int y, int z)
+{
+        printf("%d \n", x);
+        z = x;
+        x = x + y;
+        y = z;
+
+        if(x <= 1000)
+        {
+                Fibbonaci(x,y,z);
+        }
+}
+********************************************
+(iteracja)
+********************************************
+int Fibbonaci(int, int, int, int);
+
+int main(int argc, char** argv)
+{
+        int x = 1;
+        int y = 1;
+        int z;
+
+        Fibbonaci(x,y,z,20);
+
+        return 0;
+}
+
+
+int Fibbonaci(int x, int y, int z, int licznik)
+{
+
+        for (int i = 0; i < licznik; i++)
+        {
+                printf("%d \n", x);
+                z = x;
+                x = x + y;
+                y = z;
+        }
+}
+*********************************************
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
