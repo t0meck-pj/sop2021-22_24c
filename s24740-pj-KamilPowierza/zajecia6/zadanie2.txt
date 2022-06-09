@@ -1,0 +1,66 @@
+#include <stdio.h>
+#include <stdlib.h>
+#include <unistd.h>
+#include <signal.h>
+
+int petla = 1;
+
+void handler (int sig){
+	printf("Wykryto probe uruchomienia drugiej instancji programu \n");
+}
+void skasuj (int sig){
+	if(remove("tmp/lock.txt") == 0){
+		printf("\nPlik skasowany \n");
+	}else{
+		printf("Nie znalazlem pliku, nic nie zostalo skaowane \n");
+	}
+
+	petla = 0;
+}
+
+int main(void){
+
+	FILE * fp;
+
+	struct sigaction new_action, new_action_skasuj, old_action, old_action_skasuj;
+
+	new_action.sa_handler = handler;
+	new_action_skasuj.sa_handler = skasuj;
+
+	sigemptyset(&new_action.sa_mask);
+	sigemptyset(&new_action_skasuj.sa_mask);
+
+	new_action.sa_flags = 0;
+	new_action_skasuj.sa_flags = 0;
+
+	if(access("tmp/lock.txt", F_OK)==0){
+		/*Jest plik*/
+		fp = fopen("tmp/lock.txt", "r");
+		int sign_num;
+		fscanf(fp, "%d", &sign_num);
+		kill(sign_num, SIGUSR1);
+		fclose(fp);
+	}else{
+		/*Nie ma pliku*/
+		fp = fopen("tmp/lock.txt", "w+");
+		fprintf(fp, "%d", getpid());
+		fclose(fp);
+		
+		sigaction(SIGUSR1, NULL, &old_action);
+		if(old_action.sa_handler != SIG_IGN)
+			sigaction(SIGUSR1, &new_action, NULL);
+		
+		sigaction(SIGINT, NULL, &old_action_skasuj);
+		if(old_action_skasuj.sa_handler != SIG_IGN)
+			sigaction(SIGINT, &new_action_skasuj, NULL);
+		/*
+		signal(SIGUSR1, handler);
+		signal(SIGINT, skasuj);
+		*/
+		while(petla == 1){
+			sleep(1);
+		}
+	}
+
+	return 0;
+}

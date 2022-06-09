@@ -1,8 +1,8 @@
 #!/bin/bash
 
-if [[ $1 == *"@gmail.com"* ]]; then
+if [[ $1 =~ "@gmail.com" ]]; then
 	echo "Email"
-elif [[ $1 == *"-"* ]]; then
+elif [[ $1 =~ "-" ]]; then
 	echo "Kod pocztowy"
 else
 	echo "Imię"
