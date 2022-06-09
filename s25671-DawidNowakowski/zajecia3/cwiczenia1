@@ -53,7 +53,7 @@ _______________________________________________________
 
 #!/bin/bash
 
-X=`locate --a ./ | tree | wc -l`
+X=`tree | wc -l`            // [update] doszedlem do wniosku, ze "locate --a ./" nie jest potrzebne
 
 let Y=($X-3)                // wynik pomniejszam o 3 aby nie uwzglednic aktualnego katalogu wyswietlanego przez "tree" w pierwszej linii, oraz dwoch ostatnich linii (przerwy i informacji o ilosci plikow itd.)
 
