@@ -1,0 +1,6 @@
+1. Problem jest taki że gdybyśmy wypisali samo <echo $ZM> to wypisuje nam ciąg wszystkich znaków czyli wypisze wszystko w jednej lini. Później musimy dać tą zmienną w cudzysłów
+
+
+ZM=`ls -l`
+
+echo "$ZM"

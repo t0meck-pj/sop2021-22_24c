@@ -1,0 +1,9 @@
+Skrypt wyglada nastepujaco (uruchamiajac skrypt trzeba uzyc dwoch argumentow):
+    #!/bin/bash
+
+    A=$1
+    B=${#STRING}
+    echo ${A:0:1}
+    echo ${A:(B-1):1}
+    C=$2
+    echo -e '\e[32m'$C'\e[0m'

@@ -1,0 +1,22 @@
+W EDYTORZE:
+#tworzymy zmienną która będzie przyjmować imie jako argument
+name=$1
+#obliczamy długość imienia
+nameLength=${#name}
+#odejmujemy 1 od długości imienia
+nameLengthModified=$((nameLength-1))
+#tworzymy zmienną, do której przypisujemy ostatnią literkę imienia
+lastIndex=${name: -1}
+#tworzymy zmienną z przypisanym imieniem bez ostatniej literki
+nameModified=${name:0:nameLengthModified}
+
+#sprawdzamy czy ostatnia literka to "a", jeśli tak zamieniamy na ę, w innym przypadku do imienia dodajemy "a"
+if [ "$lastIndex" == 'a' ]
+then
+        echo "$name ma kota, a kot ma ${nameModified}ę"
+else
+        echo "$name ma kota, a kot ma ${name}a"
+fi
+
+
+

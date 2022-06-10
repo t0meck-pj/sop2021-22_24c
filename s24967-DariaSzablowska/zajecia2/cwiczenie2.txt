@@ -1,0 +1,52 @@
+tworzymy plik -> nano cwiczenie2.sh
+
+W EDYTORZE:
+X=tekst  -> tworzymy zmienną X i przypisujemy jej wartość "tekst"
+echo $X  -> wypisujemy zawartość zmiennej
+bash -> polecenie otwarcia nowego bash'a w bashu
+echo $X -> wypisujemy zawartość zmiennej, ona już się nie pokaże w konsoli po uruchomieniu skryptu, ponieważ zmienna nie jest zmienną środowiskową, więc nie mamy tutaj do niej dostępu
+
+nadajemy uprawnienia -> chmod 644 cwiczenie2.sh
+uruchamiamy skrypt -> ./cwiczenie2.sh
+
+W KONSOLI DOSTANIEMY:
+tekst
+-----
+
+W EDYTORZE:
+X=Tekst dłuższy
+echo $X
+
+W KONSOLI DOSTANIEMY:
+./cwiczenie2.sh: linia 1: dłuższy: nie znaleziono polecenia
+
+Do zmiennej przypisana jest tylko wartość tekst, skrypt nie wie czym jest "dłuższy", aby po uruchomieniu skryptu zobaczyć w konsoli "Tekst dłuższy" trzeba zapisać wartość zmiennej w cudzysłowiu, lub w apostrofach -> X="Tekst dłuższy".
+-----
+
+W EDYTORZE:
+X="Tekst 1"
+Y="tekst:$X"
+echo "$Y"
+Y='tekst:$X'
+echo "$Y"
+Y=tekst:$X
+echo "$Y"
+
+W KONSOLI DOSTANIEMY:
+tekst:Tekst 1
+tekst:$X
+tekst:Tekst 1
+
+W cudzysłowiach możemy odwołać się do zmiennej i zostanie wypisana jej zawartość. Tekst zapisany w apostrofach zostaje wyświetlony tak jak został napisany, nie przyjmuje żadnych odniesień. W cudzysłowiach znaczki są interpretowane jako konkretne funkcje, a w apostrofach zostają one pomijane.
+-----
+
+
+
+
+
+
+
+
+
+
+

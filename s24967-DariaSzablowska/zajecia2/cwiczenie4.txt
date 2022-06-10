@@ -1,0 +1,15 @@
+tworzymy skrypt -> nano cwiczenie4.sh
+zmieniamy uprawnienie -> chmod 644 cwiczenie4.sh
+
+W EDYTORZE:
+X=$(ls -l)
+echo "$X"
+
+W KONSOLI:
+-rwxrwxrwx 1 s24967 pjwstk  26 mar 23 23:09 cwiczenie1.sh
+-rwxrwxrwx 1 s24967 pjwstk  81 mar 24 17:58 cwiczenie2.sh
+-rwxrwxrwx 1 s24967 pjwstk  18 mar 24 18:37 cwiczenie3.sh
+-rwxrwxrwx 1 s24967 pjwstk  26 mar 24 19:01 cwiczenie4.sh
+-rwxrwxrwx 1 s24967 pjwstk 172 mar 19 11:17 kroliczek.sh
+
+jeżeli wypsizemy echo $X wszytsko wyświetli się nam w jednej linii, ponieważ bez cudzysłowu przetwarzane jest todo standardowego wyjścia, w którym każdy argument odzielany jest zwykłą spacją. Natomiast przy zapisie "$X" każdy argument jest przetwarzany jako pojedynczy i wypisywany w nowej linii.

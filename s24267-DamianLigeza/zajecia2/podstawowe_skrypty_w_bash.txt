@@ -1,0 +1,23 @@
+Skrypty, które będę przygotowywać będę pisać w edytorze tekstu Vim.
+
+Aby utworzyc nowy skrypt wywołuję komendę:
+> vim nazwa_pliku.sh
+ 
+Powyższa komenda uruchomi okno Vim w trybie NORMAL. W nim możemy wykonywać podstawowe operacje edycji pliku (wytnij, wklej, duplikuj linie itp.)
+Żeby napisać skrypt musimy przejść do trybu INSERT za pomocą klawisza I.
+Po napisaniu skryptu wychodzimy z trybu INSERT do NORMAL za pomocą klawisza ESC i wywołując w Vim komendę :w zapisujemy plik i wychodzimy z niego przy pomocy :q (lub :wq - zapisze i wyjdzie).
+
+Skrpyty uruchomiamy wpisując w terminalu:
+> ./nazwa_pliku.sh
+
+Nowo utowrzony skrypt nie uruchomi się, ponieważ wyskoczy błąd:
+> bash: permission denied: ./nazwa_pliku.sh
+
+Oznacza to, że nie posiadamy wystarczających uprawnień do jego uruchomienia. Naprawiamy to za pomocą komendy:
+> chmod u+x nazwa_pliku.sh
+
+
+Ćwiczenie 1:
+
+#/bin/bash - oznacza w jakim interpreterze nasz skrypt ma zostać uruchomiony. W tym przypadku bash.
+echo "Witamy w terminalu" - komenda echo wyświetla w terminalu podany ciąg znaków.

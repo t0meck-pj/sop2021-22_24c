@@ -1,0 +1,38 @@
+Cwiczenie 3.1
+
+#!/bin/bash
+
+function kolorowanie {
+	
+	kolor=$'\e['$2'm'
+	bezKoloru=$'\e[0m'
+
+	echo ${kolor}$1${bezKoloru}
+}
+
+
+kolorowanie "Pokoloruj ten tekst." "33"
+
+
+Cwiczenie 3.2
+
+#!/bin/bash
+
+function Fibonacci {
+	a=0
+	b=1
+	for (( i=0; i<$1; i++ ))
+	do
+		echo -n " $a "
+		fn=$((a+b))
+		a=$b
+		b=$fn
+	done
+}
+
+echo "Kolejne liczby ciagu Fibonacciego:"
+Fibonacci 9
+echo
+
+#Ograniczeniem jest liczba 93 (94 wyswietla juz ujemna liczbe), poniewaz wykracza ona poza zakres 64 bitowej cyfry.
+

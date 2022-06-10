@@ -1,0 +1,5 @@
+05.03.2022r.
+Na dzisiejszych zajęciach nauczyłem się:
+- Tworzyć maszynę wirtualną i uruchamiać plik iso z obrazem systemu do bootowania
+- instalować system debian
+- partycjonować dysk pod system linux

@@ -1,0 +1,189 @@
+-------- Instalacja systemu linux na maszynach wirtualnych
+
+-- Pobranie systemu operacyjnego
+	Debian dostepny jest do pobrania na oficjalnej stronie https://debian.org.
+	Do rozpoczecia pobierania nalezy kliknac w przycisk „Download”. Pobieranie rozpocznie sie automatycznie.
+	Jesli chcemy pobrac inna wersje nalezy wejsc na strone https://www.debian.org/distrib/, na ktorej dostepne sa nastepujace wersje:
+		- Small installation image – maly obraz plyty do instalacji tylko niezbednych plikow systemu operacyjnego, bez dodatkowych aplikacji czy pakietow. Rozmiar pliku pozwala na nagranie go na plycie CD. Dostepne w wersji 64 oraz 32 bitowej.
+		- Complete installation image – obraz plyty zawierajacy niezbedne pliki do instalacji systemu operacyjnego oraz dodatkowe aplikacje i pakiety np. pakiet biurowy  Libre Office. Dostepne w wersji 64 oraz 32 bitowej.
+		- Cloud image – specjalnie przygotowany plik do do „instalacji” systemu w chmurze.
+
+
+-- VirtualBOX
+	- Tworzenie maszyny wirtualnej - CTRL + N, Maszyna -> Nowa lub przy pomocy guzika "Nowa"
+		Name: nazwa maszyny wirtualnej
+		Machine folder: folder, w ktorym beda pliki zwiazane z maszyna wirtualna (np. dysk twardy, pliki migawek)
+		Typ: typ systemu
+		Wersja: wersja systemu
+		Rozmiar pamieci: rozmiar pamieci RAM maszyny wirtualnej.
+			To ile wybrac zalezy w zasadzie od trzech rzeczy:
+				- Minimalna ilosc pamieci RAM jaka potrzebuje system goscia zeby mogl dzialac plynnie
+				- Ilosc fizycznie posiadanej pamieci RAM w komputerze
+				- Do czego bedzie sluzyc maszyna wirtualna
+			Majac na uwadze te rzeczy mozna ocenic ile nalezy wybrac pamieci RAM.
+			W moim przypadku wybralem 8 GB: 
+				- Rekomendowana ilosc pamieci RAM dla Debian to od 128 MB (minimalna, bez srodowiska graficznego) do 1 GB (rekomendowana, ze srodowiskiem graficznym)
+				- Fizyczna pamiec RAM komputera to 32 GB
+				- Maszyna wirtualna do prostych, niewymagajacych zadan, bez srodowiska graficznego.
+		Dysk twardy: mozemy stworzyc nowy lub uzyc istniejacego pliku dysku twardego
+		Typ pliku z wirtualnym dyskiem: mozliwosc wybrania typu pliku, jesli jest potrzeba uzywania z innym programem wirtualizacyjnym, to mozna wybrac odpowiedni dla niego typ pliku.
+			Dostępne typy:
+				- VDI (VirtualBox Disk Image) - format używany porzez Oracle VM VirtualBox
+				- VHD (Virtual Hard Disk) - format używane przez Microsoft w Hyper-V
+				- VMDK (Virtual Machine Disk) - format używany przez VMware
+			Uzywam VirtualBox, dlatego też wybralem format VDI.	
+		Pamiec na fizycznym dysku twardym:
+			Dynamicznie przydzielony - plik dysku bedzie rosl w miare jego zapelniania. Nalezy wybrac jesli mamy pewnosc, ze bedziemy mieli wystarczazjaca ilosc miejsca na fizycznym dysku twardym.
+			Staly rozmiar - plik dysku twardego zarezerwuje na fizycznym dysku twardym rozmiar, ktory zostanie podany w kolejnym kroku.	Wybieramy jezeli nie mamy pewnosci, czy fizyczny dysk twardy zostanie zapelniony wczesniej niz podana wielosc wirtualnego dysku twardego.
+			Wybralem dynamicznie przydzielony.
+		Lokalizacja pliku i rozmiar: lokalizacja poliku dysku twardego oraz jego rozmiar.
+			Rozmiar wirtualnego obrazu dysku twardego zalezy od kilku czynnikow:
+				- Minimalne ilosc potrzebna do sprawnego dzialania systemu goscia.
+				- Rozmiar dostepnej pamieci na fizycznym dysku twardym.
+				- Do czego maszyna wirtualna bedzie wykorzystywana.
+			W moim przypadku wybralem 50 GB:
+				- Zalecany rozmiar dla Debiana to 2GB (bez srodowiska graficzengo) lub 10GB (ze srodowikiem graficznym).
+				- Ilosc dostepnego miejsca na fizycznym dysku twardym to okolo 1 TB.
+				- Maszyna do nauki, bez srodowiska graficznego.
+
+-- Menu instalacyjne Debian - Debian GNU/Linux installer menu (Bios mode)
+	- Graphical install - umozliwia instalacje systemu w trybie okienkowym
+	- Install - instalacja systemu w trybie tekstowym (z tej opcji korzystalismy na zajeciach)
+	- Advanced options:
+		Graphical expert install - instalacja systemu w trybie okienkowym, lecz w tym trybie mamy pelna kontrole nad przepiegiem instalacji systemu. 
+		Graphical rescue mode - tryb odzyskiwania w trybie okienkowym. Opcja ta pozwala na naprawienie systemu, gdy ten nie chce sie zaladowac np.: podczas instalacji systemu nie zaintalowalismy GRUB'a, i system nie chce sie zaladowac. Dzieki tej opcji mozemy go zainstalowac lub go reinstalowac, jesli w nim cos zostalo nagrzebane.
+		Graphical automated install - automatyczna instalacjw w trybie okienkowym. Dzieki tej opcji mozemy zautomatyzowac instalacje systemu. Opcja ta do dzialania potrzebuje skonfigurowanego pliku konfiguracyjnego, w ktorym podane sa juz odpowidzi na pytanie zadawane podczas instalacji systemu.
+		Expert install - isntalacja systemu w trybie eksperta oraz trybie tekstowym
+		Rescue mode - tryb odzyskiwania w trybie tekstowym.
+		Automated install - automatyczna instalacja w trybie tekstowym
+		- Speech-enabled advanced options:
+			Expert, Rescue oraz Automated install wykorzystujace syntezator glosu do czytania tekstu na ekranie.
+	- Accesible dark contrast installer menu - tryb wysokiego kontrastu / czarno-bialy ekran
+	- Help - pomoc
+	- Install with speech synthesiz - instalacja w trybie okienkowym z syntezatorem glosu
+
+-- Pytania podczas instalacji systemu przy wybranej opcji Install
+	- Select language
+		W tym pytaniu wybieramy jezyk, ktory bedzie dostepny podczas instalacji systemu oraz jezyk domyslny juz zainstalowanego systemu.
+		W moim przypadku wybieram "English", poniewaz jezyk angielski jest obecnie podstawa w komunikacji w IT oraz jezykiem angielskim posluguje sie wiecej osob niz jezykiem polskim.
+	
+	- Select your location
+		Wybor lokalizacji, w ktorej sie znajdujemy. Pozwala to na ustawienie odpowiedniej strefy czasowej. Pozycje na liscie dobrane sa na podstawie wczesniejszego pytania, dlatego tez Polski nie ma na liscie, aby ja odnalesc nalezy wybrac: other -> Europe - > Poland.
+	
+	- Configure locales
+		Locale, czyli ustawienia lokalne - pozwalaja one na ustawienie np. odpowiedniego sposobu wyswietlenia daty czy symbolu dziesietnego (, lub .). Przy wyborze English oraz Poland instalator nie jest w stanie okreslic odpowiedniego ustawienia dla tego pytania. Wybieramy United States.
+	
+	- Configure the keyboard
+		Tutaj wybieramy odpowiednie ustawienie do naszego ukladu klawiatury. 
+		
+	- Configure the network: 
+		Hostname - pytanie te pozwala na ustawienie nazwy naszego urzadzenia jaka bedzie widoczna w sieci.
+		Domain - ????
+	- Set up users and passwords:
+		Root password - haslo do konta "root" w systemie. Konto to posiada najwyzsze uprawnienia w systemie Debian.
+		Re-enter root password - powtorzenie hasla root w celu weryfikacji.
+		Full name for the new user - pelna nazwa nowego uzytkownika np. imie i nazwisko. Moze byc wykorzystywane przez inne programy, ktore wymagaja pelnej nazwy uzytkownika.
+		Username for your account - nazwa konta uzytkownika.
+		Chosa a password for the new user - haslo do konta uzytkownika.
+		Re-enter password to verify - powtrorzenie hasla w celu weryfikacji.
+	
+	- Partition disks:
+		Guided - use entire disk
+			Wybierajac ta opcje system pomoze podczas partycjonowania dysku.
+			Instalator zapyta sie jak chcemy partycjonowac dysk: 
+				All files in one partiton: zostanie stworzona jedna partycja, ktora bedzie zawierac foldery /, /home/, /var, /tmp itd.
+				Separate /home partition: dwie poartycje - jedna dla /home i druga na cala reszte
+				Separata /home, /var and /tmp partitions: osobne partycje dla /home, /var oraz /tmp i kolejna partycja na reszte.
+		Guided - use entire disk and set up LVM
+			Podobnie to opcji, ktora znajduje sie wyzej, tylko wraz z instalacja LVM - Logical Volume Manager. LVM dziala podobnie do RAID, pozwala np. na polaczenie kilku dyskow w jeden. Pozwala rowniez na dynamiczna zmiane wielkosci partycji.
+		Guided - use entire disk and set up encrypted LVM
+			Jak wyzej, tylko teraz z wlaczona opcja szyfrowania danych.
+		Manual
+			Reczne ustawienie partycji. Po wybraniu tej opcji system zapyta sie, ktory dysk chcemy partycjonowac.
+			
+			Ustawienia partycji:
+				Use as: typ systemu plikow partycji
+				Mount point: punkt mocowania partycji (/boot, /home, /var ...)
+				Mount options: opcja mocowania partycji, moemy np. wylaczyc zapisywanie ostatniego dostepu do pliku na partycji
+				Label: etykieta/nazwa wlasna partycji
+				Reserved blocks: ???
+				Typical usage: odpowiedni wybor pozwoli na ustawienie odpowiednich parametrow systemu plikow
+				Bootable flag: flaga bootowania paartycji
+				
+				Done setting up the partition - zapisanie i powrot do ustawien partycji dysku twardego
+			
+			
+			Przykladowa konfiguracja wyglada nastepujaco:
+			Partycja /boot:
+				Wybieramy interesujacy nas dysk twardy.
+				Zostaniemy poinformowani, ze wszystkie aktualnie znajdujace sie partycje zostana usuniete
+				Wybieramy puste miejsce na naszym wybranym dysku twardym
+				Wybieramu opcje Create new partition
+				Ustalamy rozmiar nowej partycji (w moim przypadku 500 MB)
+				Wybieramy typ partycji: Primary
+				Wybieramy czy nasza partycja ma sie rozpoczynac od poczatku dostepnego wolnego miejsca czy od jego konca: Beginning
+				Ustawienia partycji:
+					Use as: Ext4 jurnaling file system
+					Mount point: /boot
+					Mount options: defaults
+					Label: none
+					Reserved blocks: 5%
+					Typical usage: standard
+					Bootable flag: On
+			
+			Partycja /:
+				Rozmiar: 15 GB
+				Tyo partycji: Logical
+				Beginning
+				Ustawienia partycji:
+					Use as: Ext4 jurnaling file system
+					Mount point: /
+					Mount options: defaults
+					Label: none
+					Reserved blocks: 5%
+					Typical usage: standard
+					Bootable flag: off
+			
+			Partycja swap:
+				Rozmiar: 3 GB
+				Tyo partycji: Logical
+				Beginning
+				Ustawienia partycji:
+					Use as: swap area
+			
+			Partycja /home:
+				Rozmiar: pozostaly rozmiar
+				Typ partycji: Logical
+				Beginning
+				Ustawienia partycji:
+					Use as: Ext4 jurnaling file system
+					Mount point: /home
+					Mount options: defaults
+					Label: none
+					Reserved blocks: 5%
+					Typical usage: standard
+					Bootable flag: off
+					
+			
+			Po ustawieniu partycji wybieramy opcje Finish partitioning and write changes to disk.
+			
+	- Konfiguracja menedzera pakietow (apt)
+		Network mirror - serwer lustrzany. Serwer z ktorego beda pobierane aktualizacje systemu oraz pakietow
+		
+		Use a networtk mirror: Yes
+		Debian archive mirror country: Poland
+		Debian archive mirror: deb.debian.org
+		HTTP proxy inforation: puste (ustawienia sieci proxy)
+	
+	- Configurating popularity contest
+		Anonimowe dane statystyczne dotyczace najczesciej uzywanych pakietow
+		
+	-Software selection
+		Pozwala na wybranie instalacji srodowiska graficznego
+		
+	- Install the GRUB boot loader
+		Instalacja menedzera GRUB. Bez niego nie bedzie mozliwosci zaladowania systemu operacyjnego.
+		Po wybraniu opcji YES nalezy wybrac partycje z flaga bootwania.
+		
+	- Installation complete
+		Isntalacja zakonczona. Nalezy wysunac plik z obrazem dysku systemu Debian (VirtualBox sam go wysuwa).

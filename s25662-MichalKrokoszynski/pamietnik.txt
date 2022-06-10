@@ -1,0 +1,36 @@
+2022-03-05
+Moj kochany pamietniczku na dzisiejszych zajeciach nauczylem sie:
+Jak instalowac system operacyjny debian
+Ze system operacyjny bez GUI jest najlepszym systemem dla informatykow.
+
+Cale 1,5h opisywalismy kazda mozliwa opcje w instalatorze debiana. I go instalowalismy
+
+Zasakaujace bylo to jak wiele opcji mozna sobie poustawiac i ze nie jest to takie latwe jak zainstalowanie po prostu jakiegos widowsa czy ubuntu jednym przyciskiem
+
+Ciekawe co bedzie na nastepnych zajeciach
+
+
+2022-03-19
+Moj kochany pamietniczku na dzisiejszych zajeciach nauczylem sie:
+Korzystać z basha i vima. Nawet fajna zabawa moze byc z tym.
+Wszystko dokładnie o zmiennych i wykorzystanie ich w różnych poziomach w otwartych bashach
+Nawet korzystając z gita używamy basha. Probuje robic zadanko domowe ale zobaczymy jak to bedzie z nim
+
+
+2022-04-02
+Moj kochany pamietniczku na dzisiejszych zajeciach nauczylem sie:
+Jak pisać bardziej złożone skrypty (korzystając z if, pętli, itp).
+Składnia basha jest troche inna w porównaniu do innych języków programowania jakie znam.
+
+
+
+2022-04-23
+Moj kochany pamietniczku na dzisiejszych zajeciach nauczylem sie:
+Nie było mnie :c. Ale z materiałów jakie dostaliśmy, nauczyłem się podstaw dotyczących języka programowania C.
+
+
+
+2022-05-07
+Moj kochany pamietniczku na dzisiejszych zajeciach nauczylem sie:
+dokładnie jak dziala funkcja fork() choć nie jest to takie proste.
+Różnych innych funkcji jak wait getpid i getppid które są przydatne jeżeli robimy jakieś kopie procesów.

@@ -1,0 +1,7 @@
+PATH - Zmienna przechowuje gdzie można znaleźć pliki wykonywalne. Za każdym razem, gdy uruchamiane jest dowolne polecenie, powłoka wyszukuje katalogi PATH dla docelowego pliku wykonywalnego i uruchamia go
+RANDOM - funkcja zawierajaca pseudolosowa liczbe z przedziału 0 - 32767
+PWD - zmienna przechowująca ścieżke pliku. Stosowana np. do sprawdzenia czy plik jest w odpowiednim miejscu
+PS1 - Wartość tego parametru jest rozwijana i używana jako podstawowy ciąg zachęty. Domyślnie ustawione \s-\v\$. Można pozmieniać ten ciąg żeby podawał inne informacje
+USER - zmienna zawierajaca nazwe obecnego uzytkownika
+HOSTNAME - zmienna zawierajaca nazwe hosta przypisana do systemu podczas uruchamiania
+OSTYPE - zmienna zawierajaca nazwe systemu operacyjnego. Można zastosować to przy error log'ach, żeby szybciej i sprawniej znaleźć błąd który mógł się pojawiać na jednym systemie operacyjnym

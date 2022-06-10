@@ -1,0 +1,11 @@
+W EDYTORZE:
+
+A=Ala
+echo $A ma kota, a kot ma $A | sed s/a$/ę/g | sed 's/\([^ę]\)$/\1a/g' 
+
+W KONSOLI: 
+
+W obu przypadkach dostaniemy:
+Ala ma kota, a kot ma Alę
+
+Tak, dziękuję za odpowiedź. Jest już zrozumiałe.

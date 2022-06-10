@@ -1,0 +1,56 @@
+1.cwiczenie
+
+#!/bin/bash
+
+if [ $# -gt 1 ]; then
+	echo $1
+else
+	echo "Nie podano parametrow"
+fi
+
+
+------------------------------
+
+
+2. cwiczenie
+
+#!/bin/bash
+
+if [ -e ./config.cfg ]; then
+	./config.cfg
+elif [ $# -gt 0 ]; then
+	./$1
+else
+	echo "Wystapil blad"
+fi
+
+
+------------------------------
+
+
+3. cwiczenie
+
+#!/bin/bash
+
+plik="$(basename $0)"
+rozszerzenie="${plik##*.}"
+
+if [ "${rozszerzenie}" != "sh" ]; then
+	mv $0 ${0}.sh
+fi
+
+
+------------------------------
+
+
+4. cwiczenie
+
+#!/bin/bash
+
+plik=`ls -p | grep -v / | wc -l`
+
+echo "Ilosc plikow:" $plik
+
+if [ "$plik" -gt 5 ]; then
+	echo "Jest wiecej niz 5 plikow"
+fi

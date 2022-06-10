@@ -1,0 +1,74 @@
+1.cwiczenie
+
+#!/bin/bash
+
+for ((i = 10; i > 0; i=i-2)); do echo $i; done
+
+
+------------------------------
+
+
+2. cwiczenie // Skrypt poniżej wypisuje wszystkie argumenty wywołania skryptu, nawet te co są zapisanme w cusdzysłowiach.
+
+#!/bin/bash
+
+for i; do 
+   echo $i 
+done
+
+
+------------------------------
+
+
+3. cwiczenie
+
+#!/bin/bash
+
+linijka=`ls | wc -l`
+
+for ((i = 1; i < $linijka+1; i++)); do 
+   echo "Patrzcie Państwo, oto plik:" `ls | sed -n ${i}p`
+done
+
+
+------------------------------
+
+
+4. cwiczenie
+
+#!/bin/bash
+
+linijka=`ls | wc -l`
+
+for ((i = 1; i < $linijka+1; i++)); do 
+	plik=`ls | sed -n ${i}p`
+	if [ ${plik##*.} == "c" ]; then
+		cc ${plik} -o ${plik:0:${#plik}-2}
+	fi
+done
+
+
+------------------------------
+
+
+5. cwiczenie
+
+#!/bin/bash
+
+Tekst=`cat Tekst.txt`
+Tablica=()
+
+for ((i = 0; i < ${#Tekst}; i++)); do 
+	Tablica[i]=${Tekst:i:1}
+done
+
+echo "--------OD POCZATKU DO KONCA--------"
+
+printf %s "${Tablica[@]}"
+echo "${#Tablica[@]}"
+
+echo "--------OD KONCA DO POCZATKU--------"
+
+for ((i = "${#Tablica[@]}"; i > -1; i--)); do 
+	printf %s "${Tablica[i]}"
+done

@@ -1,0 +1,26 @@
+5a.
+
+#!/bin/bash
+
+Imie=$1
+Imie_ostatnia=${Imie:${#Imie}-1}
+
+if [[ $Imie_ostatnia == "a" ]]; then
+	echo $1 ma kota, a kot ma ${Imie:0:${#Imie}-1}ę
+else
+	echo $1 ma kota, a kot ma ${Imie}a
+fi
+
+
+5b.
+
+#!/bin/bash
+
+S="Testowe zdanie do zadania SOP koniec"
+S_First=${S:0:1}
+S_Last=${S:${#S}-1:${#S}}
+SOP='\e[32mSOP\e[0m'
+
+echo -e ${S_First}
+echo -e ${S_Last}
+echo -e ${S//SOP/$SOP}
