@@ -1,24 +1,21 @@
 #include <iostream>
-#include <vector>
- int suma(std::vector<int> liczby,int x , int y){
-    int suma=0;
-    for (int i = 0; i < x; ++i) {
-        std::cout<<"Wprowadź liczbę: ";
-        std::cin>>y;
-        liczby.push_back(y);
-    }
-    for (int i = 0; i < liczby.size(); ++i) {
-        suma += liczby[i];
-    }
-    std::cout<<"Suma wynosi: ";
-     return suma;
-}
+#include <unistd.h>
+#include <sys/wait.h>
 
-int main() {
-    int x,y=0;
-    std::cout<<"Wprowadź ilość liczb: ";
-    std::cin>>x;
-    std::vector<int> liczby;
-    std::cout<<suma(liczby,x,y);
+int main(int argc, char *argv[]) {
+    pid_t pid;
+    pid_t ppid = getpid();
+    pid=fork();
+    if (pid>0) {
+        std::cout <<"PID: "<< getpid() << '\n';
+        std::cout <<"PPID "<< getppid() << '\n';
+    }else{
+        std::cout<<"PID: "<< getpid() << '\n';
+        std::cout<<"PPID: "<< getppid() << '\n';
+    }
+    if (ppid==getpid()){
+        int status;
+        waitpid(0,&status,0);
+    }
     return 0;
 }
