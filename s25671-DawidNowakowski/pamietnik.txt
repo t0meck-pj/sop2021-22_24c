@@ -11,3 +11,7 @@ Moj kochany pamietniczku na dzisiejszych zajeciach niestety nie uczestniczylem w
 - nauczylem sie operacji na ciagach znakow 
 
 2022-04-16
+Moj kochany pamietniczku na dzisiejszych zajeciach nauczylem sie:
+- korzystania skladni "ifa" w skrypcie (fi na koncu bylo czyms nowym)
+- jak operowac petla for w skrypcie (skladnia daje dwie mozliwosc na realizacje petli w zaleznosci od zapotrzebowania)
+- definiowania i deklarowania funkcji w skrypcie
