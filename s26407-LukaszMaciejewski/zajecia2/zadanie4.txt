@@ -13,4 +13,12 @@ echo $X
 
 Zastanów się dlaczego.
 
-Odpowiedź: wyświetlają się wyniki w jednej linii - bez enterów. Niestety nie mogę znaleźć rozwiązania.
+Odpowiedź: 
+
+Przypisuję komendę do zmiennej za pomoca komendy:
+
+X=$(ls -l)
+
+A następnie wyświetlam zmienną w cudzysłowie:
+
+echo "$X"
