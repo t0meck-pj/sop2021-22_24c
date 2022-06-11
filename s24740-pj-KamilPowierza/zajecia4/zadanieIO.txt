@@ -20,30 +20,34 @@ int main(int argc, char** argv)
     FILE * licz;
     licz = fopen (nazwa_pliku, "r");
     int n;
-    fscanf(licz, "%d",&n);
 
-    while(fscanf(licz, "%d",&liczba) > 0) {
-        tablica[i] = liczba;
-        i++;
-    }
+    if (licz == NULL) {
+    	printf("Nie udalo sie otworzyc pliku");
+    }else{
+        fscanf(licz, "%d",&n);
 
-    fclose(licz);
+        while(fscanf(licz, "%d",&liczba) > 0) {
+            tablica[i] = liczba;
+            i++;
+        }
 
-    printf("Wypisanie liczb normalnie: ");
-    for(int x=0; x < n; x++){
-        printf("%d", tablica[x]);
-    }
+        fclose(licz);
 
-    printf("\n");
+        printf("Wypisanie liczb normalnie: ");
+        for(int x=0; x < n; x++){
+            printf("%d", tablica[x]);
+        }
 
-    printf("Wypisanie liczb odwrotnie: ");
-    for(int y=n-1; y >= 0; y--){
-        printf("%d", tablica[y]);
+        printf("\n");
+
+        printf("Wypisanie liczb odwrotnie: ");
+        for(int y=n-1; y >= 0; y--){
+            printf("%d", tablica[y]);
+        }
     }
 
     return 0;
 }
-
 
 
 
@@ -66,40 +70,45 @@ int main(int argc, char** argv)
     FILE * hex;
     hex = fopen (nazwa_pliku, "r");
 
+    if (hex == NULL) {
+    	printf("Nie udalo sie otworzyc pliku");
+    }else{
+        while(( he = fgetc(hex) ) != EOF ) {
+            if(i < 1){
+                printf("%08X0 ",line);
+                line++;
+            }
 
-    while(( he = fgetc(hex) ) != EOF ) {
-        if(i < 1){
-            printf("%08X0 ",line);
-            line++;
+            printf("%02X ",(unsigned char)he);
+            tablica[i] = he;
+            i++;
+            if(i == 16){
+                i=0;
+                for(int x=0; x < 16; x++){
+                    printf("%c", (unsigned char)tablica[x]);
+                }
+                printf("\n");
+            }
+
         }
 
-        printf("%02X ",(unsigned char)he);
-        tablica[i] = he;
-        i++;
-        if(i == 16){
-            i=0;
+        if(i > 0 && i < 16){
+            for(int x=i; x < 16; x++){
+                tablica[x] = " ";
+                printf("%02X ",tablica[x]);
+            }
             for(int x=0; x < 16; x++){
-                printf("%c", (unsigned char)tablica[x]);
+                printf("%c", tablica[x]);
             }
             printf("\n");
         }
 
-    }
+        fclose(hex);
 
-    if(i > 0 && i < 16){
-        for(int x=i; x < 16; x++){
-            tablica[x] = " ";
-            printf("%02X ",tablica[x]);
-        }
-        for(int x=0; x < 16; x++){
-            printf("%c", tablica[x]);
-        }
-        printf("\n");
     }
-
-    fclose(hex);
 
     return 0;
 }
+
 
 

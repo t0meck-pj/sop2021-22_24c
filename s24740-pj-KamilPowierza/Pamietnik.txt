@@ -29,3 +29,20 @@ Mój kochany pamiętniczku na dzisiejszych zajęciach nauczyłem się:
 - Zajęcia nazywały się wstęp do C/C++, lecz wcześniej mało co mieliśmy cokolwiek związane z językiem C, więc nie były dla mnie niektóre zadania zrozumiałe,
 - Pisania skryptów w terminalu,
 - Fajnie że nagrywamy te zajęcia i można podejrzeć co robiliśmy na ostatnich zajęciach ale czasami dźwięk nie jest w najlepszej jakości, jednak sporo sobie przypomniałem po samym obrazie.
+
+
+2022-05-14
+
+Mój kochany pamiętniczku na dzisiejszych zajęciach nauczyłem się:
+
+- Nauczyłem się jak działają procesy i ich wykorzystywanie
+- Nie był to moim zdaniem trudny temat, jednak funkcja fork() sprawiła mi lekki problem
+
+
+2022-05-28
+
+Mój kochany pamiętniczku na dzisiejszych zajęciach nauczyłem się:
+
+- Zrozumiałem na jakiej zasadzie działają sygnały
+- Zrozumiałem jak działają sockety
+- Niestety nie działała szuflandia i zajecia w formie wykładów nie były moje ulubione, jednak jest o wiele lepiej jak coś faktycznie próbujemy i testujemy na zajęciach :)

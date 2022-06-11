@@ -33,15 +33,23 @@ Pokoloruj "Przykladowy tekst do pokolorowania" $[$1]
 
 #!/bin/bash
 
+pierwsza=0
+druga=1
+dlugosc=0
+
 function Ciag () {
-	pierwsza=0
-	druga=1
-	for (( i = -1; i < $1; i++ )){
-		dodawanie=$((pierwsza+druga))
-		echo $pierwsza
-		pierwsza=$druga
-		druga=$dodawanie
-	}		
+	dlugosc=$1-1
+	
+	dodawanie=$((pierwsza+druga))
+	
+	return $pierwsza
+	
+	pierwsza=$druga
+	druga=$dodawanie
+
+	if [[ $dlugosc -gt 0 ]]; then
+		Ciag $dlugosc
+	fi
 }
 
 Ciag "19"

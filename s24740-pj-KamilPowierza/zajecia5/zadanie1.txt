@@ -1,0 +1,9 @@
+#include <stdio.h>
+#include <unistd.h>
+
+int main(){
+	int a;
+	printf("PID: %d , PPID: %d \n", getpid(), getppid());
+	scanf("%d", &a);
+	return 0;
+}

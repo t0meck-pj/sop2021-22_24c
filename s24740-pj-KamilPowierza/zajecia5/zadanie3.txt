@@ -1,0 +1,40 @@
+#include <stdio.h>
+#include <stdlib.h>
+#include <unistd.h>
+#include <sys/types.h>
+#include <sys/wait.h>
+
+
+int main(int argc, char** argv){
+	
+	int argument = atoi(argv[1]);
+	
+	pid_t masterPid = getpid();
+	pid_t p = fork();	
+
+	if(p <= 0){
+		printf("Child-nieparzyste: ");
+		int i;
+		for(i=0; i<=argument; i++){
+			if(i%2 != 0){
+				printf("%d ", i);
+			}
+		}
+		printf("\n");
+	}else{
+		int suma;
+		int x;
+		for(x=0; x<=argument; x++){
+			suma += x;
+		}
+		wait(NULL);
+		printf("Parent-Suma: %d \n", suma);
+	}
+
+	if(masterPid == getpid()){
+		int status = 0;
+		waitpid(0, &status, 0);
+	}
+	
+	return 0;
+}
