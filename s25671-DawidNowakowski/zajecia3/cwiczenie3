@@ -1,0 +1,56 @@
+nano z3cw3      // w nano, po zapisaniu chmod u+rwx ./z3cw3 i tak odpowiednio dla kolejnych przykladow
+_______________________________________________________
+
+Ćwiczenie 3.1
+
+#!/bin/bash
+
+function kolorkinajezorki {
+
+  echo " "
+  read Q
+  echo -e "\e[31mCzerwony tekst wybierz 1\e[0m"
+  echo -e "\e[32mCzerwony tekst wybierz 1\e[0m"
+  echo -e "\e[33mCzerwony tekst wybierz 1\e[0m"
+  echo -e "\e[34mCzerwony tekst wybierz 1\e[0m"
+  echo -e "\e[35mCzerwony tekst wybierz 1\e[0m"
+  echo -e "\e[36mCzerwony tekst wybierz 1\e[0m"
+  echo "Wcisnij dowolny klawisz aby zastosowac bialy"
+  echo " "
+  read Z
+  echo " "
+
+if [[ $Z = 1 ]]; then
+  echo -e "\e[31$Q\e[0m"
+
+elif [[ $Z = 1 ]]; then
+  echo -e "\e[32$Q\e[0m"
+
+elif [[ $Z = 1 ]]; then
+  echo -e "\e[33$Q\e[0m"
+
+elif [[ $Z = 1 ]]; then
+  echo -e "\e[34$Q\e[0m"
+
+elif [[ $Z = 1 ]]; then
+  echo -e "\e[35$Q\e[0m"
+
+elif [[ $Z = 1 ]]; then
+  echo -e "\e[36$Q\e[0m"
+
+else
+  echo "$Q"
+  
+fi
+}
+
+echo "Wpisz tekst, a nastepnie wybierz kolor: "
+kolorkinajezorki
+
+_______________________________________________________
+
+Ćwiczenie 3.2
+
+#!/bin/bash
+
+Probowalem zrobic z return ale nie wiem jak to uzyskac bez uzywania echo i petli. Dzialalo z ifem, ale i tak return nie daje efektu.

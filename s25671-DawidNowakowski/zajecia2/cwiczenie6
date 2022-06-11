@@ -1,0 +1,15 @@
+W bashu: nano z2cw6
+W nano edytorze:
+
+#!/bin/bash
+
+X="Ala"
+
+echo "S{X} ma kota, a kot ma" ${X} | sed s/a$/ę/g | sed 's/\([^ę]\)$/\la/g'
+
+/*zapisuję*/
+
+chmod u+rwx z2cw6
+./z2cw6
+->:
+Ala ma kota, a kot ma Alę.

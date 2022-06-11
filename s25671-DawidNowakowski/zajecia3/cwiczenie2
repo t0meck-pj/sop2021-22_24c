@@ -1,0 +1,75 @@
+nano z3cw2      // w nano, po zapisaniu "chmod u+rwx z3cw2" i tak odpowiednio dla kolejnych przykladow
+_______________________________________________________
+
+Cwiczenie 2.1
+
+#!/bin/bash
+
+for i in {10..1..2}; do
+    echo $i
+done
+
+_______________________________________________________
+
+Cwiczenie 2.2
+
+#!/bin/bash
+
+for i in "$@";do
+
+    echo $i
+    
+done
+
+_______________________________________________________
+
+Cwiczenie 2.3
+
+#!/bin/bash
+
+X=`ls ./`
+
+for i in $X; do
+
+    echo "Patrze Panstwo, oto plik: $i"
+    
+done
+
+_______________________________________________________
+
+Cwiczenie 2.4
+
+#!/bin/bash
+
+X=`ls *.c`
+
+for i in $X; do
+
+j=${#k}
+
+    echo "cc $i -o ${i:0:j-2}"
+    
+done
+
+_______________________________________________________
+
+Cwiczenie 2.5
+
+#!/bin/bash
+
+X=`ls`
+Y=`ls -r`
+
+for i in $X; do
+
+    cat $i
+    
+done
+
+echo "_______________________________________"
+
+for i in $Y; do
+
+    cat $i
+    
+done

@@ -1,0 +1,13 @@
+W bashu: nano z2cw4
+
+/* Wpisuje tresc zadania */
+
+ls -l
+X=$(ls -l)
+echo $X
+
+/*zapisuje, chmod u+rwx z2cw4 , uruchamiam */
+
+ls -l   - wypisuje zawartosc biezacego katalogu oraz autora kazdego pliku (kazda kolejna zawartosc katalogu to nastepna linia w terminalu)
+echo $X   - ( gdzie X=$(ls -l) ) wypisuje wartosc zmiennej X, ktorej przypisano standardowe wyjscie komendy "ls -l", jednak wszysto wypisywane jest w jednej linii, kolejne argumenty oddzielone sa jedna spacja gdyz komenda jest zapisana w wartosci zmiennej
+echo "$X" - sprawi, ze wartosc zmiennej X zostanie przedstawiona jak podczas normalnego wywolania "ls -l" - znak specjalny jest interpretowany, a zmienna przedstawia wartosc

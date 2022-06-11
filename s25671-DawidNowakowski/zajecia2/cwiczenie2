@@ -1,0 +1,47 @@
+W bashu: nano z2cw2 (podanie nazwy po komendzie nano tworzy od razu plik o wskazanej nazwie)
+
+do pliku zapisuje ponizsze kod, ktory nastepnie sprawdzam:
+
+X=tekst - nadaje zmiannej X wartosc "tekst"
+echo $X - wypisuje wartosc zmiennej X
+bash - komenda uruchamia nowy proces basha
+echo $X - wypisuje wartosc zmiennej X
+
+w bashu: ./z2cw2 -> pojawia sie:
+
+tekst
+
+-> gdyz komenda basha uruchomila nowy proces w ktory nie posiadal zmiennej X (zmienna X jest zmienna lokalna)
+
+_____________________________________________________________________________________________________________________
+
+czyszcze plik, do pliku zapisuje ponizszy kod, ktory nastepnie sprawdzam:
+
+X=Tekst dłuższy
+echo $X
+
+/* zapisuje, uruchamiam */
+
+pojawia sie blad "./z2cw2: line 1: dluzszy: command not found", poniewaz wartosc zmiennej X skladajaca sie z dwoch wyrazow powinna byc zapisana w cudzyslowie lub apostrofach
+
+_____________________________________________________________________________________________________________________
+
+czyszcze plik, do pliku zapisuje ponizsze kod, ktory nastepnie sprawdzam:
+
+X="Tekst 1"
+Y="tekst:$X"
+echo "$Y"
+Y='tekst:$X'
+echo "$Y"
+Y=tekst:$X
+echo "$Y"
+
+/* zapisuje, uruchamiam */
+
+tekst:Tekst 1
+tekst:$X
+tekst:Tekst 1
+
+przy wywolaniu wartosc w:
+cudzyslowie - wyswietli slowa, znaki, znaki specjalne beda interpretowane, zmienne przedstawia wartosc
+apostrofach - wyswietli zawarty ciag znakow
