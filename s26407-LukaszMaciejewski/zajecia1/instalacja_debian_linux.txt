@@ -6,7 +6,7 @@ Instalacja Debiana na maszynie wirtualnej Oracle VM VirtualBox:
 - następnie klikamy na przycisk 'Nowa' lub wybieramy z menu Maszyna>Nowa...
 - w oknie, które się pojawi wpisujemy nazwę: deb24c
 - po wpisaniu pierwszych 3 liter program wykryje automatycznie jaką dystrybucję Linuxa chcemy zainstalować > możemy kliknąć dalej
-- w następnym kroku wybieramy przydzieloną dla wirtualnej maszyny ilość pamięci RAM: 4096 MB
+- w następnym kroku wybieramy przydzieloną dla wirtualnej maszyny ilość pamięci RAM. Jej ilość zależy od naszych potrzeb. Dla celów testowych wystarczy proponowane przez instalator 1024 MB
 - kolejne okno daje nam możliwość dodania wirtualnego dysku twardego. Mamy tu trzy opcje: możemy pominąć ten krok i skonfigurować pamięć po utworzeniu wirtualnej maszyny, stworzyć wirtualny dysk twardy w tym momencie lub użyć istniejącego pliku wirtualnego dysku twardego
 - zaznaczamy opcję drugą i przechodzimy do kolejnego okna, w którym wybieramy typ pliku do użycia z nowym wirtualnym dyskiem
 - tu także mamy trzy opcje: VDI, VHD i VMDK
@@ -17,20 +17,30 @@ Instalacja Debiana na maszynie wirtualnej Oracle VM VirtualBox:
  - po wybraniu VDI mamy opcję wyboru pomiędzy dynamicznie przydzielanym a stałym rozmiarem pliku twardego dysku. Dynamicznie przydzielany plik będzie zajmował mniej miejsca na fizycznym dysku twardym i będzie rósł w miarę jak będzie się zapełniał. 
 - wybieramy dynamicznie przydzielany i przechodzimy dalej
 - w kolejnym oknie podajemy lokalizację i rozmiar pliku wirtualnego dysku
-- suwakiem zmieniamy rozmiar na 32 GB i klikamy 'Utwórz'
+- suwakiem możemy ustalić rozmiar dysku. Tu wybór także zależy od naszych potrzeb. Jeśli planujemy instalację kilku maszyn wirtualnych na jednym komputerze to pliki wirtualnych dysków nie powinny być zbyt duże. Możemy zostawic tutaj proponowany przez instalator rozmiar 8 GB i klikamy 'Utwórz'
 
 - w tym momencie widzimy już utworzoną maszynę z Debianem w głównym oknie VirtualBoxa. Należy jednak jeszcze przed uruchomieniem zmienić kilka ustawień. Klikamy na przycisk 'Ustawienia'
 - na liście wybieramy 'System' i w pierwszej zakładce 'Płyta główna' w okienku kolejność bootowania zaznaczamy 'Napęd optyczny' oraz 'Dysk twardy'
 - w kolejnej zakładce 'Procesor' możemy wybrać ilość procesorów. Zaznaczam 2
-- następnie na liście klikam 'Pamięć', następnie klikam na ikone płyty która znajduje się poniżej kontrolera IDE i kolejny raz ikonę płyty z prawej strony przy napędzie optycznym
+- następnie na liście klikam 'Pamięć', oraz klikam na ikone płyty która znajduje się poniżej kontrolera IDE i kolejny raz ikonę płyty z prawej strony przy napędzie optycznym
 - następnie wybieram 'Choose a disk file...' i wybieram pobrany wcześniej plik z obrazem Debiana i klikamy 'OK'
 
 - uruchamiamy Debiana
 - pojawi się okno BIOSU w którym konfigurujemy instalację systemu
+- na pierwszej stronie pojawia się kilka opcji do wyboru:
+	- Graphical install - instalator w formie "okienek" przypominający instalację programów w Windowsie
+	- Install - wybór tej opcji uruchomi instalator tekstowy przypominający BIOS
+	- Advanced options - tu znajduje się więcej, bardziej zaawansowanych opcji instalacji
+	- Accessible dark contrast installer menu - wersje wszystkich rodzajów instalatorów w wysokim kontraście, przeznaczone dla osób słabowidzących
+	- Help - tu pojawia się strona z tematami pomocy. Przechodzimy do konkretnych informacji klawiszami funkcyjnymi od F1 do F10. Aby powrócic do poprzedniego menu wpisujemy "menu" i klikamy 'enter'
+	- Install with speech synthesis - wersja instalatora z syntezatorem mowy
+	
 - wybieramy opcję 'Install'
-- następnie wybieramy język angielski, na kolejnej stronie wybieramy region 'other' a następnie 'Europe' i 'Poland'
-- na kolejnej stronie klikamy 'United States' i ustawienia klawiatury na 'Polish'
+- następnie wybieramy język angielski. Jest to międzynarodowy język używany w informatyce w związku z czym najłatwiej jest znaleźć pomoc w internecie właśnie w tym języku
+- na kolejnej stronie wybieramy region 'other' a następnie 'Europe' i 'Poland' aby w systemie ustawiona była odpowiednia data i strefa czasowa
+- na kolejnej stronie klikamy 'United States' i ustawienia klawiatury na 'American English'. Jeśli instalujemy linuxa w celach informatycznych/programistycznych polska klawiatura i tak się nie przyda z tego samego powodu co wcześniej przy ustawianiu wersji językowej
 - system zaczyna się instalować
+- na stronie konfiguracji sieci, która pojawi się w trakcie podajemy nazwę hosta oraz domeny
 - następnie ustawiamy hasło dla użytkownika 'root'
 - ustawiamy nazwę dla konta innego niż 'root' oraz hasło
 
@@ -38,6 +48,14 @@ Instalacja Debiana na maszynie wirtualnej Oracle VM VirtualBox:
 - wybieramy opcję 'Guided - use entire disk'
 - wybieramy na którym dysku tworzymy partycje, mamy tylko jeden więc klikamy enter
 - następnie wybieramy schemat partycji. Możemy wybrać 'All files in one partition' co jest sugerowane dla początkujących użytkowników. Aby zobaczyć jakie rozmiary zaproponuje instalator wybieramy opcję 'Separate /home, /var, and /tmp partitions'
+- instalator zaproponował 5 partycji:
+	- primary 2.1 GB - partycja główna, która otrzymała nr 1 (moze ich być maksymalnie 4 dlatego następna partycja logiczna otrzymała od razu nr 5)
+	- logical 1.0 GB /var - partycja służąca do przechowywania wszystkich zmieniających się danych takich jak: logi różnych aplikacji, skrzynki pocztowe użytkowników, informacje o działaniu systemu, strony www itp.
+	- logical 1.0 GB swap - plik wymiany, który rozszerza pamieć systemową 
+	- logical 257.9 MB /tmp - miejsce do przechowywania plików tymczasowych
+	- logical 4.2 GB /home - przechowuje katalogi główne użytkowników
+- wszystkie partycje poza swap mają system plików ext4, czyli czwartą wersję Extended File System. Jest to system plików stworzony specjalnie dla Linuxa. Każda kolejna wersja rozszerzała możliwości zarządzania danymi na dysku. Pierwsza wersja ext dopuszczała pliki do maksymalnego rozmiaru 64 MB i partycje do 2 GB. Najnowszy standard umożliwia obsługę partycji do 1 EiB (eksbibajta) i pliki do wielkości 16 TiB (tebibajtów)
+
 - w tym momencie możemy zaakceptować zaproponowane partycje lub je zmienić
 - klikamy 'Finish partitioning and write changes to disk'
 - w tym momencie instaluje się system
@@ -46,7 +64,22 @@ Instalacja Debiana na maszynie wirtualnej Oracle VM VirtualBox:
 - wybieramy 'Poland' oraz 'ftp.task.gda.pl' czyli serwery Politechniki Gdańskiej
 - proxy pozostawiamy puste
 - system się instaluje
-- na stronie ankiety popularności pakietów klikamy 'No'
-- kolejna strona to "tasksel" na niej zostawiamy zaznaczone tylko 'standard system utilities'
-- w oknie instalacji programu rozruchowego GRUB klikamy 'Yes' i wybieramy istniejący dysk
+- na kolejnej stronie pojawia się możliwość udziału w ankiecie popularności pakietów. Działa to tak, że raz w tygodniu odpowiedni skrypt wysyła do twórców raport z zainstalowanych dodatkowych pakietów. Najpopularniejsze pakiety są dodawane w pierwszej kolejności do dystrybucji na nośnikach. Jako że to instalacja testowa i nie będę instalował dodatkowych pakietów klikam 'No'
+- kolejna strona to "tasksel". Mamy tu mozliwość wybrania dodatkowych pakietów programowych, ponieważ w tym momencie zainstalowane jest tylko jadro systemu. To jakie pakiety wybierzemy zależy od tego do czego linux będzie nam potrzebny. Po zakończeniu instalacji istnieje nadal możliwość instalacji dodatkowych pakietów za pośrednictwem managerów takich jak na przykład APT-GET, jednak zaletą tasksela jest to, że instaluje całe grupy pakietów jednym kliknięciem tworząc środowiska pulpitu. 
+- w tasksel mamy do wyboru:
+	- Debian desktop enviroment - uniwersalne środowisko debiana
+	- GNOME - najpopularniejsze unixowe środowisko graficzne stworzone z naciskiem na prostotę i wygodę obsługi
+	- Xfce - środowisko graficzne, które z założenia ma być proste w obsłudze, atrakcyjne wizualnie i szybkie
+	- GNOME Flashback - środowisko gnome z klasycznym layoutem z wersji 2. Nie wykorzystuje akceleracji 3D, więc potrzebuje mniej zasobów systemowych i jest szybszy
+	- KDE Plasma - drugie po gnome najpopularniejsze środowisko graficzne z przestrzenią roboczą Plasma. 
+	- Cinnamon - środowisko graficzne początkowo tworzone jako fork od gnome. W wersji 2.0 stał się oddzielnym środowiskiem graficznym. Obecnie rozwijany jako środowisko dystrybucji Linux Mint
+	- MATE - powstał na bazie gnome 2.32. Działa w trybie 2D dzięki czemu ma mniejsze wymagania sprzętowe i jest szybki
+	- LXDE - skrót od  "Lightweight X11 Desktop Enviroment" wskazuje, ze jest to "lekkie" środowisko. Zostało stworzone z myślą o starszych, mniej wydajnych komputerach, lub nowszych o mniejszych zasobach takich jak netbooki
+	- LXQt - kolejne lekkie środowisko graficzne, które powstało z połączenia LXDE-Qt i Razor-qt
+	- web server - instalacja na serwerze www
+	- SSH server - instalacja na serwerze ssh
+	- standard system utilities - standardowy pakiet narzędzi 
+- dla moich celów zaznaczam tylko 'standard system utilities' (im mniej pakietów tym szybciej przebiega instalacja)
+
+- w oknie instalacji programu rozruchowego GRUB klikamy 'Yes'. Program ten umożliwia wybór systemu operacyjnego na komputerze, na którym jest ich zainstalowanych kilka. Instaluje się on w głównym sektorze rozruchowym dysku (MBR - Master Boot Record) zajmującym 512 bajtów, przy czym zajmuje tam 446 bajtów. Pozostałe bajty zajmuje tablica partycji. 2 ostatnie bajty zajmuje podpis cyfrowy zwany "Magic number" o wartości '0xAA55' co BIOS odczytuje jako dysk bootowalny. Jeśli wpis jest inny BIOS będzie szukał kolejnego dysku. Jeśli go nie znajdzie wyświetli się błąd ładowania systemu.
 - System został zainstalowany
