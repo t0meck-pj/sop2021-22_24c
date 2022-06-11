@@ -15,11 +15,10 @@ Tworzymy nową zmienną lokalną o nazwie "X" z wartością "tekst"
 Wywołujemy komendę "echo" z argumentem "$X" co w wyniku wyświetli w termianlu "tekst"
 
 > bash
-Uruchamiamy kolejną instację bash
+Uruchamiamy kolejną instancję bash
 
 > echo $X
 Wywołujemy komendę "echo" z argumentem "$X", lecz w tym wypadku jako wynik nic się nie wyświetli. Stało się tak, ponieważ nowa instancja bash nie ma wglądu do zmiennych lokalnych w wyższej instancji (w swoim rodzicu).
-
 
 
 Zobacz:
