@@ -1,0 +1,11 @@
+zadanie5 a)
+
+A=Ala
+echo $A ma kota, a kot ma ${A:a:2}ę
+
+
+Żeby przechwycic parametr trzeba dołożyć jedną linijkę 
+W "normalnych" imionach odmiana polega tylko na dopisaniu "a" na końcu.
+
+A=$1
+echo $A ma kota, a kot ma ${A}a
