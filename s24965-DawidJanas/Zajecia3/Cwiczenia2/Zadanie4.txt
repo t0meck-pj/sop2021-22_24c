@@ -1,0 +1,6 @@
+!#/bin/bash
+Zmienna1=(*.c)
+Zmienna2=$(find *.c | wc -l)
+for ((i = 0; i < $Zmienna2; i++)); do
+cc ${Zmienna1[i]} -o ${Zmienna1[i]%.c};
+done

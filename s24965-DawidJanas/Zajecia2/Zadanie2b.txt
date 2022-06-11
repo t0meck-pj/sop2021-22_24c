@@ -1,0 +1,4 @@
+!#/bin/bash
+X="Tekst dłuższy"
+echo $X
+#Pomogło zastosowanie apostrofów ponieważ przypisać zmienną bez cudzysłowów lub apostrofów można tylko wtedy kiedy jest to tylko jeden wyraz

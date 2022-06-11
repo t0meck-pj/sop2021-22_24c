@@ -1,0 +1,16 @@
+!#/bin/bash
+PATH
+RANDOM
+PWD
+PS1
+USER
+HOSTNAME
+OSTYPE
+# PATH-informuję powłokę , w których katalogach ma szukać plików , może się to p#rzydać jeśli chcemy coś zrobić a nie jesteśmy obecnie w tym katalogu/plliku gdz#ie ma zostać wykonana komenda
+#  Random-jest to komenda która genereuje losowe intigery. 
+#  PWD-jest to komenda która mówi użytkownikowi gdzie obecnie się znajduje.
+#  PS1-To jest główny ekran , gdzie ustawia się wszystkie znaki specjalne lub wa#żne informacje , jest to dokładnie to po lewej stronie przy wpisywaniu komend w# terminalu (Wcześniej mieliśmy zadanie gdzie mieliśmy opisać zadanie co się zmi#eniło naszym zdaniem to właśnie to)
+#  USER-Komenda ta służy do wyświetlania nazw użytkowników aktualnie zalogowanyc#hna bieżącym hoście.
+#  HOSTNAME-Polecenie hostname w systemie Linux służy do uzyskania nazwy DNS i ustawienia nazwy hosta systemu lub nazwy domeny NIS.Nazwa hosta to nazwa nadana komputerowi i dołączona do sieci.
+#  OSTYPE-zwraca informacje o typie systemu operacyjnego działającego na komputerze.
+#  Wzystkie te komendy moim zdaniem przydają się jeżeli chcemy coś sprawdzić , lub nie wiemy gdzie się aktualnie znajdujemy bądź jeżeli chcielibyśmy coś zmienić niebędąc obecnie w miejscu gdzie zmiana miałaby się wykonać 

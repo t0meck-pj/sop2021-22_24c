@@ -1,0 +1,13 @@
+#!/bin/bash
+imie='^([A-ZĘÓĄŚŁŻŹĆŃ][a-zęóąśłżźćń]+[^0-9@,_%.-]*)$'
+kod='^([0-9]{2}-[0-9]{3})$'
+mail='^([A-Za-z0-9._%+-]+@[A-Za-z0-9.-]+\.[a-z]+)$'
+if [[ $1 =~ $imie ]]; then
+	echo imię
+elif [[ $1 =~ $kod  ]]; then
+	echo kod-pocztowy
+elif [[ $1 =~ $mail ]]; then
+	echo e-mail
+else
+	echo Nie mogę rozpoznać coto.
+fi	

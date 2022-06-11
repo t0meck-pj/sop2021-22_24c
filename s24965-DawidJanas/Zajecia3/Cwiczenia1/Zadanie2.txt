@@ -1,0 +1,9 @@
+!#/bin/bash
+FILE=config.cfg
+if [[ -a "$FILE" ]]; then
+./config.cfg
+elif [[ $# != 0 ]]; then
+./$1
+else
+echo "Coś tu jest nie tak , sprawdź czy aby napewno się nie mylisz"
+fi

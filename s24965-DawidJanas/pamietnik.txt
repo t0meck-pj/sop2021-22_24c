@@ -1,0 +1,4 @@
+2022.03.14
+Mój kochany pamiętniczku na ostatnich zajęciach nauczyłem się tworzyć maszynę wirtualną Linux , zajęcia były bardzo ciekawe , całość tworzenia maszyny wirtualnej nie była dla mnie nowością ponieważ zdarzyło mi się już tworzyć podobną na poprzednim semestrze ale dla utrwalenia wiedzy było to przydatne.
+2022.03.19
+Mój kochany pamiętniczku na ostatnich zajęciach nauczyłem się tworzyć zmienne w bashu , przypomniałem sobie jak poruszać się w bashu.Na zajęciach tworzyliśmy króliczka i wyświetlaliśmy go poprostu w bashu jak i w podpowłokach.Uczyliśmy się również jak operować na zmiennych i jaka jest różnica między innymi apostrofem a cudzysłowem , a różnica jest taka , że trzeba używać apostrofów lub cudzysłowów kiedy chcemy przypisać do zmiennej więcej niż jeden wyraz , różnica pomiędzy cudzysłowem a apostrofem jest również taka , że apostrof nie czyta wartości zmiennej tylko rozumie to tak jak to jest napisane.
