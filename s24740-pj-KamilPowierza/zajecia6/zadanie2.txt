@@ -36,29 +36,37 @@ int main(void){
 	if(access("tmp/lock.txt", F_OK)==0){
 		/*Jest plik*/
 		fp = fopen("tmp/lock.txt", "r");
-		int sign_num;
-		fscanf(fp, "%d", &sign_num);
-		kill(sign_num, SIGUSR1);
-		fclose(fp);
+		if(fp == NULL){
+			printf("Nie udalo sie otworzyc pliku");
+		}else{
+			int sign_num;
+			fscanf(fp, "%d", &sign_num);
+			kill(sign_num, SIGUSR1);
+			fclose(fp);
+		}
 	}else{
 		/*Nie ma pliku*/
 		fp = fopen("tmp/lock.txt", "w+");
-		fprintf(fp, "%d", getpid());
-		fclose(fp);
-		
-		sigaction(SIGUSR1, NULL, &old_action);
-		if(old_action.sa_handler != SIG_IGN)
-			sigaction(SIGUSR1, &new_action, NULL);
-		
-		sigaction(SIGINT, NULL, &old_action_skasuj);
-		if(old_action_skasuj.sa_handler != SIG_IGN)
-			sigaction(SIGINT, &new_action_skasuj, NULL);
-		/*
-		signal(SIGUSR1, handler);
-		signal(SIGINT, skasuj);
-		*/
-		while(petla == 1){
-			sleep(1);
+		if(fp == NULL){
+			printf("Nie udalo sie otworzyc pliku");
+		}else{
+			fprintf(fp, "%d", getpid());
+			fclose(fp);
+			
+			sigaction(SIGUSR1, NULL, &old_action);
+			if(old_action.sa_handler != SIG_IGN)
+				sigaction(SIGUSR1, &new_action, NULL);
+			
+			sigaction(SIGINT, NULL, &old_action_skasuj);
+			if(old_action_skasuj.sa_handler != SIG_IGN)
+				sigaction(SIGINT, &new_action_skasuj, NULL);
+			/*
+			signal(SIGUSR1, handler);
+			signal(SIGINT, skasuj);
+			*/
+			while(petla == 1){
+				sleep(1);
+			}
 		}
 	}
 
