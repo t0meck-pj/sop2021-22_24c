@@ -1,0 +1,1 @@
+po przypisaniu komendy ls-l do x za pomoca X=$(ls -l) wywolanie echo $X wypisuje nam zawartosc komendy ls -l tylko w jednym ciagu a nie linia pod linia tak jak to robi same ls -l, aby nie było różnicy należy wywowałać echo "$X"

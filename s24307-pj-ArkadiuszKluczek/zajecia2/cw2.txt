@@ -1,0 +1,4 @@
+Po utworzeniu nowej zmiennej w powloce bash nie wykonalismy exportu przez co w nastepnej powloce nie zostala ona wyswietlona
+Aby wypisac wiecej niz dwa wyrazy w zmiennej musimy dodac "" lub ''
+Roznica pomiedzy "" a '' jest taka ze "" wyswietla zawartosc zmiennej X w Y a '' wyswietla napis tekst:$X
+

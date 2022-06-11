@@ -1,0 +1,31 @@
+Przed rozpoczęciem instalacjii potrzebowałem obrazu, którego pobrałem ze strony debian.org. Wmiędzyczasie skonfigurowałem virtual boxa następująco:
+Tools->nowa->Nazwa:deb(wpisując deb wyskakuje nam wersja debian) typ linux oraz wybrałemścieżkę na moim komputerze,następnie należy okreści rozmiar pamięci RAM w megabajtach,
+ wybrałem 8GB(w megabajtach 8192), ponieważ uważam iż jest to optymalna ilość RAM, do użytkowania virtual boxa->następnie wyskakuje nam opcja wyboru wirtualnego dysku twardego wybrałem "Stwórz wirtualny dysk",
+ ponieważ istniejącego nie posiadam->następnie do wyboru miałem "Typ pliku z wirtualnym dyskiem" do wyboru były:
+VDI(który wybrałem) - VirtualBox disk Image, jest to format pliku wirtualnego dysku twardego, może zawierać dokładnie to samo, co znajduje się na partycjach fizycznych dysków, czyli pliki foldery, systemy plików czy partycje
+VHD - Virtual Hard Disk -> jest to format dysku twardego, może zawierać dokladnie to samo co znajduje się na partycjach fizycznych dysku
+VMDK - Virtual Machine Disk->jest to dysk wirtualny przechowujący zawartość dysku twardego maszyny wirtualnej.
+Następnie pokazała mi się opcja "Pamięc na fizycznym dysku twardym" -> Dynamicznie przydzielany lub Stały rozmiar, wybrałem dynamicznie przydzielany,
+ ponieważ w razie potrzeby pamięć sama się rozszerzy, a w przypadku stałego rozmiaru jest to niemożliwe, następnie trzeba określić lokalizacje oraz rozmiar pliku,
+ wybrałem 34GB(ponieważ uważam,że więcej nie potrzeba),po kliknięciu "Utwórz" przeszedłem do ustawień->pamięć-> i kontroler IDE wybrałem wcześniej pobranego debiania,
+następnie uruchomiłem debiana,wyskoczyło mi okienko instalacyjne do wyboru miałem graficzną instalacje oraz zwykła instalacje -> wybrałem instalację zwykłą->Pierwsze co wyskakuje to wybór języka->
+wybrałem język angielski ze względu na to, że w języku angielskim jest dużo więcej informacji w internecie na dany temat->następnie lokacja->other->Europe->Poland->strefa czasowa->Polish->
+ następnie wyskakuje aby ustalić nazwę hosta: Hostname: defualtowo jest wpisane debian i tak wybrałem->nazwa domeny->defaultowo nie jest nic wpisane i rowniez przeszedlem bez wpisywania->
+następnie hasło do roota które również zostawiłem puste -> potwierdzenenia hasła czyli wcisnąłem tylko enter-> następnie należy wpisać nazwę użytkowika-> Ustawiłem "X"->
+następnie nazwa oraz hasło dla użytkownika ustawiłem również "x"->następnie wyskakuje nam opcja partycjonowania dysku->
+wybieramy opcje manual ponieważ chcemy to zrobić po swojemu :) Pozostałem opcje to guided,lvm i lvm encrypted, lvm sluzy do tworzenia dysku wirtualnego z roznych urzadzen w pamieci
+ a encrypted lvm po prostu tworzy zaszyfrowane partycje,partycjonowania dysku ciąg dalszy czyli wyskakuje nam opcja, której znowu nie chcemy guided partitioning, ponieważ wolimy to zrobić sami i lepiej :)
+ Czyli klikamy na scsi3->i dzielimy ja na partycje->tworzymy partycje w moim przypadku wybrałem 22GB, ponieważ odkładam 12gb na swap(ponieważ powinno odkładać się 1.5x ilości pamięci RAM)
+->następnie mamy do wyboru tryb primary lub logical-> wybieramy partycje primary która odpowiada za rozruch, typ logical, który służy do przechowywania danych->wybieramy opcje beginning-> mamy do wyboru system plików:
+ext4-> najnowszy system plików linuxowych, ext3->starszy brat ext4,btrfs->który pozwala chronić dane i jest wyposażony w integralnosć danych i umożliwia szybkie tworzenie migawek,
+JFS,XFS->starsze wersje przeznaczone dla specjalnych zastosowań,FAT16,FAT32->pliki FAT adresowalne 16 oraz 32bitowo, swap area->przechuwuje dane gdy, nie ma już miejsca w pamięci RAM,
+wybrałem opcje ext4->następnie mamy mount ponty-> /-glowny plik systemowy,/boot-pliki statyczne bootowania->/home-katalogi domowe użytkowników->/tmp-tymczasowe pliki->/usr-dane statyczne->/var-zmienne dane->/srv-dane dotyczące usług dla systemu->
+/opt-dodatkowe pakiety oprogramowania aplikacji->/usr/local - do użytku administratora gdy instaluje oprogramowanie lokalnie -> wybrałem opcje / 
+->done setting up the partition->pozostałą część miejsca pożytkujemy na ustawienie swap area jednakże teraz wybieramy typ logical->Finish partitioning and write changes to disk->następnie wyskakuje nam pytanie o kraj-Poland->deb.debian.org->przeklikuje pytanie o proxy->->następnie mamy do wyboru środowiska:
+GNOME-nowoczesny i prosty w użyciu,można zwiększyć funkcjonalność dzięki rozszerzeniom,duże zużycie zasobów systemowych
+Xfce-małe zużycie zasobów,łatwy w obsłudze,ograniczone możliwośći konfiguracyjne
+KDE Plasma-nowoczesny i dopracowany intefejs użytkownika,najbardziej zaawansowane i wydajne środowisko graficzne, duże możliwości dostosowania wyglądu,średnie zużycie zasobów systemowych,
+Cinnamon-elegancki i dopracowany wygląd,łatwy i przyjazny w użytkowaniu, duże możliwośći konfiguracyjne,duże zużycie zasobów
+MATE-średnie zużycie zasobów systemowych,intuicyjne i łatwe w obsłudze,duże możliwości dostosowywania wyglądu,dobre dla słabszych komputerów
+LXDE i LXQt->małe zużycie systemowych zasobów,wspiera wszystkie dystrybucje linuxa, brak animacji graficznych na rzecz wydajności
+odznaczam wszystko poza standard system utilities(zawiera w sobie pakiet komend, które przydają się przy dalszym użytkowaniu)->instalacja zakończona :)

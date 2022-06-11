@@ -1,0 +1,23 @@
+14.03.2022
+Mój kochany pamiętniczku na pierwszej lekcji systemów operacyjnych nauczyłem się:-instalacji debiana na virtual boxie
+-konfiguracji virtual boxa
+-partycjonowania oraz rozdzielania miejsca na dysku
+
+31.03.2022
+Drogi pamiętniczku, na ostatnich zajęciach przerabialiśmy skrypty w bashu,nauczylem sie:
+-rozpoczynac skrypt w bashu
+-inicjalizowac skrypty
+-przechodzic miedzy powlokami basha
+-deklarowac zmienne
+-odczytywac wartosc zmiennej
+-tworzyc proste skrypty z wypisywaniem na ekran
+
+14.04.2022
+Drogi pamiętniczku, na ostatnich zajęciach nauczyłem się:
+-używać instrukcji warunkowej if
+-pętli while
+-pętli for
+-pętli untill
+-deklarować tablice
+-odczytywac z tablic
+-tworzyc funkcje
