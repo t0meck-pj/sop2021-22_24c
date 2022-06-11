@@ -1,0 +1,56 @@
+zad 1a,b
+
+#include <iostream>
+#include <stdio.h>
+
+using namespace std;
+
+int main(int argc, char* argv[]) {
+
+FILE *plik = fopen("numbers.txt","r");
+int x, i, a;
+int num;
+int tab[15];
+
+fscanf(plik,"%d", &x);
+
+        while(fscanf(plik, "%d",&num) > 0) {
+                tab[i] = num;
+                i++;
+        }
+
+a = x;
+cout << "Ilosc liczb: " << a << endl;
+
+
+
+if(argc == 2)
+{
+
+        cout << "Ciag liczb: " << endl;
+        for(int j=0; j < x; j++){
+                cout << tab[j] << endl;
+        }
+
+        fclose(plik);
+}
+else if (argc == 1)
+{
+         cout << "Ciag liczb odwrotnie: " << endl;
+        for(int p=x-1; p > x; p--){
+                cout << tab[p] << endl;
+        }
+
+        fclose(plik);
+}
+else
+{
+ cout<<"podano za dużo argumentow"<<endl;
+}
+
+return 0;
+}
+
+--------------------
+
+

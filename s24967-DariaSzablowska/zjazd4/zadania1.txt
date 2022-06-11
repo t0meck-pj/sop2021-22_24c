@@ -1,0 +1,72 @@
+zadanie 1.1
+
+#include <iostream>
+
+using namespace std;
+
+int main(){
+int x=1;
+int suma;
+
+while(x!=0)
+{
+cout << "podaj liczbe" << endl;
+cin >> x;
+suma += x;
+}
+
+cout << suma << endl;
+return 0;
+}
+
+--------------------
+
+zadanie 1.2
+
+
+
+#include <iostream>
+
+using namespace std;
+
+int main(){
+int x=1;
+int suma;
+
+while(x!=0)
+{
+cout << "podaj liczbe" << endl;
+cin >> x;
+suma += x;
+}
+
+return suma;
+}
+--------------------
+
+zadanie 1.3
+
+#include <iostream>
+#include <cstdlib>
+
+using namespace std;
+
+int main(int argc, char* argv[]) {
+
+int height = atoi(argv[1]);
+
+for(int i=1; i<=height; i++)
+{
+   for( int j = 1; j <= height - i; j++ )
+        {
+            cout << " ";
+        }
+        for( int j = 1; j <= i * 2 - 1; j++ )
+        {
+            cout << "*";
+        }
+        cout << endl;
+}
+return 0;
+}
+

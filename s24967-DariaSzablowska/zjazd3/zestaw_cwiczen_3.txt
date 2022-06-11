@@ -1,0 +1,40 @@
+Zadanie 3.1
+
+
+
+text=$1
+colour=$2
+
+function myFunction(){
+        if [[ $colour == green ]]; then
+        echo -e "\e[32m$text\e[0m"
+        elif [[ $colour == red ]]; then
+        echo -e "\e[31m$text\e[0m"
+        elif [[ $colour == blue ]]; then
+        echo -e "\e[34m$text\e[0m"
+        elif [[ $colour == purple ]]; then
+        echo -e "\e[35m$text\e[0m"
+        elif [[ $colour == brown ]]; then
+        echo -e "\e[33m$text\e[0m"
+        fi
+}
+myFunction
+--------------------
+
+Zadanie 3.2
+
+
+function fibonacci(){
+        if [[ $1 == 0 ]]; then
+                return 0
+        elif [[ $1 == 1 ]]; then
+                return 1
+        else
+                a=$'fibonacci $[$1 - 2]'
+                b=$'fibonacci $[$1 - 1]'
+                wynik=$[$a + $b ]
+                echo $wynik
+        fi
+}
+fibonacci $1
+
