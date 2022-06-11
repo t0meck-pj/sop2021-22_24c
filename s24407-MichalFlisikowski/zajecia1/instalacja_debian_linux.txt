@@ -1,0 +1,85 @@
+Zajecia 1: Instalacja systemu linux na maszynach wirtualnych
+
+Instrukcja inastalacji systemu Debian w WirtualBox.
+->VirtualBox
+  ->Zwykły start - domyślne włączenie vm.
+  ->Bezgłowy start - włączenie maszyny bez obrazu.
+  ->Oddzielny start - uruchomienie maszyny w domyślny sposób, lecz z możliwością wyłączenia obrazu.
+  ->Tworzymy nową maszyne wirtualną, przydzielamy pamięć RAM (1GB wystarczy), dodajemy obraz systemu:
+    ->VMDK (Virtual Machine Disk) format stworzony na potrzeby Vmware.
+	->VHD (Virtual Hard Disk) format stworzony na potrzeby Microsoftu.
+	->VDI (VirtualBox Disk Image) domyślny format wykorzystywany w VB.
+  ->Przydzielamy pamięć na system i nasze pliki:
+    ->Pamięć dynamiczna - pamięć będzie rozszerzać się do określonego rozmiaru.
+	->Pamięć statyczna - przypisujemy rozmiar na sztywno.
+->Debian
+  ->Pobieramy obraz systemu operacyjnego z oficjalnej strony:
+  ->Uruchamiamy maszyne ze wcześniejszym zaimportowaniem pliku iso.
+  ->Klikamy f12 żeby wybrać kolejność bootwania, wybieramy ten, na ktorym mamy plik iso.
+  ->Jest kilka sposobow na instalacje:
+    ->Graphical install – instalacja z GUI.
+	->Install – instalacja tekstowa.
+	->Advanced options
+	  ->Graphical expert install - zaawansowany tryb z GUI.
+	  ->Graphical rescue mode - tryb awaryjny z GUI.
+	  ->Graphical automated install - uproszczona instalacja z GUI.
+	  ->Expert install - instalacja tekstowa zaawansowana..
+	  ->Rescue mode - instalacja tekstowa w trybie awaryjnym.
+	  ->Automated install - instalacja tekstowa w trybie uproszczonym.
+	  ->Speech-enabled advanced options:
+	    ->Expert speech install - zaawansowana instalacja ze syntezatorem mowy.
+		->Rescue speech mode - instalacja tekstowa w trybie awaryjnym ze syntezatorem mowy.
+		->Automated speech install - instalacja tekstowa w trybie uproszczonym ze syntezatorem mowy.
+	->Accessible dark contrast installer menu - zmiana kontrastu wyswietlanego menu.
+	->Help - dział pomocy.
+  ->Select language - wybieramy język instalacji.
+  ->Select your location - wybór lokacji, w której aktualnie się znajdujemy.
+  ->Configure locales - ustawienia dot. czasu/daty itp.
+  ->Configure the keyboard - wybór rodzaju klawiatury.
+  ->Configure the network - konfiguracja sieci.
+	->Hostname - nazwa hosta
+	->Domain name - nazwa domeny jeżeli taką posiadamy.
+  ->Set up users and passwords (Root) - konfiguracja roota.
+	->Root password - hasło roota.
+	->Re-enter password to verify - hasło roota.
+  ->Set up users and passwords (Full name) - imię i nazwisko.
+  ->Set up users and passwords (New user) (Username) - nazwa nowego użytkownika.
+  ->Set up users and passwords (New user) - hasło nowego użytkownika.
+	->Choose a password for the new user - hasło nowego użytkownika.
+	->Re-enter password to verify - hasło nowego użytkownika.
+  ->Partition disks
+    ->Guided use entire disk - użycie całego dysku.
+	->Guided use entire disk and set up LVM - użycie całego dysku i przejscia do Logical Volume Manager.
+	->Guided use entire disk and set up encrypted LVM - użycie całego dysku i przejscia do LVM z szyfrowaniem.
+	LVM - Logical volume management - pozwala na lepsze i szybsze rozmieszczanie danych na dysku przez administratora.
+	->Manual - ręczna konfiguracja dysku.
+	->Klikamy na dysk i potwierdzamy opcje "yes".+
+	->Wybieramy wolna partycje ~ "FREE SPACE"
+	->Create a new partition - Po kolei manualnie konfigurujemy miejsce na dysku na poszczególne partycje. Musimy stworzyć odzielne partycje na /home (główna partycja), /var (zmienne), /tmp (tymczasowe pliki), /boot (pliki systemowe), (na tej partycji powinniśmy ustawić flage boot, by system wiedział, z której partycji ma uruchamiać system).
+	->Automatically partition the free space - automatyczna alokacja partycji.
+	->All files in one partition (recommended for new users) - wszystkie pliki będą na jednej partycji i ta opcja rekomendowana jest dla nowych użytkowników.
+	->Separate /home partition - oddzielnie przydzieli partycje dla /home.
+	->Separate /home, /var, and /tmp partitions - oddzielnie przydzieli partycje dla /home, /var i /tmp.
+	->Show Cylinder/Head/Sector information - pokazuje szczegółowe informacje o naszym dysku.
+	->Finish partitioning and write changes to disk - Po zakończonym partycjonowaniu wybieramy tą opcję by zakończyć i przejść dalej.
+	->Configure the package manager - możemy doinstalować dodatkowe paczki.
+	->Wybieramy region, najlepiej najbliżej położony nas.
+	->Wybieramy z jakiej domeny mają się one pobierać. Zalecane dla nas to "ftp.task.gda.pl"
+	->HTTP proxy information - możliwość dodania proxy.
+	->Configuring popularity-contest - opcjonalne przesyłanie danych do developerów.
+	->Software selection - system jest zainstalowany, lecz teraz wybieramy jak chcemy by wyglądał i do czego ma być wykorzystywany. Program wyświetlający te ustawienia nazywa się tasksel. Po zainstalowaniu już wszystkiego, uruchamiamy ponownie system. W terminalu instalujemy pakiet tasksel "sudo apt-get install tasksel", następnie "sudo tasksel".
+	->Debian desktop environment - instaluje środowisko debiana.
+	->GNOME - graficznie intuicyjny i atrakcyjny pulpit oraz rozbudowana platforma, w której łatwo o integracje z resztą pulpitu.
+	->Xfce - lekkie środowisko graficzne dla systemów *NIX. Szybko ładują się aplikacje.
+	->GNOME Flashback - sesja open source dla GNOME 3.
+	->KDE Plasma - graficzne środowisko open source. Łatwa obsługa z współczesną funkcjonalnością.
+	->Cinnamon - open source system. Oferuje szybkie działanie.
+	->MATE - intuicyjne i atrakcyjne środowisko graficzne wykorzystujące tradycyjne metafory dla Linuxa i innych uniksopodobnych systemów operacyjnych.
+	->LXDE - zaprojektowany na słabsze maszyny.
+	->LXQt - lekkie środowisko graficzne typu open source. Powstała z połączenia projektów LXDE i Razor-qt.
+	->web server - wieloplatformowy serwer HTTP open source, który obsługuje duży procent witryn internetowych.
+	->SSH server - protokół do zdalnych połączeń.
+	->standard system utilities - instaluje dodatkową ilość standardowych paczek systemowych.
+
+  
+	

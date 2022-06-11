@@ -1,0 +1,5 @@
+2.1) Pod zmienną X zapisujemy ciąg znaków "tekst", następnie wypisujemy na ekran zawartość zmiennej. Uruchamiamy kolejną powłoke Bash, w której nie mamy dostępu do zmiennych z powłoki wyżej.
+
+2.2) Aby zapisac ciąg znaków, w którym występują białe znaki należy użyć cudzysłówów lub apostrofów.
+
+2.3) Apostrofy zamieniają w ciąg znaków znaki specjalne np. "$".  

@@ -1,0 +1,5 @@
+echo $X - sprawia, że wypisujemy zawartość w jednej lini, dodając cudzysłowia uzyskamy lepszy rezultat
+
+X=`ls -l`
+
+echo "$X"

@@ -1,0 +1,59 @@
+2.1)
+#!/bin/bash
+
+for ((i = 10; i > 0; i=i-2))
+ do echo $i
+ done
+ 
+2.2)
+#!/bin/bash
+
+for i
+ do 
+   echo $i 
+done
+
+2.3)
+#!/bin/bash
+
+line=`ls | wc -l`
+
+for ((i = 1; i < $line+1; i++))
+ do 
+   echo "Patrzcie Panstwo, oto plik:" `ls | sed -n ${i}p`
+done
+
+2.4)
+#!/bin/bash
+
+line=`ls | wc -l`
+
+for ((i = 1; i < $line+1; i++))
+ do 
+	file=`ls | sed -n ${i}p`
+	if [ ${file##*.} == "c" ]
+	then
+		cc ${file} -o ${file:0:${#file}-2}
+	fi
+done
+
+2.5)
+#!/bin/bash
+
+Text=`cat file.txt`
+tab=()
+
+for ((i = 0; i < ${#Text}; i++))
+ do 
+	tab[i]=${Text:i:1}
+done
+
+echo "Od poczatku do konca"
+printf %s "${tab[@]}"
+echo "${#tab[@]}"
+
+echo "Od konca do poczatku"
+for ((i = "${#tab[@]}"; i > -1; i--))
+ do 
+	printf %s "${tab[i]}"
+done
