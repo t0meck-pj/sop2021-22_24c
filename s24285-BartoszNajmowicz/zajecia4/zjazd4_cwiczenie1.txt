@@ -1,0 +1,69 @@
+Cwiczenie 1.1
+
+#include<iostream>
+
+using namespace std;
+
+int main () {
+	int a=1, suma=0;
+	
+	for (int i=0; a!=0; i++) {
+                cout << "Podaj liczbe: ";
+                cin >> a;
+                suma+=a;
+	}
+
+	cout << suma << endl;
+	return 0;
+}
+
+
+Cwiczenie 1.2
+
+#include<iostream>
+
+using namespace std;
+
+int main () {
+        int a=1, suma=0;
+
+        for (int i=0; a!=0; i++) {
+                cout << "Podaj liczbe: ";
+                cin >> a;
+                suma+=a;
+        }
+
+        cout << suma << endl;
+        return suma;
+}
+
+// po wpisaniu w terminalu echo $? powinien pojawic sie wynik zakonczenia programu
+
+
+Cwiczenie 1.3
+
+#include <iostream>
+#include <cstdlib>
+
+using namespace std;
+
+int main (int argc, char* argv[]) {
+	
+	int argument = atoi(argv[1]); //konwertowanie do inta
+        //int argument = strtol (argv[1], NULL, 10); //strtol - inny sposob na konwertowanie lancucha znakow (lancuch do skonwertowania, NULL, system liczbowy)
+
+	for (int i=1; i<=argument; i++) {
+		for (int j=1; j<=(argument-i); j++) {
+			cout << " ";
+		}
+		
+		for (int k=1; k<=(i*2-1); k++) {
+			cout << "*";
+		}
+		cout << endl;
+	}
+
+	return 0;
+}
+
+

@@ -1,0 +1,130 @@
+Cwiczenie IO 1.1
+
+#include <iostream>
+#include <stdio.h>
+
+using namespace std;
+
+int main() {
+    int linie, i=0, n;
+    int tab[10];
+    FILE * plik = fopen ("inputData.txt", "r");
+
+    if (plik != NULL) {
+    	fscanf(plik, "%d",&n);
+
+    	while(fscanf(plik, "%d",&linie) > 0) {
+		tab[i] = linie;
+        	i++;
+    	}
+
+    	fclose(plik);
+
+    	cout << "Ciag liczb: " << endl;
+    	for(int j=0; j < n; j++){
+        	cout << tab[j] << endl;
+    	}
+
+    	cout << endl;
+    } else {
+	    cout << "Nie mozna otworzyc pliku!" << endl;
+    }
+
+    return 0;
+}
+
+Cwiczenie IO 1.2
+
+#include <iostream>
+#include <stdio.h>
+
+using namespace std;
+
+int main() {
+    int linie, i=0, n;
+    int tab[10];
+    FILE * plik = fopen ("inputData.txt", "r");
+
+    if (plik != NULL) {
+    	fscanf(plik, "%d",&n);
+
+    	while(fscanf(plik, "%d",&linie) > 0) {
+		tab[i] = linie;
+        	i++;
+    	}
+
+    	fclose(plik);
+
+    	cout << "Ciag liczb w odwrotnej kolejnosci: " << endl;
+    	for(int k=n-1; k>=0; k--){
+        	cout << tab[k] << endl;;
+    	}
+
+    	cout << endl;
+    } else {
+	    cout << "Nie mozna otworzyc pliku!" << endl;
+    }
+
+    return 0;
+}
+
+
+
+Cwiczenie 2 IO:
+
+#include <iostream>
+#include <stdio.h>
+
+using namespace std;
+
+int main()
+{
+
+    char hexa;
+    char tab[20];
+    int i=0, line=1;
+
+    FILE * plik;
+    plik = fopen ("inputData.txt", "r");
+	do {
+		if(i < 1){
+		    printf("%08X0 ", line);
+		    line++;
+		    
+		}
+		printf("%02X ",(unsigned char)hexa);
+		tab[i] = hexa;
+		i++;
+		
+		if(i == 16){
+		    i=0;
+		    for(int x=0; x < 16; x++) {
+		        printf("%c", (unsigned char)tab[x]);
+		    }    
+		    cout << endl;
+		}
+
+    	} while(( hexa = fgetc(plik) ) != EOF );
+    	
+    	
+
+    if(i > 0 && i < 16){
+        for(int j=i; j < 16; j++) {
+            tab[j] = ' ';
+            printf("%02X ",tab[j]);
+
+        }
+        for(int j=0; j < 16; j++){
+            printf("%c", tab[j]);
+                        		
+        }        
+	cout << endl;
+	
+    }
+    
+    
+
+    fclose(plik);
+
+    return 0;
+}
