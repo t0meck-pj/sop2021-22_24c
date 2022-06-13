@@ -19,4 +19,25 @@ Podpunkt 2:
 	fi
 	
 Podpunkt 3:
+	#!/bin/bash
+
+	nazwa=$(basename $0)
+
+	if [[ ${nazwa} != *.sh ]]; then
+		mv $0 $0.sh
+		echo "Zmieniono rozszerzenie na .sh"
+		ls
+	else
+		echo "Rozszerzenie to .sh"
+	fi
+	
+Podpunkt 4:
+	#!/bin/bash
+
+	zmienna=$(ls -l | wc -l)
+	if [[ $zmienna > 6 ]]; then
+		echo "Katalog zawiera wiecej niz 5 plikow"
+	else
+		echo "Katalog zawiera 5 lub mniej plikow"
+	fi
 	
