@@ -1,0 +1,7 @@
+Ćwiczenie 4
+
+Przypisuję zmiennej X wartość ls -l:
+X=$(ls -l)
+echo $X - tak jak sugerowane było w ćwiczeniu uzyskuje inny rezultat, niż jak wpisuje z terminala: ls -l
+Rozwiązaniem w tym przypadku jest wywołanie zmiennej:
+echo "$X" - brana jest brana jest kompletna struktura polecenia

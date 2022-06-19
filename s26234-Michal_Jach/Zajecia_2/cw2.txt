@@ -1,0 +1,39 @@
+ćwiczenie 2
+X=tekst
+echo $X
+bash
+echo $X
+
+Co się stało? Czy potrafisz wyjaśnić?
+Po wprowadzeniu wartości zmiennej X wywołałem ją poleceniem echo. Wyświetliła się zawartość zmiennej w kolejnej linii: tekst. Wpisałem bash <enter> i wywołałem ponownie zmeinną poleceniem echo. Wyświetliło się nic - pusta linia - ponieważ po wpisaniu bash powinienem podać nazwę pliku skryptu z rozszerzeniem .sh jeżeli jestem w folderze gdzie znajduje się skrypt, bądź podać ścieżkę lokalizacji skryptu. 
+
+
+X=Tekst dłuższy
+echo $X 
+Co jest nie tak? jak to naprawić?
+Rozwiązaniem jest zastosowanie pojedyńczego apostrofu ' na początku i na końcu frazy, czyli:
+X='Tekst dłuższy'
+echo $X
+
+
+
+Mam określoną zmienną X, która wywoływana jest w zmiennej Y
+X="Tekst 1"
+Y="tekst:$X"
+echo "$Y"
+Dla Y w podwójnym cudzysłowie następuje wczytanie wartości przypisanej występującej w tym cudzysłowie zmiennej z pominięciem pozostałej treści
+
+Y='tekst:$X'
+echo "$Y"
+Dla Y w pojedynczym cudzysłowie następuje wczytanie występującej w tym cudzysłowie zmiennej - jej zapis nie jej przypisana wartość - z pominięciem pozostałej treści
+
+Y=tekst:$X
+echo "$Y"
+Dla Y bez cudzysłowiu pozwala wypisać wartość przypisaną dla Y oraz wartość jaka przypisana jest do zmiennej X
+
+
+
+
+
+
+
