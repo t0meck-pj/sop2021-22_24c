@@ -127,16 +127,28 @@ int main()
 
 
 
+Cwiczenie domowe:
+*********************************************
+int main()
+{
+        for(int i = 1; i <= 2; i++)
+        {
+                fork();
+                for(int j = 0; j < 2; j++)
+                {
+                        fork();
+                        fork();
+                }
+                wait(NULL);
+        }
 
+        //getch();
 
+        sleep(1000);
 
-
-
-
-
-
-
-
+        return 0;
+}
+********************************************
 
 
 

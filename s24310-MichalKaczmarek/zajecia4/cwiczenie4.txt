@@ -131,8 +131,9 @@ int main(int argc, char** argv)
         char* plik = argv[1];
         char hexa;
         char tab[16];
+        int i = 0;
         int line = 1;
-	int i = 0;
+
 
         FILE *hex;
         hex = fopen(plik, "r");
@@ -145,7 +146,7 @@ int main(int argc, char** argv)
                         line++;
                 }
 
-                printf("%02X ", hexa);
+                printf("%02X ", (unsigned char)hexa);
                 tab[i] = hexa;
                 i++;
 
@@ -154,16 +155,17 @@ int main(int argc, char** argv)
                         i = 0;
                         for(int j = 0; j < 16; j++)
                         {
-                                printf("%c", tab[j]);
+                                printf("%c", (unsigned char)tab[j]);
                         }
                         printf("\n");
                 }
         }
 
-        if(i > 0 && i < 17)
+        if(i > 0 && i < 16)
         {
                 for(int j = i; j < 16; j++)
                 {
+                        tab[j] = ' ';
                         printf("%02X ", tab[j]);
                 }
                 for(int j = 0; j < 16; j++)
@@ -175,11 +177,206 @@ int main(int argc, char** argv)
 
         fclose(hex);
 
+
         return 0;
 }
+
 *******************************************
 
 Cwiczenie domowe:
+Linked List:
+*******************************************
+#include <stdio.h>
+#include <stdlib.h>
+
+
+struct node
+{
+        int value;
+        struct node *next;
+};
+
+
+void printing(struct node *w)
+{
+        while (w != NULL)
+        {
+                printf("%d ", w->value);
+                w = w->next;
+        }
+        printf("\n");
+}
+
+
+
+int main()
+{
+        struct node *head;
+        struct node *one = NULL;
+        struct node *two = NULL;
+        struct node *three = NULL;
+
+        one = malloc(sizeof(struct node));
+        two = malloc(sizeof(struct node));
+        three = malloc(sizeof(struct node));
+
+        one->value = 1;
+        two->value = 2;
+        three->value = 3;
+
+        one->next = two;
+        two->next = three;
+        three->next = NULL;
+
+        head = one;
+        printing(head);
+
+
+}
+*****************************************
+
+Doubly linked list: (wzorowane na przykladzie z internetu)
+*****************************************
+#include <stdio.h>
+#include <stdlib.h>
+
+
+struct node
+{
+        int value;
+        struct node *prev;
+        struct node *next;
+};
+
+void insertFront(struct node** head, int value)
+{
+        struct node* newnode = (struct node*)malloc(sizeof(struct node));
+
+        newnode -> value = value;
+        newnode -> next = (*head);
+        newnode -> prev = NULL;
+
+        if((*head) != NULL)
+        {
+                (*head) -> prev = newnode;
+        }
+
+        (*head) = newnode;
+}
+
+void insertAfter(struct node* prevNode, int value)
+{
+        if(prevNode == NULL)
+        {
+                printf("poprzednie wiazanie nie moze byc puste");
+                return;
+        }
+
+        struct node* newnode = (struct node*)malloc(sizeof(struct node));
+
+        newnode -> value = value;
+        newnode -> next = prevNode -> next;
+        prevNode -> next = newnode;
+        newnode -> prev = prevNode;
+
+        if(newnode -> next != NULL)
+        {
+                newnode -> next -> prev = newnode;
+        }
+}
+
+void insertEnd(struct node** head, int value)
+{
+        struct node* newnode = (struct node*)malloc(sizeof(struct node));
+
+        newnode -> value = value;
+        newnode -> next = NULL;
+        struct node* temp = *head;
+
+        if(*head == NULL)
+        {
+                newnode -> prev = NULL;
+                *head = newnode;
+                return;
+        }
+
+        while(temp -> next != NULL)
+        {
+                temp = temp -> next;
+        }
+
+        temp -> next = newnode;
+        newnode -> prev = temp;
+}
+
+void deleteNode(struct node** head, struct node* delNode)
+{
+        if(*head == NULL || delNode == NULL)
+        {
+                return;
+        }
+
+        if(*head == delNode)
+        {
+                *head = delNode -> next;
+        }
+
+        if(delNode -> next != NULL)
+        {
+                delNode -> next -> prev = delNode -> next;
+        }
+
+        if(delNode -> prev != NULL)
+        {
+                delNode -> prev -> next = delNode -> next;
+        }
+
+        free(delNode);
+}
+
+void display(struct node* node)
+{
+        struct node* last;
+
+        while(node != NULL)
+        {
+                printf("%d ", node -> value);
+                last = node;
+                node = node -> next;
+        }
+
+        if(node == NULL)
+        {
+                printf("NULL\n");
+        }
+}
+
+
+int main()
+{
+        struct node* head = NULL;
+
+        insertEnd(&head, 5);
+        insertFront(&head, 1);
+        insertFront(&head, 6);
+        insertEnd(&head, 9);
+
+        insertAfter(head, 11);
+        insertAfter(head -> next, 15);
+
+        display(head);
+
+        deleteNode(&head, head -> next -> next -> next -> next -> next);
+
+        display(head);
+
+}
+
+*******************************************
+
+
+
+FIBBONACI:
 (rekurencja)
 *******************************************
 int Fibbonaci(int, int, int);
@@ -237,22 +434,4 @@ int Fibbonaci(int x, int y, int z, int licznik)
         }
 }
 *********************************************
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 
