@@ -1,0 +1,158 @@
+Cwiczenie 1.1:
+*****************************************
+#include <iostream>
+#include <cstdlib>
+#include <stdlib.h>
+#include <stdio.h>
+#include <unistd.h>
+
+int main()
+{
+        pid_t x = getpid();
+        pid_t y = getppid();
+
+        std::cout << "PID = " << x << std::endl;
+        std::cout << "PPID = " << y << std::endl;
+
+        getchar();
+
+        return 0;
+}
+*****************************************
+
+Cwiczenie 1.2:
+*****************************************
+int main()
+{
+        pid_t parent = fork();
+        if(parent > 0)
+        {
+                std::cout << "Rodzic: " << std::endl;
+                std::cout << "PID: " << getpid() << std::endl;
+                std::cout << "PPID: " << getppid() << std::endl;
+        }
+        else
+        {
+                std::cout << "Dziecko: " << std::endl;
+                std::cout << "PID: " << getpid() << std::endl;
+                std::cout << "PPID: " << getppid() << std::endl;
+        }
+
+return 0;
+}
+******************************************
+
+Cwiczenie 1.3:
+******************************************
+int nieparzysta(int a)
+{
+        int i;
+        for(i = 1; i <= a/2; i++)
+        {
+                if((a%2) == 0)
+                {
+                        return 0;
+                }
+        }
+        return 1;
+}
+
+int main(int argc, char** argv)
+{
+        int n, i, suma;
+        n = atoi(argv[1]);
+
+        if(fork() == 0)
+        {
+                for(i = 1; i <= n; i++)
+                {
+                        if(nieparzysta(i) == true)
+                        {
+                                std::cout << i << std::endl;
+                        }
+                }
+        }
+        else
+        {
+                for(i = 1; i <= n; i++)
+                {
+                        suma = suma + i;
+                }
+                wait(NULL);
+                std::cout << "Suma = " << suma << std::endl;
+        }
+
+        return 0;
+}
+********************************************
+
+Cwiczenie 1.4:
+********************************************
+int main()
+{
+        for(int i = 1; i <= 100; i++)
+        {
+                if(fork() == 0)
+                {
+                        std::cout << i << " PID: " << getpid() << " | PPID: " << getppid() <>
+                }
+
+                else
+                {
+                        wait(NULL);
+                        break;
+                }
+        }
+        return 0;
+}
+*********************************************
+
+Cwiczenie 1.5:
+*********************************************
+int main()
+{
+        for(int i = 1; i <= 100; i++)
+        {
+                if(fork() == 0)
+                {
+                        std::cout << i << " PID: " << getpid() << " | PPID: " << getppid() << std::endl; 
+                        break;
+                }
+        wait(NULL);
+        }
+
+        return 0;
+}
+*********************************************
+
+
+
+Cwiczenie domowe:
+*********************************************
+int main()
+{
+        for(int i = 1; i <= 2; i++)
+        {
+                fork();
+                for(int j = 0; j < 2; j++)
+                {
+                        fork();
+                        fork();
+                }
+                wait(NULL);
+        }
+
+        //getch();
+
+        sleep(1000);
+
+        return 0;
+}
+********************************************
+
+
+
+
+
+
+

@@ -1,0 +1,437 @@
+Cwiczenie 1.1:
+******************************************
+#include <iostream>
+
+int main()
+{
+        int x=0, y=0;
+        std::cout << "podaj 1 liczbe: ";
+        std::cin >> x;
+        std::cout << "podaj 2 liczbe: ";
+        std::cin >> y;
+        int suma = x + y;
+        std::cout << "Suma: " << suma << std::endl;
+
+        return 0;
+}
+******************************************
+
+Cwiczenie 1.2:
+******************************************
+#include <iostream>
+
+int main()
+{
+        int x=0, y=0;
+        std::cout << "podaj 1 liczbe: ";
+        std::cin >> x;
+        std::cout << "podaj 2 liczbe: ";
+        std::cin >> y;
+        int suma = x + y;
+
+        return suma;
+}
+******************************************
+
+Cwiczenie 1.3:
+******************************************
+#include <iostream>
+#include <cstdlib>
+
+int main(int argc, char** argv)
+{
+        int h = atoi(argv[1]);
+        for(int i = 0; i < h; i++)
+        {
+                for(int j = 0; j < (h-i-1); j++)
+                {
+                        std::cout << " ";
+                }
+                for(int k = 0; k < i*2+1; k++)
+                {
+                        std::cout << "*";
+                }
+                std::cout << "" << std::endl;
+        }
+        for(int j = 0; j < h-1; j++)
+	{
+                std::cout << " ";
+        } 
+        std::cout << "*" << std::endl;
+
+
+        return 0;
+}
+*******************************************
+
+Cwiczenie 2.1:
+*******************************************                                    
+#include <iostream>
+#include <cstdlib>
+#include <stdio.h>
+#include <stdlib.h>
+
+int main(int argc, char** argv)
+{
+        char* plik;
+        int liczba;
+        int tablica[20];
+        int i = 0;
+        int n;
+        
+        if(argv[1]==NULL)
+        {
+                char* nazwa;
+                printf("Nie podales parametru, podaj nazwe pliku: ");
+                scanf("%s", nazwa);
+                plik = nazwa;
+        }
+        else
+        {
+                plik = argv[1];
+        }
+
+        FILE *licz;
+        licz = fopen (plik, "r");
+        fscanf(licz, "%d",&n);
+        while(fscanf(licz, "%d",&liczba) > 0)
+        {
+                tablica[i] = liczba;
+                i++;
+        }
+        fclose(licz);
+
+        printf("wypisanie jak w pliku: ");
+        for(int j = 0; j < n; j++)
+        {
+                printf("%d", tablica[j]);
+        }
+        printf("\n");
+
+        printf("wypisanie odwrotnie niz w pliku: ");
+        for(int j = n-1; j >= 0; j--)
+        {
+                printf("%d", tablica[j]);
+        }
+        printf("\n");
+
+        return 0;
+}
+********************************************
+
+Cwiczenie 2.2:
+********************************************
+#include <iostream>
+#include <cstdlib>
+#include <stdio.h>
+#include <stdlib.h>
+
+int main(int argc, char** argv)
+{
+        char* plik = argv[1];
+        char hexa;
+        char tab[16];
+        int i = 0;
+        int line = 1;
+
+
+        FILE *hex;
+        hex = fopen(plik, "r");
+
+        while((hexa = fgetc(hex)) != EOF)
+        {
+                if(i < 1)
+                {
+                        printf("%08X0 ", line);
+                        line++;
+                }
+
+                printf("%02X ", (unsigned char)hexa);
+                tab[i] = hexa;
+                i++;
+
+                if(i == 16)
+                {
+                        i = 0;
+                        for(int j = 0; j < 16; j++)
+                        {
+                                printf("%c", (unsigned char)tab[j]);
+                        }
+                        printf("\n");
+                }
+        }
+
+        if(i > 0 && i < 16)
+        {
+                for(int j = i; j < 16; j++)
+                {
+                        tab[j] = ' ';
+                        printf("%02X ", tab[j]);
+                }
+                for(int j = 0; j < 16; j++)
+                {
+                        printf("%c", tab[j]);
+                }
+                printf("\n");
+        }
+
+        fclose(hex);
+
+
+        return 0;
+}
+
+*******************************************
+
+Cwiczenie domowe:
+Linked List:
+*******************************************
+#include <stdio.h>
+#include <stdlib.h>
+
+
+struct node
+{
+        int value;
+        struct node *next;
+};
+
+
+void printing(struct node *w)
+{
+        while (w != NULL)
+        {
+                printf("%d ", w->value);
+                w = w->next;
+        }
+        printf("\n");
+}
+
+
+
+int main()
+{
+        struct node *head;
+        struct node *one = NULL;
+        struct node *two = NULL;
+        struct node *three = NULL;
+
+        one = malloc(sizeof(struct node));
+        two = malloc(sizeof(struct node));
+        three = malloc(sizeof(struct node));
+
+        one->value = 1;
+        two->value = 2;
+        three->value = 3;
+
+        one->next = two;
+        two->next = three;
+        three->next = NULL;
+
+        head = one;
+        printing(head);
+
+
+}
+*****************************************
+
+Doubly linked list: (wzorowane na przykladzie z internetu)
+*****************************************
+#include <stdio.h>
+#include <stdlib.h>
+
+
+struct node
+{
+        int value;
+        struct node *prev;
+        struct node *next;
+};
+
+void insertFront(struct node** head, int value)
+{
+        struct node* newnode = (struct node*)malloc(sizeof(struct node));
+
+        newnode -> value = value;
+        newnode -> next = (*head);
+        newnode -> prev = NULL;
+
+        if((*head) != NULL)
+        {
+                (*head) -> prev = newnode;
+        }
+
+        (*head) = newnode;
+}
+
+void insertAfter(struct node* prevNode, int value)
+{
+        if(prevNode == NULL)
+        {
+                printf("poprzednie wiazanie nie moze byc puste");
+                return;
+        }
+
+        struct node* newnode = (struct node*)malloc(sizeof(struct node));
+
+        newnode -> value = value;
+        newnode -> next = prevNode -> next;
+        prevNode -> next = newnode;
+        newnode -> prev = prevNode;
+
+        if(newnode -> next != NULL)
+        {
+                newnode -> next -> prev = newnode;
+        }
+}
+
+void insertEnd(struct node** head, int value)
+{
+        struct node* newnode = (struct node*)malloc(sizeof(struct node));
+
+        newnode -> value = value;
+        newnode -> next = NULL;
+        struct node* temp = *head;
+
+        if(*head == NULL)
+        {
+                newnode -> prev = NULL;
+                *head = newnode;
+                return;
+        }
+
+        while(temp -> next != NULL)
+        {
+                temp = temp -> next;
+        }
+
+        temp -> next = newnode;
+        newnode -> prev = temp;
+}
+
+void deleteNode(struct node** head, struct node* delNode)
+{
+        if(*head == NULL || delNode == NULL)
+        {
+                return;
+        }
+
+        if(*head == delNode)
+        {
+                *head = delNode -> next;
+        }
+
+        if(delNode -> next != NULL)
+        {
+                delNode -> next -> prev = delNode -> next;
+        }
+
+        if(delNode -> prev != NULL)
+        {
+                delNode -> prev -> next = delNode -> next;
+        }
+
+        free(delNode);
+}
+
+void display(struct node* node)
+{
+        struct node* last;
+
+        while(node != NULL)
+        {
+                printf("%d ", node -> value);
+                last = node;
+                node = node -> next;
+        }
+
+        if(node == NULL)
+        {
+                printf("NULL\n");
+        }
+}
+
+
+int main()
+{
+        struct node* head = NULL;
+
+        insertEnd(&head, 5);
+        insertFront(&head, 1);
+        insertFront(&head, 6);
+        insertEnd(&head, 9);
+
+        insertAfter(head, 11);
+        insertAfter(head -> next, 15);
+
+        display(head);
+
+        deleteNode(&head, head -> next -> next -> next -> next -> next);
+
+        display(head);
+
+}
+
+*******************************************
+
+
+
+FIBBONACI:
+(rekurencja)
+*******************************************
+int Fibbonaci(int, int, int);
+
+int main(int argc, char** argv)
+{
+        int x = 1;
+        int y = 1;
+        int z;
+
+        Fibbonaci(x,y,z);
+
+        return 0;
+}
+
+
+int Fibbonaci(int x, int y, int z)
+{
+        printf("%d \n", x);
+        z = x;
+        x = x + y;
+        y = z;
+
+        if(x <= 1000)
+        {
+                Fibbonaci(x,y,z);
+        }
+}
+********************************************
+(iteracja)
+********************************************
+int Fibbonaci(int, int, int, int);
+
+int main(int argc, char** argv)
+{
+        int x = 1;
+        int y = 1;
+        int z;
+
+        Fibbonaci(x,y,z,20);
+
+        return 0;
+}
+
+
+int Fibbonaci(int x, int y, int z, int licznik)
+{
+
+        for (int i = 0; i < licznik; i++)
+        {
+                printf("%d \n", x);
+                z = x;
+                x = x + y;
+                y = z;
+        }
+}
+*********************************************
+
