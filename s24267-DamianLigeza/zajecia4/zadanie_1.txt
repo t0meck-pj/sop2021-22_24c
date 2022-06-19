@@ -1,0 +1,66 @@
+Podpunkt 1:
+	#include <iostream>
+
+	auto main() -> int {
+
+		auto a = 0;
+		auto sum = 0;
+
+		std::cout << "Podaj liczby do dodania (0 - zakonczy program)" << std::endl;
+
+		do {
+			a = 0;
+			std::cin >> a;
+			sum += a;
+		} while (a != 0);
+
+		std::cout << "Suma podanych liczb wynosi: " << sum << std::endl;
+
+		return 0;
+	}
+	
+Podpunkt 2:
+	#include <iostream>
+
+	auto main() -> int {
+
+		auto a = 0;
+		auto sum = 0;
+
+		std::cout << "Podaj liczby do dodania (0 - zakonczy program)" << std::endl;
+
+		do {
+			a = 0;
+			std::cin >> a;
+			sum += a;
+		} while (a != 0);
+
+		std::cout << "Suma podanych liczb wynosi: " << sum << std::endl;
+
+		return sum;
+	}
+	// echo $? - pozwala na wyswieltenie kodu zakonczenia programu
+	
+Podpunkt 3:
+#include <iostream>
+
+	auto main(int argc, char* argv[]) -> int {
+		auto wysokosc = atoi(argv[1]);
+
+		for (int wiersz = 0; wiersz <= wysokosc; wiersz++) {
+			for (int wciecie = 0; wciecie < wysokosc - wiersz; wciecie++) {
+				std::cout << " ";
+			}
+
+			for (int gwiazdka = 0; gwiazdka < wiersz * 2 - 1; gwiazdka++) {
+				std::cout << "*";
+			}
+			std::cout << " " << std::endl;
+		}
+		for (int l = 0; l < wysokosc - 1; l++) {
+			std::cout << " ";
+		}
+		std::cout << "*";
+		
+		return 0;
+	}
