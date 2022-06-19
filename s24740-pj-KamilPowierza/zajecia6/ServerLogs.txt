@@ -1,0 +1,59 @@
+1990303664:4 - Pobral plik plik2.txt
+-1368672480:4 - Polaczyl sie do serwera 
+-1368672480:4 - Pobral plik plik3.txt
+-1368672480:4 - Pobral plik plik2.txt
+1563792544:4 - Polaczyl sie do serwera 
+1563792544:4 - Pobral plik plik1.txt
+740980864:4 - Polaczyl sie do serwera 
+1673794416:4 - Polaczyl sie do serwera 
+-1214572496:4 - Polaczyl sie do serwera 
+-1130065168:4 - Polaczyl sie do serwera 
+42461488:4 - Polaczyl sie do serwera 
+-964828080:4 - Polaczyl sie do serwera 
+-548344480:4 - Polaczyl sie do serwera 
+-548344480:4 - Pobral plik plik2.txt
+-612708208:4 - Polaczyl sie do serwera 
+-469230240:4 - Polaczyl sie do serwera 
+680436464:4 - Polaczyl sie do serwera 
+1094526992:4 - Polaczyl sie do serwera 
+-1914325568:4 - Polaczyl sie do serwera 
+107890112:4 - Polaczyl sie do serwera 
+107890112:4 - Pobral plik plik2.txt
+155017200:4 - Polaczyl sie do serwera 
+824362712:45462 - Pobral plik plik2.txt
+1209887984:4 - Polaczyl sie do serwera 
+505358040:45466 - Pobral plik plik3.txt
+-1011167664:4 - Polaczyl sie do serwera 
+1138661080:45508 - Pobral plik plik2.txt
+-2081095024:4 - Polaczyl sie do serwera 
+-1953962280:45514 - Pobral plik plik2.txt
+-1505922032:4 - Polaczyl sie do serwera 
+441480920:45520 - Pobral plik plik2.txt
+-68499920:4 - Polaczyl sie do serwera 
+1664530136:45550 - Pobral plik plik2.txt
+1664530136:45550 - Pobral plik plik2.txt
+-885818736:4 - Polaczyl sie do serwera 
+957195992:45558 - Pobral plik plik2.txt
+1357146112:4 - Polaczyl sie do serwera 
+163391192:45560 - Pobral plik plik2.txt
+-1668684208:4 - Polaczyl sie do serwera 
+-1221469312:4 - Polaczyl sie do serwera 
+-1762093264:4 - Polaczyl sie do serwera 
+247202112:4 - Polaczyl sie do serwera 
+-1127356528:4 - Polaczyl sie do serwera 
+-198204848:4 - Polaczyl sie do serwera 
+320445536:4 - Polaczyl sie do serwera 
+529994432:4 - Polaczyl sie do serwera 
+1058712128:4 - Polaczyl sie do serwera 
+1559705104:4 - Polaczyl sie do serwera 
+-269826096:4 - Polaczyl sie do serwera 
+178996432:4 - Polaczyl sie do serwera 
+1468763008:4 - Polaczyl sie do serwera 
+83751232:4 - Polaczyl sie do serwera 
+1769743696:4 - Polaczyl sie do serwera 
+2070529920:4 - Polaczyl sie do serwera 
+-1492598656:4 - Polaczyl sie do serwera 
+-405310704:4 - Polaczyl sie do serwera 
+-372973744:4 - Polaczyl sie do serwera 
+232096688:4 - Polaczyl sie do serwera 
+113452880:4 - Polaczyl sie do serwera 

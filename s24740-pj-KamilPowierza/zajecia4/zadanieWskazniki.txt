@@ -1,0 +1,67 @@
+#include <stdio.h>
+
+/*
+    Program przetwarza paramtery w sposob:
+    (funkcja, ilosc elementow, liczby zalezne od ilosci elementow)
+
+    Funkcje:
+    0 -> maksimum
+    1 -> minimum
+    2 -> suma
+*/
+
+typedef int (*f)(int,int);
+
+int maksimum(int,int[]);
+int minimum(int,int[]);
+int suma(int,int[]);
+
+int main(int argc, char** argv){
+
+    f tablica[] = {maksimum, minimum, suma};
+
+    int functionId = atoi(argv[1]);
+    int elementCount = atoi(argv[2]);
+    int liczby[elementCount];
+
+    for(int i = 0; i < elementCount; i++){
+        liczby[i]=atoi(argv[3+i]);
+    }
+
+    tablica[functionId](elementCount,liczby);
+
+    return 0;
+}
+
+int maksimum(int elementCount, int liczby[]){
+    int najwieksza = liczby[0];
+    for(int i = 0; i < elementCount; i++){
+        if(najwieksza < liczby[i]){
+            najwieksza = liczby[i];
+        }
+    }
+    printf("Najwieksza wartosc to: %d",najwieksza);
+
+    return 0;
+}
+
+int minimum(int elementCount, int liczby[]){
+    int minimum = liczby[0];
+    for(int i = 0; i < elementCount; i++){
+        if(minimum > liczby[i]){
+            minimum = liczby[i];
+        }
+    }
+    printf("Najmniejsza wartosc to: %d",minimum);
+
+    return 0;
+}
+
+int suma(int elementCount, int liczby[]){
+    int suma;
+    for(int i = 0; i < elementCount; i++){
+        suma += liczby[i];
+    }
+    printf("%d",suma);
+    return 0;
+}
