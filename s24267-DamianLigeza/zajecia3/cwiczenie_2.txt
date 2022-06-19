@@ -1,0 +1,68 @@
+Podpunkt 1:
+	#!/bin/bash
+
+	for i in $(seq 10 -2 0); do
+		echo $i;
+	done
+	
+Podpunkt 2:
+	#/bin/bash 
+	 
+	tab_arg=("$@") 
+	ile_arg=${#tab_arg[@]} 
+	 
+	for (( i = 0; i < $ile_arg; i++ )); do 
+		echo '"'${tab_arg[${i}]}'"'
+	done
+	
+Podpunkt 3:
+	#!/bin/bash
+	
+	lista_plikow=$(ls)
+	tab_plikow=($lista_plikow)
+	ile=${#tab_plikow[@]} 
+
+	for (( i = 0; i < $ile; i++ )); do 
+		echo "Patrzcie Państwo, oto plik: ${tab_plikow[${i}]}"
+	done
+	
+Podpunkt 4:
+	#!/bin/bash
+
+	lista_plikow=$(ls)
+	tab_plikow=($lista_plikow)
+	ile=${#tab_plikow[@]} 
+
+	for (( i = 0; i < $ile; i++ )); do 
+		if [[ ${tab_plikow[${i}]} == *.c ]]; then
+			cc ${tab_plikow[${i}]} -o ${tab_plikow[${i}]:0:${#tab_plikow[${i}]}-2}
+		fi
+	done
+	
+Podpunkt 5:
+	#!/bin/bash
+	ile_arg=$#
+	i=0
+	n=0
+
+	while [ $n -ne $ile_arg ]; do
+		while read wiersz; do
+			tablica[$i]=$wiersz
+			i=$((i+1))
+		done < $1
+		shift
+		n=$((n+1))
+	done
+
+	echo "Od poczatku:"
+
+	for (( i = 0; i < ${#tablica[@]}; i++)); do
+		echo ${tablica[$i]}
+	done
+
+
+	echo -e "\nOd konca:"
+
+	for (( i = ${#tablica[@]} - 1; i >= 0; i--)); do
+		echo ${tablica[$i]}
+	done
