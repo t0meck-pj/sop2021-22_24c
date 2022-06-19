@@ -8,15 +8,19 @@ int main(){
 	pid_t masterPid = getpid();
 	/*Tworzymy "chat"*/
 	FILE* chat = fopen("tmp/chat.txt", "w");
-	/*Tworzymy Parenta(pierwszy chatownik) i Child(Drugi chatownik)*/
-	pid_t p = fork();
-
-	if(p > 0){
-		/*Pierwsza wiadomosc od pierwszego chatownika*/
-		fprintf(chat, "Pierwszy: Witaj! Jestem pierwszym uzytkownikiem! \n");
+	if(chat == NULL){
+		printf("Nie udalo sie otworzyc pliku");
 	}else{
-		/*Druga wiadomosc od drugiego chatownika*/
-		fprintf(chat, "Drugi: Czesc! Jestem drugim uzytkownikiem! \n");
+		/*Tworzymy Parenta(pierwszy chatownik) i Child(Drugi chatownik)*/
+		pid_t p = fork();
+	
+		if(p > 0){
+			/*Pierwsza wiadomosc od pierwszego chatownika*/
+			fprintf(chat, "Pierwszy: Witaj! Jestem pierwszym uzytkownikiem! \n");
+		}else{
+			/*Druga wiadomosc od drugiego chatownika*/
+			fprintf(chat, "Drugi: Czesc! Jestem drugim uzytkownikiem! \n");
+		}
 	}
 
 	return 0;
