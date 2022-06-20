@@ -1,0 +1,10 @@
+#!/bin/bash
+
+S="SOP - Sprawdzamy czy to dziala - SOP"
+Pierwsze=${S:0:1}
+Drugie=${S:${#S}-1:${#S}}
+SOP='\e[32mSOP\e[0m'
+
+echo -e ${Pierwsze}
+echo -e ${Drugie}
+echo -e ${S//SOP/$SOP}

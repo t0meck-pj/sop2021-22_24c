@@ -1,0 +1,5 @@
+#!/bin/bash
+
+K=Ala
+
+echo "${K} ma kota, a kot ma "${K} | sed s/a$/ę/g | sed 's/\([^ę]\)$/\la/g'

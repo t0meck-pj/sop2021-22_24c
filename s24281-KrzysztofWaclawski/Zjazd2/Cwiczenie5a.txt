@@ -1,0 +1,10 @@
+#!/bin/bash
+
+Litera=$1
+OstatniaLitera=${Litera:${#Litera}-1}
+
+if [[ $OstatniaLitera == "a" ]]; then
+	echo $1 ma kota, a kot ma ${Litera:0:${#Litera}-1}ę
+else
+	echo $1 ma kota, a kot ma ${Litera}a
+fi

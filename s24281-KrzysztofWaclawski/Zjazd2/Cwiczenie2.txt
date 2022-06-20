@@ -1,0 +1,31 @@
+I. 
+
+	X=tekst
+	echo $X
+	bash
+	echo $X
+
+	Wypisze się "tekst"
+
+II.
+
+	#!/bin/bash
+
+	X=Tekst dłuższy
+	echo $X
+
+	Nie zadziała ponieważ pomiędzy słowami jest spacja aby wyświetlić taki tekst musimy dać apostrofy
+
+III.
+
+	#!/bin/bash
+
+	X="Tekst 1"
+	Y="tekst:$X"
+	echo "$Y"
+	Y='tekst:$X'
+	echo "$Y"
+	Y=tekst:$X
+	echo "$Y"
+
+	Cudzysłów wyświetli przypisane dane a apostrofy pokażde dokładnie to co w nich jest czyli wyświetli tekst.
