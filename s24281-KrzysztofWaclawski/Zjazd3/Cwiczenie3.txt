@@ -1,0 +1,40 @@
+					-- 1 --
+#!/bin/bash
+
+Czarny = 30
+Niebieski = 34
+JasnyNiebieski = 94
+Rozowy = 35
+JasnyRozowy = 95
+Bialy = 97
+
+function Koloruj () {
+	echo -e '\e['$2'm'$1'\e[0m'
+}
+
+Koloruj "Jaki piekny kolor!" $[$1]
+
+					-- 2 --
+#!/bin/bash
+
+1Liczba=0
+2Liczba=1
+DlugoscCiagu=0
+
+function CiagFibonacciego () {
+	DlugoscCiagu=$1-1
+	
+	Suma=$((1Liczba+2Liczba))
+	
+	return $1Liczba
+	
+	1Liczba=$2Liczba
+	2Liczba=$Suma
+
+	if [[ $DlugoscCiagu -gt 0 ]];
+		then
+		CiagFibonacciego $DlugoscCiagu
+	fi
+}
+
+Ciag "69"

@@ -1,0 +1,61 @@
+					-- 1 --
+
+#!/bin/bash
+
+for ((i = 10; i > 0; i=i-2));
+	do echo $i;
+	done
+
+					-- 2 --
+#!/bin/bash
+
+for i
+ do 
+   echo $i 
+done
+
+					-- 3 --
+#!/bin/bash
+
+Lista=`ls | wc -l`
+
+for ((i = 1; i < $Lista+1; i++))
+ do 
+   echo "Patrzcie Panstwo, oto plik:" `ls | sed -n ${i}p`
+done
+
+					-- 4 --
+#!/bin/bash
+
+Lista=`ls | wc -l`
+
+for ((i = 1; i < $Lista+1; i++));
+	do 
+	TestFile=`ls | sed -n ${i}p`
+	if [ ${TestFile##*.} == "c" ];
+		then
+		cc ${TestFile} -o ${TestFile:0:${#TestFile}-2}
+	fi
+done
+
+					-- 5 --
+#!/bin/bash
+
+Tekst = `tac test cat testowy.txt`
+Xt = ()
+
+for ((i = 0; i < ${#Tekst}; i++));
+	do 
+		Xt[i]=${Tekst:i:1}
+done
+
+echo "Normalnie"
+printf %s "${Xt[@]}"
+echo "${#Xt[@]}"
+
+echo "Od tylu"
+
+for ((i = "${#Xt[@]}"; i > -1; i--));
+	do 
+		printf %s "${Xt[i]}"
+done
