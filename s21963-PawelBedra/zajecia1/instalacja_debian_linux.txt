@@ -1,22 +1,73 @@
 TWORZENIE MASZYNY WIRTUALNEJ
 Do tego celu uzywamy programu Virtual Box. Ponizej przedstawiam podstawowe parametry konfiguracji maszyny wirtualnej
 Wybieramy rozmiar dysku twardego dla VM oraz ilosc pamieci RAM.
+=============================
+t0meck-pj on 6 Apr:
+Jaki rozmiar dysku i ramu został ustalony i dlaczego?
+Na jakiej podstawie ta kalkulacja została dokonana?
+s21963 on 8 May:
+Rekomendowane przez debian.org zasoby RAM i HDD wyglądają następująco:
+bez GUI: 512MB oraz 2GB
+z GUI: 1GB oraz 10GB
+Są to oczywiście wielkości zalecane z uwagi na system, a nie oprogramowanie dodatkowe jakie może jeszcze na nim wylądować, bo te należałoby rozpatrywać dodatkowo.
+Ja przydzieliłem 4GB RAM oraz 20GB HDD. Dołożyłem do zalecanych, bo RAM, żeby móc swobodnie testować różne rozwiązania w późniejszym czasie, a mam wystarczające zasoby w laptopie, by móc sobie na to pozwolić
+=============================^
 Trzy dostepne formaty dyskow wirtualnych:
+=============================
+t0meck-pj on 6 Apr:
+Jaka jest charakterystyka każdej z opcji?
+Kiedy którą należy wybierać i dlaczego?
+s21963 on 8 May:
+VDI - Virtual Disk Image - domyślny format dla open source'owego oprogramowania firmy Oracle VM Virtual Box. Jako rozwiązanie natywne dla Virtual Boxa jest dla niego najbardziej zalecane, z uwagi na potencjalnie najlepszą kompatybilność. Dyski VDI są przenośne, pozwalają na stałe (fixed), jak i dynamiczne przydzielanie ilości pamięci. Maksymalny rozmiar dysku: 2TB. Nie wspiera "incremental backup" (zapisywanie tylko zmian w stosunku do ostatniego backupu, co znacznie oszczędza miejsce.
+
+VHD - Virtual Hard Disk - standardowy format dla maszyn wirtualnych firmy Microsoft, jak MS Virtual PC, czy Virtual Server. Posiada ciągłe wsparcie firmy MS, ale zastąpiony przez format VHDX. Maksymalny rozmiar dysku to 2TB.
+Może być wybrany stały jak i dynamiczny przydział pamięci. Dodatkowo istnieje format dyferencyjny (differencing), który zapisuje tylko zmiany dokonane na innym dysku VHD, dzięki czemu można zarządzać tymi zmianami. VHD jest przenośny i obsługiwany przez oprogramowanie innych niż MS producentów.
+
+VMDK - Virtual Machine Disk - format firmy VMware, między innymi dla VMware Workstation, którego ja używam.
+Pozwala na klonowanie całych dysków fizycznych z systemem operacyjnym. Maksymalny rozmiar: 62TB, może być przydzielony jako stały, bądź dynamiczny.
+VMDK w przeciwieństwie do VDI i VHD wspiera incremental backup, dzięki czemu tworzenie backaupów jest szybsze i zajmuje potencjalnie mniej pamięci.
+
+Ja na potrzeby wirtualizacji używam oprogramowania WMware Workstation w związku z czym wybrałem format natywny czyli VMDK.
+=============================^
 	- VDI - format Virtual Box - ten wybieramy korzystajac z tego oprogramowania
 	- VHD - format Microsoft
 	- VMDK - format firmy VM Ware, osobiscie korzystam z tego oprogramowania bo dziala mi stabilniej
 Pamiec na fizycznym dysku twardym:
 	- dynamicznie przydzielana - w miare uzytkowania systemu plik bedzie rosl, zaleta jest mniejszy rozmaiat pliku, zwlaszcza w okresie poczatkowym
 	- staly rozmiar - powstaje "ciagly" plik na dysku o docelowej wielkosci. Wiecej miejsca na starcie jest minusem, natomiast zaleta jest sprawniejsze dzialanie systemu. Byc moze rowniez
-	ewentualne bezpieczniejsze przenowszenie maszyny na inny dysk/komputer/serwer.
+	ewentualne bezpieczniejsze przenoszenie maszyny na inny dysk/komputer/serwer.
 Ustawienia -> System
 	Odznaczamy naped optyczny, by usprawnic proces pozniejszego bootowania systemu. Boot bedzie automatycznie startowal z dysku.
 Ustawienaia -> Procesor
 	Mozna ustawic liczbe przydzielanych rdzeni procesora. U mnie domyslnie bylo ustawione na 1, wiec wybralem 2.
-Ustawienia -> Pamiec -> Naped optyczny socendary master
+=============================
+t0meck-pj on 6 Apr:
+Ok. Dlaczego?
+s21963 on 8 May:
+Wybrałem dwie jednostki wykonawcze dla poprawienia wydajności systemu. Linux wspiera wielowątkowość, w związku z czym potrafi wykorzystać dwie jednostki do prowadzenia równoległych operacji. Potencjalnie będą mogły też być wykorzystane do "obsługi" dwóch niezależnych programów.
+=============================^
+Ustawienia -> Pamiec -> Naped optyczny socondary master
 	Tutaj mozna ustalic lokalizacje obrazu plyty z system Debian.
-Ustawienia Siec:
-	- NAT - wirtualna maszyna ma dostep do sieci na posrednictwem komputera hosta i tak jest widziana przez uzytkownikow sieci.
+Ustawienia Sieci:
+=============================
+t0meck-pj on 6 Apr:
+Kiedy, którą opcję użyć?
+Która została wybrana i dlaczego?
+s21963 on 8 May
+NAT - Network Address Translation - wirtualna maszyna jest odseparowana od hosta, ale dostęp do sieci ma za jego pośrednictwem.
+
+Bridged - mostkowana karta sieciowa - maszyna wirtualna będzie widoczna w sieci jako odrębny komputer podłączony do tej sieci. Tak jakby postawić obok laptop czy tablet i połączyć z WiFi.
+
+Sieć wewnętrzna - służy do komunikacji maszyn wirtualnych między sobą w sieci wewnętrznej, ale nie z maszyną hosta czy internetem.
+
+Host-only - karta sieci izolowanej - komunikacja między hostem, a tworzoną maszyną wirtualną
+
+Sieć NAT - sieć wewnętrzna natowana - jak sieć wewnętrzna, tylko za pomocą mechanizmu NAT łączona z siecią zewnętrzną przez hosta.
+
+Ja wybieram opcję pierwszą, czyli NAT, by mieć dostęp do internetu, a nie ma potrzeby mostkowania karty.
+=============================^
+
+	- NAT - wirtualna maszyna ma dostep do sieci za posrednictwem komputera hosta i tak jest widziana przez uzytkownikow sieci.
 	- Bridged - wirtualna maszyna widziana jest w sieci jako osobny komputer
 	- Siec wewnetrzna - sluzy do komunikacji maszyn wirtualnych ze soba (jesli byloby stworzonych wiecej), ale nie z komputerem
 	- Host only - sluzy do komunikacji pomiedzy hostem a maszyna wirtualna
@@ -26,20 +77,129 @@ Instalacje Debiana pobieramy ze strony debian.org.
 Mamy trzy opcje instalacji systemu: obraz plyty z dysku lub USB, CD, badz instalacje bezposrenio z sieci.
 Sciagamy maly obraz plyty Linuxa na dysk twardy i mozemy przystapic do kolejnych krokow.
 W pierwszej kolejnosci trzeba wybrac zrodlo instalacji. Zgodnie z wczesniejszym ustawieniem maszyny wirtualnej trzeba wybrac cd-rom.
+=============================
+t0meck-pj on 6 Apr
+Jak?
+Jakie są opcje do wyboru?
+Kiedy należy ich używać?
+s21963 on 8 May
+Opcje do wyboru:
+Mały plik instalacyjny - niewielki rozmiar pliku do pobrania, stąd wygodny. Nie zawiera w sobie pakietów dodatkowych. Służy do instalacji przez internet, gdyż w trakcie instalacji są pobierane pakiety danych, dlatego niezbędne jest łącze internetowe by skorzystać z tej opcji.
+
+Kompletny plik obrazu - dużo większy rozmiar pliku, zawiera pakiety opcjonalne, nie potrzeba połączenia z internetem, gdyż wszystko co niezbędne do instalacji jest już zawarte.
+
+Najmniejsze płytki - wchodząc w tę opcje przechodzimy do drzewa katalogów, m.in. netboot, który służy do bootowania przez sieć.
+
+Obraz dla chmury - może być użyty do zainstalowania Debiana w środowiskach chmur dostarczanych przez wybranych producentów: OpenStack, Amazon EC2, AWS, MS Azure i MS Marketplace.
+
+Wypróbuj Debiana live - można uruchomić system z płyty bądź napędy USB, bo potrzeby instalowania żadnych plików na dysku. Najczęściej w celu wypróbowania.
+
+Ja, zgodnie z założeniem zajęć wybrałem do instalacji Mały plik obrazu i przeprowadziłem instalację w trybie tekstowym.
+=============================^
+
 Wybieramy instlacje tekstowa, w jezyku angielskim.
+=============================
+t0meck-pj on 6 Apr
+Jakie są inne opcje?
+Do czego służą?
+Kiedy należy ich używać a kiedy nie należy?
+Czym się różni instalacja graficzna od tekstowej (poza prezentacją danych)?
+Kiedy należy której używać?
+Wybrałeś angielski. Ok. Dlaczego?
+s21963 on 8 May:
+Opcje instalacji:
+Graphical install - instalator graficzny, gdzie można wszystko przeklikać myszką. Minus jest taki, że uruchamia się dłużej, zajmuje więcej zasobów niż instalator tekstowy.
+
+Install - instalator tekstowy - jest szybszy, zużywa mniej zasobów, znakomicie działa i sprawdza się od wielu lat.
+
+Advanced options - w tej zakładce występuję opcje instalacji eksperckiej, zarówno w formie graficznej i tekstowej. Jest tu również rescue mode do odzyskiwania systemu np. po awarii. Jest też opcja dla ludzi niedowidzących tego działu
+
+Install with speech synthesis - instalacja dla ludzi niedowidzących.
+
+Język angielski wybieram zawsze z dwóch powodów. Po pierwsze IT jako branża fukncjonuje po angielsku. Praktycznie w całości, języki, formalizmy etc. Wybierając angielski poruszam się w środowisku w jego naturalnym języku.
+Drugi powód wynika bezpośrednio z pierwszego: o wiele łatwiej szukać pomocy, czy rozszyfrowywać wyświetlane błędy, w języku angielskim baza wiedzy jest o rzędy wielkości większa.
+=============================^
+
 Uklad klawiatury USA, UTF-8
+=============================
+@t0meck-pj t0meck-pj on 6 Apr
+Dlaczego?
+
+Author
+@s21963 s21963 on 8 May
+UTF-8 jest zdecydowanie najpowszechniejszym systemem kodowania znaków.
+Natomiast USA z uwagi na, że nie mogąc wpisywać polskich znaków diakrytycznych nie będę napotykał na błędy w programach które miałyby problem z ich interpretacją.
+Ponadto argument z powyżej, czyli powszechność stosowania tego języka i układu.
+=============================^
 Ustalamy kolejno uzytkownikow i hasla
 
 Partycjonowanie -> manual
+=============================
+@t0meck-pj t0meck-pj on 6 Apr
+Jakie są pozostałe opcje?
+Kiedy należy ich używać a kiedy nie?
+Jak należy dzielić dysk na partycje?
+Dlaczego dzieli się dysk na partycje?
+Które katalogi należy umieścić na osobnych partycjach i dlaczego? Co się przez to zyskuje? (trochę tego poniżej opisałeś na kilku przykładach)
+Author
+@s21963 s21963 on 8 May
+Opcje:
+Guided - use entire disk. Jest to opcja podziału całego dysku na partycje, automatycznie proponowana przez instalator debiana.
+
+Guided - use entire disk and set up LVM. Ja wyżej, tylko z systemem Logical Volume Manager, dzięki któremu na działającym systemie można zmiejszać i zwiększać, czy dodawać partycje logiczne.
+
+Guided - (...) and set up encrypted LVM. Jak wyżej, tylko z szyfrowaniem, czyli przy próbie uruchomienia komputera bądź zamontowania takiej partycji będzie trzeba podać hasło.
+
+Dysk dzieli się na partycje w zwiększenia bezpieczeństwa. Z jednej strony uszkodzenie jednej partycji nie oznacza uszkodzenia całego systemu. Dodatkowo nieograniczony rozrost danych w jakiejś części systemu nie zablokuje funkcjonowania innych, które znajdują się na innych partycjach.
+
+Co do tego, które katalogi należy umieszczać na osobnych partycjach, to nie ma jednej złotej reguły i różne źródła podchodzą do problemu inaczej. Zależy do od oczekiwań wobec systemu, czy zagrożeń jakich możemy się spodziewać. Np. przy wielu użytkownikach w środowiskach firmowych na pewno warto byłoby mieć osobną partycję /home. Zapewne istnieją również wytyczne dotyczące bezpieczeństwa, które firmy u siebie wdrażają. Zapewne jest wiele ścieżek postępowania.
+=============================^
+
 Rodzaje partycji:
 	Primary - partycja podstawowa, w systemie Linux, moze byc max 4 takie partycje
+=============================
+@t0meck-pj t0meck-pj on 6 Apr
+Źle. Linux nie ma tu nic do rzeczy.
+
+Dlaczego może być max 4 ?
+Z czego to wynika?
+Do czego są partycje primary? Kiedy należy ich używać a kiedy nie?
+Author
+@s21963 s21963 on 8 May
+Tak, tutaj nie sprawdzając tematu napisałem bzdurę.
+Ograniczenie do 4 partycji Primary wynika z tego jak zbudowany jest MBR - Master Boot Record. Jest to obszar na początku dysku twardego o rozmiarze 512 bajtów. 446 bajty przeznaczone na bootloader, 64 na tablicę partycji oraz dwa na tzw. magic numbers, które służą jako liczby kontrolne. Tablica partycji ma 64 bajty, po 16 bajtów na partycję, stąd ograniczenie do 4 partycji Primary.
+Niektóre systemy operacyjne mają ograniczenie takie, że mogą być instalowane jedynie na partycjach Primary (Windows). Na każdej takiej partycji może być zainstalowany osobny system operacyjny z własnym bootloaderem.
+Nie znalazłem informacji na temat, kiedy należałoby unikać partycji primary. Pewnie nie ma sensu ich stosować wtedy kiedy nie ma to jakiegoś wyraźnego funkcjonalnego znaczenia (np. z uwagi na bezpieczeństwo), z uwagi na utratę wydajności przepływu danych między partycjami primary.
+=============================^
+
 	Extended - partycja podstawowa moze sie zmienic w partycje rozszerzona, ktora bedzie zawierac jakas liczbe partycji Logicznych. Na liscie partycji nie widnieje taka partycja, tylko logiczne,
 		ktore zostaly na niej utworzone
 	Logiczne
+=============================
+@t0meck-pj t0meck-pj on 6 Apr
+Do czego są partycje logiczne?
+Ile ich może być?
+Author
+@s21963 s21963 on 8 May
+Partycje logiczne są używane głównie z uwagi na funkcjonalny podział danych na serwerze czy w systemie. Możliwe jest również zainstalowanie na każdej partycji logicznej osobnego systemu operacyjnego, jeżeli pozwala na to sam system (Windows nie pozwala).
+
+Liczba potencjalnych partycji logicznych na dysku jest teoretycznie ograniczona jedynie jego pojemnością.
+Minusem podziału na zbyt wiele partycji logicznych jest konieczność trafnego przewidzenia potrzebnych wielkości tych partycji wraz z wzrostem ilości danych w przyszłości, bez konieczności reinstalacji systemu.
+Jest oczywiście wspomniane wyżej narzędzie LVM, które (jeśli oczywiście wybrane w trakcie instalacji) rozwiązuje ten problem i pozwala zarządzać partycjami logicznymi. To też należy przypisać jako przewagę partycji logicznych nad podstawowymi, że są dzięki temu bardziej elastyczne.
+=============================^
 
 Podzial na partycje: Katalogi w Linuxie sa opisane wg standardu FHS - Filesystem Hierarchy Standrad. Ponizej opisuje przeznaczenie niektorych z tych katalogow:
 	/bin	- przechowuje programy wykonywalne (binarne), czyli gotowe do uruchomienia. Wiekszosc z podstawowych polecen Linux takich jak "ls" czy "cp", znajdujacych sie w tym katalogu to pliki binarne
 		przygotowane przez kompilator jezyka C.
+=============================
+@t0meck-pj t0meck-pj on 6 Apr
+Nie tylko języka C ale w zasadzie każdego, który produkuje pliki w kodzie maszynowym
+
+Author
+@s21963 s21963 on 8 May
+Tak, znowu lekkomyślnie poleciałem. Jest to logiczne.
+=============================^
+
 	/dev	- ang. devieces - przechowuje pliki urzadzen
 	/boot	- opisane ponizej
 	/etc	- najwazniejsze pliki konfiguracyjne systemu. Znajduja sie tutaj pliki hasel, konfiguracji uruchamiania systemu, urzadzen sieci i innych elementow systemu. Wiele plikow w /etc zwiazanych 
@@ -53,7 +213,7 @@ Podzial na partycje: Katalogi w Linuxie sa opisane wg standardu FHS - Filesystem
 		zostana do tego przez roota uprawnieni).
 	/tmp	- w tym katalogu mozna umieszczac niewielkie pliki tymczasowe. Kazdy uzytkownik moze zapisywac i odczytywac pliki z katalogu /tmp, ale nikt nie ma uprawnien na dostep do pikow innych uzytkownikow.
 		Niektore programy wykorzystuja ten katalog jako swoja przestrzen robocza. Wiekszosc dystrybucji czysci jego zawartosc w czasie uruchamiania systemu, a niektore cyklicznie usuwaja starsze pliki.
-	/usr	- znajduje sie tu rozbudowana struktura bardzo podobna do katalogu glowniego. W tym katalogu zapisywana jest ogromna czest systemu Linux. Wiele podkatalogow ma takie same nazwy jak podkatalogi
+	/usr	- znajduje sie tu rozbudowana struktura bardzo podobna do katalogu glowniego. W tym katalogu zapisywana jest ogromna część systemu Linux. Wiele podkatalogow ma takie same nazwy jak podkatalogi
 		katalogu glownego. Moga sie tu znajdowac np. programy zainstalowane recznie przez uzytkownikow. Katalog ten mozna trzymac na osobnej partycji, dzieki czemu po aktualizacji czy nawet zmianie 
 		systemu (choc tutaj pewnie nie zawsze), nie byloby potrzeby instalowania dodatkowych progamow.
 		/usr/include	- przechowuje pliki naglowkowe wykorzystywane przez kompilator jezyka C
@@ -71,13 +231,128 @@ Niektore katalogi z uwagi na stabilnosci i bezpieczenstwo systemu powinny byc na
 		oraz dostepnemu miejscu, tak by system w razie awarii mogl sie zawsze na nowo uruchomic
 	/var	- od ang. variable, podkatalog, w ktorym programy zapisuja informacje w czasie swojego dzialania. Znajduja sie tu dzienniki systemowe, informacje o dzialaniach uzytkownikow i inne pliki tworzone
 		przez programy systemowe. Wewnatrz znajduje sie katalog /var/tmp o podobnym przeznaczeniu jak /tmp, jednak nie jest on czyszczony przez system w czasie uruchamiania. Warto miec osobna partycje 
-		na katalog /var na wypadek np gdyby jakis prograc zaczal tworzyc nieograniczone wpisy, szybko by mogl sie rozrosnac i wypelnic cale dostepne miejsce uniemozliwsiajac dzialania innym procesom.
+		na katalog /var na wypadek np gdyby jakis program zaczal tworzyc nieograniczone wpisy, szybko by mogl sie rozrosnac i wypelnic cale dostepne miejsce uniemozliwiajac dzialania innym procesom.
 	/swap	- odpowiednik windowsowej pamieci wirtualnnej, czyli miejsce na dysku, ktore moze byc wykorzystywane przez system jako bufor w przypadku niewystarczajacej pamieci operacyjnej.
+=============================
+@t0meck-pj t0meck-pj on 6 Apr
+Opis teoretyczny całkiem fajny. Ale trzeba też trochę konkretów.
+Trzeba uzupełnić jeszcze parę rzeczy.
+
+Jaki podział na partycje został ustawiony i z czego on wynika?
+Jakie rozmiary mają partycje i jakiego są typu?
+Jakie są dostępne systemy plików i jaka jest ich charakterystyka tj. bezpieczeństwo, wydajność, stabilność, kompatybilność
+Kiedy którego systemu plików należy używać?
+Jakie punkty montowania zostały użyte?
+Jakie zostały użyte systemy plików i dlaczego?
+Jakie flagi zostały użyte i jakie jest ich znaczenie w szczególności flaga bootująca.
+
+@s21963 s21963 on 8 May
+Mój podział na partycje:
+/boot - 600MB - partycja Primary z flagą bootującą. Teoretycznie chyba nie ma wielkiej potrzeby, by oddzielać bootloader od katalogu głównego i ustawić flagę bootującą na niego, ale wyczytałem w jakimś miejscu, że warto oddzielić ten folder od reszty, by w razie jakichś awarii systemu, bootloader zawsze startował.
+Ponadto znalazłem informację na oficjalnych stronach pomocy do Ubuntu (nie mam pewności, czy ma to zastosowanie do pozostałych dystrybucji), że niektóre komputery nie widzą plików bootloadera jeżeli są usytuowane daleko na dysku (dalej niż 100GB, co oczywiście w moim przypadku nie ma miejsca, ale robię to szkoleniowo).
+Nie wiem na ile to rozwiązanie stosuje się w praktyce, ale na chłopski rozum (nie zawsze dobry doradca :)), nie powinno to w niczym zaszkodzić. Rozmiar wybrałem na podstawie rekomendacji również ze strony help.ubuntu.com, gdzie rekomendowany był rozmiar 250MB, więc dla bycia po bezpiecznej stronie (prywatnie mogę sobie pozwolić na taką rozrzutność, w środowiskach produkcyjnych z całą pewnością trzeba być bardziej precyzyjnym i świadomym w swoich wyborach, by nie marnować zasobów).
+
+/var - 1,5GB - partycja logical - zawierza cache'owane dane z różnych programów, dynamiczne biblioteki, pliki tymczasowe, logi programów etc. W związku z tym bezpiecznie ograniczyć dopuszczalny rozmiar tej lokalizacji w systemie, by w razie jakiegoś nieoczekiwanego rozrostu produkowanych danych, nie zablokował się cały system.
+
+/home - 5GB - parycja logical - taki rozmiar przyjąłem na pliki użytkownika. Myślę, że i tak za dużo. W praktyce to zależy od oczekiwań i potrzeb użytkowników.
+
+/ - 10 GB - partycja logical - tyle było zalecane na cały system, łącznie z /home i /var, więc ja tutaj założyłem z rezerwą.
+
+swap - 4GB - tę kwestię różne źródła podają rożnie. Ja oparłem swój wybór (jako, że doświadczenia własnego brak), na zaleceniach z dokumentacji dystrubucji Fedora 28, które były cytowane na stronie "opensource.com". Zgodnie z tamtymi zaleceniami, przy zainstalowanym RAMie wielkości 2 - 8GB, rekomendowany rozmiar swap, powinien być równy RAMowi.
+
+Powyższy podział jest również odpowiedzią na to jakich punków montowania użyłem.
+
+Dostępne systemy plików:
+Ext2 - Druga wersja Extended File System. Wprowadził potrójny timestamp (utworzenie inode, dostęp do pliku, zmiana pliku, 16-biotwe adresowanie. W zależności od wielkości bloku (jednostka przechowywania danych, minimalny rozmiar możliwego do zaadresowania miejsca na dysku), wielkość dysku 2-16TB, a max rozmiar pliku 16GB - 2TB. System podatny na fragmentację, przez co z czasem traci wydajność. Brak mechanizmu księgowania, więc podatny na uszkodzenie danych bądź systemu plików, przez co mogą powstawać martwe sektory na dysku.
+
+Ext3 - oparty na poprzedniku, w 2001 został domyślnym systemem plików dla Linuxa. Maksymalna wielkość partycji, jak i pliku (zależnie od wielkości bloku), takie same jak dla Ext2.
+Został wprowadzony mechanizm księgowania - journaling. Journal jest specjalnie wydzielonym miejscem na dysku, gdzie są zapisywane transakcje. Dopiero kiedy dana transakcja jest zakończona, jest zatwierdzana do systemu plików. Jeżeli system wysypie się przed jej zatwierdzeniem, po zrebootowaniu rozpoznaje ją jako nieskończoną i wycofuje jakby nigdy nie zaszła. Oznacza to, że dane takiej transakcji mogą zostać utracone, ale spójność systemu plików pozostaje bezpieczna.
+Są trzy dostępne levele księgowania:
+Journal - najbezpieczniejszy, ale i najmniej wydajny. Zarówno dane jak i metadane są najpierw zapisywane do journala, zanim zostaną zatwierdzone do systemu plików. Zapewnia to spójność samego systemu plików, jak i bezpieczeństwo danych, ale zmniejsza wydajność
+Ordered - jak nazwa wskazuje wykonuje operacje wg ściśle określonego porządku. Jest domyślny w większości dystrybucji Linuxa. Najpierw metadane są zapisywane w journalu, następnie dane w na dysku, po czym metadane na dysku i transakcja jest zatwierdzana.
+Writeback - podobnie jak w trybie ordered metadane są zapisywane w journalu, a dane nie, jednak tutaj kolejność wykonywanych operacji jest dowolna, w zależności wymagań wydajności systemu. W dalszym ciągu zapewnia spójność systemu plików, ale większe ryzyko dla samych danych niż w trybie ordered.
+
+Ext4 - ogłoszony w 2006 jako format tymczasowy, do dnia dzisiejszego domyślny format w większości dystrybucji Linuxa. Bardzo podobny do Ext3, ale oferuje większą odporność na fragmentację, lepszą wydajność i poprawione znaczniki czasowe (timestampy). Oferuje wsteczną kompatybilność z Ext3, pozwala dyskom z Ext4 automatycznie montować systemy plików Ext3. Ext3 ponadto może być upgradowany do Ext4 bez formatowania i utraty danych.
+48-bitowe adresowanie, stąd teoretycznie maksymalny rozmiar pliku to 16TB, a rozmiar partycji 1EB.
+Ext4 oferuje timestamp w nanosekundach, w odróżnieniu od Ext3 gdzie był on w sekundach. Może mieć to szczególne znaczenie w środowiskach naukowych.
+Ext3 ma bity dla datowania wystarczające tylko do 18.01.2038, co zostało nazwane problemem roku 2038. Wtedy zegar się wyzeruje, co może spowodować nieokreślone problemy, potencjalnie fatalne.
+Ext4 ma dodatkowe 2 bity do datowania, dzięki czemu okres możliwego datowania został przedłużony o 408 lat (nie jestem pewny czy dokładnie taką tymczasowość miał na myśli twórca systemu określając go w ten sposób :)).
+Ext4 wspiera defragmentację online, czyli w trakcie bycia zamontowanym.
+Pliki alokowane są w extentach, czyli w przylegających do siebie blokach, co znacznie ogranicza fragmentację, przez co zwiększa wydajność.
+Wprowadził liczby kontrolne dla zapisów księgowych.
+W praktyce znalazłem informację, że system Ext4 ma problemy z adresowaniem danych powyżej 50TB.
+Brak wsparcia dla wykrywania czy naprawiania danych zapisanych na dysku.
+Na ten moment jest to format domyślny dla dystrybucji Debian i dlatego w większości przypadków powinien być stosowany. Jako taki posiada największe wsparcie i potencjalnie najlepszą kompatybilność.
+
+XFS - 64-bitowy system. Wspiera journaling, wysoka wydajność dla dużych plików oraz duży wspiera duży stopień równoległości (concurrency). Stał się domyślnym systemem plików dla dystrybucji Red Hat Enterprise. Jest open source'owy. Praktycznie mało różnic użytkowych do Ext4 i również jest traktowany jako przejściowy.
+
+ZFS - opracowany przez Sun Microsystems system plików nowej generacji. Nazwa od Zettabyte File System, bo teoretycznie tyle pamięci może w nim zostać zaadresowane. Oferuje możliwość adresowania wielu dysków w jednym systemie plików. Oferuje kryptograficzne sprawdzanie liczb kontrolnych na poziomie bloków, co pozwala na wykrywanie uszkodzonych danych z bardzo dużą precyzją, automatyczną naprawę uszkodzeń, wbudowaną kompresję i wiele innych nowoczesnych rozwiązań.
+Problemem z punktu widzenia komercyjnych zastosowań ZFS w systemach Linux jest licencja. Jest wiele sprzecznych opinii na temat możliwości stosowania tego FS, ale jest on dostępny przy instalacji i nie zostało to jeszcze nigdzie przetestowane na drodze sądowej.
+
+btrfs - B-Tree File System. Prezentuje podobne cechy jak ZFS, z managerem dysku, blokowe sumy kontrolne czy wbudowaną kompresję. Ma jednak problemy z wydajnością w stosunku do ZFS czy nawet Ext4. Jest domyślnym systemem plików dla SUSE Enterprise Linux, natomiast Red Hat ogłosił brak wsparcia dla niego w 2017r.
+
+JFS - Journaling File Sytem stworzony przez IBM. 64-bitowy dostępny w Linux od 2002r. Zaprojektowany specjalnie dla wysokowydajnych serwerów. Na licencji GNU GPL.
+Posiada dynamiczną alokację inodes. Bardzo dobrze skalowalny od małych do ogromnych plików. Pliki również alokowane w extentach, dzięki czemu mało podatny na fragmentację.
+=============================^
 
 Po ustaleniu tych opcji konczymy instalacje, wybierajac jeszcze serwej, z ktorego beda instalowane dodatkowe pakiety.
+=============================
+@t0meck-pj t0meck-pj on 6 Apr
+Jakie środowiska graficzne są dostępne do wyboru oraz jaka jest ich charakterystyka (bezpieczeństwo, wydajność, ergonomia, wymagania sprzętowe, wymagania miejsca na dysku)
+Kiedy który instalować?
+Czy można zainstalować więcej niż jeden/wszystkie?
+Co się wtedy stanie?
+Czy naraz będą renderowane wszystkie i będzie można się przełączać pomiędzy nimi?
+Czy może będą renderowane wszystkie i obraz z każdego będzie nakładany na siebie przez co wynikowo dostaniemy jakieś bzdury i dlatego nie należy instalować więcej niż jednego?
+Czy można nie instalować żadnego?
+Co wtedy się stanie?
+Czy na ekranie cokolwiek będzie wyświetlone?
+Czy w pierwszej kolejności należy instalować system graficzny czy też nie? (bezpieczeństwo)
+Co oznacza ostatnia opcja?
+Jakie programy są instalowane?
+Czy bez zaznaczania tej opcji da się używać systemu bez środowiska graficznego czy nie będzie on zdatny do użycia?
+
+@s21963 s21963 on 8 May
+Srodowiska graficzne dla Debiana - istnieje wiele środowisk graficznych dla systemu Linux. Każde z nich posiada jakiś zespół cech charakterystycznych dla siebie, dodatkowo zmiennych w czasie, bo wszystkie są w swoich interwałach czasowych aktualizowane i poprawione. W związku z tym nie ma jednej właściwej odpowiedzi, które środowisko jest lepsze dla kogo. Natomiast niektóre środowiska będą lepiej skrojone do konkretnych zastosowań i grup użytkowników od innych. Nie posiadam jednak praktycznego doświadczenia z tymi GUI, więc nie potrafię napisać własnej opinii w tym temacie, natomiast źródła w sieci są nieprecyzyjne, niewyraziste i opierają się na założeniu, że użytkownik dobiera środowisko wg własnych preferencji, wg parametrów podawanych przez producentów i własnych rosnących doświadczeń.
+GNOME- domyślne środowisko graficzne dla Debiana. Przystosowane zarówno dla urządzeń desktopowych jak i mobilnych. Nie jest jednak lekkie i wymaga przynajmniej 4GB RAM. Natomiast przyjazne dla użytkownika i posiada dobrą wydajność. Jako domyślne środowisko, będzie preferowane dla większości użytkowników z uwagi na kompatybilność, wsparcie i w związku z tym bezpieczeństwo.
+PLASMA by KDE - Ooen Source, bardzo lekkie, z wieloma opcjami dostosowawczymi dla użytkownika.
+Xfce - lekkie środowisko graficzne dla wielu systemów Unixowych. Skoncentrowane na produktywności, szybka obsługa aplikacji i oszczędzanie zasobów sprzętowych. Z wyglądu podobne do Windows.
+LXDE - przeznaczone do pracy na urządzeniach o niskiej wydajności sprzętowej, jak starsze urządzenie i netbooki.
+MATE - kontynuacja GNOME 2, lekkie środowisko, łatwe w obsłudze. Posiada zespół wbudowanych narzędzi i aplikacji.
+LXQt - bardzo lekkie środowisko, ale dostarczające lepsze wrażenia użytkowe niż LXDE. Niezbyt intuicyjne. Bardzo wydajne sprzętowo i szybkie.
+Cinnamon - znany ze swoje podobieństwa do Windows przez co odpowiedni dla większości użytkowników przesiadających się z Widnowsa. Srednio lekki jeśli chodzi o zużywanie zasobów.
+
+Każde z powyższych środowisk ma swoją stronę i dokumentację dotyczącą dokładnych wymagań sprzętowych. Do każdej z tych stron są linki ze strony debian.org.
+
+Można zainstalować kilka różnych środowisk graficznych. Zainstalować - nie uruchamiać.
+Można również nie instalować żadnego i pozostać w trybie tekstowym. GUI jest dodatkową powłoką, reprezentacją graficzną zapisów i operacji tekstowych, więc jako taka jest pochodną powłok tekstowych. Więc jako jaki, beż środowiska graficznego, będzie zdatny do użytku.
+Da się używać różnych środowisk graficznych, ale wylogowując się z kolejnych użytkowników. Ale ciężko to uznać w takim wypadku za jednoczesne używanie powłok.
+Jeżeli chcielibyśmy używać kilku powłok graficznych jednocześnie i robilibyśmy w nich coś co miałoby wpływ na wyświetlany obraz, to prawdopodobnie każda z tych powłok interpretowałaby tę operację na swój sposób i wysyłała obrazy, wzajemnie się nadpisując.
+
+Ostatnia opcja oznacza fizycznie serwer, z którego będą pobierane pakiety danych, które będziemy ściągać (programy czy aktualizacje.
+Instalujemy przy pomocy programu apt-get, lub apt, które są wbudowane. Możemy zainstalować dodatkowo program aptitude, który służy do tego samego.
+=============================^
 Nalezy doinstalowac serwer ssh.
 Zostawiamy bootloader na odpowiedni dysk.
+=============================
+@t0meck-pj t0meck-pj on 6 Apr
+co to jest bootloader?
+gdzie w obrębie jednego dysku twardego można go instalować? (są 2 możliwe lokalizacje - MBR i BR - kiedy w którym miejscu należy instalować?)
+czy da się uruchomić system bez bootloadera?
+czy są jakieś alternatywy dla GRUB-a?
+jak bootloader ma się do flagi bootującej z etapu partycjonowania?
 
+@s21963 s21963 on 8 May
+Bootloader jest programem uruchamiającym system operacyjny (konkretnie kernel) i przekazującym mu kontrolę nad komputerem.
+W MBR (Master Boot Record, specjalny sektor na fizycznym dysku twardym o pojemności 512b) trzymany jest bootloader pierwszej fazy. Jego zadaniem jest wgranie i przekazanie kontroli bootloaderowi drugie fazy, który jest zapisany w Boot Record, przechowywany tradycyjnie na dysku, bez określonego wcześniej miejsca. w Linux jest to katalog /boot.
+BIOS po uruchomieniu komputera wyszukuje urządzeń, które są aktywne i bootowalne, wg zapisanej listy preferencji (CMOS). Może to być floopy, cd-rom, usb, bądź też partycja na dysku twardym z ustawioną flagą bootowania.
+Kiedy Linux uruchamiany jest z dysku BIOS z MBR pobiera bootloader pierwszej fazy, wgrywa do RAM i przekazuje mu kontrolę. Ten z kolei jest programem, który ma na celu jedynie uruchomienie bootloadera drugiej fazy, który uruchamia cały system. Zajmuje dużo więcej miejsca i nie zmieściłby się na MBR.
+Flaga bootująca z etapu partycjonowania ma się tak, że wskazuje bootloaderowi pierwszej fazy z MBR, na którym dysku ma szukać bootloader drugiej fazy (wskazując np. który system jest preferowany w przypadku, gdyby na innych podłączonych dyskach były również zainstalowane systemy operacyjne).
+
+Da się uruchomić system bez bootloadera, jednak wykracza to poza moje umiejętności na tym etapie. Natomiast bootloader programem (a raczej zespołem podprogramów), które po kolei wykonują jakieś zadania. A programy co do zasady są w jakimś sensie zautomatyzowanym zespołem instrukcji, które można wykonać "ręcznie". Więc rozumiejąc bootloader jako taki, na pewno można wykonać pracę, którą on wykonuje "z palca".
+
+Są alternatywy dla GRUBa, między innymi LILO, ale GRUB jest domyślnym programem bootowania.
+=============================^
 
 
 
