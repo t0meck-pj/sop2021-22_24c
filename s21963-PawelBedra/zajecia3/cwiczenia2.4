@@ -1,0 +1,14 @@
+#!/bin/bash
+
+#find -type f -name "*.c" | sed -rn 's/([a-zA-Z0-9\-\.\\-]+).c$/\1/pg'
+
+
+find -type f -name "*.c" | sed -rn 's/([a-zA-Z0-9\-\.\\-]+).c$/\1/pg'
+
+
+exit
+Napisz skrypt, który dla każdego pliku w bieżącym katalogu, który ma rozszerzenie .c, wykona taką komendę:
+
+cc (tu_nazwa_pliku) -o (tu_nazwa_pliku_bez_rozszerzenia)
+
+Oczywiście zamień na właściwe nazwy plików.

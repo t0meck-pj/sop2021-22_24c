@@ -1,0 +1,30 @@
+#!/bin/bash
+
+declare -a buffer
+
+buffer[0]=0
+buffer[1]=1
+n=$1
+
+function Fibonacci {
+	if [[ $1 < 2 ]]; then
+		return $1
+	else
+
+		return "$(Fibonacci $1-1)+$(Fibonacci $1-2)"
+	#	buffer[i-2]=$(Fibonacci i-2)
+	#	buffer[i-1]=$(Fibonacci i-1)
+	fi
+}
+
+echo "$(Fibonacci 5)"
+
+
+
+
+
+
+exit
+Przygotu funkcję obliczającą rekurencyjnie ciąg Fibonacciego. Niech wynik zwraca za pomocą return. 
+Czy są jakieś ograniczenia?
+

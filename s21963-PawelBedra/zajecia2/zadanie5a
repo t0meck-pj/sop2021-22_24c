@@ -1,12 +1,11 @@
-#!/bin./bash
+#!/bin/bash
 
 I=$1
 X=${#I}
 Y=${I:(X-1):X}
 
-
 if [[ $Y == "a" ]]; then
-echo $I ma kota, a kot ma ${I:0:(X-1)}e
+	echo $I ma kota, a kot ma ${I:0:(X-1)}e
 else
 echo $I ma kota, a kot ma ${I}a
 fi

@@ -1,0 +1,39 @@
+#!/bin/bash
+
+bezKoloru="\e[0m"
+#Foreground colors
+b="\ei[0;30m"
+r="\e[0;31m"
+g="\e[0;32m"
+y="\e[0;33m"
+x="\e[0;34m"
+m="\e[0;35m"
+c="\e[0;36m"
+w="\e[0;37m"
+
+read -p 'Type in the text to color: ' text
+
+function getTextColor {
+read -p 'Please set a TEXT COLOR by choosing the right button:
+BLACK    ===> b
+RED      ===> r
+GREEN    ===> g
+YELLOW   ===> y
+BLUE     ===> x
+MAGENTA  ===> m
+CYAN     ===> c
+WHITE    ===> w
+Now press the right button > ' foreGround
+
+#Petla do validacji dokonanego wyboru
+while [[ "$foreGround" != "b" && "$foreGround" != "r" && "$foreGround" != "g" && "$foreGround" != "y" && "$foreGround" != "x" && "$foreGround" != "m" && "$foreGround" != "c" && "$foreGround" != "w" ]]; do
+	getTextColor
+done
+}
+
+getTextColor
+
+echo $foreGround
+
+echo -e ${!foreGround}${text}${bezKoloru}
+
