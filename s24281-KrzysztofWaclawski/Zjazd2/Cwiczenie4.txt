@@ -1,0 +1,5 @@
+echo $X - wypisze nam wszystko w jednej lini bez wartości zmiennych
+
+X=`ls -l`
+
+echo "$X" - z cudzysłowem zostaną też przedstawione wartości

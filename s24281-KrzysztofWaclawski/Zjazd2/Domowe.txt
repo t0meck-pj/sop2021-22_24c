@@ -1,0 +1,6 @@
+#!/bin/bash
+
+file=`cat $1`
+name='\e[31mKrzysztof\e[0m'
+
+echo -e ${file//Krzysztof/$name}

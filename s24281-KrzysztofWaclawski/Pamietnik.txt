@@ -1,0 +1,22 @@
+05.03.2022
+Mój kochany pamiętniczku na dzisiejszych zajęciach dowiedziałem się:
+
+- O istnieniu Debiana i jak go zainstalować
+- że prowadzący jest żartownisiem i prowadzi zajęcia na przysłowiowym "luzie" :D
+- że nie do końca ogarniam GitHub
+
+19.03.2022
+Mój kochany pamiętniczku na dzisiejszych zajęciach dowiedziałem się:
+
+- Co to skrypty i jak się je tworzy / uruchamia
+- Co to jest "Shebang" - "#!/bin/bash" jest to opcjonalna linijka na początku skryptu
+- Jak dostać się na Szuflandię i jak z niej korzystać
+- Jak stworzyć skrypt i edytować go
+- Przez source nie odpalamy skrypty ponieważ zostawia nieodwracalne zmiany
+- Strona do nauki GITa "https://learngitbranching.js.org/?locale=pl"
+
+02.04.2022
+Mój kochany pamiętniczku na dzisiejszych zajęciach dowiedziałem się:
+
+- Co to if i jak z niego korzystać w skryptach
+- Wyszukiwania pomocy w konsoli poprzez "man"

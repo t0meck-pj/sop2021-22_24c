@@ -1,0 +1,4 @@
+Ćwiczenie1:
+
+#!/ibin/bash
+echo "Witamy w terminalu"

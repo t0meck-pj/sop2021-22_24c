@@ -1,0 +1,6 @@
+PATH - ścieżka pliku po prostu pokazuje ścieżkę programu
+RANDOM - generator liczby, losuje losową liczbę
+PS1 - pierwsza wartość po uruchomieniu shella
+USER - pokazuje aktualnego użytkownika terminala
+HOSTNAME - pokazuje nazwę hosta
+OSTYPE - pokazuje nam jakiego systemu operacyjnego używamy (nazwę)
