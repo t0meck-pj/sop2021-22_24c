@@ -23,3 +23,9 @@ Mój kochany pamietniczku, na dzisiejszych zajęciach:
 
 2022.04.21
 Mój kochany pamiętniczku, niestety nie mogłam być na dzisiejszych zajęciach, na których uczyliśmy się podstaw języa C. Dlatego czeka mnie nadrabianie zaległości.
+
+2022.05.07
+Kochany pamiętniczku, na dzisiejszych zajęciach uczyliśmy się procesów w języku C i C++.
+
+2022.05.28
+Kochany pamiętniczku, na dzisiejszych zajęciach materiał był dosyć trudny, ponieważ dotyczył socketów i sygnałów. Jest to dosyć obszerny materiał, więc niestety ciężko go załapać od razu.
