@@ -15,3 +15,15 @@ Mój kochany pamiętniczku na dzisiejszych zajęciach nauczyłem się:
 Mój kochany pamiętniczku na dzisiejszych zajęciach nauczyłem się:
 - Przypomniałem sobie podstawy języka C (IO, wskaźniki, zmienne, tablice, funkcje)
 - Ręcznej kompilacji
+
+2022-05-14
+Mój kochany pamiętniczku na dzisiejszych zajęciach nauczyłem się:
+- działania procesów.
+
+2022-05-28
+Mój kochany pamiętniczku na dzisiejszych zajęciach nauczyłem się:
+- Sposobu działania sygnałów
+- Zrozumiałem jak działają sockety
+
+2022-06-11
+Dzień sądu :) kolokwium
