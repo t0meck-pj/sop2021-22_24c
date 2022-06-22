@@ -1,0 +1,40 @@
+#include <stdio.h>
+#include <stdlib.h>
+#include <unistd.h>
+#include <sys/types.h>
+#include <sys/wait.h>
+
+
+int main(int argc, char** argv){
+	
+	int arg = atoi(argv[1]);
+	
+	pid_t masterPid = getpid();
+	pid_t p = fork();	
+
+	if(p <= 0){
+		printf("Potomny - nieparzyste: ");
+		int i;
+		for(i=0; i<=arg; i++){
+			if(i%2 != 0){
+				printf("%d ", i);
+			}
+		}
+		printf("\n");
+	}else{
+		int sum;
+		int x;
+		for(x=0; x<=arg; x++){
+			sum += x;
+		}
+		wait(NULL);
+		printf("Rodzic - Suma: %d \n", sum);
+	}
+
+	if(masterPid == getpid()){
+		int state = 0;
+		waitpid(0, &state, 0);
+	}
+	
+	return 0;
+}

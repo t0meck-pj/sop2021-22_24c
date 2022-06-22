@@ -1,0 +1,20 @@
+#include <stdio.h>
+#include <unistd.h>
+#include <sys/types.h>
+
+
+int main(){
+	
+	pid_t masterPid = getpid();
+	FILE* chat = fopen("tmp/chat.txt", "w");
+	pid_t p = fork();
+	if(p > 0){
+		
+		fprintf(chat, "1: Witaj! Jestem pierwszym uzytkownikiem! \n");
+	}else{
+		
+		fprintf(chat, "2: Czesc! Jestem drugim uzytkownikiem! \n");
+	}
+
+	return 0;
+}
