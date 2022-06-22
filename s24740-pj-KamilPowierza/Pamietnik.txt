@@ -46,3 +46,8 @@ Mój kochany pamiętniczku na dzisiejszych zajęciach nauczyłem się:
 - Zrozumiałem na jakiej zasadzie działają sygnały
 - Zrozumiałem jak działają sockety
 - Niestety nie działała szuflandia i zajecia w formie wykładów nie były moje ulubione, jednak jest o wiele lepiej jak coś faktycznie próbujemy i testujemy na zajęciach :)
+
+
+2022-06-11
+
+Kolokwium
