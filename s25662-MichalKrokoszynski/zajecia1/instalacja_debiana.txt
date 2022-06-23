@@ -1,0 +1,64 @@
+Używać będziemy programu VirtualBox i instalować system Debian.
+Na początku tworzymy wirtualna maszynę wpisujemy nazwę, lokalizacje maszyny i system (ciekawostka: jak zacznie się wpisywać w nazwie 3 pierwsze literki nazwy systemu od razu nam na niego ustawi czyli „deb…”).
+Żeby przyspieszyć wydajność (bo o to tutaj najbardziej się rozchodzi), pamięć RAM – im więcej tym lepiej, ale 2GB w zupełności wystarczą.
+
+Tworzymy wirtualny dysk twardy i wybieramy typ pliku taki jaki już mamy pobrany o rozszerzeniu .vdi (Virtual Disk Image), który pobraliśmy wcześniej na stronie internetowej debiana: https://debian.org.
+VDI - format używany przez Oracle VM VirtualBox
+VHD (Virtual Hard Disk) - format używany przez Microsoft w Hyper-V
+VMDK (Virtual Machine Disk) - format używany przez VMware
+Następnie przydzielamy pamięć na dysku fizycznym. Może być dynamicznie przydzielany – zużywa tyle miejsca ile faktycznie jest potrzebne albo stały rozmiar – czyli ustalamy jakaś wartość i nie mniej nie więcej jest zarezerwowane dla wirtualnej maszyny. I mamy!
+
+Aby rozpocząć prace na wirtualnej maszynie, musimy najpierw ją skonfigurować, żeby działała optymalnie. Wchodzimy w ustawienia maszyny wirtualnej i modyfikujemy jak najwięcej żeby było jak najwięcej zabawy :-).
+W zakładce System wybieramy jakie dyski będziemy używać. W moim przypadku będę używał tylko dysku twardego.
+
+I tu myślimy ze możemy sobie tak po prostu włączyć. Możemy, ale musimy tez znać inne rodzaje uruchamiania systemu jak:
+Zwykły start –domyślny start
+Bezgłowy start – start maszyny bez obrazu.
+Oddzielny start – start maszyny domyślnie, ale z możliwością wyłączenia obrazu.
+
+-----Debian-----
+Po włączeniu będziemy instalować system. Po wlączeniu ukazują nam się różne opcje:
+- Graphical install – graficzna instalacja debiana
+- Install - instalacja debiana tylko tekstowy (to wybierzemy)
+- Advanced options:
+	*Graphical expert install – graficzna instalacja systemu z nasza pelna kontrola w przebiegu instalacji. 
+	*Graphical rescue mode - tryb odzyskiwania w trybie graficznym. Używa się jeżeli cos się popsuło i nie możemy uruchomić systemu.
+	*Graphical automated install – graficzna instalacja systemu, tylko zautomatyzowana (jest potrzebny plik gdzie wszystkie ustawienia instalacji sa już zapisane[używane do masowej instalacji np. na komputerach w pracy])
+	*Expert install - instalacja w trybie tekstowym z trybem eksperta
+	*Rescue mode - tryb odzyskiwania w trybie tekstowym.
+	*Automated install - automatyczna instalacja w trybie tekstowym
+		- Speech-enabled advanced options – podobne opcje tylko z wykorzystaniem syntezatora mowy
+- Accesible dark contrast installer menu – podobne opcje instalacji tylko w dużym kontraście
+- Help - pomoc
+- Install with speech synthesiz – instalacja systemu w trybie okienkowym z syntezatorem mowy
+
+Podczas instalacji będziemy musieli odpowiedzieć na wiele ważnych pytan:
+- Select a language – wybierzemy angielski bo to jest najpopularniejszy jezyk do porozumiewania się pomiędzy obcokrajowcami, błędy będą w jeżyku angielskim(będzie latwiej znaleźć rozwiązanie w Internecie), a ja sam się podszkolę w tym jeżyku.
+- Select your location -  wybieramy nasz kraj w którym się znajdujemy, pozwoli nam to na ustalenie strefy czasowej. (Polske musimy głębiej poszukać others>Europe>Poland)
+- Configure locales – pozwala na odpowiednie wyświetlanie daty itp.
+- Configure the keyboard – Ustawiamy układ naszej klawiatury (osobiście nie wybieram z polskimi znakami, bo po prostu nie będę ich używać)
+- Configure the network
+- wpisujemy nazwę hosta
+	- domene jeśli taka mamy
+- Set up users and passwords
+	- ustawiamy hasło roota I drugi raz żeby potwierdzić ze dobrze wpisaliśmy
+	- wpisujemy pełna nazwę użytkownika
+	- wpisujemy krótka nazwę użytkownika 
+	- ustawiamy dla niego hasło i potwierdzamy drugi raz
+- Partition disks
+	- Guided - use entire disk – uzyjemy calego dysku
+	- Guided - use entire disk and set up LVM – uzyjemy calego dysku i ustawimy LVM (Logical Volume Manager), pozwala na polaczenie kilku dyskow w jeden
+	- Guided - use entire disk and set up encrypted LVM – podobnie jak wyżej tylko LVM zaszyfrowane
+				- All files in one partiton: tworzy jedna partycje na ktorej beda znajdywac sie foldery home var itp.
+		- Separate /home partition: zrobi podobnie jak wyżej tylko stowrzy jeszcze jedna partycje gdzie będzie sam home się znajdowac
+		- Separata /home, /var and /tmp partitions: osobne partycje dla home var I tmp 
+
+	- Manual
+		Ręczne ustawienia. Na początku zaznaczamy który dysk chcemy partycjonować. Wybieramy wolne miejsce, tworzymy nowe partycje i ustawiamy jej rozmiar w zależności do czego będzie ona potrzebna.
+
+- Configure the package manager – wybieramy kraj Poland i najlepszy dla nas serwer do pobierania dodatkowych paczek, (opcjonalnie proxy możemy dodać).
+- Software selection – do tego momentu tylko core systemu został zainstalowany i do niego możemy doinstalować różne oprogramowania. Wybieramy najpotrzebniejsze (nie instalujemy niepotrzebnych rzeczy żeby nie spowolnić wydajności)
+- install the GRUB boot loader – pytają nas się czy doinstalować menadżer GRUB bez którego komputer nie da rady załadować systemu operacyjnego.
+- finish the installation – W końcu! Możemy kontynuować, a system sam się zresetuje i ku naszym oczom pojawi się system operacyjny debian.
+
+

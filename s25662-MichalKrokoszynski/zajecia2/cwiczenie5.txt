@@ -9,3 +9,13 @@ W "normalnych" imionach odmiana polega tylko na dopisaniu "a" na końcu.
 
 A=$1
 echo $A ma kota, a kot ma ${A}a
+
+
+b)
+Skrypt wyglada nastepujaco wszystko dziala jak nalezy
+
+A=$1
+
+echo ${A:0:1}
+echo ${A:(${#A}-1):1}
+echo -e ${A//"SOP"/"\e[32mSOP\e[0m"}

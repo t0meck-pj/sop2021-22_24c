@@ -1,0 +1,8 @@
+X=`ls -l`
+echo $X
+
+Chodzi o to, żeby do komendy echo dołożyć jeszcze cudzyslowia.
+Wtedy nasze echo bedzie sformatowane tak jak bylo to podczas wykonywania komendy ls
+
+X=`ls -l`
+echo "$X"

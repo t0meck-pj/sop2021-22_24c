@@ -1,0 +1,27 @@
+1)
+function witaj {
+  echo -e "\e[${2}m${1}\e[0m"
+}
+
+witaj "hello" 32
+
+
+2)
+
+function fibo {
+		
+	sumka=$(($1+$2))
+	len=$(($3-1))
+	if [[ $len -gt 0 ]]; then
+		fibo $2 $sumka $len
+	else
+		return $2
+	fi
+}
+
+#argumenty funkcji F0/F1/liczba rekurencji
+fibo 0 1 10
+
+echo $?
+
+#ograniczenie takie ze konczy sie miejsce i po 13. rekurencji liczy w dol
