@@ -1,0 +1,119 @@
+1)
+#include <stdio.h>
+#include <stdlib.h>
+
+typedef struct Node {
+    int x;
+    struct Node* next;
+} Node;
+
+int main()
+{
+    Node root;
+
+    root.x = 1;
+    root.next = malloc(sizeof(Node));
+
+    root.next->x = 2;
+    root.next->next = malloc(sizeof(Node));
+
+    root.next->next->x = 3;
+    root.next->next->next = NULL;
+
+    printf("Pierwsza wartosc: %d\n", root.x);
+    printf("Druga wartosc: %d\n", root.next->x);
+    printf("Trzecia wartosc: %d\n", root.next->next->x);
+
+    free(root.next);
+    free(root.next->next);
+    return 0;
+}
+
+2)
+#include <stdio.h>
+#include <stdlib.h>
+
+typedef struct Node {
+    int x;
+    struct Node* next;
+    struct Node* prev;
+} Node;
+
+int main()
+{
+    Node root;
+
+	root.prev = NULL;
+    root.x = 1;
+    root.next = malloc(sizeof(Node));
+
+    root.next->prev = root.x;
+
+    root.next->x = 2;
+    root.next->next = malloc(sizeof(Node));
+
+    root.next->next->prev = root.next->x;
+
+    root.next->next->x = 3;
+    root.next->next->next = NULL;
+
+    printf("Pierwsza wartosc: %d\n", root.x);
+	printf("Pierwsza wartosc nastepna: %d\n\n", root.next->x);
+
+	printf("Druga wartosc poprzednia: %d\n", root.next->prev);
+    printf("Druga wartosc: %d\n", root.next->x);
+	printf("Druga wartosc nastepna: %d\n\n", root.next->next->x);
+	
+   	printf("Trzecia wartosc poprzednia: %d\n", root.next->next->prev);
+    printf("Trzecia wartosc: %d\n", root.next->next->x);
+
+    free(root.next);
+    free(root.next->next);
+    return 0;
+}
+
+3)
+//rekurencja
+
+#include <stdio.h>
+#include <stdlib.h>
+
+int fib(int,int,int);
+
+int main() {
+    int a=0;
+    int b=1;
+	int n=10;//ile razy ma sie potworzyc ciag fibonacciego
+    fib(a, b, n);
+    return 0;
+}
+
+int fib(a,b,n) {
+	if(n>0){
+		printf("%d \n", a);
+		fib(b, (a + b), n-1);
+	}
+    return 0;
+}
+
+
+//iteracja
+
+#include <stdio.h>
+#include <stdlib.h>
+
+int fib(int,int,int);
+
+int main() {
+    int a=0;
+    int b=1;
+	int n=10;//ile razy ma sie potworzyc ciag fibonacciego
+    for(int i = 0; i < n; i++){
+		printf("%d \n", a);
+		int suma = a + b;
+		a = b;
+		b = suma;	
+	}
+    return 0;
+}
+

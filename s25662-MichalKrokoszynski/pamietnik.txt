@@ -23,14 +23,24 @@ Jak pisać bardziej złożone skrypty (korzystając z if, pętli, itp).
 Składnia basha jest troche inna w porównaniu do innych języków programowania jakie znam.
 
 
-
 2022-04-23
 Moj kochany pamietniczku na dzisiejszych zajeciach nauczylem sie:
 Nie było mnie :c. Ale z materiałów jakie dostaliśmy, nauczyłem się podstaw dotyczących języka programowania C.
 
 
-
-2022-05-07
+2022-05-14
 Moj kochany pamietniczku na dzisiejszych zajeciach nauczylem sie:
 dokładnie jak dziala funkcja fork() choć nie jest to takie proste.
 Różnych innych funkcji jak wait getpid i getppid które są przydatne jeżeli robimy jakieś kopie procesów.
+
+
+2022-05-28
+Moj kochany pamietniczku na dzisiejszych zajeciach nauczylem sie:
+Troche o sygnalach i socketach ze to nie taka prosta rzecz, ale da sie zrozumiec przeciez mamy byc dobrymi informatykami
+i wiem ze musze sie rpzygotowac na to kolokwium bo jak to bedzie to ciezej bedzie
+
+
+2022-06-11
+Moj kochany pamietniczku na dzisiejszych zajeciach nauczylem sie:
+ze SOP nie jest taki latwy, a na kolokwoim to juz w ogóle, ale jest jako przedmiot bardzo ciekawy.
+Po kolokwium podliczyłem punkty i wiem ze zaliczylem go. Jeszcze odesłać zadanka ;)

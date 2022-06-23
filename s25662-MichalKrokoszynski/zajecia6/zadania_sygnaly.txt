@@ -1,0 +1,73 @@
+Zadanie 1
+
+#include <stdio.h>
+#include <stdlib.h>
+#include <unistd.h>
+#include <signal.h>
+
+int e = 1;
+
+void handler (int sig){
+	printf("Signal!!!");
+	e = 0;
+}
+
+int main(){
+
+	signal(SIGUSR1, handler);
+	while(e){
+		printf("PID: %d\n", getpid());
+		sleep(1);
+	}
+
+}// kill -SIGUSR1 "PID"
+
+
+Zadanie 2
+
+#include <stdio.h>
+#include <stdlib.h>
+#include <unistd.h>
+#include <signal.h>
+
+int e = 1;
+char path[] = "tmp/lock.txt";
+
+
+void handler (int sig){
+	printf("Wyrkyto probe uruchomienia drugiej instancji programu. \n");
+}
+void removeFile (int sig){
+	if(remove(path) == 0){
+		printf("Plik skasowany \n");
+	}
+	e = 0;
+}
+
+int main(void){
+
+	FILE * f;
+
+	
+
+	if(access(path, F_OK)==0){
+		/*Jest plik*/
+		f = fopen(path, "r");
+		int pid_file;
+		fscanf(f, "%d", &pid_file);
+		kill(pid_file, SIGUSR1);
+		fclose(f);
+	}else{
+		f = fopen(path, "w");
+		fprintf(f, "%d", getpid());
+		fclose(f);
+		
+		signal(SIGUSR1, handler);
+		signal(SIGINT, removeFile);
+		while(e){
+			sleep(1);
+		}
+	}
+
+	return 0;
+}
