@@ -10,13 +10,13 @@ fi
 
 zadanie 2
 
-if [ -f config.cfg ]
+if [ -e config.cfg ]
 then
         echo "plik zostanie uruchomiony"
         ./config.cfg
 elif [ $# -gt 0 ]
 then
-        touch $1.txt
+        ./$1
 else
         echo "blad"
 fi
@@ -27,11 +27,11 @@ zadanie 3
 
 file=$(basename $0)
 
-if [[ $file == *.txt ]]
+if [[ $file == *.sh ]]
 then
         echo "ten plik ma rozszerzenie .sh"
 else
-        mv  ${file} ${file:0:10}.txt
+        mv  ${file} ${file:0:10}.sh
 fi
 
 --------------------
@@ -39,7 +39,7 @@ fi
 zadanie 4
 
 
-num_of_files=$(ls -1 /home/PJWSTK/s24967/zjazd3 | wc -l)
+num_of_files=$(ls -1Up | grep -v / | wc -l)
 
 if [ $num_of_files > '5' ]
 then

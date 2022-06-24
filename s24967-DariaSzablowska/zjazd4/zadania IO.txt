@@ -50,7 +50,66 @@ else
 
 return 0;
 }
-
 --------------------
 
 
+
+Cwiczenie 2 IO:
+
+#include <iostream>
+#include <stdio.h>
+
+using namespace std;
+
+int main()
+{
+
+    char hex;
+    char tab[15];
+    int i = 0;
+    int line = 1;
+
+    FILE * file;
+    file = fopen ("inputData.txt", "r");
+	do {
+		if(i < 1){
+		    printf("%08X0 ", line);
+		    line++;
+		    
+		}
+		printf("%02X ",(unsigned char)hex);
+		tab[i] = hex;
+		i++;
+		
+		if(i == 16){
+		    i=0;
+		    for(int x=0; x < 16; x++) {
+		        printf("%c", (unsigned char)tab[x]);
+		    }    
+		    cout << endl;
+		}
+
+    	} while(( hex = fgetc(file) ) != EOF );
+    	
+    	
+
+    if(i > 0 && i < 16){
+        for(int j=i; j < 16; j++) {
+            tab[j] = ' ';
+            printf("%02X ",tab[j]);
+
+        }
+        for(int j=0; j < 16; j++){
+            printf("%c", tab[j]);
+                        		
+        }        
+	cout << endl;
+	
+    }
+    
+    
+
+    fclose(file);
+
+    return 0;
+}

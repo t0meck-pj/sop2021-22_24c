@@ -46,7 +46,7 @@ int main()
     a.add_node(2);
     return 0;
 }
-
+--------------------
 3.
 #include <iostream>
 using namespace std;
@@ -66,4 +66,241 @@ cin >> x;
 	cout << y << endl;
 	}
     return 0;
+}
+--------------------
+2.
+#include <iostream>
+
+using namespace std;
+
+struct TlistElement
+{
+  TlistElement * next, * prev;
+  int key;
+};
+
+
+
+class TdoubleList
+{
+  private:
+
+    TlistElement * front, * back;
+    unsigned counter;
+
+  public:
+         
+
+    TdoubleList()
+    {
+      front = back = NULL;
+      counter  = 0;
+    }
+    
+
+    ~TdoubleList()
+    {
+      TlistElement * p;
+      
+      while(front)
+      {
+        p = front->next;
+        delete front;
+        front = p;
+      }              
+    }
+
+
+    unsigned size()
+    {
+      return counter;
+    }
+
+
+    TlistElement * push_front(TlistElement * p)
+    {
+      p->next = front; p->prev = NULL;
+      if(front) front->prev = p;
+      front = p;
+      if(!back) back = front;
+      counter++;
+      return front;
+    }
+    
+
+    TlistElement * push_back(TlistElement * p)
+    {
+      if(back) back->next = p;
+      p->next = NULL; p->prev = back;
+      back = p;
+      if(!front) front = back;
+      counter++;
+      return back;
+    }
+    
+
+    TlistElement * insert(TlistElement * p1, TlistElement * p2)
+    {
+      p1->next = p2->next; p1->prev = p2;
+      p2->next = p1;
+      if(p1->next) p1->next->prev = p1;
+      else back = p1;
+      counter++;
+      return p1;
+    }
+    
+
+    TlistElement * pop_front()
+    {
+      TlistElement * p;
+      
+      if(front)
+      {
+        p = front;
+        front = front->next;
+        if(!front) back = NULL;
+        else front->prev = NULL;
+        counter--;
+        return p;
+      }
+      else return NULL;     
+    }
+    
+
+    TlistElement * pop_back()
+    {
+      TlistElement * p;
+      
+      if(back)
+      {
+        p = back;
+        if(p == front) front = back = NULL;
+        else
+        {
+          back = back->prev;
+          back->next = NULL;
+        };
+        counter--;
+        return p;
+      }
+      else return NULL;
+    }
+    
+
+    TlistElement * erase(TlistElement * p)
+    {
+      TlistElement * p1;
+      
+      if(p->prev) p->prev->next = p->next;
+      else front = p->next;
+      if(p->next) p->next->prev = p->prev;
+      else back = p->prev;
+      counter--;
+      return p;
+    } 
+
+
+    TlistElement * index(unsigned n)
+    {
+      TlistElement * p;
+      
+      if((!n) || (n > counter)) return NULL;
+      else if(n == counter) return back;
+      else if(n < counter / 2)
+      {
+        p = front;
+        while(--n) p = p->next;
+        return p;
+      }
+      else
+      {
+        p = back;
+        while(counter > n++) p = p->prev;
+        return p;
+      }  
+    }
+
+
+    void showKeys()
+    {
+      TlistElement * p;
+      
+      if(!front) cout << "Lista jest pusta." << endl;
+      else
+      {
+        p = front;
+        while(p)
+        {
+          cout << p->key << " ";
+          p = p->next;
+        }
+        cout << endl;
+      }
+    }
+};
+
+
+main()
+{
+  TdoubleList    dl;
+  TlistElement * p;
+  int            i;
+  
+  cout << "(A) : "; dl.showKeys();
+  
+
+
+  for(i = 1; i <= 5; i++)
+  {
+    p = new TlistElement;
+    p->key = i;
+    dl.push_front(p);
+  }
+
+  cout << "(B) : ";   dl.showKeys();
+  
+
+  for(i = 1; i <= 5; i++)
+  {
+    p = new TlistElement;
+    p->key = i;
+    dl.push_back(p);
+  }
+
+  cout << "(C) : ";   dl.showKeys();
+
+
+  dl.pop_front();
+  
+  cout << "(D) : ";   dl.showKeys();
+
+
+  dl.pop_back();
+  
+  cout << "(E) : ";   dl.showKeys();
+ 
+
+  delete dl.erase(dl.index(3));
+  
+  cout << "(F) : ";   dl.showKeys();
+
+
+  delete dl.erase(dl.index(dl.size() - 1));
+  
+  cout << "(G) : ";   dl.showKeys();
+
+
+  p = new TlistElement;
+  p->key = 9;
+  dl.insert(p,dl.index(4));
+  
+  cout << "(H) : ";   dl.showKeys();
+
+
+  while(dl.size()) dl.pop_front();
+  
+  cout << "(I) : ";   dl.showKeys();
+  
+  cout << endl << endl; 
+  system("PAUSE");
 }

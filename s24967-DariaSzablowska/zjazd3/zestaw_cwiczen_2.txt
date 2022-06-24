@@ -5,8 +5,9 @@ for ((i=10; i>0; i-=2)); do echo $i; done
 
 Zadanie 2.2
 
-arg=$#
-for i in $@; do echo $i; done
+for i in "$@"; do 
+echo "$i"; 
+done
 --------------------
 
 Zadanie 2.3
