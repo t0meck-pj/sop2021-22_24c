@@ -1,0 +1,13 @@
+#!/bin/bash
+
+TABLICA=(element1 "element2" element\ 3)
+
+echo '${TABLICA[1]}:' ${TABLICA[1]}
+echo '${TABLICA[*]}:' ${TABLICA[*]}
+echo '${TABLICA[@]}:' ${TABLICA[@]}
+echo '${TABLICA[*]}:' ${TABLICA[*]}
+echo '"${!TABLICA[@] ${!TABLICA[*]}":' "${!TABLICA[@]} ${!TABLICA[*]}"
+echo '${!TABLICA[@]}:' ${!TABLICA[@]}
+echo '${!TABLICA[*]}:' ${!TABLICA[*]}
+echo '${#TABLICA[@]}:' ${#TABLICA[@]}
+

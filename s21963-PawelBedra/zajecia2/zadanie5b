@@ -1,0 +1,11 @@
+#!/bin/bash
+
+T=$1
+X=${#T}
+A=${T:0:1}
+Z=${T:(X-1):1}
+
+echo $T
+echo $A
+echo $Z
+

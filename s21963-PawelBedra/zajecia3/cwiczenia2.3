@@ -1,0 +1,6 @@
+#!/bin/bash
+
+lista=$(ls -la)
+
+echo "${lista}" | sed -r 's/^\-.*\s([a-zA-Z0-9\_\.\-\/\\]+)$/Patrzcie Panstwo, oto plik: \1/g'
+

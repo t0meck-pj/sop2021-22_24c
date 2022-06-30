@@ -1,0 +1,32 @@
+#!/bin/bash
+
+#Uworzenie tablicy, w ktorej beda zapisywane dane w petlach
+declare -a var
+
+
+#Pętla w której przypisuję kolejne argumenty skryptu do kolejnych argumentów tablicy
+for((i=1; i<=$#; i++)); do
+	var[i]="${!i}"
+	var[i]=$(grep '.*' "${!i}")
+
+#wypisanie po kolej wszystkich znaków jeden po drugim
+		for ((j=0; j<${#var[i]}; j++)); do
+			echo -n "${var[i]:$j:1}"
+		done
+		echo " "
+done
+
+echo -----------------------------------------------
+#Przypisanie od ostatniego argumentow skryptu do argumentow tablicy
+for((i=$#; i>0; i--)); do
+	var[i]="${!i}"
+	var[i]=$(grep '.*' "${!i}")
+#	echo "${var[$i]}"
+
+#Wypisanie znak po znaku, od ostatniego do pierwszego, argumentow tablicy podanych z petli nadrzednej
+		for ((j=${#var[i]}-1; j>=0; j--)); do
+			echo -n "${var[i]:$j:1}"
+		done
+		echo " "
+done
+

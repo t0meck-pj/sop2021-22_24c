@@ -1,0 +1,8 @@
+X=tekst
+echo $X
+# Najpierw deklarujemy zmienna i podajemy jej wartosc, w tym przypadku jest to slowo "tekst". Nastepnie przy uzyciu polecenia echo wywolujemy wartosc zmiennej, ktora zostala zapisana w tej sesji powloki.
+
+bash
+echo $X
+# Poleceniem bash otworzylismy nowa sesje powloki, w ktorej wartosc zmiennej X nie zostala zapisana, dlatego wywolanie jej wartosci nie przynosi efektu.
+

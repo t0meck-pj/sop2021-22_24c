@@ -1,0 +1,11 @@
+#!/bin/bash
+X=$(ls -l)
+echo "$X"
+
+# Dzieje sie tak dlatego, ze  przy prostym wywolaniu "echo $X" program pobiera zawartosc zmiennej i wypisuje ja na ekranie.
+# Jesli umieszczamy "$X" to zawartosc zmiennej jest rozwijana niejako w programie echo.
+
+
+
+
+

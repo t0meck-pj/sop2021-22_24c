@@ -1,0 +1,13 @@
+#!/bin/bash
+
+declare -a buffer
+argc=$#
+echo ${argc}
+
+for ((i=1; i<=${argc}; i++));
+do
+	buffer[i]=${i}
+	buffer[i]='$'${buffer[i]}
+	eval echo ${buffer[i]}
+done
+
