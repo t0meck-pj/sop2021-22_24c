@@ -1,8 +1,7 @@
 #!/bin/bash
-A=0
 if [ -e ./config.cfg ]; then
 	./config.cfg
-elif [ "$#" -gt "$A" ]; then
+elif [ "$#" -gt 0 ]; then
 	./$1
 else
 	echo "Nie dziala";
